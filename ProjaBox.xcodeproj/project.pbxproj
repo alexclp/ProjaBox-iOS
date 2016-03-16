@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
+		0FC223AF1C99BFA1006DD18B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* ViewController.swift */; };
+		0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC223B01C99BFA1006DD18B /* Main.storyboard */; };
+		0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC223B31C99BFA1006DD18B /* Assets.xcassets */; };
+		0FC223B71C99BFA1006DD18B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC223B51C99BFA1006DD18B /* LaunchScreen.storyboard */; };
+		0FC223C21C99BFA1006DD18B /* ProjaBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223C11C99BFA1006DD18B /* ProjaBoxTests.swift */; };
+		0FC223CD1C99BFA1006DD18B /* ProjaBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */; };
+		0FC223DC1C99C183006DD18B /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC223DB1C99C183006DD18B /* linkedin-sdk.framework */; };
+		570C152286185CE3BB597108 /* Pods_ProjaBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150DAC5C25C09635EEA1872C /* Pods_ProjaBox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FC223BE1C99BFA1006DD18B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FC223A11C99BFA1006DD18B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FC223A81C99BFA1006DD18B;
+			remoteInfo = ProjaBox;
+		};
+		0FC223C91C99BFA1006DD18B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FC223A11C99BFA1006DD18B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FC223A81C99BFA1006DD18B;
+			remoteInfo = ProjaBox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FC223AE1C99BFA1006DD18B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FC223B11C99BFA1006DD18B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FC223B31C99BFA1006DD18B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FC223B61C99BFA1006DD18B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FC223B81C99BFA1006DD18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FC223BD1C99BFA1006DD18B /* ProjaBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjaBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FC223C11C99BFA1006DD18B /* ProjaBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjaBoxTests.swift; sourceTree = "<group>"; };
+		0FC223C31C99BFA1006DD18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FC223C81C99BFA1006DD18B /* ProjaBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjaBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjaBoxUITests.swift; sourceTree = "<group>"; };
+		0FC223CE1C99BFA1006DD18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FC223DB1C99C183006DD18B /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
+		150DAC5C25C09635EEA1872C /* Pods_ProjaBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjaBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.release.xcconfig"; sourceTree = "<group>"; };
+		6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FC223A61C99BFA1006DD18B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC223DC1C99C183006DD18B /* linkedin-sdk.framework in Frameworks */,
+				570C152286185CE3BB597108 /* Pods_ProjaBox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FC223BA1C99BFA1006DD18B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FC223C51C99BFA1006DD18B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FC223A01C99BFA1006DD18B = {
+			isa = PBXGroup;
+			children = (
+				0FC223AB1C99BFA1006DD18B /* ProjaBox */,
+				0FC223DA1C99C134006DD18B /* Frameworks */,
+				0FC223C01C99BFA1006DD18B /* ProjaBoxTests */,
+				0FC223CB1C99BFA1006DD18B /* ProjaBoxUITests */,
+				0FC223AA1C99BFA1006DD18B /* Products */,
+				170C3FDC025620E557E68496 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		0FC223AA1C99BFA1006DD18B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FC223A91C99BFA1006DD18B /* ProjaBox.app */,
+				0FC223BD1C99BFA1006DD18B /* ProjaBoxTests.xctest */,
+				0FC223C81C99BFA1006DD18B /* ProjaBoxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FC223AB1C99BFA1006DD18B /* ProjaBox */ = {
+			isa = PBXGroup;
+			children = (
+				0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */,
+				0FC223AE1C99BFA1006DD18B /* ViewController.swift */,
+				0FC223B01C99BFA1006DD18B /* Main.storyboard */,
+				0FC223B31C99BFA1006DD18B /* Assets.xcassets */,
+				0FC223B51C99BFA1006DD18B /* LaunchScreen.storyboard */,
+				0FC223B81C99BFA1006DD18B /* Info.plist */,
+			);
+			path = ProjaBox;
+			sourceTree = "<group>";
+		};
+		0FC223C01C99BFA1006DD18B /* ProjaBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				0FC223C11C99BFA1006DD18B /* ProjaBoxTests.swift */,
+				0FC223C31C99BFA1006DD18B /* Info.plist */,
+			);
+			path = ProjaBoxTests;
+			sourceTree = "<group>";
+		};
+		0FC223CB1C99BFA1006DD18B /* ProjaBoxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */,
+				0FC223CE1C99BFA1006DD18B /* Info.plist */,
+			);
+			path = ProjaBoxUITests;
+			sourceTree = "<group>";
+		};
+		0FC223DA1C99C134006DD18B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FC223DB1C99C183006DD18B /* linkedin-sdk.framework */,
+				150DAC5C25C09635EEA1872C /* Pods_ProjaBox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		170C3FDC025620E557E68496 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */,
+				463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FC223A81C99BFA1006DD18B /* ProjaBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FC223D11C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBox" */;
+			buildPhases = (
+				37332D4AC33C0975510DC9C1 /* Check Pods Manifest.lock */,
+				0FC223A51C99BFA1006DD18B /* Sources */,
+				0FC223A61C99BFA1006DD18B /* Frameworks */,
+				0FC223A71C99BFA1006DD18B /* Resources */,
+				2402EEF3FEEEAF14A70C5F65 /* Embed Pods Frameworks */,
+				082DF79E9204DB3B7B94B300 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProjaBox;
+			productName = ProjaBox;
+			productReference = 0FC223A91C99BFA1006DD18B /* ProjaBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0FC223BC1C99BFA1006DD18B /* ProjaBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FC223D41C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBoxTests" */;
+			buildPhases = (
+				0FC223B91C99BFA1006DD18B /* Sources */,
+				0FC223BA1C99BFA1006DD18B /* Frameworks */,
+				0FC223BB1C99BFA1006DD18B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FC223BF1C99BFA1006DD18B /* PBXTargetDependency */,
+			);
+			name = ProjaBoxTests;
+			productName = ProjaBoxTests;
+			productReference = 0FC223BD1C99BFA1006DD18B /* ProjaBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0FC223C71C99BFA1006DD18B /* ProjaBoxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FC223D71C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBoxUITests" */;
+			buildPhases = (
+				0FC223C41C99BFA1006DD18B /* Sources */,
+				0FC223C51C99BFA1006DD18B /* Frameworks */,
+				0FC223C61C99BFA1006DD18B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FC223CA1C99BFA1006DD18B /* PBXTargetDependency */,
+			);
+			name = ProjaBoxUITests;
+			productName = ProjaBoxUITests;
+			productReference = 0FC223C81C99BFA1006DD18B /* ProjaBoxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FC223A11C99BFA1006DD18B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Alexandru Clapa";
+				TargetAttributes = {
+					0FC223A81C99BFA1006DD18B = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					0FC223BC1C99BFA1006DD18B = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 0FC223A81C99BFA1006DD18B;
+					};
+					0FC223C71C99BFA1006DD18B = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 0FC223A81C99BFA1006DD18B;
+					};
+				};
+			};
+			buildConfigurationList = 0FC223A41C99BFA1006DD18B /* Build configuration list for PBXProject "ProjaBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FC223A01C99BFA1006DD18B;
+			productRefGroup = 0FC223AA1C99BFA1006DD18B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FC223A81C99BFA1006DD18B /* ProjaBox */,
+				0FC223BC1C99BFA1006DD18B /* ProjaBoxTests */,
+				0FC223C71C99BFA1006DD18B /* ProjaBoxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FC223A71C99BFA1006DD18B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC223B71C99BFA1006DD18B /* LaunchScreen.storyboard in Resources */,
+				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
+				0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FC223BB1C99BFA1006DD18B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FC223C61C99BFA1006DD18B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		082DF79E9204DB3B7B94B300 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2402EEF3FEEEAF14A70C5F65 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37332D4AC33C0975510DC9C1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FC223A51C99BFA1006DD18B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC223AF1C99BFA1006DD18B /* ViewController.swift in Sources */,
+				0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FC223B91C99BFA1006DD18B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC223C21C99BFA1006DD18B /* ProjaBoxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FC223C41C99BFA1006DD18B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC223CD1C99BFA1006DD18B /* ProjaBoxUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FC223BF1C99BFA1006DD18B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FC223A81C99BFA1006DD18B /* ProjaBox */;
+			targetProxy = 0FC223BE1C99BFA1006DD18B /* PBXContainerItemProxy */;
+		};
+		0FC223CA1C99BFA1006DD18B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FC223A81C99BFA1006DD18B /* ProjaBox */;
+			targetProxy = 0FC223C91C99BFA1006DD18B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0FC223B01C99BFA1006DD18B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FC223B11C99BFA1006DD18B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FC223B51C99BFA1006DD18B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FC223B61C99BFA1006DD18B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0FC223CF1C99BFA1006DD18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0FC223D01C99BFA1006DD18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FC223D21C99BFA1006DD18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ProjaBox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandruclapa.ProjaBox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0FC223D31C99BFA1006DD18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ProjaBox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandruclapa.ProjaBox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0FC223D51C99BFA1006DD18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ProjaBoxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandruclapa.ProjaBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjaBox.app/ProjaBox";
+			};
+			name = Debug;
+		};
+		0FC223D61C99BFA1006DD18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ProjaBoxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandruclapa.ProjaBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjaBox.app/ProjaBox";
+			};
+			name = Release;
+		};
+		0FC223D81C99BFA1006DD18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ProjaBoxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandruclapa.ProjaBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ProjaBox;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		0FC223D91C99BFA1006DD18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ProjaBoxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandruclapa.ProjaBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ProjaBox;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FC223A41C99BFA1006DD18B /* Build configuration list for PBXProject "ProjaBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FC223CF1C99BFA1006DD18B /* Debug */,
+				0FC223D01C99BFA1006DD18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FC223D11C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FC223D21C99BFA1006DD18B /* Debug */,
+				0FC223D31C99BFA1006DD18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FC223D41C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FC223D51C99BFA1006DD18B /* Debug */,
+				0FC223D61C99BFA1006DD18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FC223D71C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBoxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FC223D81C99BFA1006DD18B /* Debug */,
+				0FC223D91C99BFA1006DD18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FC223A11C99BFA1006DD18B /* Project object */;
+}
