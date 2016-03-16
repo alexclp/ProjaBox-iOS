@@ -14,15 +14,25 @@ import FBSDKCoreKit
 class ViewController: UIViewController {
 
 	let facebookReadPermissions = ["public_profile", "email", "user_friends"]
-	let facebookButton = FBSDKLoginButton()
+	var facebookButton: FBSDKLoginButton?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		facebookButton.center = self.view.center
-		self.view.addSubview(facebookButton)
+		facebookButton = FBSDKLoginButton()
+		facebookButton!.center = self.view.center
 		
+		let loginMethodSelector = Selector("facebookButtonClicked")
+		
+		facebookButton?.addTarget(self, action: loginMethodSelector, forControlEvents: .TouchUpInside)
+		
+		self.view.addSubview(facebookButton!)
+		
+	}
+	
+	func facebookButtonClicked() {
+		print("hello")
 	}
 
 }
