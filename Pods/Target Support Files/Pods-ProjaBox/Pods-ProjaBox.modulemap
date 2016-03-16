@@ -1,6 +1,0 @@
-framework module Pods_ProjaBox {
-  umbrella header "Pods-ProjaBox-umbrella.h"
-
-  export *
-  module * { export * }
-}

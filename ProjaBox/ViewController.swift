@@ -7,15 +7,19 @@
 //
 
 import UIKit
+
+import FBSDKCoreKit
 import FBSDKLoginKit
 
 class ViewController: UIViewController {
-	
-	@IBOutlet weak var facebookButton: FBSDKLoginButton?
 
+	let facebookReadPermissions = ["public_profile", "email", "user_friends"]
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+
+
 	}
 
 }
