@@ -38,12 +38,12 @@
 	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
-  <dict>
-	  <key>CFBundleURLSchemes</key>
-	  <array>
-		  <string>fb{your-app-id}</string>
-	  </array>
-  </dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1730481763863719</string>
+			</array>
+		</dict>
 	</array>
 	<key>FacebookAppID</key>
 	<string>1730481763863719</string>
@@ -51,24 +51,22 @@
 	<string>ProjaBox</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-  <key>NSExceptionDomains</key>
-  <dict>
-	  <key>facebook.com</key>
-	  <dict>
-		  <key>NSIncludesSubdomains</key> <true/>
-		  <key>NSThirdPartyExceptionRequiresForwardSecrecy</key> <false/>
-	  </dict>
-	  <key>fbcdn.net</key>
-	  <dict>
-		  <key>NSIncludesSubdomains</key> <true/>
-		  <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>  <false/>
-	  </dict>
-	  <key>akamaihd.net</key>
-	  <dict>
-		  <key>NSIncludesSubdomains</key> <true/>
-		  <key>NSThirdPartyExceptionRequiresForwardSecrecy</key> <false/>
-	  </dict>
-  </dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>yourserver.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+		</dict>
 	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 </dict>
 </plist>
