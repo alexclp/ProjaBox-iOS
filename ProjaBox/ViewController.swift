@@ -13,7 +13,7 @@ import FBSDKCoreKit
 
 class ViewController: UIViewController {
 
-	let facebookReadPermissions = ["public_profile", "email", "user_friends"]
+	let facebookPermissions = ["public_profile", "email", "user_friends"]
 	var facebookButton: FBSDKLoginButton?
 	
 	override func viewDidLoad() {
@@ -32,7 +32,16 @@ class ViewController: UIViewController {
 	}
 	
 	func facebookButtonClicked() {
-		print("hello")
+		let loginManager = FBSDKLoginManager()
+		loginManager.logInWithReadPermissions(facebookPermissions, fromViewController: self) { (result, error) -> Void in
+			if ((error) != nil) {
+				print("Process error \(error.description)")
+			} else if (result.isCancelled) {
+				print("Cancelled")
+			} else {
+				print("Logged in")
+			}
+		}
 	}
 
 }
