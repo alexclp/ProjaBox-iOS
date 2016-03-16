@@ -8,18 +8,21 @@
 
 import UIKit
 
-import FBSDKCoreKit
 import FBSDKLoginKit
+import FBSDKCoreKit
 
 class ViewController: UIViewController {
 
 	let facebookReadPermissions = ["public_profile", "email", "user_friends"]
+	let facebookButton = FBSDKLoginButton()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-
-
+		
+		facebookButton.center = self.view.center
+		self.view.addSubview(facebookButton)
+		
 	}
 
 }

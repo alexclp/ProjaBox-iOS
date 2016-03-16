@@ -15,7 +15,7 @@
 		0FC223C21C99BFA1006DD18B /* ProjaBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223C11C99BFA1006DD18B /* ProjaBoxTests.swift */; };
 		0FC223CD1C99BFA1006DD18B /* ProjaBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */; };
 		0FC223DC1C99C183006DD18B /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC223DB1C99C183006DD18B /* linkedin-sdk.framework */; };
-		570C152286185CE3BB597108 /* Pods_ProjaBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150DAC5C25C09635EEA1872C /* Pods_ProjaBox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		446AD3F03EE56AFEE5C0EFC5 /* Pods_ProjaBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +50,9 @@
 		0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjaBoxUITests.swift; sourceTree = "<group>"; };
 		0FC223CE1C99BFA1006DD18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FC223DB1C99C183006DD18B /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
-		150DAC5C25C09635EEA1872C /* Pods_ProjaBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjaBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.release.xcconfig"; sourceTree = "<group>"; };
 		6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.debug.xcconfig"; sourceTree = "<group>"; };
+		E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjaBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC223DC1C99C183006DD18B /* linkedin-sdk.framework in Frameworks */,
-				570C152286185CE3BB597108 /* Pods_ProjaBox.framework in Frameworks */,
+				446AD3F03EE56AFEE5C0EFC5 /* Pods_ProjaBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC223DB1C99C183006DD18B /* linkedin-sdk.framework */,
-				150DAC5C25C09635EEA1872C /* Pods_ProjaBox.framework */,
+				E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,8 +164,8 @@
 				0FC223A51C99BFA1006DD18B /* Sources */,
 				0FC223A61C99BFA1006DD18B /* Frameworks */,
 				0FC223A71C99BFA1006DD18B /* Resources */,
-				2402EEF3FEEEAF14A70C5F65 /* Embed Pods Frameworks */,
 				082DF79E9204DB3B7B94B300 /* Copy Pods Resources */,
+				22B6819646904C51A46AB969 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,7 +298,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2402EEF3FEEEAF14A70C5F65 /* Embed Pods Frameworks */ = {
+		22B6819646904C51A46AB969 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
