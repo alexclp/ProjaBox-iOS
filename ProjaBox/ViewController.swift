@@ -21,7 +21,8 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		facebookButton = FBSDKLoginButton()
-		facebookButton!.center = self.view.center
+		
+		facebookButton?.frame = CGRectMake(self.view.frame.width / 2 - 90, self.view.frame.height/2 + self.view.frame.height/4, 180, 40)
 		
 		let loginMethodSelector = Selector("facebookButtonClicked")
 		
