@@ -11,7 +11,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
 	let facebookPermissions = ["public_profile", "email", "user_friends"]
 	var facebookButton: FBSDKLoginButton?
