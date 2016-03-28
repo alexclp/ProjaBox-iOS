@@ -39,16 +39,14 @@
                                     <constraint firstAttribute="width" constant="247" id="IJ0-n6-Xw1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvV-kk-Tp7">
-                                <rect key="frame" x="177" y="212" width="247" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIj-Zk-KSD">
                                 <rect key="frame" x="277" y="259" width="47" height="30"/>
                                 <state key="normal" title="Sign in"/>
+                                <connections>
+                                    <segue destination="ewO-ei-b6I" kind="show" id="Rgy-ad-ulX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeA-Ts-xgn">
                                 <rect key="frame" x="275" y="297" width="52" height="30"/>
@@ -57,6 +55,11 @@
                                     <segue destination="zx8-pr-gh9" kind="show" identifier="signUpSegue" id="6xK-Cr-wdx"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvV-kk-Tp7">
+                                <rect key="frame" x="177" y="212" width="247" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -76,6 +79,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-137" y="-82"/>
+        </scene>
+        <!--Project-->
+        <scene sceneID="r7D-IY-n8S">
+            <objects>
+                <viewController id="l5y-tr-GjW" customClass="ProjectViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2g2-Nz-Zqm"/>
+                        <viewControllerLayoutGuide type="bottom" id="TiV-Z9-Adn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fT4-Xx-1qE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Project" id="YXa-oI-3v2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILi-pB-Lu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="1267"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="sb8-JZ-nMu">
+            <objects>
+                <viewController id="n5B-XR-4mZ" customClass="ProfileViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xqR-pE-WKi"/>
+                        <viewControllerLayoutGuide type="bottom" id="uBZ-ht-kSr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1vq-Tq-HZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="7P3-aN-jmN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-6r-BbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="1949"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="vi1-dz-HhZ">
+            <objects>
+                <viewController id="3l0-kv-sff" customClass="FeedViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ymd-oX-0jg"/>
+                        <viewControllerLayoutGuide type="bottom" id="cmx-by-uC1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fxf-48-SsF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Feed" id="cbO-n2-VyN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1P-mm-mfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="607"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zKR-AJ-95r">
+            <objects>
+                <tabBarController id="ewO-ei-b6I" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="qAe-BO-PLw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3l0-kv-sff" kind="relationship" relationship="viewControllers" id="SLV-mW-UOK"/>
+                        <segue destination="l5y-tr-GjW" kind="relationship" relationship="viewControllers" id="8bm-O1-phA"/>
+                        <segue destination="n5B-XR-4mZ" kind="relationship" relationship="viewControllers" id="Wdm-jg-nre"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZH-9e-HWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="740"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="VXL-WR-jLT">
