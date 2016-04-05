@@ -14,6 +14,8 @@ import FBSDKCoreKit
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
 	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]
+	
+	
 	@IBOutlet weak var facebookButton: FBSDKLoginButton?
 	
 	lazy var fbLoginManager: FBSDKLoginManager = {
@@ -24,6 +26,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 		super.viewDidLoad()
 		
 	}
+	
+//	MARK: LinkedIn Stuff
+	
+	
+
+//	MARK: Facebook Login Delegate + Fetching Data
 	
 	func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
 		if ((error) != nil) {
