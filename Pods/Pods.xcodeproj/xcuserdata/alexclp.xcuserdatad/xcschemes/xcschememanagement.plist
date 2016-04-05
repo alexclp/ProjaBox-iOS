@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IOSLinkedInAPI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LinkedinSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ProjaBox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -33,6 +48,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0654FE1E2AD07CB15FE42D17357FB50A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>766FD9905173FCCB09CE7D71D145CF50</key>
+		<key>59E862D94F78B63487055AFB02A2DACF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B99B74782AB696EEC24A089379CD4187</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8DBD5AC67268C921A3012DDBE9194BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
