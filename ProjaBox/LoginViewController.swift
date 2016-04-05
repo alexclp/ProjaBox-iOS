@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
 		
 		facebookButton?.frame = CGRectMake(self.view.frame.width / 2 - 90, self.view.frame.height/2 + self.view.frame.height/4, 180, 40)
 		
-		let loginMethodSelector = Selector("facebookButtonClicked")
+		let loginMethodSelector = #selector(LoginViewController.facebookButtonClicked)
 		
 		facebookButton?.addTarget(self, action: loginMethodSelector, forControlEvents: .TouchUpInside)
 		
