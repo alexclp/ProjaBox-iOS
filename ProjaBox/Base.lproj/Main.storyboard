@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o9i-hh-gYS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o9i-hh-gYS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -36,13 +36,17 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ON-WL-f78">
                                 <rect key="frame" x="177" y="164" width="247" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="247" id="IJ0-n6-Xw1"/>
+                                    <constraint firstAttribute="height" constant="30" id="XGG-OY-XAL"/>
+                                    <constraint firstAttribute="width" constant="247" id="jn2-zl-1OU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIj-Zk-KSD">
                                 <rect key="frame" x="277" y="259" width="47" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iEW-Kk-rc6"/>
+                                </constraints>
                                 <state key="normal" title="Sign in"/>
                                 <connections>
                                     <segue destination="ewO-ei-b6I" kind="show" id="Rgy-ad-ulX"/>
@@ -50,6 +54,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeA-Ts-xgn">
                                 <rect key="frame" x="275" y="297" width="52" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PjL-Xp-GrS"/>
+                                </constraints>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
                                     <segue destination="zx8-pr-gh9" kind="show" identifier="signUpSegue" id="6xK-Cr-wdx"/>
@@ -57,24 +64,37 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvV-kk-Tp7">
                                 <rect key="frame" x="177" y="212" width="247" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6i1-Km-bdr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8E-sW-hNy" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="177" y="335" width="247" height="34"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="top" secondItem="9ON-WL-f78" secondAttribute="bottom" constant="18" id="5dT-BL-oNT"/>
-                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="trailing" secondItem="9ON-WL-f78" secondAttribute="trailing" id="GBT-Ij-N3f"/>
-                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="centerX" secondItem="dvV-kk-Tp7" secondAttribute="centerX" id="IZI-KL-G30"/>
-                            <constraint firstItem="9ON-WL-f78" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Lbg-bt-S8A"/>
-                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="top" secondItem="dvV-kk-Tp7" secondAttribute="bottom" constant="17" id="LgA-AJ-fhK"/>
-                            <constraint firstItem="TeA-Ts-xgn" firstAttribute="top" secondItem="aIj-Zk-KSD" secondAttribute="bottom" constant="8" symbolic="YES" id="MM7-sA-285"/>
-                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="leading" secondItem="9ON-WL-f78" secondAttribute="leading" id="RE2-yT-862"/>
-                            <constraint firstItem="TeA-Ts-xgn" firstAttribute="centerX" secondItem="aIj-Zk-KSD" secondAttribute="centerX" id="ly4-u6-N5z"/>
-                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yfX-vS-Vd3"/>
+                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="trailing" secondItem="B8E-sW-hNy" secondAttribute="trailing" id="BJN-q1-YgF"/>
+                            <constraint firstItem="9ON-WL-f78" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Cek-Rn-z2n"/>
+                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="leading" secondItem="B8E-sW-hNy" secondAttribute="leading" id="QMd-eY-b99"/>
+                            <constraint firstItem="9ON-WL-f78" firstAttribute="trailing" secondItem="dvV-kk-Tp7" secondAttribute="trailing" id="S31-nQ-p0v"/>
+                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="top" secondItem="dvV-kk-Tp7" secondAttribute="bottom" constant="17" id="cnm-Cg-2eG"/>
+                            <constraint firstItem="B8E-sW-hNy" firstAttribute="top" secondItem="TeA-Ts-xgn" secondAttribute="bottom" constant="8" symbolic="YES" id="gIi-QF-ddX"/>
+                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="top" secondItem="9ON-WL-f78" secondAttribute="bottom" constant="18" id="hEV-Lx-ymL"/>
+                            <constraint firstItem="9ON-WL-f78" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qhe-vg-pSm"/>
+                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="centerX" secondItem="TeA-Ts-xgn" secondAttribute="centerX" id="rQe-yZ-SOt"/>
+                            <constraint firstItem="TeA-Ts-xgn" firstAttribute="top" secondItem="aIj-Zk-KSD" secondAttribute="bottom" constant="8" symbolic="YES" id="tZx-G4-dhx"/>
+                            <constraint firstItem="9ON-WL-f78" firstAttribute="leading" secondItem="dvV-kk-Tp7" secondAttribute="leading" id="zOa-iJ-0mA"/>
+                            <constraint firstItem="TeA-Ts-xgn" firstAttribute="centerX" secondItem="B8E-sW-hNy" secondAttribute="centerX" id="zkL-2T-kj8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign in" id="I0S-Cr-rjx"/>
+                    <connections>
+                        <outlet property="facebookButton" destination="B8E-sW-hNy" id="Hqp-JL-Lo5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

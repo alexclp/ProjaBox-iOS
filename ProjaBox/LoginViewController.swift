@@ -14,7 +14,7 @@ import FBSDKCoreKit
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
 	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]
-	var facebookButton: FBSDKLoginButton?
+	@IBOutlet weak var facebookButton: FBSDKLoginButton?
 	
 	lazy var fbLoginManager: FBSDKLoginManager = {
 		return FBSDKLoginManager()
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		setupFacebookButton()
+//		setupFacebookButton()
 	}
 	
 	func setupFacebookButton() {
