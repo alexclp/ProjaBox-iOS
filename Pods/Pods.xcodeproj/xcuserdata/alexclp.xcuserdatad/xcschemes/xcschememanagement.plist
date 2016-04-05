@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,16 +20,6 @@
 			<false/>
 		</dict>
 		<key>FBSDKShareKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>IOSLinkedInAPI.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>LinkedinSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,22 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59E862D94F78B63487055AFB02A2DACF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B99B74782AB696EEC24A089379CD4187</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C91A46012F8822DFDBAC8BC32FCC9001</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F8DBD5AC67268C921A3012DDBE9194BA</key>
+		<key>766FD9905173FCCB09CE7D71D145CF50</key>
 		<dict>
 			<key>primary</key>
 			<true/>
