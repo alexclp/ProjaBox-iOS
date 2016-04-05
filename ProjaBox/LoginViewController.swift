@@ -23,17 +23,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-//		setupFacebookButton()
-	}
-	
-	func setupFacebookButton() {
-		facebookButton = FBSDKLoginButton()
-		
-		facebookButton?.frame = CGRectMake(self.view.frame.width / 2 - 90, self.view.frame.height/2 + self.view.frame.height/4, 180, 40)
-		facebookButton?.readPermissions = facebookPermissions
-		facebookButton?.delegate = self
-		
-		self.view.addSubview(facebookButton!)
 	}
 	
 	func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
