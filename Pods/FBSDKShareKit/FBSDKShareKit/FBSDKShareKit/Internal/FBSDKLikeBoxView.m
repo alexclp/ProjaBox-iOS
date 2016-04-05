@@ -37,12 +37,10 @@
   return self;
 }
 
-- (id)initWithCoder:(NSCoder *)decoder
+- (void)awakeFromNib
 {
-  if ((self = [super initWithCoder:decoder])) {
-    [self _initializeContent];
-  }
-  return self;
+  [super awakeFromNib];
+  [self _initializeContent];
 }
 
 #pragma mark - Properties

@@ -22,6 +22,7 @@
 #import "FBSDKShareUtility.h"
 
 #define FBSDK_APP_GROUP_CONTENT_GROUP_DESCRIPTION_KEY @"groupDescription"
+#define FBSDK_APP_GROUP_CONTENT_GROUP_ID_KEY @"groupID"
 #define FBSDK_APP_GROUP_CONTENT_NAME_KEY @"name"
 #define FBSDK_APP_GROUP_CONTENT_PRIVACY_KEY @"privacy"
 
@@ -45,6 +46,7 @@ NSString *NSStringFromFBSDKAppGroupPrivacy(FBSDKAppGroupPrivacy privacy)
 {
   NSUInteger subhashes[] = {
     [_groupDescription hash],
+    [_groupID hash],
     [_name hash],
     _privacy,
   };
@@ -67,7 +69,8 @@ NSString *NSStringFromFBSDKAppGroupPrivacy(FBSDKAppGroupPrivacy privacy)
   return (content &&
           (_privacy == content.privacy) &&
           [FBSDKInternalUtility object:_name isEqualToObject:content.name] &&
-          [FBSDKInternalUtility object:_groupDescription isEqualToObject:content.groupDescription]);
+          [FBSDKInternalUtility object:_groupDescription isEqualToObject:content.groupDescription] &&
+          [FBSDKInternalUtility object:_groupID isEqualToObject:content.groupID]);
 }
 
 #pragma mark - NSCoding
@@ -82,6 +85,7 @@ NSString *NSStringFromFBSDKAppGroupPrivacy(FBSDKAppGroupPrivacy privacy)
   if ((self = [self init])) {
     _groupDescription = [decoder decodeObjectOfClass:[NSString class]
                                               forKey:FBSDK_APP_GROUP_CONTENT_GROUP_DESCRIPTION_KEY];
+    _groupID = [decoder decodeObjectOfClass:[NSString class] forKey:FBSDK_APP_GROUP_CONTENT_GROUP_ID_KEY];
     _name = [decoder decodeObjectOfClass:[NSString class] forKey:FBSDK_APP_GROUP_CONTENT_PRIVACY_KEY];
     _privacy = [decoder decodeIntegerForKey:FBSDK_APP_GROUP_CONTENT_PRIVACY_KEY];
   }
@@ -91,6 +95,7 @@ NSString *NSStringFromFBSDKAppGroupPrivacy(FBSDKAppGroupPrivacy privacy)
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
   [encoder encodeObject:_groupDescription forKey:FBSDK_APP_GROUP_CONTENT_GROUP_DESCRIPTION_KEY];
+  [encoder encodeObject:_groupID forKey:FBSDK_APP_GROUP_CONTENT_GROUP_ID_KEY];
   [encoder encodeObject:_name forKey:FBSDK_APP_GROUP_CONTENT_NAME_KEY];
   [encoder encodeInteger:_privacy forKey:FBSDK_APP_GROUP_CONTENT_PRIVACY_KEY];
 }
@@ -101,6 +106,7 @@ NSString *NSStringFromFBSDKAppGroupPrivacy(FBSDKAppGroupPrivacy privacy)
 {
   FBSDKAppGroupContent *copy = [[FBSDKAppGroupContent alloc] init];
   copy->_groupDescription = [_groupDescription copy];
+  copy->_groupID = [_groupID copy];
   copy->_name = [_name copy];
   copy->_privacy = _privacy;
   return copy;

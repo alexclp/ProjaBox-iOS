@@ -137,11 +137,11 @@
   self.soundEnabled = YES;
 
   NSString *title =
-  NSLocalizedStringWithDefaultValue(@"LikeButton.Like", @"FacebookSDK", [FBSDKInternalUtility bundleForStrings],
+  NSLocalizedStringWithDefaultValue(@"LikeButton.Like", @"FacebookSDK", [NSBundle mainBundle],
                                     @"Like",
                                     @"The label for the FBSDKLikeButton when the object is not currently liked.");
   NSString *selectedTitle =
-  NSLocalizedStringWithDefaultValue(@"LikeButton.Liked", @"FacebookSDK", [FBSDKInternalUtility bundleForStrings],
+  NSLocalizedStringWithDefaultValue(@"LikeButton.Liked", @"FacebookSDK", [NSBundle mainBundle],
                                     @"Liked",
                                     @"The label for the FBSDKLikeButton when the object is currently liked.");
 
@@ -199,18 +199,13 @@
 
 - (void)_handleTap:(FBSDKLikeButton *)likeButton
 {
-  [self logTapEventWithEventName:FBSDKAppEventNameFBSDKLikeButtonDidTap parameters:[self analyticsParameters]];
   [self _ensureLikeActionController:YES];
-  [_likeActionController toggleLikeWithSoundEnabled:self.soundEnabled
-                                analyticsParameters:[self analyticsParameters]
-                                 fromViewController:[FBSDKInternalUtility viewControllerforView:self]];
+  [_likeActionController toggleLikeWithSoundEnabled:self.soundEnabled analyticsParameters:[self analyticsParameters]];
 }
 
 - (void)_like:(id)sender
 {
-  [_likeActionController toggleLikeWithSoundEnabled:_soundEnabled
-                                analyticsParameters:[self analyticsParameters]
-                                 fromViewController:[FBSDKInternalUtility viewControllerforView:self]];
+  [_likeActionController toggleLikeWithSoundEnabled:_soundEnabled analyticsParameters:[self analyticsParameters]];
 }
 
 - (void)_likeActionControllerDidDisableNotification:(NSNotification *)notification

@@ -17,7 +17,6 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 #import <FBSDKCoreKit/FBSDKMacros.h>
 
@@ -43,6 +42,6 @@ FBSDK_EXTERN NSString *const FBSDKLikeActionControllerAnimatedKey;
 @property (nonatomic, copy, readonly) NSString *socialSentence;
 
 - (void)refresh;
-- (void)toggleLikeWithSoundEnabled:(BOOL)soundEnabled analyticsParameters:(NSDictionary *)analyticsParameters fromViewController:(UIViewController *)fromViewController;
+- (void)toggleLikeWithSoundEnabled:(BOOL)soundEnabled analyticsParameters:(NSDictionary *)analyticsParameters;
 
 @end

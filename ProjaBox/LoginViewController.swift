@@ -11,37 +11,53 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
-	let facebookPermissions = ["public_profile", "email", "user_friends"]
+	let facebookPermissions = ["public_profile", "email", "user_birthday"]
 	var facebookButton: FBSDKLoginButton?
+	
+	lazy var fbLoginManager: FBSDKLoginManager = {
+		return FBSDKLoginManager()
+	}()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
 		
+		setupFacebookButton()
+	}
+	
+	func setupFacebookButton() {
 		facebookButton = FBSDKLoginButton()
 		
 		facebookButton?.frame = CGRectMake(self.view.frame.width / 2 - 90, self.view.frame.height/2 + self.view.frame.height/4, 180, 40)
-		
-		let loginMethodSelector = #selector(LoginViewController.facebookButtonClicked)
-		
-		facebookButton?.addTarget(self, action: loginMethodSelector, forControlEvents: .TouchUpInside)
+		facebookButton?.readPermissions = facebookPermissions
+		facebookButton?.delegate = self
 		
 		self.view.addSubview(facebookButton!)
-		
 	}
 	
-	func facebookButtonClicked() {
-		let loginManager = FBSDKLoginManager()
-		loginManager.logInWithReadPermissions(facebookPermissions, fromViewController: self) { (result, error) -> Void in
-			if ((error) != nil) {
-				print("Process error \(error.description)")
-			} else if (result.isCancelled) {
-				print("Cancelled")
-			} else {
-				print("Logged in")
-			}
+	func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+		if ((error) != nil) {
+			// Process error
+		}
+		else if result.isCancelled {
+			// Handle cancellations
+		}
+		else {
+			// Navigate to other view
+			print("Not granted: \(result.declinedPermissions)")
+			fetchData()
+		}
+	}
+	
+	func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+		print("User Logged Out")
+	}
+	
+	func fetchData() {
+		let parameters: [String : String] = ["fields": "id,name"]
+		FBSDKGraphRequest.init(graphPath: "me", parameters: parameters) .startWithCompletionHandler { (connection, result, error) in
+			print(result)
 		}
 	}
 

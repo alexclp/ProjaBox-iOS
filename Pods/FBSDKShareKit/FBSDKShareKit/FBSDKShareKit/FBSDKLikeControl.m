@@ -21,7 +21,7 @@
 
 #import "FBSDKCoreKit+Internal.h"
 #import "FBSDKLikeActionController.h"
-#import "FBSDKLikeBoxView.h"
+#import "FBSDKLikeBoxBorderView.h"
 #import "FBSDKLikeButton+Internal.h"
 #import "FBSDKLikeButton.h"
 
@@ -108,12 +108,10 @@ typedef CGSize (^fbsdk_like_control_sizing_block_t)(UIView *subview, CGSize cons
   return self;
 }
 
-- (id)initWithCoder:(NSCoder *)decoder
+- (void)awakeFromNib
 {
-  if ((self = [super initWithCoder:decoder])) {
-    [self _initializeContent];
-  }
-  return self;
+  [super awakeFromNib];
+  [self _initializeContent];
 }
 
 - (void)dealloc

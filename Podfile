@@ -6,9 +6,9 @@ target 'ProjaBox' do
 use_frameworks!
 
 pod 'Bolts'
-pod 'FBSDKCoreKit'
-pod 'FBSDKShareKit'
-pod 'FBSDKLoginKit'
+pod 'FBSDKCoreKit', '~> 4.2.0'
+pod 'FBSDKShareKit', '~> 4.1.0'
+pod 'FBSDKLoginKit', '~> 4.1.0'
 
 end
 

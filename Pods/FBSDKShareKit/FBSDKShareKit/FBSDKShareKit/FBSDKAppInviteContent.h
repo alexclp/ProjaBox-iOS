@@ -26,13 +26,6 @@
 @interface FBSDKAppInviteContent : NSObject <FBSDKCopying, NSSecureCoding>
 
 /*!
- @abstract A URL to a preview image that will be displayed with the app invite
-
- @discussion This is optional.  If you don't include it a fallback image will be used.
-*/
-@property (nonatomic, copy) NSURL *appInvitePreviewImageURL;
-
-/*!
  @abstract An app link target that will be used as a target when the user accept the invite.
 
  @discussion This is a requirement.
@@ -40,9 +33,11 @@
 @property (nonatomic, copy) NSURL *appLinkURL;
 
 /*!
- @deprecated Use `appInvitePreviewImageURL` instead.
+ @abstract A URL to a preview image that will be displayed with the app invite
+
+ @discussion This is optional.  If you don't include it a fallback image will be used.
  */
-@property (nonatomic, copy) NSURL *previewImageURL __attribute__ ((deprecated("use appInvitePreviewImageURL instead")));
+@property (nonatomic, copy) NSURL *previewImageURL;
 
 /*!
  @abstract Compares the receiver to another app invite content.

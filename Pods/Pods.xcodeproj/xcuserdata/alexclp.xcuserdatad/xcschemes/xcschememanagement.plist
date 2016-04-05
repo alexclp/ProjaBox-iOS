@@ -4,22 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-ProjaBox-Bolts.xcscheme</key>
+		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ProjaBox-FBSDKCoreKit.xcscheme</key>
+		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ProjaBox-FBSDKLoginKit.xcscheme</key>
+		<key>FBSDKLoginKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ProjaBox-FBSDKShareKit.xcscheme</key>
+		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3453F500077C817D22FF1FC0</key>
+		<key>0654FE1E2AD07CB15FE42D17357FB50A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C1AF273756A48A3445761D2</key>
+		<key>212DA4ED7F07886F82EC8AAF0BE3E380</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7367DEC2AF2D8656C2A86139</key>
+		<key>2C180328607B9AF555416B6580E59FC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>97A167B00031A7A6CC849C9A</key>
+		<key>52D82BFDD1E808D9CB257431922C1EE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1BAFE26A5672773C127581C</key>
+		<key>766FD9905173FCCB09CE7D71D145CF50</key>
 		<dict>
 			<key>primary</key>
 			<true/>

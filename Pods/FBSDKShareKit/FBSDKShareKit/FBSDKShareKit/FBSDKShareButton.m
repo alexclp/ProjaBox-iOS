@@ -61,7 +61,7 @@
 - (void)configureButton
 {
   NSString *title =
-  NSLocalizedStringWithDefaultValue(@"ShareButton.Share", @"FacebookSDK", [FBSDKInternalUtility bundleForStrings],
+  NSLocalizedStringWithDefaultValue(@"ShareButton.Share", @"FacebookSDK", [NSBundle mainBundle],
                                     @"Share",
                                     @"The label for FBSDKShareButton");
 
@@ -83,7 +83,6 @@
 
 - (void)_share:(id)sender
 {
-  [self logTapEventWithEventName:FBSDKAppEventNameFBSDKShareButtonDidTap parameters:[self analyticsParameters]];
   [_dialog show];
 }
 
