@@ -13,7 +13,7 @@ import FBSDKCoreKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
-	let facebookPermissions = ["public_profile", "email", "user_birthday"]
+	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]
 	var facebookButton: FBSDKLoginButton?
 	
 	lazy var fbLoginManager: FBSDKLoginManager = {
@@ -45,7 +45,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 		}
 		else {
 			// Navigate to other view
-			print("Not granted: \(result.declinedPermissions)")
 			fetchData()
 		}
 	}
@@ -55,7 +54,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	}
 	
 	func fetchData() {
-		let parameters: [String : String] = ["fields": "id,name"]
+		let parameters: [String : String] = ["fields": "id, name, birthday, picture, location"]
 		FBSDKGraphRequest.init(graphPath: "me", parameters: parameters) .startWithCompletionHandler { (connection, result, error) in
 			print(result)
 		}
