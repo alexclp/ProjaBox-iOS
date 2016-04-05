@@ -36,8 +36,8 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ON-WL-f78">
                                 <rect key="frame" x="177" y="164" width="247" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="XGG-OY-XAL"/>
-                                    <constraint firstAttribute="width" constant="247" id="jn2-zl-1OU"/>
+                                    <constraint firstAttribute="height" constant="30" id="MT8-Ut-lMU"/>
+                                    <constraint firstAttribute="width" constant="247" id="yhR-BH-JA1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -45,7 +45,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIj-Zk-KSD">
                                 <rect key="frame" x="277" y="259" width="47" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="iEW-Kk-rc6"/>
+                                    <constraint firstAttribute="height" constant="30" id="I05-h8-PLN"/>
                                 </constraints>
                                 <state key="normal" title="Sign in"/>
                                 <connections>
@@ -55,7 +55,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeA-Ts-xgn">
                                 <rect key="frame" x="275" y="297" width="52" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PjL-Xp-GrS"/>
+                                    <constraint firstAttribute="height" constant="30" id="ca9-JQ-nI7"/>
                                 </constraints>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
@@ -65,30 +65,44 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvV-kk-Tp7">
                                 <rect key="frame" x="177" y="212" width="247" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6i1-Km-bdr"/>
+                                    <constraint firstAttribute="height" constant="30" id="WaN-Rh-9be"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8E-sW-hNy" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="177" y="335" width="247" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Y4O-e6-B5G"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvF-YB-AtL" userLabel="Linkedin Button">
+                                <rect key="frame" x="177" y="383" width="247" height="42"/>
+                                <state key="normal" title="Button" image="linkedinbutton.png"/>
+                                <connections>
+                                    <action selector="linkedinLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="WOK-DY-XkS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="trailing" secondItem="B8E-sW-hNy" secondAttribute="trailing" id="BJN-q1-YgF"/>
-                            <constraint firstItem="9ON-WL-f78" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Cek-Rn-z2n"/>
-                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="leading" secondItem="B8E-sW-hNy" secondAttribute="leading" id="QMd-eY-b99"/>
-                            <constraint firstItem="9ON-WL-f78" firstAttribute="trailing" secondItem="dvV-kk-Tp7" secondAttribute="trailing" id="S31-nQ-p0v"/>
-                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="top" secondItem="dvV-kk-Tp7" secondAttribute="bottom" constant="17" id="cnm-Cg-2eG"/>
-                            <constraint firstItem="B8E-sW-hNy" firstAttribute="top" secondItem="TeA-Ts-xgn" secondAttribute="bottom" constant="8" symbolic="YES" id="gIi-QF-ddX"/>
-                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="top" secondItem="9ON-WL-f78" secondAttribute="bottom" constant="18" id="hEV-Lx-ymL"/>
-                            <constraint firstItem="9ON-WL-f78" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qhe-vg-pSm"/>
-                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="centerX" secondItem="TeA-Ts-xgn" secondAttribute="centerX" id="rQe-yZ-SOt"/>
-                            <constraint firstItem="TeA-Ts-xgn" firstAttribute="top" secondItem="aIj-Zk-KSD" secondAttribute="bottom" constant="8" symbolic="YES" id="tZx-G4-dhx"/>
-                            <constraint firstItem="9ON-WL-f78" firstAttribute="leading" secondItem="dvV-kk-Tp7" secondAttribute="leading" id="zOa-iJ-0mA"/>
-                            <constraint firstItem="TeA-Ts-xgn" firstAttribute="centerX" secondItem="B8E-sW-hNy" secondAttribute="centerX" id="zkL-2T-kj8"/>
+                            <constraint firstItem="B8E-sW-hNy" firstAttribute="trailing" secondItem="MvF-YB-AtL" secondAttribute="trailing" id="7Ih-aP-MAZ"/>
+                            <constraint firstItem="9ON-WL-f78" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="9TJ-sl-Qyf"/>
+                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="top" secondItem="9ON-WL-f78" secondAttribute="bottom" constant="18" id="DcH-df-aY0"/>
+                            <constraint firstItem="9ON-WL-f78" firstAttribute="leading" secondItem="dvV-kk-Tp7" secondAttribute="leading" id="DzK-Ma-3qS"/>
+                            <constraint firstItem="TeA-Ts-xgn" firstAttribute="centerX" secondItem="B8E-sW-hNy" secondAttribute="centerX" id="Imn-wX-lP9"/>
+                            <constraint firstItem="B8E-sW-hNy" firstAttribute="leading" secondItem="MvF-YB-AtL" secondAttribute="leading" id="Kr6-Q6-cVq"/>
+                            <constraint firstItem="9ON-WL-f78" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MMV-50-vFZ"/>
+                            <constraint firstItem="MvF-YB-AtL" firstAttribute="top" secondItem="B8E-sW-hNy" secondAttribute="bottom" constant="14" id="Maa-HD-fWY"/>
+                            <constraint firstItem="TeA-Ts-xgn" firstAttribute="top" secondItem="aIj-Zk-KSD" secondAttribute="bottom" constant="8" symbolic="YES" id="Qcr-eW-IGI"/>
+                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="centerX" secondItem="TeA-Ts-xgn" secondAttribute="centerX" id="ZPv-TY-zwb"/>
+                            <constraint firstItem="9ON-WL-f78" firstAttribute="trailing" secondItem="dvV-kk-Tp7" secondAttribute="trailing" id="isj-hz-tZV"/>
+                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="trailing" secondItem="B8E-sW-hNy" secondAttribute="trailing" id="mA7-CX-1vK"/>
+                            <constraint firstItem="dvV-kk-Tp7" firstAttribute="leading" secondItem="B8E-sW-hNy" secondAttribute="leading" id="oqa-Mw-nie"/>
+                            <constraint firstItem="B8E-sW-hNy" firstAttribute="top" secondItem="TeA-Ts-xgn" secondAttribute="bottom" constant="8" symbolic="YES" id="srE-cH-3mG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MvF-YB-AtL" secondAttribute="bottom" constant="175" id="tM6-qK-eAN"/>
+                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="top" secondItem="dvV-kk-Tp7" secondAttribute="bottom" constant="17" id="vQN-c0-qZ7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign in" id="I0S-Cr-rjx"/>
@@ -247,4 +261,7 @@
             <point key="canvasLocation" x="607" y="-93"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="linkedinbutton.png" width="215" height="41"/>
+    </resources>
 </document>

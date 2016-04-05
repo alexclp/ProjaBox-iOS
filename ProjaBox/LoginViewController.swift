@@ -14,9 +14,9 @@ import FBSDKCoreKit
 import LinkedinSwift
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-
-	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]
 	
+	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]
+	let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "77ob2fnaq59qlq", clientSecret: "oBjj94qBmnthEg4H", state: "DCEeFWf45A53sdfKef424", permissions: ["r_basicprofile", "r_emailaddress"], redirectUrl: "http://alexandruclapa.com"))
 	
 	@IBOutlet weak var facebookButton: FBSDKLoginButton?
 	
@@ -31,6 +31,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	
 //	MARK: LinkedIn Stuff
 	
+	@IBAction func linkedinLogin() {
+		linkedinHelper.authorizeSuccess({ (lsToken) -> Void in
+			//Login success lsToken
+
+			print("Success")
+			
+			}, error: { (error) -> Void in
+				//Encounter error: error.localizedDescription
+			}, cancel: { () -> Void in
+				//User Cancelled!
+		})
+	}
 	
 
 //	MARK: Facebook Login Delegate + Fetching Data
