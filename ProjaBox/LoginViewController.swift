@@ -11,6 +11,8 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 
+import LinkedinSwift
+
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
 	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]

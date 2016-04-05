@@ -10,6 +10,7 @@ pod 'FBSDKCoreKit', '~> 4.2.0'
 pod 'FBSDKShareKit', '~> 4.1.0'
 pod 'FBSDKLoginKit', '~> 4.1.0'
 pod 'LinkedinSwift', '~> 1.4'
+pod 'AFNetworking', '~> 2.5.4'
 
 end
 
