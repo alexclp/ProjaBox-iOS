@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8FD772548ACDE0A084E3C1CC'
-               BlueprintName = 'FBSDKCoreKit'
+               BlueprintIdentifier = '0E62249C2EE02E3C2E5A61A9'
+               BlueprintName = 'DMActivityInstagram'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FBSDKCoreKit.framework'>
+               BuildableName = 'DMActivityInstagram.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

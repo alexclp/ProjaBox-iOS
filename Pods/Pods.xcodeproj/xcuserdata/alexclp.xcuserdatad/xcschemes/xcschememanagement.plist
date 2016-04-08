@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DMActivityInstagram.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,6 +42,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>08E132E95319C72BD3525192DB6E8F10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>212DA4ED7F07886F82EC8AAF0BE3E380</key>
 		<dict>
 			<key>primary</key>
@@ -47,12 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52D82BFDD1E808D9CB257431922C1EE4</key>
+		<key>34B86A3BE4A087CC8988924CD7B75F29</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>766FD9905173FCCB09CE7D71D145CF50</key>
+		<key>52D82BFDD1E808D9CB257431922C1EE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
