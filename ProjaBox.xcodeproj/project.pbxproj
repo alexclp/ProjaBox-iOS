@@ -13,6 +13,7 @@
 		0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0935291CA81C4000AC2C59 /* FeedViewController.swift */; };
 		0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */; };
 		0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */; };
+		0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
@@ -50,6 +51,7 @@
 		0F0935291CA81C4000AC2C59 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCardTableViewCell.swift; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F08DD2C1CB7228A008B7C57 /* View Controller */ = {
+		0F08DD2C1CB7228A008B7C57 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */,
@@ -107,7 +109,7 @@
 				0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */,
 				0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */,
 			);
-			name = "View Controller";
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		0F08DD2D1CB722A0008B7C57 /* Model */ = {
@@ -115,6 +117,15 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		0F6785B01CC6C7DC00F89541 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FC223B01C99BFA1006DD18B /* Main.storyboard */,
+				0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		0FA4D7B91CB410630085371E /* Assets */ = {
@@ -155,8 +166,8 @@
 				0FA4D7B91CB410630085371E /* Assets */,
 				0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */,
 				0F08DD2D1CB722A0008B7C57 /* Model */,
-				0F08DD2C1CB7228A008B7C57 /* View Controller */,
-				0FC223B01C99BFA1006DD18B /* Main.storyboard */,
+				0F08DD2C1CB7228A008B7C57 /* Controller */,
+				0F6785B01CC6C7DC00F89541 /* View */,
 				0FC223B31C99BFA1006DD18B /* Assets.xcassets */,
 				0FC223B51C99BFA1006DD18B /* LaunchScreen.storyboard */,
 				0FC223B81C99BFA1006DD18B /* Info.plist */,
@@ -391,6 +402,7 @@
 				0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */,
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
 				0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */,
+				0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
