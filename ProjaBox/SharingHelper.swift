@@ -13,12 +13,21 @@ class SharingHelper {
 	
 	class func shareProjectOrPerson(url: String) -> UIActivityViewController? {
 		let textToShare = "Project Default text"
-		let imageToShare = UIImage()
+		let imageToShare = UIImage(named: "testimage.jpeg")
 		
-		if let postURL = NSURL(string: url) {
-			let objectsToShare = [textToShare, imageToShare, postURL]
+		if let postURL = NSURL(string: url), let postImage = imageToShare {
+			let objectsToShare: [AnyObject] = [postImage, postURL]
 			let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-			activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+			activityVC.excludedActivityTypes = [UIActivityTypeAirDrop,
+			                                    UIActivityTypeAddToReadingList,
+			                                    UIActivityTypePrint,
+			                                    UIActivityTypeOpenInIBooks,
+			                                    UIActivityTypeAssignToContact,
+			                                    UIActivityTypeSaveToCameraRoll,
+			                                    UIActivityTypePostToVimeo,
+			                                    UIActivityTypePostToFlickr,
+			                                    UIActivityTypePostToWeibo]
+			
 			return activityVC
 		}
 		return nil

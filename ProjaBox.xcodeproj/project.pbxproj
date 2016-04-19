@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F08DD2B1CB44DFF008B7C57 /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F08DD2A1CB44DFF008B7C57 /* linkedin-sdk.framework */; };
 		0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */; };
+		0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F08DD301CB7C91B008B7C57 /* testimage.jpeg */; };
 		0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0935291CA81C4000AC2C59 /* FeedViewController.swift */; };
 		0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */; };
 		0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */; };
@@ -45,6 +46,7 @@
 		0F08DD291CB44C1F008B7C57 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		0F08DD2A1CB44DFF008B7C57 /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
 		0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingHelper.swift; sourceTree = "<group>"; };
+		0F08DD301CB7C91B008B7C57 /* testimage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testimage.jpeg; sourceTree = "<group>"; };
 		0F0935291CA81C4000AC2C59 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		0F08DD2C1CB7228A008B7C57 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */,
 				0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */,
 				0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */,
 				0F0935291CA81C4000AC2C59 /* FeedViewController.swift */,
@@ -110,7 +113,6 @@
 		0F08DD2D1CB722A0008B7C57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				0FA4D7BA1CB410710085371E /* linkedinbutton.png */,
+				0F08DD301CB7C91B008B7C57 /* testimage.jpeg */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */,
 				0FC223B71C99BFA1006DD18B /* LaunchScreen.storyboard in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
 				0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */,

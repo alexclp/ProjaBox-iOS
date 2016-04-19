@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Social
 
 import FBSDKLoginKit
 import FBSDKCoreKit
 
+import DMActivityInstagram
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]
@@ -24,6 +26,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		facebookButton?.delegate = self
+		
 	}
 	
 //	MARK: LinkedIn Stuff
