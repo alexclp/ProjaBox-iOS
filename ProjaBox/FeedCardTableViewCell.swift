@@ -18,7 +18,12 @@ class FeedCardTableViewCell: UITableViewCell {
 	@IBOutlet weak var profileImageView: UIImageView?
 	@IBOutlet weak var locationImageView: UIImageView?
 	@IBOutlet weak var cardView: UIView?
-
+	@IBOutlet weak var likeButton: UIButton?
+	@IBOutlet weak var shareButton: UIButton?
+	@IBOutlet weak var messageButton: UIButton?
+	@IBOutlet weak var moreButton: UIButton?
+	@IBOutlet weak var likesLabel: UILabel?
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,6 +38,26 @@ class FeedCardTableViewCell: UITableViewCell {
 	override func layoutSubviews() {
 		cardSetup()
 		imageSetup()
+		setupButtons()
+	}
+	
+	func setupButtons() {
+//		playButton.setImage(UIImage(named: "play.png"), forState: UIControlState.Normal)
+		likeButton?.setBackgroundImage(UIImage(named: "like default.png"), forState: .Normal)
+		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Highlighted)
+//		likeButton?.setImage(UIImage(named: "like selected.png"), forState: .Selected)
+		
+		shareButton?.setBackgroundImage(UIImage(named: "share default.png"), forState: .Normal)
+		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Highlighted)
+//		shareButton?.setImage(UIImage(named: "share selected.png"), forState: .Selected)
+		
+		messageButton?.setImage(UIImage(named: "message default.png"), forState: .Normal)
+		messageButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Highlighted)
+//		messageButton?.setImage(UIImage(named: "message selected.png"), forState: .Selected)
+		
+		moreButton?.setBackgroundImage(UIImage(named: "other default.png"), forState: .Normal)
+		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Highlighted)
+//		moreButton?.setImage(UIImage(named: "other selected.png"), forState: .Selected)
 	}
 	
 	func cardSetup() {
