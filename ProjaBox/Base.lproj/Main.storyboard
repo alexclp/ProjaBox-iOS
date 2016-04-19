@@ -183,7 +183,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLE-zK-sxc">
                                                     <rect key="frame" x="8" y="8" width="584" height="184"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n0x-NC-huL">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="n0x-NC-huL">
                                                             <rect key="frame" x="8" y="8" width="91" height="64"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="91" id="fe9-uI-unC"/>
@@ -392,5 +392,6 @@
     </scenes>
     <resources>
         <image name="linkedinbutton.png" width="215" height="41"/>
+        <image name="profile_pic.jpg" width="160" height="160"/>
     </resources>
 </document>

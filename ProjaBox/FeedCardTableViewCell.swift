@@ -30,6 +30,23 @@ class FeedCardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 	
+	func maskRoundedImage(image: UIImage, radius: Float) -> UIImage {
+		let imageView: UIImageView = UIImageView(image: image)
+		var layer: CALayer = CALayer()
+		layer = imageView.layer
+		
+		layer.masksToBounds = true
+		layer.cornerRadius = CGFloat(radius)
+		
+		UIGraphicsBeginImageContext(imageView.bounds.size)
+		layer.renderInContext(UIGraphicsGetCurrentContext()!)
+		let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+		
+		return roundedImage
+	}
+	
+	
 	override func layoutSubviews() {
 		cardSetup()
 		imageSetup()
@@ -48,10 +65,15 @@ class FeedCardTableViewCell: UITableViewCell {
 	}
 	
 	func imageSetup() {
-		profileImageView?.alpha = 1
+//		profileImageView?.layer.cornerRadius = (profileImageView?.frame.size.width)!/2
 		profileImageView?.clipsToBounds = true
 		profileImageView?.contentMode = .ScaleAspectFit
 		profileImageView?.backgroundColor = UIColor.whiteColor()
+		
+		if let image = profileImageView?.image {
+			let roundedImage = maskRoundedImage(image, radius: Float((profileImageView?.frame.width)!/2))
+			profileImageView?.image = roundedImage
+		}
 	}
 
 }

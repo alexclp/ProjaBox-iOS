@@ -14,6 +14,7 @@
 		0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */; };
 		0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */; };
 		0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */; };
+		0F6785B41CC6D70200F89541 /* profile_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785B31CC6D70200F89541 /* profile_pic.jpg */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
@@ -52,6 +53,7 @@
 		0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCardTableViewCell.swift; sourceTree = "<group>"; };
+		0F6785B31CC6D70200F89541 /* profile_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_pic.jpg; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F6785B31CC6D70200F89541 /* profile_pic.jpg */,
 				0FA4D7BA1CB410710085371E /* linkedinbutton.png */,
 				0F08DD301CB7C91B008B7C57 /* testimage.jpeg */,
 			);
@@ -322,6 +325,7 @@
 				0FC223B71C99BFA1006DD18B /* LaunchScreen.storyboard in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
 				0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */,
+				0F6785B41CC6D70200F89541 /* profile_pic.jpg in Resources */,
 				0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
