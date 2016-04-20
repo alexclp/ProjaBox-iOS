@@ -14,9 +14,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.title = "Feed"
-		self.navigationController?.navigationBar.barTintColor = UIColor.redColor()
-		self.navigationController?.navigationBar.translucent = false
+		self.tabBarController!.navigationItem.title = "Feed"
 	}
 	
 	//	MARK: UITableView Data Source

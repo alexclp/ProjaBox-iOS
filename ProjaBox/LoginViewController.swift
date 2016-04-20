@@ -25,7 +25,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		facebookButton?.delegate = self		
+		facebookButton?.delegate = self
+		
+//		let customColour = UIColor(red: 237.0, green: 34.0, blue: 34.0, alpha: 1.0)
+//		
+//		self.navigationController?.navigationBar.barTintColor = customColour
+//		self.navigationController?.navigationBar.translucent = false
 	}
 	
 //	MARK: LinkedIn Stuff

@@ -44,19 +44,19 @@ class FeedCardTableViewCell: UITableViewCell {
 	func setupButtons() {
 		likeButton?.setBackgroundImage(UIImage(named: "like default.png"), forState: .Normal)
 		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Highlighted)
-//		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Selected)
+		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Selected)
 		
 		shareButton?.setBackgroundImage(UIImage(named: "share default.png"), forState: .Normal)
 		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Highlighted)
-//		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Selected)
+		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Selected)
 		
 		messageButton?.setBackgroundImage(UIImage(named: "message default.png"), forState: .Normal)
 		messageButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Highlighted)
-//		messageButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Selected)
+		messageButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Selected)
 		
 		moreButton?.setBackgroundImage(UIImage(named: "other default.png"), forState: .Normal)
 		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Highlighted)
-//		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Selected)
+		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Selected)
 	}
 	
 	func cardSetup() {
