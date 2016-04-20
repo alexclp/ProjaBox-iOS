@@ -14,8 +14,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		self.tabBarController!.navigationItem.title = "Projabox"
 		self.tabBarController!.navigationItem.hidesBackButton = true
+		
+		setupBarButtons()
+	}
+	
+	func setupBarButtons() {
+		self.tabBarController!.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "mail.png"), style: .Plain, target: self, action: #selector(FeedViewController.chatButtonPressed(_:)))
+		self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "settings.png"), style: .Plain, target: self, action: #selector(FeedViewController.settingsButtonPressed(_:)))
 	}
 	
 	//	MARK: UITableView Data Source
@@ -66,6 +74,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func moreButtonPressed(sender: UIButton) {
 		print("More button tag: \(sender.tag)")
+	}
+	
+	func settingsButtonPressed(sender: UIBarButtonItem) {
+		
+	}
+	
+	func chatButtonPressed(sender: UIBarButtonItem) {
+		
 	}
 	
 }
