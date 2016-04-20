@@ -25,8 +25,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		facebookButton?.delegate = self
-		
+		facebookButton?.delegate = self		
 	}
 	
 //	MARK: LinkedIn Stuff

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ewO-ei-b6I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o9i-hh-gYS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -265,7 +265,6 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="pnq-8W-Ddp"/>
                                                             </constraints>
-                                                            <state key="highlighted" image="like selected.png"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aue-ND-2Ys">
                                                             <rect key="frame" x="46" y="172" width="32" height="21"/>
@@ -364,7 +363,7 @@
                                                 <constraint firstItem="QLE-zK-sxc" firstAttribute="leading" secondItem="1t6-Dl-KLS" secondAttribute="leadingMargin" id="yVJ-sB-Nir"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.87661141804788212" green="0.87661141804788212" blue="0.87661141804788212" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.95395948434622468" green="0.95395948434622468" blue="0.95395948434622468" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="authorDetailsLabel" destination="c7g-DM-WyV" id="tqf-hx-olv"/>
                                             <outlet property="authorLabel" destination="SKP-q4-mXt" id="tWd-hF-Zxm"/>
@@ -497,7 +496,6 @@
     </scenes>
     <resources>
         <image name="card separator.png" width="1090" height="4"/>
-        <image name="like selected.png" width="64" height="62"/>
         <image name="linkedinbutton.png" width="215" height="41"/>
         <image name="location pin.png" width="22" height="30"/>
         <image name="profile_pic.jpg" width="160" height="160"/>
