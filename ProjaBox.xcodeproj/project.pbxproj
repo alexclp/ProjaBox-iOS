@@ -33,6 +33,7 @@
 		0F6785E51CC983CE00F89541 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785DF1CC983CE00F89541 /* settings@3x.png */; };
 		0F6785E81CC98C8C00F89541 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785E61CC98C8C00F89541 /* photo.png */; };
 		0F6785E91CC98C8C00F89541 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785E71CC98C8C00F89541 /* post.png */; };
+		0F6785EB1CC99F2300F89541 /* vertical_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785EA1CC99F2300F89541 /* vertical_separator.png */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
@@ -90,6 +91,7 @@
 		0F6785DF1CC983CE00F89541 /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
 		0F6785E61CC98C8C00F89541 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		0F6785E71CC98C8C00F89541 /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
+		0F6785EA1CC99F2300F89541 /* vertical_separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical_separator.png; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				0F6785B31CC6D70200F89541 /* profile_pic.jpg */,
 				0FA4D7BA1CB410710085371E /* linkedinbutton.png */,
 				0F08DD301CB7C91B008B7C57 /* testimage.jpeg */,
+				0F6785EA1CC99F2300F89541 /* vertical_separator.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				0F6785E21CC983CE00F89541 /* messages@3x.png in Resources */,
 				0F6785E11CC983CE00F89541 /* messages@2x.png in Resources */,
 				0F6785E81CC98C8C00F89541 /* photo.png in Resources */,
+				0F6785EB1CC99F2300F89541 /* vertical_separator.png in Resources */,
 				0F6785CF1CC6F69A00F89541 /* other selected.png in Resources */,
 				0F6785CE1CC6F69A00F89541 /* other default.png in Resources */,
 				0F6785C41CC6F58600F89541 /* like default.png in Resources */,
