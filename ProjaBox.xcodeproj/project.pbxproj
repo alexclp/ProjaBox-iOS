@@ -25,10 +25,12 @@
 		0F6785CF1CC6F69A00F89541 /* other selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785C91CC6F69A00F89541 /* other selected.png */; };
 		0F6785D01CC6F69A00F89541 /* share default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785CA1CC6F69A00F89541 /* share default.png */; };
 		0F6785D11CC6F69A00F89541 /* share selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785CB1CC6F69A00F89541 /* share selected.png */; };
-		0F6785D31CC7DC3000F89541 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785D21CC7DC3000F89541 /* settings.png */; };
-		0F6785D51CC7DC4600F89541 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785D41CC7DC4600F89541 /* mail.png */; };
-		0F6785D81CC7DD8800F89541 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785D61CC7DD8800F89541 /* mail.png */; };
-		0F6785D91CC7DD8800F89541 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785D71CC7DD8800F89541 /* settings.png */; };
+		0F6785E01CC983CE00F89541 /* messages.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785DA1CC983CE00F89541 /* messages.png */; };
+		0F6785E11CC983CE00F89541 /* messages@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785DB1CC983CE00F89541 /* messages@2x.png */; };
+		0F6785E21CC983CE00F89541 /* messages@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785DC1CC983CE00F89541 /* messages@3x.png */; };
+		0F6785E31CC983CE00F89541 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785DD1CC983CE00F89541 /* settings.png */; };
+		0F6785E41CC983CE00F89541 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785DE1CC983CE00F89541 /* settings@2x.png */; };
+		0F6785E51CC983CE00F89541 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785DF1CC983CE00F89541 /* settings@3x.png */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
@@ -78,10 +80,12 @@
 		0F6785C91CC6F69A00F89541 /* other selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "other selected.png"; sourceTree = "<group>"; };
 		0F6785CA1CC6F69A00F89541 /* share default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share default.png"; sourceTree = "<group>"; };
 		0F6785CB1CC6F69A00F89541 /* share selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share selected.png"; sourceTree = "<group>"; };
-		0F6785D21CC7DC3000F89541 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
-		0F6785D41CC7DC4600F89541 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
-		0F6785D61CC7DD8800F89541 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
-		0F6785D71CC7DD8800F89541 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		0F6785DA1CC983CE00F89541 /* messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages.png; sourceTree = "<group>"; };
+		0F6785DB1CC983CE00F89541 /* messages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messages@2x.png"; sourceTree = "<group>"; };
+		0F6785DC1CC983CE00F89541 /* messages@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messages@3x.png"; sourceTree = "<group>"; };
+		0F6785DD1CC983CE00F89541 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		0F6785DE1CC983CE00F89541 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		0F6785DF1CC983CE00F89541 /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,10 +182,12 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				0F6785D21CC7DC3000F89541 /* settings.png */,
-				0F6785D41CC7DC4600F89541 /* mail.png */,
-				0F6785D61CC7DD8800F89541 /* mail.png */,
-				0F6785D71CC7DD8800F89541 /* settings.png */,
+				0F6785DA1CC983CE00F89541 /* messages.png */,
+				0F6785DB1CC983CE00F89541 /* messages@2x.png */,
+				0F6785DC1CC983CE00F89541 /* messages@3x.png */,
+				0F6785DD1CC983CE00F89541 /* settings.png */,
+				0F6785DE1CC983CE00F89541 /* settings@2x.png */,
+				0F6785DF1CC983CE00F89541 /* settings@3x.png */,
 				0F6785B51CC6F2F200F89541 /* Card View */,
 				0F6785B31CC6D70200F89541 /* profile_pic.jpg */,
 				0FA4D7BA1CB410710085371E /* linkedinbutton.png */,
@@ -371,23 +377,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F6785E51CC983CE00F89541 /* settings@3x.png in Resources */,
 				0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */,
 				0F6785D11CC6F69A00F89541 /* share selected.png in Resources */,
-				0F6785D51CC7DC4600F89541 /* mail.png in Resources */,
 				0F6785BE1CC6F32400F89541 /* location pin.png in Resources */,
-				0F6785D31CC7DC3000F89541 /* settings.png in Resources */,
 				0FC223B71C99BFA1006DD18B /* LaunchScreen.storyboard in Resources */,
 				0F6785BC1CC6F32400F89541 /* card separator.png in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
 				0F6785CC1CC6F69A00F89541 /* message default.png in Resources */,
 				0F6785CD1CC6F69A00F89541 /* message selected.png in Resources */,
 				0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */,
+				0F6785E01CC983CE00F89541 /* messages.png in Resources */,
+				0F6785E21CC983CE00F89541 /* messages@3x.png in Resources */,
+				0F6785E11CC983CE00F89541 /* messages@2x.png in Resources */,
 				0F6785CF1CC6F69A00F89541 /* other selected.png in Resources */,
-				0F6785D81CC7DD8800F89541 /* mail.png in Resources */,
 				0F6785CE1CC6F69A00F89541 /* other default.png in Resources */,
 				0F6785C41CC6F58600F89541 /* like default.png in Resources */,
 				0F6785B41CC6D70200F89541 /* profile_pic.jpg in Resources */,
-				0F6785D91CC7DD8800F89541 /* settings.png in Resources */,
+				0F6785E41CC983CE00F89541 /* settings@2x.png in Resources */,
+				0F6785E31CC983CE00F89541 /* settings.png in Resources */,
 				0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */,
 				0F6785D01CC6F69A00F89541 /* share default.png in Resources */,
 				0F6785C51CC6F58600F89541 /* like selected.png in Resources */,
