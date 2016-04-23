@@ -81,7 +81,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func chatButtonPressed(sender: UIBarButtonItem) {
-		
+		performSegueWithIdentifier("showChatSegue", sender: self)
 	}
 	
 }
