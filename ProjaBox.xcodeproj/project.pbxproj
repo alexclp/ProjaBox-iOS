@@ -36,6 +36,7 @@
 		0F6785E81CC98C8C00F89541 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785E61CC98C8C00F89541 /* photo.png */; };
 		0F6785E91CC98C8C00F89541 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785E71CC98C8C00F89541 /* post.png */; };
 		0F6785EB1CC99F2300F89541 /* vertical_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785EA1CC99F2300F89541 /* vertical_separator.png */; };
+		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
@@ -96,6 +97,7 @@
 		0F6785E61CC98C8C00F89541 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		0F6785E71CC98C8C00F89541 /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
 		0F6785EA1CC99F2300F89541 /* vertical_separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical_separator.png; sourceTree = "<group>"; };
+		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */,
 				0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */,
 				0F4F99621CCBB413006628CF /* ChatListViewController.swift */,
+				0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,
 				0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */,
+				0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */,
 				0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
