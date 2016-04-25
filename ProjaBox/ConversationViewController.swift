@@ -11,8 +11,8 @@ import JSQMessagesViewController
 
 class ConversationViewController: JSQMessagesViewController {
 	
-	let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
-	let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
+	let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1.0))
+	let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 237/255, green: 84/255, blue: 84/255, alpha: 1))
 	var messages = [JSQMessage]()
 
     override func viewDidLoad() {
