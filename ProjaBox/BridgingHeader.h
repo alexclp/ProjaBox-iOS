@@ -11,5 +11,6 @@
 
 #import <Foundation/Foundation.h>
 #import <linkedin-sdk/LISDK.h>
+#import <JSQMessagesViewController/JSQMessages.h>
 
 #endif /* BridgingHeader_h */

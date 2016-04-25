@@ -585,11 +585,30 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="O1v-Ge-HJP" id="NNp-ua-VeS"/>
+                        <segue destination="Dt2-VX-Wyz" kind="show" identifier="showConversationSegue" id="oEf-Fv-bcB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqW-2i-VfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1262.5" y="593.5"/>
+        </scene>
+        <!--Conversation View Controller-->
+        <scene sceneID="jCp-Tk-VDb">
+            <objects>
+                <viewController id="Dt2-VX-Wyz" customClass="ConversationViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ihd-YX-eQn"/>
+                        <viewControllerLayoutGuide type="bottom" id="aGv-d6-7hB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jua-JF-6Zp">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtH-BO-Za6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="579"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zKR-AJ-95r">
