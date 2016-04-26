@@ -18,6 +18,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]
 	
 	@IBOutlet weak var facebookButton: FBSDKLoginButton?
+	@IBOutlet weak var usernameTextField: UITextField!
+	@IBOutlet weak var passwordTextField: UITextField!
 	
 	lazy var fbLoginManager: FBSDKLoginManager = {
 		return FBSDKLoginManager()
@@ -86,4 +88,3 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 		}
 	}
 }
-

@@ -122,6 +122,8 @@
                     <navigationItem key="navigationItem" title="Sign in" id="I0S-Cr-rjx"/>
                     <connections>
                         <outlet property="facebookButton" destination="B8E-sW-hNy" id="Hqp-JL-Lo5"/>
+                        <outlet property="passwordTextField" destination="dvV-kk-Tp7" id="OYn-J8-W3C"/>
+                        <outlet property="usernameTextField" destination="9ON-WL-f78" id="32L-od-W2o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

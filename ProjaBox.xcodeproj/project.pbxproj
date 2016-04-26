@@ -13,6 +13,7 @@
 		0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0935291CA81C4000AC2C59 /* FeedViewController.swift */; };
 		0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */; };
 		0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */; };
+		0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
 		0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */; };
@@ -74,6 +75,7 @@
 		0F0935291CA81C4000AC2C59 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatingPostViewController.swift; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCardTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */,
 				0F4F99621CCBB413006628CF /* ChatListViewController.swift */,
 				0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */,
+				0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			files = (
 				0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */,
 				0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */,
+				0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
 				0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */,
