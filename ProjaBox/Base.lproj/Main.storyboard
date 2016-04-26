@@ -190,10 +190,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-oU-0UY" userLabel="Post Button">
                                         <rect key="frame" x="34" y="10" width="66" height="21"/>
                                         <state key="normal" image="post.png"/>
+                                        <connections>
+                                            <action selector="postButtonPressed:" destination="3l0-kv-sff" eventType="touchUpInside" id="5Dq-i4-xge"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-JY-0dD" userLabel="Photo Button">
                                         <rect key="frame" x="245" y="10" width="79" height="21"/>
                                         <state key="normal" image="photo.png"/>
+                                        <connections>
+                                            <action selector="photoButtonPressed:" destination="3l0-kv-sff" eventType="touchUpInside" id="LEE-RE-d2g"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

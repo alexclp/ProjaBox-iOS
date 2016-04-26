@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DKImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DMActivityInstagram.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,11 +30,6 @@
 			<false/>
 		</dict>
 		<key>FBSDKShareKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>GMImagePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,11 +62,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B66A87FAC89ADFB53F84245025C5341</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2C180328607B9AF555416B6580E59FC2</key>
 		<dict>
 			<key>primary</key>
@@ -82,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>67563DC6DC932B43BE592572F918C028</key>
+		<key>7116AA14740A17264FF47B18C2B67020</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B2F9454858307109596C8F2119D3DF4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

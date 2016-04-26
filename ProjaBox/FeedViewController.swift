@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import DKImagePickerController
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	@IBOutlet weak var tableView: UITableView?
+	
+	let pickerController = DKImagePickerController()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		self.tabBarController!.navigationItem.title = "Projabox"
 		self.tabBarController!.navigationItem.hidesBackButton = true
+		
+		pickerController.singleSelect = true
 		
 		setupBarButtons()
 	}
@@ -57,6 +62,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
 	
+	// MARK: Image Picker Delegate
+	
+
+	
 	// MARK: User Interaction
 	
 	func likeButtonPressed(sender: UIButton) {
@@ -82,6 +91,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func chatButtonPressed(sender: UIBarButtonItem) {
 		performSegueWithIdentifier("showChatSegue", sender: self)
+	}
+	
+	@IBAction func postButtonPressed(sender: UIButton) {
+		
+	}
+	
+	@IBAction func photoButtonPressed(sender: UIButton) {
+		pickerController.didSelectAssets = { (assets: [DKAsset]) in
+			print("didSelectAssets")
+			print(assets)
+		}
+		
+		self.presentViewController(pickerController, animated: true) {}
 	}
 	
 }
