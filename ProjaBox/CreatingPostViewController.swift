@@ -8,16 +8,23 @@
 //
 
 import UIKit
+import KMPlaceholderTextView
 
 class CreatingPostViewController: UIViewController {
 
+	@IBOutlet weak var textView: UITextView?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		
+		addToolBar(textView!)
     }
 	
-	
+	@IBAction func doneButtonPressed() {
+		dismissViewControllerAnimated(true, completion: nil)
+	}
 
 }
 

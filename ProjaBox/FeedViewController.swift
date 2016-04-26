@@ -106,7 +106,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	@IBAction func postButtonPressed(sender: UIButton) {
-		
+		performSegueWithIdentifier("showComposePostSegue", sender: self)
 	}
 	
 	@IBAction func photoButtonPressed(sender: UIButton) {

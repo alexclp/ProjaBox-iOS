@@ -480,6 +480,7 @@
                     <connections>
                         <outlet property="tableView" destination="gMz-H5-fpt" id="dVd-z1-bCd"/>
                         <segue destination="Xuk-NB-k6f" kind="show" identifier="showChatSegue" id="4Y0-cg-Qcp"/>
+                        <segue destination="0pi-1U-3nW" kind="presentation" identifier="showComposePostSegue" id="EX1-1V-TE0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1P-mm-mfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -617,6 +618,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtH-BO-Za6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="579"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g4V-Y2-h0n">
+            <objects>
+                <navigationController id="0pi-1U-3nW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="F9v-u1-2nV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92941176469999998" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3Cf-Mc-Dde" kind="relationship" relationship="rootViewController" id="NyS-mb-cRm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcH-si-SD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480.5" y="1372.5"/>
+        </scene>
+        <!--Post-->
+        <scene sceneID="MBj-YR-wUR">
+            <objects>
+                <viewController id="3Cf-Mc-Dde" customClass="CreatingPostViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X31-yd-uwu"/>
+                        <viewControllerLayoutGuide type="bottom" id="clc-82-Qaa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eav-7F-anY">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M7z-2H-oGV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Write something or use @ to mention someone"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="M7z-2H-oGV" secondAttribute="trailing" id="Gud-7B-0h5"/>
+                            <constraint firstItem="M7z-2H-oGV" firstAttribute="leading" secondItem="eav-7F-anY" secondAttribute="leading" id="OjE-qo-xop"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="M7z-2H-oGV" secondAttribute="bottom" constant="-64" id="cFi-hf-b6X"/>
+                            <constraint firstItem="M7z-2H-oGV" firstAttribute="top" secondItem="X31-yd-uwu" secondAttribute="bottom" id="cKm-Ti-H17"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post" id="cOU-7e-5NU">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="Os9-7G-cO0">
+                            <connections>
+                                <action selector="doneButtonPressed" destination="3Cf-Mc-Dde" id="3Y5-n5-hZ3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="M7z-2H-oGV" id="L4P-kf-AIa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3h-hc-40u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2133.5" y="1372.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zKR-AJ-95r">

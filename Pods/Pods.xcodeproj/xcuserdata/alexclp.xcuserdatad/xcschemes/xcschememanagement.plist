@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KMPlaceholderTextView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ProjaBox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,12 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5A0EE16F2F67DA84374881DCC1FAB4F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>95DB89A8BFC5FF0BF98458651D0163CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E80571C622B658173D6E584990B90316</key>
+		<key>EC25B770E2E786F47106EE8F013163EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
