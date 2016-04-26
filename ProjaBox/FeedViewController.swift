@@ -9,11 +9,11 @@
 import UIKit
 import DKImagePickerController
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 	@IBOutlet weak var tableView: UITableView?
-	
-	let pickerController = DKImagePickerController()
+
+	let imagePicker = UIImagePickerController()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,7 +21,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		self.tabBarController!.navigationItem.title = "Projabox"
 		self.tabBarController!.navigationItem.hidesBackButton = true
 		
-		pickerController.singleSelect = true
+		imagePicker.delegate = self
+		imagePicker.navigationBar.translucent = false
+		imagePicker.navigationBar.barTintColor = UIColor(red: 237/255, green: 84/255, blue: 84/255, alpha: 1.0) // Background color
+		imagePicker.navigationBar.tintColor = .whiteColor() // Cancel button ~ any UITabBarButton items
+		imagePicker.navigationBar.titleTextAttributes = [
+			NSForegroundColorAttributeName : UIColor.whiteColor()
+		] // Title color
 		
 		setupBarButtons()
 	}
@@ -64,7 +70,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	// MARK: Image Picker Delegate
 	
-
+	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+		dismissViewControllerAnimated(true, completion: nil)
+	}
+	
+	func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+		dismissViewControllerAnimated(true, completion: nil)
+	}
 	
 	// MARK: User Interaction
 	
@@ -98,12 +110,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	@IBAction func photoButtonPressed(sender: UIButton) {
-		pickerController.didSelectAssets = { (assets: [DKAsset]) in
-			print("didSelectAssets")
-			print(assets)
-		}
+		imagePicker.allowsEditing = false
+		imagePicker.sourceType = .PhotoLibrary
 		
-		self.presentViewController(pickerController, animated: true) {}
+		presentViewController(imagePicker, animated: true, completion: nil)
 	}
 	
 }

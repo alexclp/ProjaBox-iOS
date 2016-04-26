@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C5B09939A49B283D6BE1813E'
-               BlueprintName = 'JSQSystemSoundPlayer'
+               BlueprintIdentifier = '8770C73BB54F0A7165CF47D7'
+               BlueprintName = 'ImagePicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'JSQSystemSoundPlayer.framework'>
+               BuildableName = 'ImagePicker.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
