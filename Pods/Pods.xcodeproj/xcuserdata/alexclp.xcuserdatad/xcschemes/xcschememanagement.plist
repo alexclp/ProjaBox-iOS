@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GMImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,6 +62,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2B66A87FAC89ADFB53F84245025C5341</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C180328607B9AF555416B6580E59FC2</key>
 		<dict>
 			<key>primary</key>
@@ -72,12 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95DB89A8BFC5FF0BF98458651D0163CD</key>
+		<key>67563DC6DC932B43BE592572F918C028</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E80571C622B658173D6E584990B90316</key>
+		<key>95DB89A8BFC5FF0BF98458651D0163CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

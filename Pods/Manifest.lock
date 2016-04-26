@@ -19,6 +19,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.1.0):
     - FBSDKCoreKit
+  - GMImagePicker (0.0.2)
   - JSQMessagesViewController (7.2.0):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.2.0)
   - FBSDKLoginKit (~> 4.1.0)
   - FBSDKShareKit (~> 4.1.0)
+  - GMImagePicker (~> 0.0.2)
   - JSQMessagesViewController
 
 SPEC CHECKSUMS:
@@ -37,6 +39,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 84b3616a361801f190e43a9909caead7bb6087c7
   FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
   FBSDKShareKit: 8002faf0c564ff3625eadd16e506b0b0fbf3adef
+  GMImagePicker: 6438a6764d6280b1dbf19b59140313f5a73daeeb
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
 

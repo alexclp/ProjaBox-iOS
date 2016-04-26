@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4A77543A51FAB6F055AAF3B7'
-               BlueprintName = 'FBSDKLoginKit'
+               BlueprintIdentifier = '2B1722529FBA944391BB8282'
+               BlueprintName = 'GMImagePicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FBSDKLoginKit.framework'>
+               BuildableName = 'GMImagePicker.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

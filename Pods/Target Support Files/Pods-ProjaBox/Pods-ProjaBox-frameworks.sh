@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-ProjaBox/FBSDKCoreKit.framework"
   install_framework "Pods-ProjaBox/FBSDKLoginKit.framework"
   install_framework "Pods-ProjaBox/FBSDKShareKit.framework"
+  install_framework "Pods-ProjaBox/GMImagePicker.framework"
   install_framework "Pods-ProjaBox/JSQMessagesViewController.framework"
   install_framework "Pods-ProjaBox/JSQSystemSoundPlayer.framework"
 fi
@@ -98,6 +99,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-ProjaBox/FBSDKCoreKit.framework"
   install_framework "Pods-ProjaBox/FBSDKLoginKit.framework"
   install_framework "Pods-ProjaBox/FBSDKShareKit.framework"
+  install_framework "Pods-ProjaBox/GMImagePicker.framework"
   install_framework "Pods-ProjaBox/JSQMessagesViewController.framework"
   install_framework "Pods-ProjaBox/JSQSystemSoundPlayer.framework"
 fi

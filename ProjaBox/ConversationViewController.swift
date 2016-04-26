@@ -25,7 +25,7 @@ class ConversationViewController: JSQMessagesViewController {
 	
 	func addDemoMessages() {
 		for i in 1...10 {
-			let sender = (i%2 == 0) ? "Server" : self.senderId
+			let sender = (i % 2 == 0) ? "Server" : self.senderId
 			let messageContent = "Message nr. \(i)"
 			let message = JSQMessage(senderId: sender, displayName: sender, text: messageContent)
 			self.messages += [message]
@@ -71,7 +71,7 @@ class ConversationViewController: JSQMessagesViewController {
 		return nil
 	}
 	
-	// MARK: Toolbar Methodså
+	// MARK: Toolbar Methods
 	
 	override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
 		let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)

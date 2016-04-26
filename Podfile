@@ -11,6 +11,7 @@ pod 'FBSDKShareKit', '~> 4.1.0'
 pod 'FBSDKLoginKit', '~> 4.1.0'
 pod 'DMActivityInstagram', '0.0.3'
 pod 'JSQMessagesViewController'
+pod 'GMImagePicker', '~> 0.0.2'
 
 end
 
