@@ -13,6 +13,7 @@ import KMPlaceholderTextView
 class CreatingPostViewController: UIViewController {
 
 	@IBOutlet weak var textView: UITextView?
+	@IBOutlet weak var profileImageView: UIImageView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,15 @@ class CreatingPostViewController: UIViewController {
         // Do any additional setup after loading the view.
 		
 		addToolBar(textView!)
+		setupImageView()
     }
+	
+	func setupImageView() {
+		profileImageView?.layer.cornerRadius = (profileImageView?.frame.size.width)!/2
+		profileImageView?.clipsToBounds = true
+		profileImageView?.contentMode = .ScaleAspectFit
+		profileImageView?.backgroundColor = UIColor.whiteColor()
+	}
 	
 	@IBAction func doneButtonPressed() {
 		dismissViewControllerAnimated(true, completion: nil)

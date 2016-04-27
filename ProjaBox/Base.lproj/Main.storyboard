@@ -652,7 +652,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M7z-2H-oGV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="79" y="0.0" width="296" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -660,13 +660,22 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Write something or use @ to mention someone"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7s0-2a-tYC">
+                                <rect key="frame" x="20" y="8" width="51" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="C9i-8A-cVU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="M7z-2H-oGV" secondAttribute="trailing" id="Gud-7B-0h5"/>
-                            <constraint firstItem="M7z-2H-oGV" firstAttribute="leading" secondItem="eav-7F-anY" secondAttribute="leading" id="OjE-qo-xop"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="M7z-2H-oGV" secondAttribute="bottom" constant="-64" id="cFi-hf-b6X"/>
-                            <constraint firstItem="M7z-2H-oGV" firstAttribute="top" secondItem="X31-yd-uwu" secondAttribute="bottom" id="cKm-Ti-H17"/>
+                            <constraint firstItem="7s0-2a-tYC" firstAttribute="top" secondItem="X31-yd-uwu" secondAttribute="bottom" constant="8" symbolic="YES" id="Sv8-Gs-OZO"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="M7z-2H-oGV" secondAttribute="bottom" constant="-64" id="YgF-lB-7bL"/>
+                            <constraint firstItem="M7z-2H-oGV" firstAttribute="top" secondItem="X31-yd-uwu" secondAttribute="bottom" id="fSO-8i-BRS"/>
+                            <constraint firstItem="7s0-2a-tYC" firstAttribute="leading" secondItem="eav-7F-anY" secondAttribute="leadingMargin" constant="4" id="gk7-pq-EsU"/>
+                            <constraint firstItem="clc-82-Qaa" firstAttribute="top" secondItem="7s0-2a-tYC" secondAttribute="bottom" constant="544" id="hVq-UD-7se"/>
+                            <constraint firstAttribute="trailing" secondItem="M7z-2H-oGV" secondAttribute="trailing" id="kp0-0f-tl5"/>
+                            <constraint firstItem="M7z-2H-oGV" firstAttribute="leading" secondItem="7s0-2a-tYC" secondAttribute="trailing" constant="8" symbolic="YES" id="xwn-Dk-1be"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="cOU-7e-5NU">
@@ -677,6 +686,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="profileImageView" destination="7s0-2a-tYC" id="j0b-Tb-YSl"/>
                         <outlet property="textView" destination="M7z-2H-oGV" id="L4P-kf-AIa"/>
                     </connections>
                 </viewController>
