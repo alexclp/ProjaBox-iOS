@@ -22,6 +22,13 @@ class CreatingPostViewController: UIViewController {
 		
 		addToolBar(textView!)
 		setupImageView()
+		
+		textView!.text = "Write something or use @ to mention someone"
+		textView!.textColor = UIColor.lightGrayColor()
+		
+		textView!.becomeFirstResponder()
+		
+		textView!.selectedTextRange = textView!.textRangeFromPosition(textView!.beginningOfDocument, toPosition: textView!.beginningOfDocument)
     }
 	
 	func setupImageView() {
@@ -34,7 +41,47 @@ class CreatingPostViewController: UIViewController {
 	@IBAction func doneButtonPressed() {
 		dismissViewControllerAnimated(true, completion: nil)
 	}
-
+	
+	// MARK: Text View Delegate
+	
+	func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+		
+		// Combine the textView text and the replacement text to
+		// create the updated text string
+		let currentText:NSString = textView.text
+		let updatedText = currentText.stringByReplacingCharactersInRange(range, withString:text)
+		
+		// If updated text view will be empty, add the placeholder
+		// and set the cursor to the beginning of the text view
+		if updatedText.isEmpty {
+			
+			textView.text = "Placeholder"
+			textView.textColor = UIColor.lightGrayColor()
+			
+			textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
+			
+			return false
+		}
+			
+			// Else if the text view's placeholder is showing and the
+			// length of the replacement string is greater than 0, clear
+			// the text view and set its color to black to prepare for
+			// the user's entry
+		else if textView.textColor == UIColor.lightGrayColor() && !text.isEmpty {
+			textView.text = nil
+			textView.textColor = UIColor.blackColor()
+		}
+		
+		return true
+	}
+	
+	func textViewDidChangeSelection(textView: UITextView) {
+		if self.view.window != nil {
+			if textView.textColor == UIColor.lightGrayColor() {
+				textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
+			}
+		}
+	}
 }
 
 extension UIViewController: UITextViewDelegate {
