@@ -18,6 +18,8 @@
 		0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */; };
 		0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */; };
 		0F15C47D1CD427AC00E2E4B9 /* LikesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C47B1CD427AC00E2E4B9 /* LikesTableViewCell.xib */; };
+		0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */; };
+		0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */; };
 		0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
@@ -85,6 +87,8 @@
 		0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C47B1CD427AC00E2E4B9 /* LikesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikesTableViewCell.xib; sourceTree = "<group>"; };
+		0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */,
 				0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */,
 				0F15C47B1CD427AC00E2E4B9 /* LikesTableViewCell.xib */,
+				0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */,
+				0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				0FC223B71C99BFA1006DD18B /* LaunchScreen.storyboard in Resources */,
 				0F6785BC1CC6F32400F89541 /* card separator.png in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
+				0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */,
 				0F6785CC1CC6F69A00F89541 /* message default.png in Resources */,
 				0F6785CD1CC6F69A00F89541 /* message selected.png in Resources */,
 				0F6785E91CC98C8C00F89541 /* post.png in Resources */,
@@ -536,6 +543,7 @@
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
 				0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */,
+				0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */,
 				0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */,
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,
