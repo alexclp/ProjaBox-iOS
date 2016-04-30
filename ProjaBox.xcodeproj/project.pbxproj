@@ -20,6 +20,7 @@
 		0F15C47D1CD427AC00E2E4B9 /* LikesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C47B1CD427AC00E2E4B9 /* LikesTableViewCell.xib */; };
 		0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */; };
 		0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */; };
+		0F15C4871CD542F000E2E4B9 /* telegram.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4861CD542F000E2E4B9 /* telegram.png */; };
 		0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
@@ -89,6 +90,7 @@
 		0F15C47B1CD427AC00E2E4B9 /* LikesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikesTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		0F15C4861CD542F000E2E4B9 /* telegram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telegram.png; sourceTree = "<group>"; };
 		0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F15C4861CD542F000E2E4B9 /* telegram.png */,
 				0F6785E61CC98C8C00F89541 /* photo.png */,
 				0F6785E71CC98C8C00F89541 /* post.png */,
 				0F6785DA1CC983CE00F89541 /* messages.png */,
@@ -454,6 +457,7 @@
 				0F6785E81CC98C8C00F89541 /* photo.png in Resources */,
 				0F6785EB1CC99F2300F89541 /* vertical_separator.png in Resources */,
 				0F6785CF1CC6F69A00F89541 /* other selected.png in Resources */,
+				0F15C4871CD542F000E2E4B9 /* telegram.png in Resources */,
 				0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */,
 				0F6785CE1CC6F69A00F89541 /* other default.png in Resources */,
 				0F6785C41CC6F58600F89541 /* like default.png in Resources */,

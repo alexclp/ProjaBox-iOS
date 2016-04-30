@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILi-pB-Lu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="1267"/>
+            <point key="canvasLocation" x="574" y="2669"/>
         </scene>
         <!--Profile-->
         <scene sceneID="sb8-JZ-nMu">
@@ -166,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-6r-BbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="1949"/>
+            <point key="canvasLocation" x="574" y="3337"/>
         </scene>
         <!--Projabox-->
         <scene sceneID="vi1-dz-HhZ">
@@ -481,6 +481,7 @@
                         <outlet property="tableView" destination="gMz-H5-fpt" id="dVd-z1-bCd"/>
                         <segue destination="Xuk-NB-k6f" kind="show" identifier="showChatSegue" id="4Y0-cg-Qcp"/>
                         <segue destination="0pi-1U-3nW" kind="presentation" identifier="showComposePostSegue" id="EX1-1V-TE0"/>
+                        <segue destination="ytC-Tz-8Yr" kind="show" identifier="showPostDetailsSegue" id="aws-rB-jBW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1P-mm-mfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -637,7 +638,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcH-si-SD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480.5" y="1372.5"/>
+            <point key="canvasLocation" x="1262.5" y="1336.5"/>
+        </scene>
+        <!--Post Details View Controller-->
+        <scene sceneID="vYQ-Nw-PtD">
+            <objects>
+                <viewController id="ytC-Tz-8Yr" customClass="PostDetailsViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T5W-Mc-Fus"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wqc-Yl-fJ0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Mt-8r-gWw">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-ER-SqD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ytC-Tz-8Yr" id="UnD-dW-Wwr"/>
+                                    <outlet property="delegate" destination="ytC-Tz-8Yr" id="Wfb-xY-Y3n"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="top" secondItem="T5W-Mc-Fus" secondAttribute="bottom" id="EZx-dm-c88"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="leading" secondItem="8Mt-8r-gWw" secondAttribute="leading" id="V0c-II-ljh"/>
+                            <constraint firstAttribute="trailing" secondItem="VFd-ER-SqD" secondAttribute="trailing" id="X8N-EU-SGx"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="bottom" secondItem="Wqc-Yl-fJ0" secondAttribute="top" id="ysz-Hu-hpe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="postDetailsTableView" destination="VFd-ER-SqD" id="cfp-sG-f9u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0e3-ad-aR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262.5" y="2104.5"/>
         </scene>
         <!--Post-->
         <scene sceneID="MBj-YR-wUR">
@@ -695,7 +734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3h-hc-40u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2133.5" y="1372.5"/>
+            <point key="canvasLocation" x="1811.5" y="1312.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zKR-AJ-95r">
