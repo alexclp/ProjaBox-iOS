@@ -20,48 +20,27 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		postDetailsTableView!.registerNib(UINib(nibName: "PostDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "postDetailsCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "LikesTableViewCell", bundle: nil), forCellReuseIdentifier: "likesCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "commentCell")
-		
-		
-		postDetailsTableView!.rowHeight = UITableViewAutomaticDimension
     }
 
 	// MARK: Table View Data Source
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-		if indexPath.section == 0 {
+		if indexPath.row == 0 {
 			return 250.0
-		} else if indexPath.section == 1 {
-			return 60.0
+		} else if indexPath.row == 1 {
+			return 115
 		} else {
 			return 104.0
 		}
 	}
 	
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return 3
-	}
-	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if section == 0 || section == 1 {
-			return 1
-		}
-		
-		return 4
-	}
-	
-	func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if section == 0 {
-			return nil
-		} else if section == 1 {
-			return "Likes"
-		}
-		
-		return "Comments"
+		return 2 + 4
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
-		if indexPath.section == 0 {
+		if indexPath.row == 0 {
 			
 			let cell = tableView.dequeueReusableCellWithIdentifier("postDetailsCell", forIndexPath: indexPath) as! PostDetailsTableViewCell
 			cell.selectionStyle = .None
@@ -75,7 +54,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			
 			return cell
 			
-		} else if indexPath.section == 1 {
+		} else if indexPath.row == 1 {
 			
 			let cell = tableView.dequeueReusableCellWithIdentifier("likesCell", forIndexPath: indexPath) as! LikesTableViewCell
 			cell.profileImageView1?.hidden = false
