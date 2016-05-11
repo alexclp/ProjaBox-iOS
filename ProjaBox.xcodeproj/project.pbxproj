@@ -49,6 +49,8 @@
 		0F82D2301CE3803600C779E5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */; };
 		0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82D2311CE38F1300C779E5 /* ProfileTableViewCell.swift */; };
 		0F82D2341CE38F2100C779E5 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */; };
+		0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */; };
+		0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
@@ -122,6 +124,8 @@
 		0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0F82D2311CE38F1300C779E5 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */,
 				0F82D2311CE38F1300C779E5 /* ProfileTableViewCell.swift */,
 				0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */,
+				0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */,
+				0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */,
 				0F6785CC1CC6F69A00F89541 /* message default.png in Resources */,
 				0F6785CD1CC6F69A00F89541 /* message selected.png in Resources */,
+				0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */,
 				0F6785E91CC98C8C00F89541 /* post.png in Resources */,
 				0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */,
 				0F6785E01CC983CE00F89541 /* messages.png in Resources */,
@@ -554,6 +561,7 @@
 				0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */,
 				0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */,
 				0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */,
+				0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */,
 				0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,

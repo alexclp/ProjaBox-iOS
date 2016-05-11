@@ -10,6 +10,11 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
 
+	@IBOutlet weak var profileImageView: UIImageView?
+	@IBOutlet weak var nameLabel: UILabel?
+	@IBOutlet weak var positionLabel: UILabel?
+	@IBOutlet weak var editButton: UIButton?
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +25,16 @@ class ProfileTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+	
+	override func layoutSubviews() {
+		imageSetup()
+	}
+	
+	func imageSetup() {
+		profileImageView?.layer.cornerRadius = (profileImageView?.frame.size.width)!/2
+		profileImageView?.clipsToBounds = true
+		profileImageView?.contentMode = .ScaleAspectFit
+		profileImageView?.backgroundColor = UIColor.whiteColor()
+	}
 
 }
