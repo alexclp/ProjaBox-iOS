@@ -35,6 +35,11 @@
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.86666666666666659" green="0.86666666666666659" blue="0.86666666666666659" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="cellAccessoryImageView" destination="XMQ-bs-8UE" id="GdT-xe-mQa"/>
+                <outlet property="cellImageView" destination="Yl2-85-NdR" id="D28-ZG-s7f"/>
+                <outlet property="cellTitleLabel" destination="HLF-FA-0ex" id="sYV-qp-ntV"/>
+            </connections>
             <point key="canvasLocation" x="565" y="477.5"/>
         </tableViewCell>
     </objects>
