@@ -46,6 +46,9 @@
 		0F6785E91CC98C8C00F89541 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785E71CC98C8C00F89541 /* post.png */; };
 		0F6785EB1CC99F2300F89541 /* vertical_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785EA1CC99F2300F89541 /* vertical_separator.png */; };
 		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
+		0F82D2301CE3803600C779E5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */; };
+		0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82D2311CE38F1300C779E5 /* ProfileTableViewCell.swift */; };
+		0F82D2341CE38F2100C779E5 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
@@ -116,6 +119,9 @@
 		0F6785E71CC98C8C00F89541 /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
 		0F6785EA1CC99F2300F89541 /* vertical_separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical_separator.png; sourceTree = "<group>"; };
 		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0F82D2311CE38F1300C779E5 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 				0F4F99621CCBB413006628CF /* ChatListViewController.swift */,
 				0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */,
 				0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */,
+				0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -215,6 +222,8 @@
 				0F15C47B1CD427AC00E2E4B9 /* LikesTableViewCell.xib */,
 				0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */,
 				0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */,
+				0F82D2311CE38F1300C779E5 /* ProfileTableViewCell.swift */,
+				0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -467,6 +476,7 @@
 				0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */,
 				0F6785D01CC6F69A00F89541 /* share default.png in Resources */,
 				0F6785C51CC6F58600F89541 /* like selected.png in Resources */,
+				0F82D2341CE38F2100C779E5 /* ProfileTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +552,7 @@
 				0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */,
 				0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */,
 				0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */,
+				0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */,
 				0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */,
 				0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
@@ -551,6 +562,7 @@
 				0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */,
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,
+				0F82D2301CE3803600C779E5 /* SettingsViewController.swift in Sources */,
 				0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */,
 				0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */,
 				0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */,

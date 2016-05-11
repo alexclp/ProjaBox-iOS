@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o9i-hh-gYS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o9i-hh-gYS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -27,7 +27,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Hh-jD-clb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1062" y="-100"/>
+            <point key="canvasLocation" x="-1082" y="-840"/>
         </scene>
         <!--Sign in-->
         <scene sceneID="tne-QT-ifu">
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="-82"/>
+            <point key="canvasLocation" x="-261" y="-834"/>
         </scene>
         <!--Project-->
         <scene sceneID="r7D-IY-n8S">
@@ -482,6 +482,7 @@
                         <segue destination="Xuk-NB-k6f" kind="show" identifier="showChatSegue" id="4Y0-cg-Qcp"/>
                         <segue destination="0pi-1U-3nW" kind="presentation" identifier="showComposePostSegue" id="EX1-1V-TE0"/>
                         <segue destination="ytC-Tz-8Yr" kind="show" identifier="showPostDetailsSegue" id="aws-rB-jBW"/>
+                        <segue destination="XUr-b7-zw9" kind="show" identifier="showSettingsSegue" id="fed-gc-PN4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1P-mm-mfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -825,7 +826,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQQ-th-6eF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="607" y="-93"/>
+            <point key="canvasLocation" x="531" y="-834"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="7Gf-0W-aeH">
+            <objects>
+                <viewController id="XUr-b7-zw9" customClass="SettingsViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vFY-iz-Ziw"/>
+                        <viewControllerLayoutGuide type="bottom" id="GxW-NJ-AFa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VUl-0b-rGn">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zSP-jU-1hP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zSP-jU-1hP" secondAttribute="trailing" id="4x7-Ky-dtN"/>
+                            <constraint firstItem="zSP-jU-1hP" firstAttribute="bottom" secondItem="GxW-NJ-AFa" secondAttribute="top" id="PHF-h1-slG"/>
+                            <constraint firstItem="zSP-jU-1hP" firstAttribute="leading" secondItem="VUl-0b-rGn" secondAttribute="leading" id="l2o-4k-zss"/>
+                            <constraint firstItem="zSP-jU-1hP" firstAttribute="top" secondItem="vFY-iz-Ziw" secondAttribute="bottom" id="vrs-4Z-u1Q"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0e-ta-6uW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702.5" y="-122.5"/>
         </scene>
     </scenes>
     <resources>
