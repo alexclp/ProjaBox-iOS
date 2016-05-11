@@ -15,6 +15,8 @@ class ConversationViewController: JSQMessagesViewController {
 	let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 237/255, green: 84/255, blue: 84/255, alpha: 1))
 	var messages = [JSQMessage]()
 
+	// TODO: Add custom view to messages bubbles
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 

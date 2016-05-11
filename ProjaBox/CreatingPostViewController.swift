@@ -15,6 +15,8 @@ class CreatingPostViewController: UIViewController {
 	@IBOutlet weak var textView: UITextView?
 	@IBOutlet weak var profileImageView: UIImageView!
 	
+	// TODO: Add UI Elements to keyboard toolbar
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
