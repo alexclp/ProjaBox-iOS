@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,27 +15,50 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e20-Fj-PkZ">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e20-Fj-PkZ">
                         <rect key="frame" x="8" y="8" width="304" height="48"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yl2-85-NdR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yl2-85-NdR">
                                 <rect key="frame" x="8" y="4" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="2bb-ot-WTN"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLF-FA-0ex">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLF-FA-0ex">
                                 <rect key="frame" x="56" y="13" width="215" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMQ-bs-8UE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XMQ-bs-8UE">
                                 <rect key="frame" x="279" y="11" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="hWP-Ce-TQn"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yl2-85-NdR" firstAttribute="centerY" secondItem="HLF-FA-0ex" secondAttribute="centerY" id="3Mi-Qg-j30"/>
+                            <constraint firstItem="XMQ-bs-8UE" firstAttribute="top" secondItem="e20-Fj-PkZ" secondAttribute="top" constant="11" id="FUG-Ey-06G"/>
+                            <constraint firstItem="Yl2-85-NdR" firstAttribute="top" secondItem="e20-Fj-PkZ" secondAttribute="top" constant="4" id="H7w-w8-xQT"/>
+                            <constraint firstItem="Yl2-85-NdR" firstAttribute="leading" secondItem="e20-Fj-PkZ" secondAttribute="leadingMargin" id="LaK-AW-Ww7"/>
+                            <constraint firstItem="HLF-FA-0ex" firstAttribute="leading" secondItem="Yl2-85-NdR" secondAttribute="trailing" constant="8" symbolic="YES" id="O78-2G-qPs"/>
+                            <constraint firstAttribute="trailing" secondItem="XMQ-bs-8UE" secondAttribute="trailing" id="Q2l-cY-khp"/>
+                            <constraint firstItem="HLF-FA-0ex" firstAttribute="centerY" secondItem="XMQ-bs-8UE" secondAttribute="centerY" id="Xue-bm-LUm"/>
+                            <constraint firstItem="Yl2-85-NdR" firstAttribute="centerY" secondItem="e20-Fj-PkZ" secondAttribute="centerY" id="k19-oP-XIC"/>
+                            <constraint firstItem="XMQ-bs-8UE" firstAttribute="leading" secondItem="HLF-FA-0ex" secondAttribute="trailing" constant="8" symbolic="YES" id="vRc-sE-X48"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="e20-Fj-PkZ" secondAttribute="bottom" id="2zk-Dl-Dea"/>
+                    <constraint firstItem="e20-Fj-PkZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3Z2-Wz-sgJ"/>
+                    <constraint firstItem="e20-Fj-PkZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ev9-tJ-uAu"/>
+                    <constraint firstItem="e20-Fj-PkZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="oMA-3h-R71"/>
+                </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.86666666666666659" green="0.86666666666666659" blue="0.86666666666666659" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="cellAccessoryImageView" destination="XMQ-bs-8UE" id="GdT-xe-mQa"/>
                 <outlet property="cellImageView" destination="Yl2-85-NdR" id="D28-ZG-s7f"/>

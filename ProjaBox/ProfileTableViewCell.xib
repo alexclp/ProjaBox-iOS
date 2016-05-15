@@ -65,7 +65,7 @@
                     <constraint firstItem="tFd-wY-qv1" firstAttribute="bottom" secondItem="4vJ-jJ-S8C" secondAttribute="bottomMargin" id="haV-Jk-wxX"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.87692307692307681" green="0.87692307692307681" blue="0.87692307692307681" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="editButton" destination="oXG-NB-28s" id="c9a-UX-3Qd"/>
                 <outlet property="nameLabel" destination="7Ui-e3-LTA" id="SWt-Mr-iIB"/>
