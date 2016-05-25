@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DKImagePickerController
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 

@@ -60,6 +60,7 @@
 		0FC223C21C99BFA1006DD18B /* ProjaBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223C11C99BFA1006DD18B /* ProjaBoxTests.swift */; };
 		0FC223CD1C99BFA1006DD18B /* ProjaBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */; };
 		0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */; };
+		0FD43C5C1CF5F6670061E4E9 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD43C5B1CF5F6670061E4E9 /* background.png */; };
 		446AD3F03EE56AFEE5C0EFC5 /* Pods_ProjaBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,7 @@
 		0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjaBoxUITests.swift; sourceTree = "<group>"; };
 		0FC223CE1C99BFA1006DD18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0FD43C5B1CF5F6670061E4E9 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.release.xcconfig"; sourceTree = "<group>"; };
 		6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.debug.xcconfig"; sourceTree = "<group>"; };
 		E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjaBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0FD43C5B1CF5F6670061E4E9 /* background.png */,
 				0F15C4861CD542F000E2E4B9 /* telegram.png */,
 				0F6785E61CC98C8C00F89541 /* photo.png */,
 				0F6785E71CC98C8C00F89541 /* post.png */,
@@ -454,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F6785E51CC983CE00F89541 /* settings@3x.png in Resources */,
+				0FD43C5C1CF5F6670061E4E9 /* background.png in Resources */,
 				0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */,
 				0F15C47D1CD427AC00E2E4B9 /* LikesTableViewCell.xib in Resources */,
 				0F6785D11CC6F69A00F89541 /* share selected.png in Resources */,
