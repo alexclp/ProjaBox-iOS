@@ -26,7 +26,6 @@ class SettingsTableViewCell: UITableViewCell {
     }
 	
 	override func layoutSubviews() {
-		
 		imageSetup()
 	}
 

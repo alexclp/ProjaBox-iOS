@@ -61,6 +61,8 @@
 		0FC223CD1C99BFA1006DD18B /* ProjaBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */; };
 		0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */; };
 		0FD43C5C1CF5F6670061E4E9 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD43C5B1CF5F6670061E4E9 /* background.png */; };
+		0FD43C5E1CF603560061E4E9 /* EducationExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD43C5D1CF603560061E4E9 /* EducationExperienceTableViewCell.swift */; };
+		0FD43C601CF603650061E4E9 /* EducationExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD43C5F1CF603650061E4E9 /* EducationExperienceTableViewCell.xib */; };
 		446AD3F03EE56AFEE5C0EFC5 /* Pods_ProjaBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +145,8 @@
 		0FC223CE1C99BFA1006DD18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0FD43C5B1CF5F6670061E4E9 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		0FD43C5D1CF603560061E4E9 /* EducationExperienceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		0FD43C5F1CF603650061E4E9 /* EducationExperienceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EducationExperienceTableViewCell.xib; sourceTree = "<group>"; };
 		463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.release.xcconfig"; sourceTree = "<group>"; };
 		6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.debug.xcconfig"; sourceTree = "<group>"; };
 		E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjaBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +236,8 @@
 				0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */,
 				0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */,
 				0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */,
+				0FD43C5D1CF603560061E4E9 /* EducationExperienceTableViewCell.swift */,
+				0FD43C5F1CF603650061E4E9 /* EducationExperienceTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				0F6785BE1CC6F32400F89541 /* location pin.png in Resources */,
 				0FC223B71C99BFA1006DD18B /* LaunchScreen.storyboard in Resources */,
 				0F6785BC1CC6F32400F89541 /* card separator.png in Resources */,
+				0FD43C601CF603650061E4E9 /* EducationExperienceTableViewCell.xib in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
 				0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */,
 				0F6785CC1CC6F69A00F89541 /* message default.png in Resources */,
@@ -576,6 +583,7 @@
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,
 				0F82D2301CE3803600C779E5 /* SettingsViewController.swift in Sources */,
 				0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */,
+				0FD43C5E1CF603560061E4E9 /* EducationExperienceTableViewCell.swift in Sources */,
 				0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */,
 				0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */,
 				0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */,
