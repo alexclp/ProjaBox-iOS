@@ -34,7 +34,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 //		self.navigationController?.navigationBar.barTintColor = customColour
 //		self.navigationController?.navigationBar.translucent = false
 		
-		self.view.layer.contents = UIImage(named:"background.png")!.CGImage
+		self.navigationController?.navigationBar.hidden = true
+		self.view.layer.contents = UIImage(named:"sign-in-background.png")!.CGImage
 	}
 	
 //	MARK: LinkedIn Stuff

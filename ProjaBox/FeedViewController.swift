@@ -17,6 +17,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.navigationController?.navigationBar.hidden = false
+		
 		self.tabBarController!.navigationItem.title = "Projabox"
 		self.tabBarController!.navigationItem.hidesBackButton = true
 		
