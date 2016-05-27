@@ -24,6 +24,7 @@
 		0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
+		0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5505801CF86830005229D7 /* RootTabBarViewController.swift */; };
 		0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */; };
 		0F6785B41CC6D70200F89541 /* profile_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785B31CC6D70200F89541 /* profile_pic.jpg */; };
 		0F6785BC1CC6F32400F89541 /* card separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785B61CC6F32400F89541 /* card separator.png */; };
@@ -104,6 +105,7 @@
 		0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		0F5505801CF86830005229D7 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCardTableViewCell.swift; sourceTree = "<group>"; };
 		0F6785B31CC6D70200F89541 /* profile_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_pic.jpg; sourceTree = "<group>"; };
 		0F6785B61CC6F32400F89541 /* card separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card separator.png"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				0FD43C5F1CF603650061E4E9 /* EducationExperienceTableViewCell.xib */,
 				0FD43C611CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift */,
 				0FD43C621CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib */,
+				0F5505801CF86830005229D7 /* RootTabBarViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				0FD43C631CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift in Sources */,
 				0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */,
 				0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */,
+				0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */,
 				0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
