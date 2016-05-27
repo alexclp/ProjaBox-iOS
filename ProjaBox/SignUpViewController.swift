@@ -13,7 +13,8 @@ class SignUpViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.title = "Sign up"
+		self.navigationController?.navigationBar.hidden = true
+		self.view.layer.contents = UIImage(named:"background-proja.png")!.CGImage
 	}
 	
 }
