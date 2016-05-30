@@ -14,6 +14,9 @@
 		0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */; };
 		0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */; };
 		0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */; };
+		0F0D888E1CFC70CC0074E5E6 /* facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */; };
+		0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888D1CFC70CC0074E5E6 /* linked-button.png */; };
+		0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */; };
 		0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */; };
 		0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */; };
 		0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */; };
@@ -25,8 +28,6 @@
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
 		0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5505801CF86830005229D7 /* RootTabBarViewController.swift */; };
-		0F5505841CF8B4E8005229D7 /* facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505821CF8B4E8005229D7 /* facebook-button.png */; };
-		0F5505851CF8B4E8005229D7 /* linked-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505831CF8B4E8005229D7 /* linked-button.png */; };
 		0F5505871CF8B7EC005229D7 /* sign-in-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505861CF8B7EC005229D7 /* sign-in-background.png */; };
 		0F5505891CF8BD5B005229D7 /* background-proja.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505881CF8BD5B005229D7 /* background-proja.png */; };
 		0F55058B1CF8BD61005229D7 /* signup-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F55058A1CF8BD61005229D7 /* signup-button.png */; };
@@ -100,6 +101,9 @@
 		0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatingPostViewController.swift; sourceTree = "<group>"; };
+		0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-button.png"; sourceTree = "<group>"; };
+		0F0D888D1CFC70CC0074E5E6 /* linked-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linked-button.png"; sourceTree = "<group>"; };
+		0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,8 +115,6 @@
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		0F5505801CF86830005229D7 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
-		0F5505821CF8B4E8005229D7 /* facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-button.png"; sourceTree = "<group>"; };
-		0F5505831CF8B4E8005229D7 /* linked-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linked-button.png"; sourceTree = "<group>"; };
 		0F5505861CF8B7EC005229D7 /* sign-in-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-background.png"; sourceTree = "<group>"; };
 		0F5505881CF8BD5B005229D7 /* background-proja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-proja.png"; sourceTree = "<group>"; };
 		0F55058A1CF8BD61005229D7 /* signup-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signup-button.png"; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */,
 				0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */,
+				0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -281,11 +284,11 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */,
+				0F0D888D1CFC70CC0074E5E6 /* linked-button.png */,
 				0F55058A1CF8BD61005229D7 /* signup-button.png */,
 				0F5505881CF8BD5B005229D7 /* background-proja.png */,
 				0F5505861CF8B7EC005229D7 /* sign-in-background.png */,
-				0F5505821CF8B4E8005229D7 /* facebook-button.png */,
-				0F5505831CF8B4E8005229D7 /* linked-button.png */,
 				0FD43C5B1CF5F6670061E4E9 /* background.png */,
 				0F15C4861CD542F000E2E4B9 /* telegram.png */,
 				0F6785E61CC98C8C00F89541 /* photo.png */,
@@ -491,12 +494,14 @@
 				0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */,
 				0F15C47D1CD427AC00E2E4B9 /* LikesTableViewCell.xib in Resources */,
 				0F6785D11CC6F69A00F89541 /* share selected.png in Resources */,
+				0F0D888E1CFC70CC0074E5E6 /* facebook-button.png in Resources */,
 				0F6785BE1CC6F32400F89541 /* location pin.png in Resources */,
 				0F5505891CF8BD5B005229D7 /* background-proja.png in Resources */,
 				0FC223B71C99BFA1006DD18B /* LaunchScreen.storyboard in Resources */,
 				0F6785BC1CC6F32400F89541 /* card separator.png in Resources */,
 				0FD43C601CF603650061E4E9 /* EducationExperienceTableViewCell.xib in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
+				0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */,
 				0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */,
 				0F6785CC1CC6F69A00F89541 /* message default.png in Resources */,
 				0F6785CD1CC6F69A00F89541 /* message selected.png in Resources */,
@@ -508,11 +513,9 @@
 				0F6785E21CC983CE00F89541 /* messages@3x.png in Resources */,
 				0F6785E11CC983CE00F89541 /* messages@2x.png in Resources */,
 				0F6785E81CC98C8C00F89541 /* photo.png in Resources */,
-				0F5505841CF8B4E8005229D7 /* facebook-button.png in Resources */,
 				0F6785EB1CC99F2300F89541 /* vertical_separator.png in Resources */,
 				0F6785CF1CC6F69A00F89541 /* other selected.png in Resources */,
 				0F15C4871CD542F000E2E4B9 /* telegram.png in Resources */,
-				0F5505851CF8B4E8005229D7 /* linked-button.png in Resources */,
 				0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */,
 				0F6785CE1CC6F69A00F89541 /* other default.png in Resources */,
 				0F6785C41CC6F58600F89541 /* like default.png in Resources */,
@@ -599,6 +602,7 @@
 			files = (
 				0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */,
 				0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */,
+				0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */,
 				0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */,
 				0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */,
 				0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */,

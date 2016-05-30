@@ -9,6 +9,8 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+	
+	@IBOutlet weak var emailTextField: UITextField?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -17,4 +19,20 @@ class SignUpViewController: UIViewController {
 		self.view.layer.contents = UIImage(named:"background-proja.png")!.CGImage
 	}
 	
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "showPasswordSegue" {
+			
+			if isValidEmail((emailTextField?.text)!) {
+				performSegueWithIdentifier("showPasswordSegue", sender: self)
+			}
+		}
+	}
+	
+	func isValidEmail(testStr:String) -> Bool {
+		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+		
+		let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+		return emailTest.evaluateWithObject(testStr)
+	}
 }

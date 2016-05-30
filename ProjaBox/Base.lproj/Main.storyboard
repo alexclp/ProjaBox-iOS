@@ -41,25 +41,11 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8E-sW-hNy" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="177" y="334" width="247" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="247" id="FLF-mP-VDu"/>
-                                </constraints>
-                                <state key="normal" image="facebook-button.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvF-YB-AtL" userLabel="Linkedin Button">
-                                <rect key="frame" x="177" y="383" width="247" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="NI1-O1-0p2"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="linked-button.png"/>
-                                <connections>
-                                    <action selector="linkedinLoginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJi-KN-txp"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIj-Zk-KSD">
-                                <rect key="frame" x="229" y="465" width="142" height="30"/>
+                                <rect key="frame" x="229" y="498" width="142" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8QU-ZD-M3O"/>
+                                </constraints>
                                 <state key="normal" title="or create an account">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -67,15 +53,31 @@
                                     <segue destination="zx8-pr-gh9" kind="show" id="yWX-cj-OGA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvF-YB-AtL" userLabel="Linkedin Button">
+                                <rect key="frame" x="177" y="448" width="247" height="42"/>
+                                <state key="normal" title="Button" image="linked-button.png"/>
+                                <connections>
+                                    <action selector="linkedinLoginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJi-KN-txp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8E-sW-hNy" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="177" y="398" width="247" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Hmk-aV-0An"/>
+                                    <constraint firstAttribute="width" constant="247" id="uSy-bx-49u"/>
+                                </constraints>
+                                <state key="normal" image="facebook-button.png"/>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="MvF-YB-AtL" firstAttribute="top" secondItem="B8E-sW-hNy" secondAttribute="bottom" constant="6" id="5Kn-zr-wPZ"/>
-                            <constraint firstItem="B8E-sW-hNy" firstAttribute="trailing" secondItem="MvF-YB-AtL" secondAttribute="trailing" id="7jg-PD-eur"/>
-                            <constraint firstItem="MvF-YB-AtL" firstAttribute="centerX" secondItem="aIj-Zk-KSD" secondAttribute="centerX" id="9aN-3R-AGv"/>
-                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="top" secondItem="MvF-YB-AtL" secondAttribute="bottom" constant="40" id="OlJ-Pd-scm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aIj-Zk-KSD" secondAttribute="bottom" constant="41" id="Woh-ot-qg8"/>
-                            <constraint firstItem="B8E-sW-hNy" firstAttribute="leading" secondItem="MvF-YB-AtL" secondAttribute="leading" id="c0W-Ni-B2Y"/>
-                            <constraint firstItem="B8E-sW-hNy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mlB-0R-u3y"/>
+                            <constraint firstItem="B8E-sW-hNy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Mx-B0-FOR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aIj-Zk-KSD" secondAttribute="bottom" constant="8" symbolic="YES" id="FeR-6v-UpP"/>
+                            <constraint firstItem="MvF-YB-AtL" firstAttribute="top" secondItem="B8E-sW-hNy" secondAttribute="bottom" constant="8" symbolic="YES" id="Fhi-II-4rF"/>
+                            <constraint firstItem="B8E-sW-hNy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="398" id="JZT-1U-99p"/>
+                            <constraint firstItem="MvF-YB-AtL" firstAttribute="centerX" secondItem="aIj-Zk-KSD" secondAttribute="centerX" id="WRj-gm-bXF"/>
+                            <constraint firstItem="B8E-sW-hNy" firstAttribute="leading" secondItem="MvF-YB-AtL" secondAttribute="leading" id="ikY-YS-vvJ"/>
+                            <constraint firstItem="B8E-sW-hNy" firstAttribute="trailing" secondItem="MvF-YB-AtL" secondAttribute="trailing" id="o9P-9L-ry2"/>
+                            <constraint firstItem="aIj-Zk-KSD" firstAttribute="top" secondItem="MvF-YB-AtL" secondAttribute="bottom" constant="8" symbolic="YES" id="s4a-8K-WbN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign in" id="I0S-Cr-rjx"/>
@@ -876,14 +878,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awb-g3-tny">
-                                <rect key="frame" x="174" y="357" width="253" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="253" id="D0O-t9-2hX"/>
-                                    <constraint firstAttribute="height" constant="47" id="RnC-4r-uvt"/>
-                                </constraints>
-                                <state key="normal" image="signup-button.png"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTh-uX-QdF">
                                 <rect key="frame" x="217" y="412" width="166" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -904,6 +898,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awb-g3-tny">
+                                <rect key="frame" x="174" y="357" width="253" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="253" id="D0O-t9-2hX"/>
+                                    <constraint firstAttribute="height" constant="47" id="RnC-4r-uvt"/>
+                                </constraints>
+                                <state key="normal" image="signup-button.png"/>
+                                <connections>
+                                    <segue destination="37w-HL-qSb" kind="show" identifier="showPasswordSegue" id="99r-IM-5R4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -919,10 +924,81 @@
                             <constraint firstItem="awb-g3-tny" firstAttribute="trailing" secondItem="9Pm-oi-M21" secondAttribute="trailing" id="rYT-4e-WmZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="9Pm-oi-M21" id="2mh-Eo-4WW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQQ-th-6eF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="531" y="-834"/>
+        </scene>
+        <!--Sign Up Password View Controller-->
+        <scene sceneID="UjJ-na-qki">
+            <objects>
+                <viewController id="37w-HL-qSb" customClass="SignUpPasswordViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dFe-dG-BLu"/>
+                        <viewControllerLayoutGuide type="bottom" id="vwf-BG-3Ja"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rdo-xJ-Lht">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gi9-n2-rLI">
+                                <rect key="frame" x="167" y="253" width="253" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="253" id="mVS-gg-g4l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r84-85-p6E">
+                                <rect key="frame" x="167" y="342" width="253" height="47"/>
+                                <state key="normal" image="signup-button.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5N-R6-5WT">
+                                <rect key="frame" x="195" y="397" width="196" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PNM-dD-GXu"/>
+                                    <constraint firstAttribute="width" constant="196" id="cYI-g0-unM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZf-TU-YF1">
+                                <rect key="frame" x="268" y="426" width="59" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="4Ok-xI-Jwt"/>
+                                    <constraint firstAttribute="height" constant="30" id="xhN-ip-V30"/>
+                                </constraints>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vwf-BG-3Ja" firstAttribute="top" secondItem="uZf-TU-YF1" secondAttribute="bottom" constant="80" id="7OS-jf-DUk"/>
+                            <constraint firstItem="Gi9-n2-rLI" firstAttribute="centerY" secondItem="Rdo-xJ-Lht" secondAttribute="centerY" id="BNV-ts-2Kd"/>
+                            <constraint firstItem="Gi9-n2-rLI" firstAttribute="top" secondItem="dFe-dG-BLu" secondAttribute="bottom" constant="253" id="Eoa-hH-HYC"/>
+                            <constraint firstItem="Gi9-n2-rLI" firstAttribute="leading" secondItem="r84-85-p6E" secondAttribute="leading" id="JbU-7c-ld0"/>
+                            <constraint firstItem="uZf-TU-YF1" firstAttribute="top" secondItem="h5N-R6-5WT" secondAttribute="bottom" constant="8" symbolic="YES" id="LoX-rC-cgV"/>
+                            <constraint firstItem="h5N-R6-5WT" firstAttribute="top" secondItem="r84-85-p6E" secondAttribute="bottom" constant="8" symbolic="YES" id="PN7-G7-N0d"/>
+                            <constraint firstItem="uZf-TU-YF1" firstAttribute="leading" secondItem="Rdo-xJ-Lht" secondAttribute="leading" constant="268" id="T50-eo-hMF"/>
+                            <constraint firstItem="Gi9-n2-rLI" firstAttribute="trailing" secondItem="r84-85-p6E" secondAttribute="trailing" id="X9s-IU-67K"/>
+                            <constraint firstItem="r84-85-p6E" firstAttribute="centerX" secondItem="h5N-R6-5WT" secondAttribute="centerX" id="de2-Nv-reA"/>
+                            <constraint firstItem="Gi9-n2-rLI" firstAttribute="leading" secondItem="Rdo-xJ-Lht" secondAttribute="leading" constant="167" id="emO-Ay-S5z"/>
+                            <constraint firstItem="r84-85-p6E" firstAttribute="top" secondItem="Gi9-n2-rLI" secondAttribute="bottom" constant="59" id="yip-s8-mZs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="Gi9-n2-rLI" id="qi7-bk-sKw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2o-A7-JQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="-834"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="7Gf-0W-aeH">
@@ -966,9 +1042,9 @@
     </scenes>
     <resources>
         <image name="card separator.png" width="1090" height="4"/>
-        <image name="facebook-button.png" width="247" height="43"/>
+        <image name="facebook-button.png" width="982" height="169"/>
         <image name="like default.png" width="64" height="62"/>
-        <image name="linked-button.png" width="247" height="43"/>
+        <image name="linked-button.png" width="982" height="169"/>
         <image name="location pin.png" width="22" height="30"/>
         <image name="message default.png" width="62" height="44"/>
         <image name="other default.png" width="87" height="13"/>
