@@ -17,6 +17,7 @@
 		0F0D888E1CFC70CC0074E5E6 /* facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */; };
 		0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888D1CFC70CC0074E5E6 /* linked-button.png */; };
 		0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */; };
+		0F0D88931CFC87E60074E5E6 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D88921CFC87E60074E5E6 /* Server.swift */; };
 		0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */; };
 		0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */; };
 		0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */; };
@@ -104,6 +105,7 @@
 		0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-button.png"; sourceTree = "<group>"; };
 		0F0D888D1CFC70CC0074E5E6 /* linked-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linked-button.png"; sourceTree = "<group>"; };
 		0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
+		0F0D88921CFC87E60074E5E6 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		0F08DD2D1CB722A0008B7C57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F0D88921CFC87E60074E5E6 /* Server.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */,
 				0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */,
 				0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */,
+				0F0D88931CFC87E60074E5E6 /* Server.swift in Sources */,
 				0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
