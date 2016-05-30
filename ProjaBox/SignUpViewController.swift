@@ -25,6 +25,9 @@ class SignUpViewController: UIViewController {
 			
 			if isValidEmail((emailTextField?.text)!) {
 				performSegueWithIdentifier("showPasswordSegue", sender: self)
+			} else {
+				let alert = UIAlertController(title: "Alert", message: "Enter a valid email address!", preferredStyle: UIAlertControllerStyle.Alert)
+				presentViewController(alert, animated: true, completion: nil)
 			}
 		}
 	}
