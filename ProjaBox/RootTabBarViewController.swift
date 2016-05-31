@@ -15,15 +15,11 @@ class RootTabBarViewController: UITabBarController {
 		
 		print("items: \(self.tabBar.items?.count)")
 		
-		self.tabBar.barTintColor = UIColor.blueColor()
+//		self.tabBar.barTintColor = UIColor.blueColor()
 		
-		let image = UIImage(named: "settings.png")?.imageWithRenderingMode(.AlwaysOriginal)
+		let image = UIImage(named: "tab-bar-background.png")?.imageWithRenderingMode(.AlwaysOriginal)
 		
-		self.tabBar.items![0].selectedImage = image
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//		self.tabBar.items![0].selectedImage = image
+//		self.tabBar.backgroundImage = image
     }
 }

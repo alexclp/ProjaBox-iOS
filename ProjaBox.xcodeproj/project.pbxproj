@@ -26,6 +26,7 @@
 		0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */; };
 		0F15C4871CD542F000E2E4B9 /* telegram.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4861CD542F000E2E4B9 /* telegram.png */; };
 		0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */; };
+		0F4171441CFDFCA10043A98B /* tab-bar-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4171431CFDFCA10043A98B /* tab-bar-background.png */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
 		0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5505801CF86830005229D7 /* RootTabBarViewController.swift */; };
@@ -115,6 +116,7 @@
 		0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C4861CD542F000E2E4B9 /* telegram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telegram.png; sourceTree = "<group>"; };
 		0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		0F4171431CFDFCA10043A98B /* tab-bar-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-bar-background.png"; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		0F5505801CF86830005229D7 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F4171431CFDFCA10043A98B /* tab-bar-background.png */,
 				0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */,
 				0F0D888D1CFC70CC0074E5E6 /* linked-button.png */,
 				0F55058A1CF8BD61005229D7 /* signup-button.png */,
@@ -534,6 +537,7 @@
 				0F6785D01CC6F69A00F89541 /* share default.png in Resources */,
 				0F6785C51CC6F58600F89541 /* like selected.png in Resources */,
 				0F82D2341CE38F2100C779E5 /* ProfileTableViewCell.xib in Resources */,
+				0F4171441CFDFCA10043A98B /* tab-bar-background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
