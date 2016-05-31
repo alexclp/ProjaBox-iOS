@@ -19,7 +19,6 @@ enum ServerResponse {
 	case Failure(ServerError)
 }
 
-
 class Server: NSObject {
 	
 	class func sharedServer() -> Server {

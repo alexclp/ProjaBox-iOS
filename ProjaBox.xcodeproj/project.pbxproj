@@ -73,6 +73,7 @@
 		0FD43C601CF603650061E4E9 /* EducationExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD43C5F1CF603650061E4E9 /* EducationExperienceTableViewCell.xib */; };
 		0FD43C631CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD43C611CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift */; };
 		0FD43C641CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD43C621CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib */; };
+		0FEF70051CFD1DC900A80D09 /* MoreSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */; };
 		446AD3F03EE56AFEE5C0EFC5 /* Pods_ProjaBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +168,7 @@
 		0FD43C5F1CF603650061E4E9 /* EducationExperienceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EducationExperienceTableViewCell.xib; sourceTree = "<group>"; };
 		0FD43C611CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		0FD43C621CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSettingsViewController.swift; sourceTree = "<group>"; };
 		463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.release.xcconfig"; sourceTree = "<group>"; };
 		6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.debug.xcconfig"; sourceTree = "<group>"; };
 		E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjaBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +240,7 @@
 				0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */,
 				0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */,
 				0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */,
+				0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */,
 				0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */,
 				0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */,
+				0FEF70051CFD1DC900A80D09 /* MoreSettingsViewController.swift in Sources */,
 				0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
