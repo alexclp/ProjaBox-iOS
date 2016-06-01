@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.4.0)
   - Bolts (1.7.0):
     - Bolts/AppLinks (= 1.7.0)
     - Bolts/Tasks (= 1.7.0)
@@ -26,6 +27,7 @@ PODS:
   - TagListView (1.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Bolts
   - DMActivityInstagram (= 0.0.3)
   - FBSDKCoreKit (~> 4.2.0)
@@ -36,6 +38,7 @@ DEPENDENCIES:
   - TagListView (~> 1.0)
 
 SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   DMActivityInstagram: d97425cfac5ac6982a4c5d9e81f2ca07b9d8f363
   FBSDKCoreKit: 84b3616a361801f190e43a9909caead7bb6087c7

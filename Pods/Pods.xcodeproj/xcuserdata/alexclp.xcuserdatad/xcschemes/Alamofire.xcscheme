@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '35FB7851F76176E2DAAA4C1C'
-               BlueprintName = 'JSQSystemSoundPlayer'
+               BlueprintIdentifier = '9F5C9C4D2878C4E97BF02EA2'
+               BlueprintName = 'Alamofire'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'JSQSystemSoundPlayer.framework'>
+               BuildableName = 'Alamofire.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

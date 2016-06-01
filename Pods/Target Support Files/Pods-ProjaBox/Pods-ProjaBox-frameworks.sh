@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-ProjaBox/Alamofire.framework"
   install_framework "Pods-ProjaBox/Bolts.framework"
   install_framework "Pods-ProjaBox/DMActivityInstagram.framework"
   install_framework "Pods-ProjaBox/FBSDKCoreKit.framework"
@@ -95,6 +96,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-ProjaBox/TagListView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-ProjaBox/Alamofire.framework"
   install_framework "Pods-ProjaBox/Bolts.framework"
   install_framework "Pods-ProjaBox/DMActivityInstagram.framework"
   install_framework "Pods-ProjaBox/FBSDKCoreKit.framework"
