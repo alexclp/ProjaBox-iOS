@@ -15,7 +15,7 @@ import FBSDKCoreKit
 import DMActivityInstagram
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location"]
+	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location", "user_about_me", "user_education_history", "user_work_history"]
 	
 	@IBOutlet weak var facebookButton: FBSDKLoginButton?
 	@IBOutlet weak var usernameTextField: UITextField!
@@ -28,11 +28,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		facebookButton?.delegate = self
-		
-//		let customColour = UIColor(red: 237.0, green: 34.0, blue: 34.0, alpha: 1.0)
-//		
-//		self.navigationController?.navigationBar.barTintColor = customColour
-//		self.navigationController?.navigationBar.translucent = false
 		
 		self.navigationController?.navigationBar.hidden = true
 		self.view.layer.contents = UIImage(named:"sign-in-background.png")!.CGImage
@@ -85,7 +80,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	}
 	
 	func fetchFacebookData() {
-		let parameters: [String : String] = ["fields": "id, name, birthday, picture, location"]
+		let parameters: [String : String] = ["fields": "id, name, birthday, picture, location, gender, email, education, work"]
 		FBSDKGraphRequest.init(graphPath: "me", parameters: parameters) .startWithCompletionHandler { (connection, result, error) in
 			print(result)
 		}
