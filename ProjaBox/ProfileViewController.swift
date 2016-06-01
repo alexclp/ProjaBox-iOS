@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	// MARK: UITableView Methods
 	
 	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return 4
+		return 5
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,17 +36,13 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	}
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-		
-		// STATIC VALUE FOR ALL CELLS EXCEPT INTERESTS
-		// FOR INTERESTS GET HEIGHT FROM TAG LIST VIEW AND RETURN
-		
 		if indexPath.section == 0 {
 			return 293.0
 		} else if indexPath.section == 1 {
 			let cell = tableView.cellForRowAtIndexPath(indexPath) as! InterestsTableViewCell
 			let height = cell.tagListView?.bounds.height
 			return height!
-		} else if indexPath.section == 2 {
+		} else if indexPath.section == 2 || indexPath.section == 3 {
 			return 115.0
 		} else {
 			return 221.0
@@ -55,18 +51,27 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		if indexPath.section == 0 {
+			// HEADER PART
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileHeaderCell", forIndexPath: indexPath) as! ProfileTableViewCell
 			
 			return cell
 		} else if indexPath.section == 1 {
+			// SKILLS/INTERESTS
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
 			
 			return cell
 		} else if indexPath.section == 2 {
+			// EDUCATION
+			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
+			
+			return cell
+		} else if indexPath.section == 3 {
+			// EXPERIENCE
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
 			
 			return cell
 		} else {
+			// POSTS
 			let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
 			
 			return cell
