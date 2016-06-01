@@ -28,6 +28,8 @@
 		0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */; };
 		0F4171441CFDFCA10043A98B /* tab-bar-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4171431CFDFCA10043A98B /* tab-bar-background.png */; };
 		0F4171461CFE37870043A98B /* PillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4171451CFE37870043A98B /* PillLabel.swift */; };
+		0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */; };
+		0F41714A1CFE6E340043A98B /* InterestsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4171481CFE6E340043A98B /* InterestsTableViewCell.xib */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
 		0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5505801CF86830005229D7 /* RootTabBarViewController.swift */; };
@@ -119,6 +121,8 @@
 		0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		0F4171431CFDFCA10043A98B /* tab-bar-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-bar-background.png"; sourceTree = "<group>"; };
 		0F4171451CFE37870043A98B /* PillLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillLabel.swift; sourceTree = "<group>"; };
+		0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsTableViewCell.swift; sourceTree = "<group>"; };
+		0F4171481CFE6E340043A98B /* InterestsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterestsTableViewCell.xib; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		0F5505801CF86830005229D7 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 				0FD43C621CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib */,
 				0F5505801CF86830005229D7 /* RootTabBarViewController.swift */,
 				0F4171451CFE37870043A98B /* PillLabel.swift */,
+				0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */,
+				0F4171481CFE6E340043A98B /* InterestsTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F41714A1CFE6E340043A98B /* InterestsTableViewCell.xib in Resources */,
 				0F6785E51CC983CE00F89541 /* settings@3x.png in Resources */,
 				0FD43C5C1CF5F6670061E4E9 /* background.png in Resources */,
 				0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */,
@@ -628,6 +635,7 @@
 				0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */,
 				0F4171461CFE37870043A98B /* PillLabel.swift in Sources */,
 				0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */,
+				0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */,
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,
 				0F82D2301CE3803600C779E5 /* SettingsViewController.swift in Sources */,

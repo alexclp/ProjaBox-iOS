@@ -11,7 +11,8 @@ pod 'FBSDKShareKit', '~> 4.1.0'
 pod 'FBSDKLoginKit', '~> 4.1.0'
 pod 'DMActivityInstagram', '0.0.3'
 pod 'JSQMessagesViewController'
-pod 'KMPlaceholderTextView', '~> 1.2.0' 
+pod 'KMPlaceholderTextView', '~> 1.2.0'
+pod 'TagListView', '~> 1.0'
 
 end
 

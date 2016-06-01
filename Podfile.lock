@@ -23,6 +23,7 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - KMPlaceholderTextView (1.2.0)
+  - TagListView (1.0.0)
 
 DEPENDENCIES:
   - Bolts
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - FBSDKShareKit (~> 4.1.0)
   - JSQMessagesViewController
   - KMPlaceholderTextView (~> 1.2.0)
+  - TagListView (~> 1.0)
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
@@ -42,5 +44,6 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   KMPlaceholderTextView: cae8ee889bd38d20587eee6b2623b8218f31b8f5
+  TagListView: 6bf4bded034c4c90b1e90d8cd3d8e1d852dba0a8
 
 COCOAPODS: 0.39.0

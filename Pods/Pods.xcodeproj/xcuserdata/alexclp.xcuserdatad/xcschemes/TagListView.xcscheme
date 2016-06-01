@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '76AAEF0E486326C810AF02FA'
-               BlueprintName = 'JSQMessagesViewController'
+               BlueprintIdentifier = 'CF601E6C4DAD2F2820D38051'
+               BlueprintName = 'TagListView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'JSQMessagesViewController.framework'>
+               BuildableName = 'TagListView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

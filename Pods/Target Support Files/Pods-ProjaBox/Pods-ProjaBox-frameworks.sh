@@ -92,6 +92,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-ProjaBox/JSQMessagesViewController.framework"
   install_framework "Pods-ProjaBox/JSQSystemSoundPlayer.framework"
   install_framework "Pods-ProjaBox/KMPlaceholderTextView.framework"
+  install_framework "Pods-ProjaBox/TagListView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-ProjaBox/Bolts.framework"
@@ -102,4 +103,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-ProjaBox/JSQMessagesViewController.framework"
   install_framework "Pods-ProjaBox/JSQSystemSoundPlayer.framework"
   install_framework "Pods-ProjaBox/KMPlaceholderTextView.framework"
+  install_framework "Pods-ProjaBox/TagListView.framework"
 fi
