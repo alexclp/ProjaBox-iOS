@@ -16,10 +16,10 @@ class RootTabBarViewController: UITabBarController {
 		print("items: \(self.tabBar.items?.count)")
 		
 //		self.tabBar.barTintColor = UIColor.blueColor()
-		
-		let image = UIImage(named: "tab-bar-background.png")?.imageWithRenderingMode(.AlwaysOriginal)
-		
-//		self.tabBar.items![0].selectedImage = image
-//		self.tabBar.backgroundImage = image
+//		
+//		let image = UIImage(named: "tab-bar-background.png")?.imageWithRenderingMode(.AlwaysOriginal)
+//		
+////		self.tabBar.items![0].selectedImage = image
+////		self.tabBar.backgroundImage = image
     }
 }

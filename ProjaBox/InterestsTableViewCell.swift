@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import TagListView
 
 class InterestsTableViewCell: UITableViewCell {
 
-	@IBOutlet private weak var collectionView: UICollectionView!
+	@IBOutlet weak var tagListView: TagListView?
 	
     override func awakeFromNib() {
         super.awakeFromNib()
