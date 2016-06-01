@@ -15,10 +15,18 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		tableView!.registerNib(UINib(nibName: "EducationExperienceTableViewCell", bundle: nil), forCellReuseIdentifier: "educationExpercienceCell")
+		tableView!.registerNib(UINib(nibName: "ProfileHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "profileHeaderCell")
+		tableView!.registerNib(UINib(nibName: "InterestsTableViewCell", bundle: nil), forCellReuseIdentifier: "interestsCell")
+		
 		self.title = "Profile"
 	}
 	
 	// MARK: UITableView Methods
+	
+	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+		return 3
+	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		let rows = 0

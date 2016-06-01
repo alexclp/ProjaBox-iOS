@@ -17,6 +17,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
+		
 		self.navigationController?.navigationBar.hidden = false
 		
 		self.tabBarController!.navigationItem.title = "Projabox"
