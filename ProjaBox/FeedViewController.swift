@@ -24,6 +24,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		self.tabBarController!.navigationItem.title = "Projabox"
 		self.tabBarController!.navigationItem.hidesBackButton = true
 		
+		self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+		
+		
 		imagePicker.delegate = self
 		imagePicker.navigationBar.translucent = false
 		imagePicker.navigationBar.barTintColor = UIColor(red: 237/255, green: 84/255, blue: 84/255, alpha: 1.0) // Background color

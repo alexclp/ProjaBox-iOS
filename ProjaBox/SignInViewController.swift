@@ -23,6 +23,10 @@ class SignInViewController: UIViewController {
     }
 	
 	@IBAction func singInPressed(sender: UIButton) {
-		
+		SignInHelper.signIn((emailTextField?.text)!, password: (passwordTextField?.text)!) { (response) in
+			if response == true {
+				self.performSegueWithIdentifier("showFeedSegue", sender: self)
+			} 
+		}
 	}
 }

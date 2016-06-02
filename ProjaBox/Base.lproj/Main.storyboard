@@ -556,6 +556,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="0Rz-3g-8Ev" id="v2e-Ox-2dj"/>
                         <outlet property="passwordTextField" destination="XER-eg-2mv" id="LH0-gl-lrt"/>
+                        <segue destination="ewO-ei-b6I" kind="show" identifier="showFeedSegue" id="kb7-Mb-Q0E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBV-s3-mf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -793,6 +794,7 @@
         <image name="vertical_separator.png" width="4" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="kb7-Mb-Q0E"/>
         <segue reference="HjA-FE-eog"/>
     </inferredMetricsTieBreakers>
 </document>
