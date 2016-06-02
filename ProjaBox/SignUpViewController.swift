@@ -12,6 +12,8 @@ class SignUpViewController: UIViewController {
 	
 	@IBOutlet weak var emailTextField: UITextField?
 
+	// TODO: SCROLL VIEW WHEN KEYBOARD APPEARS
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -19,27 +21,33 @@ class SignUpViewController: UIViewController {
 		self.view.layer.contents = UIImage(named:"background-proja.png")!.CGImage
 	}
 	
+	@IBAction func signUpPressed(sender: UIButton) {
+		let emailAddress = emailTextField?.text
+		
+		if isValidEmail(emailAddress!) {
+			SignInHelper.signUpFirstStep((emailTextField?.text)!, completionHandler: { (response) in
+				print("result: \(response)")
+				
+				if response == true {
+					self.performSegueWithIdentifier("showPasswordSegue", sender: self)
+				} else {
+					let alert = UIAlertController(title: "Alert", message: "There was an error while registering. Please try again.", preferredStyle: UIAlertControllerStyle.Alert)
+					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+					self.presentViewController(alert, animated: true, completion: nil)
+				}
+			})
+		} else {
+			let alert = UIAlertController(title: "Alert", message: "Enter a valid email address!", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+			presentViewController(alert, animated: true, completion: nil)
+		}
+	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "showPasswordSegue" {
+			let destinationVc = segue.destinationViewController as! SignUpPasswordViewController
+			destinationVc.email = (emailTextField?.text)!
 			
-			if isValidEmail((emailTextField?.text)!) {
-				SignInHelper.signUpFirstStep((emailTextField?.text)!, completionHandler: { (response) in
-					print("result: \(response)")
-					
-					if response == true {
-						self.performSegueWithIdentifier("showPasswordSegue", sender: self)
-					} else {
-						let alert = UIAlertController(title: "Alert", message: "There was an error while registering. Please try again.", preferredStyle: UIAlertControllerStyle.Alert)
-						alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-						self.presentViewController(alert, animated: true, completion: nil)
-					}
-				})
-			} else {
-				let alert = UIAlertController(title: "Alert", message: "Enter a valid email address!", preferredStyle: UIAlertControllerStyle.Alert)
-				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-				presentViewController(alert, animated: true, completion: nil)
-			}
 		}
 	}
 	
