@@ -29,7 +29,13 @@ class SignUpPasswordViewController: UIViewController {
 		let password = passwordTextField?.text
 		
 		SignInHelper.signUpSecondStep(email, password: password!) { (response) in
-			
+			if response == true {
+				self.performSegueWithIdentifier("showPostsSegue", sender: self)
+			} else {
+				let alert = UIAlertController(title: "Alert", message: "There was an error while registering. Please try again.", preferredStyle: UIAlertControllerStyle.Alert)
+				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+				self.presentViewController(alert, animated: true, completion: nil)
+			}
 		}
 	}
 
