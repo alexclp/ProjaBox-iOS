@@ -37,6 +37,8 @@
 		0F5505871CF8B7EC005229D7 /* sign-in-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505861CF8B7EC005229D7 /* sign-in-background.png */; };
 		0F5505891CF8BD5B005229D7 /* background-proja.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505881CF8BD5B005229D7 /* background-proja.png */; };
 		0F55058B1CF8BD61005229D7 /* signup-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F55058A1CF8BD61005229D7 /* signup-button.png */; };
+		0F6076DD1CFFAE3300926E6E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */; };
+		0F6076DF1CFFB40B00926E6E /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */; };
 		0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */; };
 		0F6785B41CC6D70200F89541 /* profile_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785B31CC6D70200F89541 /* profile_pic.jpg */; };
 		0F6785BC1CC6F32400F89541 /* card separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785B61CC6F32400F89541 /* card separator.png */; };
@@ -131,6 +133,8 @@
 		0F5505861CF8B7EC005229D7 /* sign-in-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-background.png"; sourceTree = "<group>"; };
 		0F5505881CF8BD5B005229D7 /* background-proja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-proja.png"; sourceTree = "<group>"; };
 		0F55058A1CF8BD61005229D7 /* signup-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signup-button.png"; sourceTree = "<group>"; };
+		0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
 		0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCardTableViewCell.swift; sourceTree = "<group>"; };
 		0F6785B31CC6D70200F89541 /* profile_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile_pic.jpg; sourceTree = "<group>"; };
 		0F6785B61CC6F32400F89541 /* card separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card separator.png"; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				0F0D88921CFC87E60074E5E6 /* Server.swift */,
+				0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */,
+				0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */,
 				0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */,
 				0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */,
 			);
@@ -624,9 +630,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F6076DD1CFFAE3300926E6E /* SignInViewController.swift in Sources */,
 				0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */,
 				0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */,
 				0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */,
+				0F6076DF1CFFB40B00926E6E /* SignInHelper.swift in Sources */,
 				0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */,
 				0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */,
 				0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */,
