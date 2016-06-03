@@ -77,6 +77,8 @@
 		0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */; };
 		0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
+		0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */; };
+		0FB056691D01F3D800CDBC76 /* NoAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
 		0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC223B01C99BFA1006DD18B /* Main.storyboard */; };
@@ -186,6 +188,8 @@
 		0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
+		0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAnimationSegue.swift; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 				0F3A0C8E1CD2BD68005C6C23 /* Feed */,
 				0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */,
 				0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */,
+				0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */,
 				0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */,
 				0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */,
+				0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -781,6 +787,7 @@
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
 				0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */,
 				0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */,
+				0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */,
 				0F4171461CFE37870043A98B /* PillLabel.swift in Sources */,
 				0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */,
 				0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */,
@@ -793,6 +800,7 @@
 				0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */,
 				0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */,
 				0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */,
+				0FB056691D01F3D800CDBC76 /* NoAnimationSegue.swift in Sources */,
 				0F0D88931CFC87E60074E5E6 /* Server.swift in Sources */,
 				0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */,
 			);

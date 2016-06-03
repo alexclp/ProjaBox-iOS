@@ -19,7 +19,7 @@ class RootTabBarViewController: UITabBarController {
 //		
 //		let image = UIImage(named: "tab-bar-background.png")?.imageWithRenderingMode(.AlwaysOriginal)
 //		
-////		self.tabBar.items![0].selectedImage = image
-////		self.tabBar.backgroundImage = image
+//		self.tabBar.items![0].selectedImage = image
+//		self.tabBar.backgroundImage = image
     }
 }
