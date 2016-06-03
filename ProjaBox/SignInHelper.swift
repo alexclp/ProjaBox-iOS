@@ -22,6 +22,9 @@ class SignInHelper: NSObject {
 			if errorCode != 0 {
 				completionHandler(false)
 			} else {
+				let userData = response.result.value!["data"] as! [String: AnyObject]
+				saveUserData(userData)
+				
 				completionHandler(true)
 			}
 		}
@@ -38,8 +41,13 @@ class SignInHelper: NSObject {
 			if errorCode != 0 {
 				completionHandler(false)
 			} else {
+				let userData = response.result.value!["data"] as! [String: AnyObject]
+				saveUserData(userData)
+				
 				completionHandler(true)
 			}
+			
+			
 		}
 	}
 	
@@ -54,8 +62,16 @@ class SignInHelper: NSObject {
 			if errorCode != 0 {
 				completionHandler(false)
 			} else {
+				let userData = response.result.value!["data"] as! [String: AnyObject]
+				saveUserData(userData)
+				
 				completionHandler(true)
 			}
 		}
+	}
+	
+	private class func saveUserData(userData: [String: AnyObject]) {
+		print(userData)
+		NSUserDefaults.standardUserDefaults().setObject(userData, forKey: "userData")
 	}
 }
