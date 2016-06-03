@@ -44,7 +44,7 @@ class SignInHelper: NSObject {
 	}
 	
 	class func signIn(emailAddress: String, password: String, completionHandler: (Bool) -> Void) {
-		let parameters: [String: String] = ["email": emailAddress, "password": "password", "os": "iOS"]
+		let parameters: [String: String] = ["email": "alexandru.clapa@gmail.com", "password": "password", "os": "iOS"]
 		
 		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/auth/signin", parameters: parameters, encoding: .JSON, headers: nil) .validate() .responseJSON { response in
 			

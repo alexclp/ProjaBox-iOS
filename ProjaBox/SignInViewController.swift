@@ -19,7 +19,7 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
 		
 		self.navigationController?.navigationBar.hidden = true
-		self.view.layer.contents = UIImage(named:"sign-in-background.png")!.CGImage
+		self.view.layer.contents = UIImage(named:"background-proja.png")!.CGImage
     }
 	
 	@IBAction func singInPressed(sender: UIButton) {
