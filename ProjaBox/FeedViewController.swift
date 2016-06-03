@@ -36,6 +36,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		] // Title color
 		
 		setupBarButtons()
+		getLatestPosts()
+	}
+	
+	func getLatestPosts() {
+		NewsFeedHelper.getNewsFeed()
 	}
 	
 	func setupBarButtons() {

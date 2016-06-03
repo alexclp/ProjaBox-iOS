@@ -79,6 +79,7 @@
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */; };
 		0FB056691D01F3D800CDBC76 /* NoAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */; };
+		0FB0566B1D022FCC00CDBC76 /* NewsFeedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0566A1D022FCC00CDBC76 /* NewsFeedHelper.swift */; };
 		0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */; };
 		0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */; };
 		0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC223B01C99BFA1006DD18B /* Main.storyboard */; };
@@ -190,6 +191,7 @@
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAnimationSegue.swift; sourceTree = "<group>"; };
+		0FB0566A1D022FCC00CDBC76 /* NewsFeedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedHelper.swift; sourceTree = "<group>"; };
 		0FC223A91C99BFA1006DD18B /* ProjaBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC223AE1C99BFA1006DD18B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		0F08DD2C1CB7228A008B7C57 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */,
 				0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */,
 				0F3A0C8D1CD2BD52005C6C23 /* Login */,
 				0F3A0C8E1CD2BD68005C6C23 /* Feed */,
@@ -275,6 +278,7 @@
 			children = (
 				0F0D88921CFC87E60074E5E6 /* Server.swift */,
 				0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */,
+				0FB0566A1D022FCC00CDBC76 /* NewsFeedHelper.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -286,7 +290,6 @@
 				0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */,
 				0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */,
 				0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */,
-				0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB0566B1D022FCC00CDBC76 /* NewsFeedHelper.swift in Sources */,
 				0F6076DD1CFFAE3300926E6E /* SignInViewController.swift in Sources */,
 				0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */,
 				0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */,
