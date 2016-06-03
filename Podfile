@@ -14,6 +14,7 @@ pod 'JSQMessagesViewController'
 pod 'KMPlaceholderTextView', '~> 1.2.0'
 pod 'TagListView', '~> 1.0'
 pod 'Alamofire'
+pod 'IQKeyboardManagerSwift'
 
 end
 

@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,6 +59,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ProjaBoxTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ProjaBoxUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TagListView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,17 +77,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0654FE1E2AD07CB15FE42D17357FB50A</key>
+		<key>05366687FDFF7308797496E4C8C023F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>212DA4ED7F07886F82EC8AAF0BE3E380</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2C180328607B9AF555416B6580E59FC2</key>
+		<key>1520003FEBEC114D6C84F832AFEDB994</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>52F1B1EE5604F6329A8451B53F910244</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93472FD72633C55DFA77794A1D0760C5</key>
+		<key>8CC19B0B54CFAE38EC4A05166ECE5746</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +117,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC25B770E2E786F47106EE8F013163EA</key>
+		<key>A56D5BEE98B36BD0A872DA3EB044B504</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED460172A852817E5319B235B41FDA57</key>
+		<key>AA078BFF0F4F1EF12BAE7044E724CFB5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC4068CF56019CBDD88114E6F1056052</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD8B0F69E0B13E1BD26FBFE39C45262D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC25B770E2E786F47106EE8F013163EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

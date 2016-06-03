@@ -81,7 +81,9 @@
 		0FD43C631CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD43C611CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift */; };
 		0FD43C641CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD43C621CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib */; };
 		0FEF70051CFD1DC900A80D09 /* MoreSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */; };
-		446AD3F03EE56AFEE5C0EFC5 /* Pods_ProjaBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */; };
+		546933A5EFA37BBA5FBB6670 /* libPods-ProjaBoxUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54EF224DD9BF1BCABCD43CB0 /* libPods-ProjaBoxUITests.a */; };
+		5590CD478479293914B639F5 /* libPods-ProjaBoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1972BD44159C341D4EA83407 /* libPods-ProjaBoxTests.a */; };
+		D0F1697A9E5052EFD1C5009F /* Pods_ProjaBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8C2AC1AD642B9DA526D819 /* Pods_ProjaBox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EAA2094654456A2DD73019B /* Pods-ProjaBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBoxTests/Pods-ProjaBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F08DD291CB44C1F008B7C57 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		0F08DD2A1CB44DFF008B7C57 /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
 		0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingHelper.swift; sourceTree = "<group>"; };
@@ -183,9 +186,14 @@
 		0FD43C611CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		0FD43C621CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreSettingsViewController.swift; sourceTree = "<group>"; };
-		463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.release.xcconfig"; sourceTree = "<group>"; };
-		6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.debug.xcconfig"; sourceTree = "<group>"; };
-		E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjaBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1972BD44159C341D4EA83407 /* libPods-ProjaBoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjaBoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F5062BD9F28C8A9F1382FE1 /* Pods-ProjaBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.debug.xcconfig"; sourceTree = "<group>"; };
+		4BEDE38E9DEAB171D992EEAC /* Pods-ProjaBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox.release.xcconfig"; sourceTree = "<group>"; };
+		54EF224DD9BF1BCABCD43CB0 /* libPods-ProjaBoxUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjaBoxUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A9A16D4FD5883A98C630899 /* Pods-ProjaBoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBoxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBoxTests/Pods-ProjaBoxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD8C2AC1AD642B9DA526D819 /* Pods_ProjaBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjaBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E337D5F3F114D9EA1585D942 /* Pods-ProjaBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBoxUITests/Pods-ProjaBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FC1DDDA316FCCA8952C1805E /* Pods-ProjaBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjaBoxUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjaBoxUITests/Pods-ProjaBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,8 +201,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446AD3F03EE56AFEE5C0EFC5 /* Pods_ProjaBox.framework in Frameworks */,
 				0F08DD2B1CB44DFF008B7C57 /* linkedin-sdk.framework in Frameworks */,
+				D0F1697A9E5052EFD1C5009F /* Pods_ProjaBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5590CD478479293914B639F5 /* libPods-ProjaBoxTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546933A5EFA37BBA5FBB6670 /* libPods-ProjaBoxUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +353,7 @@
 				0FC223C01C99BFA1006DD18B /* ProjaBoxTests */,
 				0FC223CB1C99BFA1006DD18B /* ProjaBoxUITests */,
 				0FC223AA1C99BFA1006DD18B /* Products */,
-				170C3FDC025620E557E68496 /* Pods */,
+				C486F61000CD9E10FEA0FD62 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -395,16 +405,22 @@
 			isa = PBXGroup;
 			children = (
 				0F08DD2A1CB44DFF008B7C57 /* linkedin-sdk.framework */,
-				E37BB0B3064F685FDF3231C7 /* Pods_ProjaBox.framework */,
+				BD8C2AC1AD642B9DA526D819 /* Pods_ProjaBox.framework */,
+				1972BD44159C341D4EA83407 /* libPods-ProjaBoxTests.a */,
+				54EF224DD9BF1BCABCD43CB0 /* libPods-ProjaBoxUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		170C3FDC025620E557E68496 /* Pods */ = {
+		C486F61000CD9E10FEA0FD62 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */,
-				463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */,
+				3F5062BD9F28C8A9F1382FE1 /* Pods-ProjaBox.debug.xcconfig */,
+				4BEDE38E9DEAB171D992EEAC /* Pods-ProjaBox.release.xcconfig */,
+				6A9A16D4FD5883A98C630899 /* Pods-ProjaBoxTests.debug.xcconfig */,
+				0EAA2094654456A2DD73019B /* Pods-ProjaBoxTests.release.xcconfig */,
+				FC1DDDA316FCCA8952C1805E /* Pods-ProjaBoxUITests.debug.xcconfig */,
+				E337D5F3F114D9EA1585D942 /* Pods-ProjaBoxUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -416,12 +432,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FC223D11C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBox" */;
 			buildPhases = (
-				37332D4AC33C0975510DC9C1 /* Check Pods Manifest.lock */,
+				C991C4F1C1A857D59A21D346 /* 📦 Check Pods Manifest.lock */,
 				0FC223A51C99BFA1006DD18B /* Sources */,
 				0FC223A61C99BFA1006DD18B /* Frameworks */,
 				0FC223A71C99BFA1006DD18B /* Resources */,
-				082DF79E9204DB3B7B94B300 /* Copy Pods Resources */,
-				22B6819646904C51A46AB969 /* Embed Pods Frameworks */,
+				FAD0FCAB8C251402917D0915 /* 📦 Embed Pods Frameworks */,
+				9FD3C0827F22169AEF734DC9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -436,9 +452,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FC223D41C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBoxTests" */;
 			buildPhases = (
+				FF298C7D76C9F57BAD58ABCB /* 📦 Check Pods Manifest.lock */,
 				0FC223B91C99BFA1006DD18B /* Sources */,
 				0FC223BA1C99BFA1006DD18B /* Frameworks */,
 				0FC223BB1C99BFA1006DD18B /* Resources */,
+				2987D041B4DBB52E9025E7EA /* 📦 Embed Pods Frameworks */,
+				045066006D21CB267BF83086 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -454,9 +473,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FC223D71C99BFA1006DD18B /* Build configuration list for PBXNativeTarget "ProjaBoxUITests" */;
 			buildPhases = (
+				BB9238DC06949B333F0835AA /* 📦 Check Pods Manifest.lock */,
 				0FC223C41C99BFA1006DD18B /* Sources */,
 				0FC223C51C99BFA1006DD18B /* Frameworks */,
 				0FC223C61C99BFA1006DD18B /* Resources */,
+				EE122093272650FEFDB28495 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -578,14 +599,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		082DF79E9204DB3B7B94B300 /* Copy Pods Resources */ = {
+		045066006D21CB267BF83086 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjaBoxTests/Pods-ProjaBoxTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2987D041B4DBB52E9025E7EA /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjaBoxTests/Pods-ProjaBoxTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FD3C0827F22169AEF734DC9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,14 +644,59 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		22B6819646904C51A46AB969 /* Embed Pods Frameworks */ = {
+		BB9238DC06949B333F0835AA /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C991C4F1C1A857D59A21D346 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE122093272650FEFDB28495 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjaBoxUITests/Pods-ProjaBoxUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAD0FCAB8C251402917D0915 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,14 +704,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjaBox/Pods-ProjaBox-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		37332D4AC33C0975510DC9C1 /* Check Pods Manifest.lock */ = {
+		FF298C7D76C9F57BAD58ABCB /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,7 +892,7 @@
 		};
 		0FC223D21C99BFA1006DD18B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EA1A215D18B91AEDAB3CE9C /* Pods-ProjaBox.debug.xcconfig */;
+			baseConfigurationReference = 3F5062BD9F28C8A9F1382FE1 /* Pods-ProjaBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -813,7 +909,7 @@
 		};
 		0FC223D31C99BFA1006DD18B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 463BBE67BB1F6344DE9DED91 /* Pods-ProjaBox.release.xcconfig */;
+			baseConfigurationReference = 4BEDE38E9DEAB171D992EEAC /* Pods-ProjaBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -830,6 +926,7 @@
 		};
 		0FC223D51C99BFA1006DD18B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A9A16D4FD5883A98C630899 /* Pods-ProjaBoxTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ProjaBoxTests/Info.plist;
@@ -842,6 +939,7 @@
 		};
 		0FC223D61C99BFA1006DD18B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EAA2094654456A2DD73019B /* Pods-ProjaBoxTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ProjaBoxTests/Info.plist;
@@ -854,6 +952,7 @@
 		};
 		0FC223D81C99BFA1006DD18B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC1DDDA316FCCA8952C1805E /* Pods-ProjaBoxUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ProjaBoxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -866,6 +965,7 @@
 		};
 		0FC223D91C99BFA1006DD18B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E337D5F3F114D9EA1585D942 /* Pods-ProjaBoxUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ProjaBoxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -17,10 +17,10 @@
 @implementation DMResizerViewController
 
 -(id)initWithImage:(UIImage *)imageObject {
-	if (!(self = [super initWithNibName:@"DMResizerViewController" bundle:[NSBundle bundleForClass:[DMResizerViewController class]]])) return nil;
+    if (!(self = [super initWithNibName:@"DMResizerViewController" bundle:nil])) return nil;
     
     UIImage *exportImage = [UIImage imageWithCGImage:imageObject.CGImage scale:imageObject.scale orientation:UIImageOrientationUp];
-	
+    
     self.inputImage = exportImage;
     
     return self;
