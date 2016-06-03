@@ -12,8 +12,6 @@ import Social
 import FBSDKLoginKit
 import FBSDKCoreKit
 
-import DMActivityInstagram
-
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	let facebookPermissions = ["public_profile", "email", "user_birthday", "user_location", "user_about_me", "user_education_history", "user_work_history"]
 	

@@ -1,27 +1,7 @@
 PODS:
   - Alamofire (3.4.0)
-  - Bolts (1.7.0):
-    - Bolts/AppLinks (= 1.7.0)
-    - Bolts/Tasks (= 1.7.0)
-  - Bolts/AppLinks (1.7.0):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.7.0)
-  - DMActivityInstagram (0.0.3)
-  - FBSDKCoreKit (4.2.0):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.2.0)
-    - FBSDKCoreKit/no-arc (= 4.2.0)
-  - FBSDKCoreKit/arc (4.2.0):
-    - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.2.0):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.1.0):
-    - FBSDKCoreKit
-  - FBSDKShareKit (4.1.0):
-    - FBSDKCoreKit
   - IQKeyboardManagerSwift (4.0.3)
-  - JSQMessagesViewController (7.2.0):
+  - JSQMessagesViewController (7.3.1):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - KMPlaceholderTextView (1.2.0)
@@ -29,11 +9,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Bolts
-  - DMActivityInstagram (= 0.0.3)
-  - FBSDKCoreKit (~> 4.2.0)
-  - FBSDKLoginKit (~> 4.1.0)
-  - FBSDKShareKit (~> 4.1.0)
   - IQKeyboardManagerSwift
   - JSQMessagesViewController
   - KMPlaceholderTextView (~> 1.2.0)
@@ -41,17 +16,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
-  DMActivityInstagram: d97425cfac5ac6982a4c5d9e81f2ca07b9d8f363
-  FBSDKCoreKit: 84b3616a361801f190e43a9909caead7bb6087c7
-  FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
-  FBSDKShareKit: 8002faf0c564ff3625eadd16e506b0b0fbf3adef
   IQKeyboardManagerSwift: b6883b720b0e76473692fdc80828442566e1075f
-  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
+  JSQMessagesViewController: 3847120a97a7ab3bdc701f166c59f3955f7801c7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   KMPlaceholderTextView: cae8ee889bd38d20587eee6b2623b8218f31b8f5
   TagListView: 6bf4bded034c4c90b1e90d8cd3d8e1d852dba0a8
 
-PODFILE CHECKSUM: 26e42f78b94d7f1ba7716e5ef888b299772b09bf
+PODFILE CHECKSUM: 6ceded44041d4909bfb19971dc9ac929747cddb7
 
 COCOAPODS: 1.0.0

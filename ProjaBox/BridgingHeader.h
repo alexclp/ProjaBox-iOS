@@ -12,5 +12,8 @@
 #import <Foundation/Foundation.h>
 #import <linkedin-sdk/LISDK.h>
 #import <JSQMessagesViewController/JSQMessages.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 #endif /* BridgingHeader_h */

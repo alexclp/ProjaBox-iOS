@@ -9,31 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Bolts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>DMActivityInstagram.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FBSDKCoreKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FBSDKLoginKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FBSDKShareKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,27 +52,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05366687FDFF7308797496E4C8C023F2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1520003FEBEC114D6C84F832AFEDB994</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>34B86A3BE4A087CC8988924CD7B75F29</key>
+		<key>1ED4DFAAD25E1999D0244868457A351E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52D82BFDD1E808D9CB257431922C1EE4</key>
+		<key>31246027096EA734F1B8E4839C3190A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52F1B1EE5604F6329A8451B53F910244</key>
+		<key>59CDDB315DD2B098E0CD9ED56B026F4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,42 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8CC19B0B54CFAE38EC4A05166ECE5746</key>
+		<key>94DD1DEDE1824EC6158BCA23DCDC982C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95DB89A8BFC5FF0BF98458651D0163CD</key>
+		<key>BC3D94F5977091FF3158085CB788939F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A56D5BEE98B36BD0A872DA3EB044B504</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AA078BFF0F4F1EF12BAE7044E724CFB5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DC4068CF56019CBDD88114E6F1056052</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD8B0F69E0B13E1BD26FBFE39C45262D</key>
+		<key>DF090E44DDD6C1D94BD60FFADBC0DE29</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>EC25B770E2E786F47106EE8F013163EA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EDA125ADA52355B7CA6DF7BA96918357</key>
 		<dict>
 			<key>primary</key>
 			<true/>

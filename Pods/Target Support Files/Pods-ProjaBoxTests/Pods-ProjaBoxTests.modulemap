@@ -1,0 +1,6 @@
+framework module Pods_ProjaBoxTests {
+  umbrella header "Pods-ProjaBoxTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

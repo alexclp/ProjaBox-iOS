@@ -1,15 +1,15 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '6.0'
 
-target 'ProjaBox' do
 
 use_frameworks!
 
-pod 'Bolts'
-pod 'FBSDKCoreKit', '~> 4.2.0'
-pod 'FBSDKShareKit', '~> 4.1.0'
-pod 'FBSDKLoginKit', '~> 4.1.0'
-pod 'DMActivityInstagram', '0.0.3'
+target 'ProjaBox' do
+
+#pod 'Bolts'
+#pod 'FBSDKCoreKit', '~> 4.2.0'
+#pod 'FBSDKShareKit', '~> 4.1.0'
+#pod 'FBSDKLoginKit', '~> 4.1.0'
 pod 'JSQMessagesViewController'
 pod 'KMPlaceholderTextView', '~> 1.2.0'
 pod 'TagListView', '~> 1.0'
