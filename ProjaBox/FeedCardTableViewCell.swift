@@ -41,7 +41,7 @@ class FeedCardTableViewCell: UITableViewCell {
 		setupButtons()
 	}
 	
-	func setupButtons() {
+	private func setupButtons() {
 		likeButton?.setBackgroundImage(UIImage(named: "like default.png"), forState: .Normal)
 		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Highlighted)
 		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Selected)
@@ -59,7 +59,7 @@ class FeedCardTableViewCell: UITableViewCell {
 		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Selected)
 	}
 	
-	func cardSetup() {
+	private func cardSetup() {
 		cardView?.alpha = 1
 		cardView?.layer.masksToBounds = false
 		cardView?.layer.cornerRadius = 1 // if you like rounded corners
@@ -73,7 +73,7 @@ class FeedCardTableViewCell: UITableViewCell {
 		cardView!.layer.shadowPath = path.CGPath
 	}
 	
-	func imageSetup() {
+	private func imageSetup() {
 		profileImageView?.layer.cornerRadius = (profileImageView?.frame.size.width)!/2
 		profileImageView?.clipsToBounds = true
 		profileImageView?.contentMode = .ScaleAspectFit

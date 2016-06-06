@@ -11,7 +11,9 @@ import UIKit
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 	@IBOutlet weak var tableView: UITableView?
-
+	
+	var postsData = [UserPost]()
+	
 	let imagePicker = UIImagePickerController()
 	
 	override func viewDidLoad() {
@@ -42,7 +44,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	func getLatestPosts() {
 		NewsFeedHelper.getNewsFeed { (response, posts) in
 			if response == true {
-//				print(posts![0])
+				if let data = posts {
+					self.postsData = data
+					self.tableView?.reloadData()
+				}
 			}
 		}
 	}
@@ -55,7 +60,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	//	MARK: UITableView Data Source
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let rows = 10
+		let rows = postsData.count
 		return rows
 	}
 	
@@ -64,17 +69,36 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		cell.likeButton?.tag = indexPath.row
 		cell.likeButton?.addTarget(self, action: #selector(FeedViewController.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
-		
 		cell.shareButton?.tag = indexPath.row
 		cell.shareButton?.addTarget(self, action: #selector(FeedViewController.shareButtonPressed(_:)), forControlEvents: .TouchUpInside)
-		
 		cell.messageButton?.tag = indexPath.row
 		cell.messageButton?.addTarget(self, action: #selector(FeedViewController.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
-		
 		cell.moreButton?.tag = indexPath.row
 		cell.moreButton?.addTarget(self, action: #selector(FeedViewController.moreButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
+		let currentPost = postsData[indexPath.row]
+		
+		if currentPost is ProjectPost {
+			
+		} else {
+			cell.postLabel?.text = currentPost.content
+			cell.currentTimeLabel?.text = getTimeFromTimestamp(currentPost.createdTimestamp!)
+		}
+		
 		return cell
+	}
+	
+	private func getTimeFromTimestamp(timestamp: Int) -> String {
+		let date = NSDate(timeIntervalSince1970: Double(timestamp))
+		print(date)
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+		let calendar = NSCalendar.currentCalendar()
+		let comp = calendar.components([.Hour, .Minute], fromDate: date)
+		let hour = comp.hour
+		let minute = comp.minute
+		
+		return "\(hour):\(minute)"
 	}
 	
 	//	MARK: UITableView Delegate
