@@ -31,6 +31,8 @@
 		0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */; };
 		0F41714A1CFE6E340043A98B /* InterestsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4171481CFE6E340043A98B /* InterestsTableViewCell.xib */; };
 		0F4171521CFF52CF0043A98B /* FeedCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4171511CFF52CF0043A98B /* FeedCardTableViewCell.xib */; };
+		0F4665451D05BA180042932F /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4665441D05BA180042932F /* UserPost.swift */; };
+		0F4665471D05CCE70042932F /* ProjectPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4665461D05CCE70042932F /* ProjectPost.swift */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
 		0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5505801CF86830005229D7 /* RootTabBarViewController.swift */; };
@@ -143,6 +145,8 @@
 		0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsTableViewCell.swift; sourceTree = "<group>"; };
 		0F4171481CFE6E340043A98B /* InterestsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterestsTableViewCell.xib; sourceTree = "<group>"; };
 		0F4171511CFF52CF0043A98B /* FeedCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCardTableViewCell.xib; sourceTree = "<group>"; };
+		0F4665441D05BA180042932F /* UserPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
+		0F4665461D05CCE70042932F /* ProjectPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPost.swift; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		0F5505801CF86830005229D7 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 				0F0D88921CFC87E60074E5E6 /* Server.swift */,
 				0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */,
 				0FB0566A1D022FCC00CDBC76 /* NewsFeedHelper.swift */,
+				0F4665441D05BA180042932F /* UserPost.swift */,
+				0F4665461D05CCE70042932F /* ProjectPost.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -778,6 +784,7 @@
 				0FB0566B1D022FCC00CDBC76 /* NewsFeedHelper.swift in Sources */,
 				0F6076DD1CFFAE3300926E6E /* SignInViewController.swift in Sources */,
 				0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */,
+				0F4665471D05CCE70042932F /* ProjectPost.swift in Sources */,
 				0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */,
 				0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */,
 				0F6076DF1CFFB40B00926E6E /* SignInHelper.swift in Sources */,
@@ -787,6 +794,7 @@
 				0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */,
 				0FEF70051CFD1DC900A80D09 /* MoreSettingsViewController.swift in Sources */,
 				0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */,
+				0F4665451D05BA180042932F /* UserPost.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
 				0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */,

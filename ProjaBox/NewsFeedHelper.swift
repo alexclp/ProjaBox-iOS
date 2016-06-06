@@ -36,7 +36,7 @@ class NewsFeedHelper: NSObject {
 		return ["Z-UserId": String(userId), "Z-DeviceId": String(deviceId), "Z-Token": token]
 	}
 
-	class func getNewsFeed() {
+	class func getNewsFeed(completionHandler: (Bool) -> Void) {
 		let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
 		let userId = userData!["userId"] as! Int
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/users/\(userId)/feed"
@@ -45,6 +45,13 @@ class NewsFeedHelper: NSObject {
 			Alamofire.request(urlRequest).responseJSON { response in
 				print(response.result.error)
 				print(response.result.value)
+				
+				let errorCode = response.result.value!["errorCode"] as! Int
+				if errorCode != 0 {
+					completionHandler(false)
+				} else {
+					completionHandler(true)
+				}
 			}
 		}
 	}

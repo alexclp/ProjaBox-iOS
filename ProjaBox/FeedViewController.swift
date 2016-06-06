@@ -40,7 +40,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func getLatestPosts() {
-		NewsFeedHelper.getNewsFeed()
+		NewsFeedHelper.getNewsFeed { (response) in
+			if response == true {
+				
+			}
+		}
 	}
 	
 	func setupBarButtons() {
