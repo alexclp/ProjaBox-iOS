@@ -124,15 +124,25 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	// MARK: User Interaction
 	
 	func likeButtonPressed(sender: UIButton) {
-		print("Like button tag: \(sender.tag)")
 		let postId = postsData[sender.tag].id
-		NewsFeedHelper.likePost(String(postId!)) { (response) in
-			if response == true {
-				print("Liked successfully")
-				sender.selected = true
-			} else {
-				print("Error while liking post id: \(postId)")
+		if sender.selected == false {
+			NewsFeedHelper.likePost(String(postId!)) { (response) in
+				if response == true {
+					print("Liked successfully")
+					sender.selected = true
+				} else {
+					print("Error while liking post id: \(postId)")
+				}
 			}
+		} else {
+			NewsFeedHelper.unlikePost(String(postId!), completionHandler: { (response) in
+				if response == true {
+					print("Unliked successfully")
+					sender.selected = false
+				} else {
+					print("Error while unliking post id: \(postId)")
+				}
+			})
 		}
 	}
 	

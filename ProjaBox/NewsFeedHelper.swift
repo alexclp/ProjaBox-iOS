@@ -121,12 +121,27 @@ class NewsFeedHelper: NSObject {
 	}
 	
 	class func likePost(postId: String, completionHandler: (Bool) -> Void) {
-//		http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/<postId>/like
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)/like"
 		let headers = getHeaders()
 		
 		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
 			print(response)
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				completionHandler(false)
+			} else {
+				completionHandler(true)
+			}
+		}
+	}
+	
+	class func unlikePost(postId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)/like"
+		let headers = getHeaders()
+		print(headers)
+		
+		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+			print(response.request)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
 				completionHandler(false)
