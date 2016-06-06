@@ -12,7 +12,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 	@IBOutlet weak var tableView: UITableView?
 	
-	var postsData = [UserPost]()
+	internal var postsData = [UserPost]()
+	internal var selectedCellIndex = 0
 	
 	let imagePicker = UIImagePickerController()
 	
@@ -66,12 +67,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
 		
+		cell.selectionStyle = .None
 		cell.likeButton?.tag = indexPath.row
 		cell.likeButton?.addTarget(self, action: #selector(FeedViewController.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		cell.shareButton?.tag = indexPath.row
 		cell.shareButton?.addTarget(self, action: #selector(FeedViewController.shareButtonPressed(_:)), forControlEvents: .TouchUpInside)
-		cell.messageButton?.tag = indexPath.row
-		cell.messageButton?.addTarget(self, action: #selector(FeedViewController.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
+		cell.commentButton?.tag = indexPath.row
+		cell.commentButton?.addTarget(self, action: #selector(FeedViewController.commentButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		cell.moreButton?.tag = indexPath.row
 		cell.moreButton?.addTarget(self, action: #selector(FeedViewController.moreButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
@@ -157,8 +159,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		print("Share button tag: \(sender.tag)")
 	}
 	
-	func messageButtonPressed(sender: UIButton) {
-		print("Message button tag: \(sender.tag)")
+	func commentButtonPressed(sender: UIButton) {
+		print("Comment button tag: \(sender.tag)")
+		selectedCellIndex = sender.tag
+		performSegueWithIdentifier("showPostDetailsSegue", sender: self)
 	}
 	
 	func moreButtonPressed(sender: UIButton) {
@@ -184,4 +188,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		presentViewController(imagePicker, animated: true, completion: nil)
 	}
 	
+	// MARK: Segue Methods
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "showPostDetailsSegue" {
+			let destinationController = segue.destinationViewController as! PostDetailsViewController
+			destinationController.selectedPost = postsData[selectedCellIndex]
+		}
+	}
 }

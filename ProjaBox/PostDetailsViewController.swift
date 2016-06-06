@@ -11,6 +11,8 @@ import UIKit
 class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	@IBOutlet weak var postDetailsTableView: UITableView?
+	
+	var selectedPost = UserPost()
 
     override func viewDidLoad() {
         super.viewDidLoad()

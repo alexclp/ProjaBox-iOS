@@ -20,7 +20,7 @@ class FeedCardTableViewCell: UITableViewCell {
 	@IBOutlet weak var cardView: UIView?
 	@IBOutlet weak var likeButton: UIButton?
 	@IBOutlet weak var shareButton: UIButton?
-	@IBOutlet weak var messageButton: UIButton?
+	@IBOutlet weak var commentButton: UIButton?
 	@IBOutlet weak var moreButton: UIButton?
 	@IBOutlet weak var likesLabel: UILabel?
 	
@@ -50,9 +50,9 @@ class FeedCardTableViewCell: UITableViewCell {
 		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Highlighted)
 		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Selected)
 		
-		messageButton?.setBackgroundImage(UIImage(named: "message default.png"), forState: .Normal)
-		messageButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Highlighted)
-		messageButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Selected)
+		commentButton?.setBackgroundImage(UIImage(named: "comment-default.png"), forState: .Normal)
+//		commentButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Highlighted)
+//		commentButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Selected)
 		
 		moreButton?.setBackgroundImage(UIImage(named: "other default.png"), forState: .Normal)
 		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Highlighted)
