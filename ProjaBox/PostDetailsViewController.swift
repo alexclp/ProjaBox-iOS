@@ -103,7 +103,30 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	// MARK: User Interaction
 	
 	func likePressed(sender: UIButton) {
-		
+		let postId = selectedPost.id
+		if sender.selected == false {
+			NewsFeedHelper.likePost(String(postId!)) { (response) in
+				if response == true {
+					print("Liked successfully")
+					sender.selected = true
+					let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! PostDetailsTableViewCell
+					cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
+				} else {
+					print("Error while liking post id: \(postId)")
+				}
+			}
+		} else {
+			NewsFeedHelper.unlikePost(String(postId!), completionHandler: { (response) in
+				if response == true {
+					print("Unliked successfully")
+					sender.selected = false
+					let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! PostDetailsTableViewCell
+					cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
+				} else {
+					print("Error while unliking post id: \(postId)")
+				}
+			})
+		}
 	}
 	
 	func sharePressed(sender: UIButton) {
