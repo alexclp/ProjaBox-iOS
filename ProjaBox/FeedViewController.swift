@@ -90,7 +90,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	private func getTimeFromTimestamp(timestamp: Int) -> String {
 		let date = NSDate(timeIntervalSince1970: Double(timestamp))
-		print(date)
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		let calendar = NSCalendar.currentCalendar()
