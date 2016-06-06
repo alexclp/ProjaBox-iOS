@@ -47,6 +47,29 @@ class NewsFeedHelper: NSObject {
 				print(response.result.value)
 				
 				let errorCode = response.result.value!["errorCode"] as! Int
+				let data = response.result.value!["data"] as! [[String: AnyObject]]
+				
+				let posts: [UserPost]
+				for post in data {
+					let type = post["type"] as! String
+					
+					var postToAdd = UserPost()
+					postToAdd.content = post["content"] as? String
+					postToAdd.createdTimestamp = post["created"] as? Int
+					postToAdd.id = post["id"] as? Int
+					postToAdd.isLikedByMe = post["isLikedByMe"] as? Bool
+					postToAdd.image = post["image"] as? NSData
+					postToAdd.video = post["video"] as? NSData
+					
+					if type == "user" {
+						
+					} else {
+						postToAdd = postToAdd as! ProjectPost
+					}
+					
+					
+				}
+				
 				if errorCode != 0 {
 					completionHandler(false)
 				} else {
