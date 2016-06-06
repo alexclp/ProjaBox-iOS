@@ -13,7 +13,7 @@ class RootTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		print("items: \(self.tabBar.items?.count)")
+//		print("items: \(self.tabBar.items?.count)")
 		
 //		self.tabBar.barTintColor = UIColor.blueColor()
 //		

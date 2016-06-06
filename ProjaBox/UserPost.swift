@@ -19,5 +19,5 @@ class UserPost: NSObject {
 	var ownerName: String?
 	var image: NSData?
 	var video: NSData?
-	var likers: [String: AnyObject]?
+	var likers: [[String: AnyObject]]?
 }
