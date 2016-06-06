@@ -28,7 +28,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
 		
-		
 		imagePicker.delegate = self
 		imagePicker.navigationBar.translucent = false
 		imagePicker.navigationBar.barTintColor = UIColor(red: 237/255, green: 84/255, blue: 84/255, alpha: 1.0) // Background color
@@ -83,6 +82,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		} else {
 			cell.postLabel?.text = currentPost.content
 			cell.currentTimeLabel?.text = getTimeFromTimestamp(currentPost.createdTimestamp!)
+			
+			if currentPost.isLikedByMe == true {
+				cell.likeButton!.selected = true
+			}
 		}
 		
 		return cell
@@ -122,7 +125,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func likeButtonPressed(sender: UIButton) {
 		print("Like button tag: \(sender.tag)")
-		sender.selected = true
+		let postId = postsData[sender.tag].id
+		NewsFeedHelper.likePost(String(postId!)) { (response) in
+			if response == true {
+				print("Liked successfully")
+				sender.selected = true
+			} else {
+				print("Error while liking post id: \(postId)")
+			}
+		}
 	}
 	
 	func shareButtonPressed(sender: UIButton) {
