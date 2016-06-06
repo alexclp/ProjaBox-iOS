@@ -40,9 +40,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func getLatestPosts() {
-		NewsFeedHelper.getNewsFeed { (response) in
+		NewsFeedHelper.getNewsFeed { (response, posts) in
 			if response == true {
-				
+//				print(posts![0])
 			}
 		}
 	}
