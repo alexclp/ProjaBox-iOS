@@ -41,6 +41,13 @@ class CreatingPostViewController: UIViewController {
 	}
 	
 	@IBAction func doneButtonPressed() {
+		NewsFeedHelper.createPost("Post", "Created a new post", nil, nil) { (response) in
+			if response == false {
+				let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
+				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+				self.presentViewController(alert, animated: true, completion: nil)
+			}
+		}
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 	

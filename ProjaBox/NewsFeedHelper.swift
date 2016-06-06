@@ -26,6 +26,15 @@ class NewsFeedHelper: NSObject {
 		
 		return mutableURLRequest
 	}
+	
+	private class func getHeaders() -> [String: String] {
+		let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
+		let userId = userData!["userId"] as! Int
+		let deviceId = userData!["deviceId"] as! Int
+		let token = userData!["token"] as! String
+		
+		return ["Z-UserId": String(userId), "Z-DeviceId": String(deviceId), "Z-Token": token]
+	}
 
 	class func getNewsFeed() {
 		let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
@@ -40,16 +49,34 @@ class NewsFeedHelper: NSObject {
 		}
 	}
 	
-	class func createPost(name: String, _content: String, photo: NSData?, video: NSData?) {
-		if let url = NSURL(string: "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts") {
-			let urlRequest = createAuthHeadersForURL(url, "POST")
-			
-			let manager = Alamofire.Manager.sharedInstance
-			let request = manager.request(urlRequest)
-			request.responseJSON(completionHandler: { (response) in
+	class func createPost(name: String, _ content: String, _ photo: NSData?, _ video: NSData?, completionHandler: (Bool) -> Void) {
+		if let image = photo, let video = video {
+			let parameters: [String: AnyObject] = ["name": name, "content": content, "image": image, "video": video]
+			let headers = getHeaders()
+			Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: parameters, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+				
 				print(response)
-			})
+				
+				let errorCode = response.result.value!["errorCode"] as! Int
+				if errorCode != 0 {
+					completionHandler(false)
+				} else {
+					completionHandler(true)
+				}
+			}
+		} else {
+			let headers = getHeaders()
+			Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: ["name": name, "content": content], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+				
+				print(response)
+				
+				let errorCode = response.result.value!["errorCode"] as! Int
+				if errorCode != 0 {
+					completionHandler(false)
+				} else {
+					completionHandler(true)
+				}
+			}
 		}
 	}
-	
 }
