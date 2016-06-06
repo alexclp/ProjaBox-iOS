@@ -162,15 +162,10 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:41" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-Mh-BaK">
-                                <rect key="frame" x="262" y="8" width="34" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxL-w0-CWC">
                                 <rect key="frame" x="273" y="176" width="23" height="4"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="QGX-Jc-d7z"/>
                                     <constraint firstAttribute="height" constant="4" id="d4f-v6-F62"/>
                                     <constraint firstAttribute="height" constant="9" id="uLY-Y9-ETC"/>
                                 </constraints>
@@ -181,6 +176,12 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:41" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-Mh-BaK">
+                                <rect key="frame" x="262" y="8" width="34" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -212,7 +213,6 @@
                             <constraint firstItem="sxL-w0-CWC" firstAttribute="top" secondItem="4zA-Hd-X5m" secondAttribute="bottom" constant="5" id="DTH-gT-pVm"/>
                             <constraint firstItem="Mvz-1O-E4d" firstAttribute="leading" secondItem="xuI-BO-lOP" secondAttribute="trailing" constant="33" id="Dl1-hV-PUa"/>
                             <constraint firstItem="1Bt-8C-LSW" firstAttribute="bottom" secondItem="Mvz-1O-E4d" secondAttribute="bottom" id="EQ7-MT-OIk"/>
-                            <constraint firstItem="sxL-w0-CWC" firstAttribute="leading" secondItem="vrI-IA-BGl" secondAttribute="trailing" constant="88" id="Emj-Sm-brs"/>
                             <constraint firstItem="Rce-wl-xbX" firstAttribute="leading" secondItem="884-c6-joQ" secondAttribute="leading" id="Emo-l5-GlI"/>
                             <constraint firstItem="vrI-IA-BGl" firstAttribute="top" secondItem="4zA-Hd-X5m" secondAttribute="bottom" constant="8" symbolic="YES" id="Hza-EP-s2f"/>
                             <constraint firstItem="884-c6-joQ" firstAttribute="top" secondItem="Rce-wl-xbX" secondAttribute="bottom" id="JF2-1Z-wav"/>
