@@ -12,6 +12,18 @@ import Alamofire
 
 class NewsFeedHelper: NSObject {
 	
+	class func getTimeFromTimestamp(timestamp: Int) -> String {
+		let date = NSDate(timeIntervalSince1970: Double(timestamp))
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+		let calendar = NSCalendar.currentCalendar()
+		let comp = calendar.components([.Hour, .Minute], fromDate: date)
+		let hour = comp.hour
+		let minute = comp.minute
+		
+		return "\(hour):\(minute)"
+	}
+	
 	private class func createAuthHeadersForURL(URL: NSURL, _ httpMethod: String) -> NSURLRequest {
 		let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
 		let userId = userData!["userId"] as! Int

@@ -83,7 +83,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			
 		} else {
 			cell.postLabel?.text = currentPost.content
-			cell.currentTimeLabel?.text = getTimeFromTimestamp(currentPost.createdTimestamp!)
+			cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
 			if let likers = currentPost.likers {
 				cell.likesLabel?.text = String(likers.count)
 			}
@@ -93,18 +93,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		}
 		
 		return cell
-	}
-	
-	private func getTimeFromTimestamp(timestamp: Int) -> String {
-		let date = NSDate(timeIntervalSince1970: Double(timestamp))
-		let dateFormatter = NSDateFormatter()
-		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-		let calendar = NSCalendar.currentCalendar()
-		let comp = calendar.components([.Hour, .Minute], fromDate: date)
-		let hour = comp.hour
-		let minute = comp.minute
-		
-		return "\(hour):\(minute)"
 	}
 	
 	//	MARK: UITableView Delegate

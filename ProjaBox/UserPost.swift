@@ -20,4 +20,5 @@ class UserPost: NSObject {
 	var image: NSData?
 	var video: NSData?
 	var likers: [[String: AnyObject]]?
+	var comments: [[String: AnyObject]]?
 }

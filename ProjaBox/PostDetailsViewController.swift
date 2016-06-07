@@ -52,11 +52,23 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			cell.commentsButton?.addTarget(self, action: #selector(PostDetailsViewController.commentPressed(_:)), forControlEvents: .TouchUpInside)
 			cell.moreButton?.addTarget(self, action: #selector(PostDetailsViewController.morePressed(_:)), forControlEvents: .TouchUpInside)
 			
-			cell.profileImageView?.image = UIImage(named: "telegram.png")
+			cell.contentLabel?.text = selectedPost.content
+			if let likersData = selectedPost.likers {
+				 cell.likesLabel?.text = String(likersData.count)
+			}
+			
+			if selectedPost.isLikedByMe == true {
+				cell.likeButton?.selected = true
+			}
+			
+			cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
 			
 			return cell
 			
 		} else if indexPath.row == 1 {
+			
+			// 7 images in total for the likes table view cell
+			// if likes >= 7 make the last one as a three dot icon (to show that there are many likes for the post)
 			
 			let cell = tableView.dequeueReusableCellWithIdentifier("likesCell", forIndexPath: indexPath) as! LikesTableViewCell
 			cell.profileImageView1?.hidden = false

@@ -34,13 +34,20 @@ class PostDetailsTableViewCell: UITableViewCell {
 	
 	override func layoutSubviews() {
 		imageSetup()
+		setupButtons()
 	}
 	
-	func imageSetup() {
+	private func imageSetup() {
 		profileImageView?.layer.cornerRadius = (profileImageView?.frame.size.width)!/2
 		profileImageView?.clipsToBounds = true
 		profileImageView?.contentMode = .ScaleAspectFit
 		profileImageView?.backgroundColor = UIColor.whiteColor()
+	}
+	
+	private func setupButtons() {
+		likeButton?.setBackgroundImage(UIImage(named: "like default.png"), forState: .Normal)
+		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Highlighted)
+		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Selected)
 	}
 
 }
