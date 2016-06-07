@@ -101,6 +101,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		cell.selectionStyle = .None
 		cell.profileImageView?.image = UIImage(named: "telegram.png")
 		cell.commentLabel?.text = currentComment["content"] as? String
+		cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
 		
 		return cell
 	}
