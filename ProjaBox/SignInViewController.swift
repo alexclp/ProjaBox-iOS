@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class SignInViewController: UIViewController {
 	
@@ -23,8 +24,10 @@ class SignInViewController: UIViewController {
     }
 	
 	@IBAction func singInPressed(sender: UIButton) {
+		SwiftSpinner.show("Logging in")
 		SignInHelper.signIn((emailTextField?.text)!, password: (passwordTextField?.text)!) { (response) in
 			if response == true {
+				SwiftSpinner.hide()
 				self.performSegueWithIdentifier("showFeedSegue", sender: self)
 			} 
 		}
