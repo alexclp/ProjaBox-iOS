@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -16,6 +17,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	internal var selectedCellIndex = 0
 	
 	let imagePicker = UIImagePickerController()
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		getLatestPosts()
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,13 +49,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func getLatestPosts() {
+		SwiftSpinner.show("Loading data")
 		NewsFeedHelper.getNewsFeed { (response, posts) in
 			if response == true {
 				if let data = posts {
 					self.postsData = data
 					self.tableView?.reloadData()
 				}
+				SwiftSpinner.hide()
+			} else {
+				
 			}
+			
 		}
 	}
 	

@@ -272,6 +272,8 @@
 				0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */,
 				0F3A0C8D1CD2BD52005C6C23 /* Login */,
 				0F3A0C8E1CD2BD68005C6C23 /* Feed */,
+				0F4654B51D07471D005E2C5E /* Chat */,
+				0F4654B61D074726005E2C5E /* Settings */,
 				0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */,
 				0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */,
 				0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */,
@@ -307,13 +309,27 @@
 			children = (
 				0F0935291CA81C4000AC2C59 /* FeedViewController.swift */,
 				0F3A0C8F1CD2BD81005C6C23 /* PostDetailsViewController.swift */,
+				0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		0F4654B51D07471D005E2C5E /* Chat */ = {
+			isa = PBXGroup;
+			children = (
 				0F4F99621CCBB413006628CF /* ChatListViewController.swift */,
 				0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */,
-				0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		0F4654B61D074726005E2C5E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
 				0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */,
 				0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */,
 			);
-			name = Feed;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		0F6785B01CC6C7DC00F89541 /* View */ = {

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1319F8171D9DA3DCE32322C1F7FA63DB'
-               BlueprintName = 'TagListView'
+               BlueprintIdentifier = '10DF388F510867E7CC26FE64FAEECF41'
+               BlueprintName = 'SwiftSpinner'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'TagListView.framework'>
+               BuildableName = 'SwiftSpinner.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

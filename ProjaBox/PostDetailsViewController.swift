@@ -14,6 +14,8 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	@IBOutlet weak var commentTextField: UITextField?
 	@IBOutlet weak var postButton: UIBarButtonItem?
 	
+	var commentsData = [[String: AnyObject]]()
+	
 	var selectedPost = UserPost()
 
     override func viewDidLoad() {
@@ -24,7 +26,16 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		postDetailsTableView!.registerNib(UINib(nibName: "PostDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "postDetailsCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "LikesTableViewCell", bundle: nil), forCellReuseIdentifier: "likesCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "commentCell")
-    }
+		
+		fillData()
+	}
+	
+	func fillData() {
+		if let comments = selectedPost.comments {
+			commentsData = comments
+		}
+		postDetailsTableView?.reloadData()
+	}
 	
 	// MARK: Table View Data Source
 	
@@ -84,9 +95,12 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			
 		}
 		
+		let currentComment = commentsData[indexPath.row - 2]
+		
 		let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTableViewCell
 		cell.selectionStyle = .None
 		cell.profileImageView?.image = UIImage(named: "telegram.png")
+		cell.commentLabel?.text = currentComment["content"] as? String
 		
 		return cell
 	}

@@ -59,52 +59,56 @@ class NewsFeedHelper: NSObject {
 		if let url = NSURL(string: urlString) {
 			let urlRequest = createAuthHeadersForURL(url, "GET")
 			Alamofire.request(urlRequest).responseJSON { response in
-				print(response.result.error)
+				print(response.request)
 				print(response.result.value)
 				
 				let errorCode = response.result.value!["errorCode"] as! Int
-				let data = response.result.value!["data"] as! [[String: AnyObject]]
+				let data = response.result.value!["data"] as? [[String: AnyObject]]
 				
-				var posts = [UserPost]()
-				for post in data {
-					let type = post["type"] as! String
-					if type == "user" {
-						let postToAdd = UserPost()
-						postToAdd.content = post["content"] as? String
-						postToAdd.createdTimestamp = post["created"] as? Int
-						postToAdd.id = post["id"] as? Int
-						postToAdd.isLikedByMe = post["isLikedByMe"] as? Bool
-						postToAdd.image = post["image"] as? NSData
-						postToAdd.video = post["video"] as? NSData
-						postToAdd.likers = post["likers"] as? [[String: AnyObject]]
-						postToAdd.comments = post["comments"] as? [[String: AnyObject]]
-						
-						posts.append(postToAdd)
+				if let data = data {
+					var posts = [UserPost]()
+					for post in data {
+						let type = post["type"] as! String
+						if type == "user" {
+							let postToAdd = UserPost()
+							postToAdd.content = post["content"] as? String
+							postToAdd.createdTimestamp = post["created"] as? Int
+							postToAdd.id = post["id"] as? Int
+							postToAdd.isLikedByMe = post["isLikedByMe"] as? Bool
+							postToAdd.image = post["image"] as? NSData
+							postToAdd.video = post["video"] as? NSData
+							postToAdd.likers = post["likers"] as? [[String: AnyObject]]
+							postToAdd.comments = post["comments"] as? [[String: AnyObject]]
+							
+							posts.append(postToAdd)
+						} else {
+							let postToAdd = ProjectPost()
+							postToAdd.content = post["content"] as? String
+							postToAdd.createdTimestamp = post["created"] as? Int
+							postToAdd.id = post["id"] as? Int
+							postToAdd.isLikedByMe = post["isLikedByMe"] as? Bool
+							postToAdd.image = post["image"] as? NSData
+							postToAdd.video = post["video"] as? NSData
+							
+							postToAdd.projectAvatar = post["projectAvatar"] as? NSData
+							postToAdd.projectId = post["projectId"] as? Int
+							postToAdd.projectName = post["projectName"] as? String
+							postToAdd.projectOwnerId = post["projectOwnerId"] as? Int
+							postToAdd.likers = post["likers"] as? [[String: AnyObject]]
+							postToAdd.comments = post["comments"] as? [[String: AnyObject]]
+							
+							posts.append(postToAdd)
+						}
+					}
+					
+					if errorCode != 0 {
+						completionHandler(false, nil)
 					} else {
-						let postToAdd = ProjectPost()
-						postToAdd.content = post["content"] as? String
-						postToAdd.createdTimestamp = post["created"] as? Int
-						postToAdd.id = post["id"] as? Int
-						postToAdd.isLikedByMe = post["isLikedByMe"] as? Bool
-						postToAdd.image = post["image"] as? NSData
-						postToAdd.video = post["video"] as? NSData
-						
-						postToAdd.projectAvatar = post["projectAvatar"] as? NSData
-						postToAdd.projectId = post["projectId"] as? Int
-						postToAdd.projectName = post["projectName"] as? String
-						postToAdd.projectOwnerId = post["projectOwnerId"] as? Int
-						postToAdd.likers = post["likers"] as? [[String: AnyObject]]
-						postToAdd.comments = post["comments"] as? [[String: AnyObject]]
-						
-						posts.append(postToAdd)
+						completionHandler(true, posts)
 					}
 				}
 				
-				if errorCode != 0 {
-					completionHandler(false, nil)
-				} else {
-					completionHandler(true, posts)
-				}
+				
 			}
 		}
 	}
@@ -185,6 +189,21 @@ class NewsFeedHelper: NSObject {
 				completionHandler(false)
 			} else {
 				completionHandler(true)
+			}
+		}
+	}
+	
+	class func getPostComments(postId: String, completionHandler: (Bool, [[String: AnyObject]]?) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)/comments"
+		let headers = getHeaders()
+		
+		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+			print(response)
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				completionHandler(false, nil)
+			} else {
+				
 			}
 		}
 	}

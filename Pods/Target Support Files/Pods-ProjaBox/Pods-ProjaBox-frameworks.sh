@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/JSQMessagesViewController/JSQMessagesViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KMPlaceholderTextView/KMPlaceholderTextView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftSpinner/SwiftSpinner.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TagListView/TagListView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -97,5 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/JSQMessagesViewController/JSQMessagesViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KMPlaceholderTextView/KMPlaceholderTextView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftSpinner/SwiftSpinner.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TagListView/TagListView.framework"
 fi
