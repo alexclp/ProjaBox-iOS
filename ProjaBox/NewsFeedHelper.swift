@@ -73,6 +73,7 @@ class NewsFeedHelper: NSObject {
 						postToAdd.image = post["image"] as? NSData
 						postToAdd.video = post["video"] as? NSData
 						postToAdd.likers = post["likers"] as? [[String: AnyObject]]
+						postToAdd.comments = post["comments"] as? [[String: AnyObject]]
 						
 						posts.append(postToAdd)
 					} else {
@@ -89,6 +90,7 @@ class NewsFeedHelper: NSObject {
 						postToAdd.projectName = post["projectName"] as? String
 						postToAdd.projectOwnerId = post["projectOwnerId"] as? Int
 						postToAdd.likers = post["likers"] as? [[String: AnyObject]]
+						postToAdd.comments = post["comments"] as? [[String: AnyObject]]
 						
 						posts.append(postToAdd)
 					}

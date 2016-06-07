@@ -37,7 +37,10 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 2 + 4
+		if let comments = selectedPost.comments {
+			return 2 + comments.count
+		}
+		return 2
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
