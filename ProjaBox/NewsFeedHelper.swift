@@ -12,6 +12,8 @@ import Alamofire
 
 class NewsFeedHelper: NSObject {
 	
+	// MARK: UTILITY METHODS
+	
 	class func getTimeFromTimestamp(timestamp: Int) -> String {
 		let date = NSDate(timeIntervalSince1970: Double(timestamp))
 		let dateFormatter = NSDateFormatter()
@@ -47,6 +49,8 @@ class NewsFeedHelper: NSObject {
 		
 		return ["Z-UserId": String(userId), "Z-DeviceId": String(deviceId), "Z-Token": token]
 	}
+	
+	// MARK: POST RELATED METHODS
 
 	class func getNewsFeed(completionHandler: (Bool, [UserPost]?) -> Void) {
 		let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
@@ -136,6 +140,8 @@ class NewsFeedHelper: NSObject {
 		}
 	}
 	
+	// MARK: LIKE METHODS
+	
 	class func likePost(postId: String, completionHandler: (Bool) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)/like"
 		let headers = getHeaders()
@@ -156,6 +162,24 @@ class NewsFeedHelper: NSObject {
 		let headers = getHeaders()
 		
 		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				completionHandler(false)
+			} else {
+				completionHandler(true)
+			}
+		}
+	}
+	
+	// MARK: COMMENT METHODS
+	
+	class func createComment(postId: String, commentContent: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)/comments"
+		let headers = getHeaders()
+		let parameters = ["content": commentContent]
+		
+		Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+			print(response)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
 				completionHandler(false)

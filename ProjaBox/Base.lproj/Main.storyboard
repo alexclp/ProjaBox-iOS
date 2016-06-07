@@ -430,16 +430,39 @@
                                     <outlet property="delegate" destination="ytC-Tz-8Yr" id="Wfb-xY-Y3n"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13y-gt-Eum">
+                                <rect key="frame" x="0.0" y="510" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="zyE-A3-a51">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="HiS-Tu-qcx">
+                                            <rect key="frame" x="16" y="7" width="307" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem title="Post" id="tkE-rS-lXs">
+                                        <connections>
+                                            <action selector="postCommentPressed:" destination="ytC-Tz-8Yr" id="9xO-FQ-a1R"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VFd-ER-SqD" firstAttribute="top" secondItem="T5W-Mc-Fus" secondAttribute="bottom" id="EZx-dm-c88"/>
-                            <constraint firstItem="VFd-ER-SqD" firstAttribute="leading" secondItem="8Mt-8r-gWw" secondAttribute="leading" id="V0c-II-ljh"/>
-                            <constraint firstAttribute="trailing" secondItem="VFd-ER-SqD" secondAttribute="trailing" id="X8N-EU-SGx"/>
-                            <constraint firstItem="VFd-ER-SqD" firstAttribute="bottom" secondItem="Wqc-Yl-fJ0" secondAttribute="top" id="ysz-Hu-hpe"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="bottom" secondItem="Wqc-Yl-fJ0" secondAttribute="top" id="0xy-JU-jTk"/>
+                            <constraint firstItem="13y-gt-Eum" firstAttribute="bottom" secondItem="Wqc-Yl-fJ0" secondAttribute="top" id="2YO-c0-A18"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="top" secondItem="T5W-Mc-Fus" secondAttribute="bottom" id="ETl-3V-5Ly"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="leading" secondItem="8Mt-8r-gWw" secondAttribute="leading" id="YfJ-4f-F9j"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="trailing" secondItem="13y-gt-Eum" secondAttribute="trailing" id="aKP-AQ-fCn"/>
+                            <constraint firstAttribute="trailing" secondItem="VFd-ER-SqD" secondAttribute="trailing" id="mBL-qC-Lms"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="leading" secondItem="13y-gt-Eum" secondAttribute="leading" id="wqZ-E9-3dy"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentTextField" destination="HiS-Tu-qcx" id="trh-Qh-R4d"/>
+                        <outlet property="postButton" destination="tkE-rS-lXs" id="Shz-Kx-mbh"/>
                         <outlet property="postDetailsTableView" destination="VFd-ER-SqD" id="cfp-sG-f9u"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,8 @@ import UIKit
 class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	@IBOutlet weak var postDetailsTableView: UITableView?
+	@IBOutlet weak var commentTextField: UITextField?
+	@IBOutlet weak var postButton: UIBarButtonItem?
 	
 	var selectedPost = UserPost()
 
@@ -23,7 +25,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		postDetailsTableView!.registerNib(UINib(nibName: "LikesTableViewCell", bundle: nil), forCellReuseIdentifier: "likesCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "commentCell")
     }
-
+	
 	// MARK: Table View Data Source
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -116,6 +118,15 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	// MARK: User Interaction
+	
+	@IBAction func postCommentPressed(sender: UIBarButtonItem) {
+		let postContent = commentTextField?.text
+		let postId = selectedPost.id
+		
+		NewsFeedHelper.createComment(String(postId!), commentContent: postContent!) { (response) in
+			
+		}
+	}
 	
 	func likePressed(sender: UIButton) {
 		let postId = selectedPost.id
