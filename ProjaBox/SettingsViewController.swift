@@ -12,6 +12,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
 	@IBOutlet weak var tableView: UITableView?
 	
+	let cellTitles = [1: ["My Profile", "My Posts"], 2: ["My Settings"], 3: ["Questions and Answers", "About"], 4: ["Log out"]]
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,6 +56,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		}
 		
 		let cell = tableView.dequeueReusableCellWithIdentifier("settingsCell", forIndexPath: indexPath) as! SettingsTableViewCell
+		cell.cellTitleLabel?.text = cellTitles[indexPath.section]![indexPath.row]
 		
 		return cell
 		
