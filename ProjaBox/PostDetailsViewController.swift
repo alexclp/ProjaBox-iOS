@@ -79,6 +79,17 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			
 			cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
 			
+			if selectedPost is ProjectPost {
+				let projectPost = selectedPost as! ProjectPost
+				if let name = projectPost.projectName {
+					cell.nameLabel?.text = name
+				}
+			} else {
+				if let name = selectedPost.ownerName {
+					cell.nameLabel?.text = name
+				}
+			}
+			
 			return cell
 			
 		} else if indexPath.row == 1 {

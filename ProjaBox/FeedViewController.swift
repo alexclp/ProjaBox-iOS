@@ -90,17 +90,23 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		cell.moreButton?.addTarget(self, action: #selector(FeedViewController.moreButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
 		let currentPost = postsData[indexPath.row]
+		cell.postLabel?.text = currentPost.content
+		cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
+		if let likers = currentPost.likers {
+			cell.likesLabel?.text = String(likers.count)
+		}
+		if currentPost.isLikedByMe == true {
+			cell.likeButton!.selected = true
+		}
 		
 		if currentPost is ProjectPost {
-			
-		} else {
-			cell.postLabel?.text = currentPost.content
-			cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
-			if let likers = currentPost.likers {
-				cell.likesLabel?.text = String(likers.count)
+			let projectPost = currentPost as! ProjectPost
+			if let name = projectPost.projectName {
+				cell.authorLabel?.text = name
 			}
-			if currentPost.isLikedByMe == true {
-				cell.likeButton!.selected = true
+		} else {
+			if let name = currentPost.ownerName {
+				cell.authorLabel?.text = name
 			}
 		}
 		
