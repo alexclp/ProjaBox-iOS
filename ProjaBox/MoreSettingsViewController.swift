@@ -34,6 +34,7 @@ class MoreSettingsViewController: UIViewController, UITableViewDelegate, UITable
 		let cell = tableView.dequeueReusableCellWithIdentifier("settingsCell", forIndexPath: indexPath) as! SettingsTableViewCell
 		
 		cell.cellTitleLabel?.text = tableData[indexPath.row]
+		cell.cellImageView?.image = UIImage(named: tableData[indexPath.row] + ".png")
 		
 		return cell
 	}
