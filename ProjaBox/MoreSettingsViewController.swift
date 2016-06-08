@@ -27,7 +27,7 @@ class MoreSettingsViewController: UIViewController, UITableViewDelegate, UITable
 	// MARK: UITableView Methods
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let rows = 6
+		let rows = tableData.count
 		
 		return rows
 	}
