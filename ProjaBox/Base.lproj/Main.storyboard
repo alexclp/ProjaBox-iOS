@@ -135,7 +135,7 @@
         <!--Profile-->
         <scene sceneID="sb8-JZ-nMu">
             <objects>
-                <viewController id="n5B-XR-4mZ" customClass="ProfileViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n5B-XR-4mZ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xqR-pE-WKi"/>
                         <viewControllerLayoutGuide type="bottom" id="uBZ-ht-kSr"/>
@@ -143,28 +143,9 @@
                     <view key="view" contentMode="scaleToFill" id="1vq-Tq-HZQ">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TmS-at-C6L">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="n5B-XR-4mZ" id="kEW-iX-OJB"/>
-                                    <outlet property="delegate" destination="n5B-XR-4mZ" id="C1W-Gy-Nea"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="TmS-at-C6L" firstAttribute="bottom" secondItem="uBZ-ht-kSr" secondAttribute="top" id="FsA-c6-of8"/>
-                            <constraint firstAttribute="trailing" secondItem="TmS-at-C6L" secondAttribute="trailing" id="Kmr-Gn-SCt"/>
-                            <constraint firstItem="TmS-at-C6L" firstAttribute="leading" secondItem="1vq-Tq-HZQ" secondAttribute="leading" id="amg-LV-7Tc"/>
-                            <constraint firstItem="TmS-at-C6L" firstAttribute="top" secondItem="xqR-pE-WKi" secondAttribute="bottom" id="naX-vI-Sfd"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="7P3-aN-jmN"/>
-                    <connections>
-                        <outlet property="tableView" destination="TmS-at-C6L" id="R48-jv-GwC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-6r-BbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -793,7 +774,7 @@
                     <connections>
                         <outlet property="tableView" destination="zSP-jU-1hP" id="5nw-Yf-xaE"/>
                         <segue destination="VeF-zS-5tW" kind="show" identifier="showMoreSettingsSegue" id="VNH-az-yg6"/>
-                        <segue destination="89u-Dd-E0B" kind="show" identifier="showProfileSegue" id="HtI-ez-lY0"/>
+                        <segue destination="89u-Dd-E0B" kind="show" identifier="showMyProfileSegue" id="HtI-ez-lY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0e-ta-6uW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -812,8 +793,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-hw-O5R">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-hw-O5R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="VeF-zS-5tW" id="AbQ-Fy-ufg"/>
@@ -822,6 +803,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="top" secondItem="TD0-fB-VuU" secondAttribute="bottom" id="4aa-cq-THW"/>
+                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="bottom" secondItem="2bn-qg-NRp" secondAttribute="top" id="IEI-jR-dNw"/>
+                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="leading" secondItem="2Vr-Vp-WR5" secondAttribute="leading" id="ZtG-h2-n0G"/>
+                            <constraint firstAttribute="trailing" secondItem="Hr5-hw-O5R" secondAttribute="trailing" id="tne-5x-Ijs"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Hr5-hw-O5R" id="4gS-Xp-fYo"/>
@@ -831,10 +818,10 @@
             </objects>
             <point key="canvasLocation" x="1271.5" y="219.5"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--My Profile View Controller-->
         <scene sceneID="fSz-ko-6KY">
             <objects>
-                <viewController id="89u-Dd-E0B" customClass="ProfileViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="89u-Dd-E0B" customClass="MyProfileViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DGD-3F-vFO"/>
                         <viewControllerLayoutGuide type="bottom" id="5Vb-Sl-LVQ"/>
@@ -842,12 +829,31 @@
                     <view key="view" contentMode="scaleToFill" id="QY4-k4-XgE">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2p3-Wr-BXf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="89u-Dd-E0B" id="XmK-nn-cAn"/>
+                                    <outlet property="delegate" destination="89u-Dd-E0B" id="CZM-5W-w91"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2p3-Wr-BXf" secondAttribute="trailing" id="2u9-wq-bcD"/>
+                            <constraint firstItem="2p3-Wr-BXf" firstAttribute="bottom" secondItem="5Vb-Sl-LVQ" secondAttribute="top" id="NcL-Ig-Kae"/>
+                            <constraint firstItem="2p3-Wr-BXf" firstAttribute="leading" secondItem="QY4-k4-XgE" secondAttribute="leading" id="e4b-J6-8aJ"/>
+                            <constraint firstItem="2p3-Wr-BXf" firstAttribute="top" secondItem="DGD-3F-vFO" secondAttribute="bottom" id="fcC-hh-esz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="2p3-Wr-BXf" id="ag6-qc-NlG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nj2-Oh-NyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="-238"/>
+            <point key="canvasLocation" x="1861.5" y="-250.5"/>
         </scene>
     </scenes>
     <resources>

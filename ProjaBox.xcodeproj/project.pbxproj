@@ -11,7 +11,7 @@
 		0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */; };
 		0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F08DD301CB7C91B008B7C57 /* testimage.jpeg */; };
 		0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0935291CA81C4000AC2C59 /* FeedViewController.swift */; };
-		0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */; };
+		0F09352C1CA81C4A00AC2C59 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352B1CA81C4A00AC2C59 /* MyProfileViewController.swift */; };
 		0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */; };
 		0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */; };
 		0F0D888E1CFC70CC0074E5E6 /* facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */; };
@@ -32,6 +32,7 @@
 		0F3B68271D08D158003BB7E5 /* Notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B68211D08D158003BB7E5 /* Notifications.png */; };
 		0F3B68281D08D158003BB7E5 /* Personal info.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B68221D08D158003BB7E5 /* Personal info.png */; };
 		0F3B68291D08D158003BB7E5 /* Privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B68231D08D158003BB7E5 /* Privacy.png */; };
+		0F3B682B1D08D9DF003BB7E5 /* ProfileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B682A1D08D9DF003BB7E5 /* ProfileHelper.swift */; };
 		0F4171441CFDFCA10043A98B /* tab-bar-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4171431CFDFCA10043A98B /* tab-bar-background.png */; };
 		0F4171461CFE37870043A98B /* PillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4171451CFE37870043A98B /* PillLabel.swift */; };
 		0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */; };
@@ -139,7 +140,7 @@
 		0F08DD2E1CB722BA008B7C57 /* SharingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingHelper.swift; sourceTree = "<group>"; };
 		0F08DD301CB7C91B008B7C57 /* testimage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testimage.jpeg; sourceTree = "<group>"; };
 		0F0935291CA81C4000AC2C59 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0F09352B1CA81C4A00AC2C59 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatingPostViewController.swift; sourceTree = "<group>"; };
 		0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-button.png"; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 		0F3B68211D08D158003BB7E5 /* Notifications.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notifications.png; sourceTree = "<group>"; };
 		0F3B68221D08D158003BB7E5 /* Personal info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Personal info.png"; sourceTree = "<group>"; };
 		0F3B68231D08D158003BB7E5 /* Privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Privacy.png; sourceTree = "<group>"; };
+		0F3B682A1D08D9DF003BB7E5 /* ProfileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHelper.swift; sourceTree = "<group>"; };
 		0F4171431CFDFCA10043A98B /* tab-bar-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-bar-background.png"; sourceTree = "<group>"; };
 		0F4171451CFE37870043A98B /* PillLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillLabel.swift; sourceTree = "<group>"; };
 		0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsTableViewCell.swift; sourceTree = "<group>"; };
@@ -300,7 +302,7 @@
 				0F3A0C8E1CD2BD68005C6C23 /* Feed */,
 				0F4654B51D07471D005E2C5E /* Chat */,
 				0F4654B61D074726005E2C5E /* Settings */,
-				0F09352B1CA81C4A00AC2C59 /* ProfileViewController.swift */,
+				0F09352B1CA81C4A00AC2C59 /* MyProfileViewController.swift */,
 				0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */,
 				0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */,
 			);
@@ -313,6 +315,7 @@
 				0F0D88921CFC87E60074E5E6 /* Server.swift */,
 				0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */,
 				0FB0566A1D022FCC00CDBC76 /* NewsFeedHelper.swift */,
+				0F3B682A1D08D9DF003BB7E5 /* ProfileHelper.swift */,
 				0F4665441D05BA180042932F /* UserPost.swift */,
 				0F4665461D05CCE70042932F /* ProjectPost.swift */,
 			);
@@ -883,13 +886,14 @@
 				0FEF70051CFD1DC900A80D09 /* MoreSettingsViewController.swift in Sources */,
 				0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */,
 				0F4665451D05BA180042932F /* UserPost.swift in Sources */,
+				0F3B682B1D08D9DF003BB7E5 /* ProfileHelper.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
 				0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */,
 				0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */,
 				0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */,
 				0F4171461CFE37870043A98B /* PillLabel.swift in Sources */,
-				0F09352C1CA81C4A00AC2C59 /* ProfileViewController.swift in Sources */,
+				0F09352C1CA81C4A00AC2C59 /* MyProfileViewController.swift in Sources */,
 				0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */,
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,

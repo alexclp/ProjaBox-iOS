@@ -73,12 +73,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		
 		if indexPath.section == 1 {
 			if indexPath.row == 0 {
-				
+				performSegueWithIdentifier("showMyProfileSegue", sender: self)
 			} else {
 				
 			}
-		} else if indexPath.section == 2{
-			self.performSegueWithIdentifier("showMoreSettingsSegue", sender: self)
+		} else if indexPath.section == 2 {
+			performSegueWithIdentifier("showMoreSettingsSegue", sender: self)
 		}
 	}
 	
