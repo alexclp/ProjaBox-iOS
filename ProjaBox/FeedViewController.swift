@@ -31,7 +31,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		self.navigationController?.navigationBar.hidden = false
 		
-		self.tabBarController!.navigationItem.title = "Projabox"
+		self.tabBarController!.navigationItem.title = "Feed"
 		self.tabBarController!.navigationItem.hidesBackButton = true
 		
 		self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
@@ -200,6 +200,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		if segue.identifier == "showPostDetailsSegue" {
 			let destinationController = segue.destinationViewController as! PostDetailsViewController
 			destinationController.selectedPost = postsData[selectedCellIndex]
+		} else if segue.identifier == "showSettingsSegue" {
+			let backItem = UIBarButtonItem()
+			backItem.title = ""
 		}
 	}
 }

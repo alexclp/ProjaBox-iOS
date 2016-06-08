@@ -21,6 +21,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		
 		tableView?.registerNib(UINib(nibName: "ProfileTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "profileCell")
 		tableView?.registerNib(UINib(nibName: "SettingsTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "settingsCell")
+		
+		self.navigationItem.title = "Settings"
     }
 
 	// MARK: Table View Data Source
