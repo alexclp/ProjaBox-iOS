@@ -57,6 +57,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		
 		let cell = tableView.dequeueReusableCellWithIdentifier("settingsCell", forIndexPath: indexPath) as! SettingsTableViewCell
 		cell.cellTitleLabel?.text = cellTitles[indexPath.section]![indexPath.row]
+		cell.cellAccessoryImageView?.image = UIImage(named: "accessory-view.png")
+		cell.cellImageView?.image = UIImage(named: cellTitles[indexPath.section]![indexPath.row] + ".png")
 		
 		return cell
 		
