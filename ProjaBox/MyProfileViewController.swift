@@ -21,6 +21,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
 		
 		self.title = "My profile"
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(self.editButtonPressed(_:)))
 		
 		ProfileHelper.getMyFullProfile { (response) in
 			
@@ -46,7 +47,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 //			let cell = tableView.cellForRowAtIndexPath(indexPath) as! InterestsTableViewCell
 //			let height = cell.tagListView?.bounds.height
 //			return height!
-			return 100.0
+			return 115.0
 		} else if indexPath.section == 2 || indexPath.section == 3 {
 			return 115.0
 		} else {
@@ -85,5 +86,11 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+	}
+	
+	// MARK: User interaction
+	
+	func editButtonPressed(sender: UIBarButtonItem) {
+		
 	}
 }
