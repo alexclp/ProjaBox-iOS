@@ -81,6 +81,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		if indexPath.section == 0 {
 			// HEADER PART
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileHeaderCell", forIndexPath: indexPath) as! ProfileHeaderTableViewCell
+			cell.editButton?.addTarget(self, action: #selector(self.editBioPressed(_:)), forControlEvents: .TouchUpInside)
 			
 			return cell
 		} else if indexPath.section == 1 {
@@ -150,13 +151,15 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			let destination = segue.destinationViewController as! EditInterestsViewController
 			destination.interestsList = interestsData
 			destination.delegate = self
+		} else if segue.identifier == "editBioSegue" {
+			
 		}
  	}
 	
 	// MARK: User interaction
 	
-	func editPersonalInfoPressed(sender: UIButton) {
-		
+	func editBioPressed(sender: UIButton) {
+		performSegueWithIdentifier("editBioSegue", sender: self)
 	}
 	
 	func editInterestsButtonPressed(sender: UIButton) {

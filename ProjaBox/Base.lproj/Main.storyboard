@@ -368,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtH-BO-Za6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1827.5" y="957.5"/>
+            <point key="canvasLocation" x="1723.5" y="957.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g4V-Y2-h0n">
@@ -852,6 +852,7 @@
                         <segue destination="iKA-I0-Fpz" kind="show" identifier="editEducationSegue" id="uRn-HA-72h"/>
                         <segue destination="mSB-fs-q8r" kind="show" identifier="editExperienceSegue" id="nX1-iU-8rQ"/>
                         <segue destination="bwx-2Q-kY5" kind="show" identifier="editInterestsSegue" id="25A-yR-ibd"/>
+                        <segue destination="tnr-0c-s3C" kind="show" identifier="editBioSegue" id="yCy-zV-y23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nj2-Oh-NyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -893,6 +894,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9JH-HX-zaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2559.5" y="-296.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Ka-a4-JWE">
+            <objects>
+                <viewController id="tnr-0c-s3C" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ted-Pc-nmk"/>
+                        <viewControllerLayoutGuide type="bottom" id="28n-gM-YAN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c8J-62-HCw">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krj-3J-QdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135.5" y="457.5"/>
         </scene>
         <!--Edit Interests View Controller-->
         <scene sceneID="pBd-NJ-LeI">

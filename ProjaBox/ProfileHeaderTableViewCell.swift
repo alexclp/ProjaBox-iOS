@@ -23,6 +23,7 @@ class ProfileHeaderTableViewCell: UITableViewCell {
 	@IBOutlet weak var moreButton: UIButton?
 	@IBOutlet weak var followButton: UIButton?
 	@IBOutlet weak var followersLabel: UILabel?
+	@IBOutlet weak var editButton: UIButton?
 
     override func awakeFromNib() {
         super.awakeFromNib()
