@@ -12,9 +12,11 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	
 	@IBOutlet weak var tableView: UITableView?
 	
-	let educationData = [[String: String]]()
-	let experienceData = [[String: AnyObject]]()
+	var educationData = [[String: String]]()
+	var experienceData = [[String: String]]()
 	let interestsData = [String]()
+	
+	var fullProfileData = [String: AnyObject]()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -26,8 +28,12 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		
 		self.title = "My profile"
 		
-		ProfileHelper.getMyFullProfile { (response) in
-			
+		ProfileHelper.getMyFullProfile { (response, data) in
+			if response == true {
+				self.fullProfileData = data!
+			} else {
+				
+			}
 		}
 	}
 	
@@ -156,6 +162,20 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	// MARK: Finished entering data delegate
 	
 	func finishedCompletingItem(item: [String : String]) {
-		
+		if let university = item["university"] {
+			// Education item
+			var data = item
+			data.removeValueForKey("university")
+			data["name"] = university
+			educationData.append(data)
+			fullProfileData["education"] = educationData
+		} else if let work = item["work"] {
+			// Work item
+			var data = item
+			data.removeValueForKey("work")
+			data["work"] = work
+			experienceData.append(data)
+			fullProfileData["experience"] = experienceData
+		}
 	}
 }
