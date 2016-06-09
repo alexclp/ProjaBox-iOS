@@ -8,13 +8,13 @@
 
 import UIKit
 
-class MyProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExperienceInputDelegate {
+class MyProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExperienceInputDelegate, InterestsInputDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
 	
 	var educationData = [[String: String]]()
 	var experienceData = [[String: String]]()
-	let interestsData = [String]()
+	var interestsData = [String]()
 	
 	var fullProfileData = [String: AnyObject]()
 
@@ -86,7 +86,11 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		} else if indexPath.section == 1 {
 			// SKILLS/INTERESTS
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
-			cell.tagListView?.addTag("Press to add interests")
+			cell.editButton?.addTarget(self, action: #selector(self.editInterestsButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			
+			for interest in interestsData {
+				cell.tagListView?.addTag(interest)
+			}
 			
 			return cell
 		} else if indexPath.section == 2 {
@@ -142,8 +146,10 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		} else if segue.identifier == "editExperienceSegue" {
 			let destination = segue.destinationViewController as! EditExperienceViewController
 			destination.delegate = self
-		} else if segue.identifier == "" {
-			
+		} else if segue.identifier == "editInterestsSegue" {
+			let destination = segue.destinationViewController as! EditInterestsViewController
+			destination.interestsList = interestsData
+			destination.delegate = self
 		}
  	}
 	
@@ -154,7 +160,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	}
 	
 	func editInterestsButtonPressed(sender: UIButton) {
-		
+		performSegueWithIdentifier("editInterestsSegue", sender: self)
 	}
 	
 	func editEducationPressed(sender: UIButton) {
@@ -176,7 +182,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			educationData.append(data)
 			fullProfileData["education"] = educationData
 			updateProfile()
-			self.tableView?.reloadData()
+			tableView?.reloadData()
 		} else if let work = item["work"] {
 			// Work item
 			var data = item
@@ -185,8 +191,15 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			experienceData.append(data)
 			fullProfileData["experience"] = experienceData
 			updateProfile()
-			self.tableView?.reloadData()
+			tableView?.reloadData()
 		}
+	}
+	
+	func userDidFinishEditingInterests(interests: [String]) {
+		interestsData = interests
+		fullProfileData["interests"] = interestsData
+		tableView?.reloadData()
+		updateProfile()
 	}
 	
 	// MARK: UPDATING
@@ -195,6 +208,8 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		ProfileHelper.updateMyProfile(fullProfileData) { (response) in
 			if response != true {
 				print("Update failed")
+			} else {
+				print("Update successful")
 			}
 		}
 	}
