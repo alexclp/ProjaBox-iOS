@@ -53,10 +53,11 @@ class EditExperienceViewController: FormViewController {
 			let endDateString = formatDate(endDate as! NSDate)
 			
 			data["work"] = (university as! String)
-			data["startDate"] = startDateString
-			data["endDate"] = endDateString
+			data["start"] = startDateString
+			data["finish"] = endDateString
 			
 			delegate?.finishedCompletingItem(data)
+			self.navigationController?.popViewControllerAnimated(true)
 		} else {
 			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
 			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))

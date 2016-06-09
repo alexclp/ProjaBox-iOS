@@ -93,10 +93,11 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			// EDUCATION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
 			
-			if educationData.count == 0 {
+			if educationData.count == 0 || indexPath.row == educationData.count {
 				cell.companyNameLabel?.text = "Add past education"
 			} else {
-				
+				cell.companyNameLabel?.text = educationData[indexPath.row]["name"]
+				cell.periodLabel?.text = educationData[indexPath.row]["start"]! + " - " + educationData[indexPath.row]["finish"]!
 			}
 			
 			return cell
@@ -104,8 +105,11 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			// EXPERIENCE
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
 			
-			if experienceData.count == 0 {
+			if experienceData.count == 0 || indexPath.row == experienceData.count {
 				cell.companyNameLabel?.text = "Add past experience"
+			} else {
+				cell.companyNameLabel?.text = experienceData[indexPath.row]["name"]
+				cell.periodLabel?.text = experienceData[indexPath.row]["start"]! + " - " + experienceData[indexPath.row]["finish"]!
 			}
 			
 			return cell
@@ -169,6 +173,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			data["name"] = university
 			educationData.append(data)
 			fullProfileData["education"] = educationData
+			self.tableView?.reloadData()
 		} else if let work = item["work"] {
 			// Work item
 			var data = item
@@ -176,6 +181,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			data["work"] = work
 			experienceData.append(data)
 			fullProfileData["experience"] = experienceData
+			self.tableView?.reloadData()
 		}
 	}
 }
