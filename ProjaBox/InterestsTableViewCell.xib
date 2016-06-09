@@ -12,18 +12,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuA-e8-fIk">
-                        <rect key="frame" x="288" y="8" width="24" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="24" id="w0u-QF-GPY"/>
-                        </constraints>
-                        <state key="normal" image="My Posts.png"/>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKr-p9-fDk" customClass="TagListView" customModule="TagListView">
-                        <rect key="frame" x="0.0" y="8" width="280" height="98"/>
+                        <rect key="frame" x="0.0" y="8" width="284" height="98"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -46,7 +39,7 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="NO"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                 <real key="value" value="1"/>
@@ -56,14 +49,21 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuA-e8-fIk">
+                        <rect key="frame" x="292" y="8" width="20" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="02T-Hy-fnE"/>
+                            <constraint firstAttribute="height" constant="21" id="xww-2R-JTh"/>
+                        </constraints>
+                        <state key="normal" image="My Posts.png"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="KKr-p9-fDk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Dfd-4H-MyW"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="iuA-e8-fIk" secondAttribute="bottom" constant="68.5" id="KLW-Le-7yL"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="KKr-p9-fDk" secondAttribute="bottom" constant="-7.5" id="OS1-BF-frQ"/>
-                    <constraint firstItem="iuA-e8-fIk" firstAttribute="leading" secondItem="KKr-p9-fDk" secondAttribute="trailing" constant="8" symbolic="YES" id="YVk-oK-zwv"/>
-                    <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="iuA-e8-fIk" secondAttribute="top" id="w79-9E-4uF"/>
-                    <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="whZ-ks-3Ll"/>
+                    <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="iuA-e8-fIk" secondAttribute="top" id="J2X-rN-ETa"/>
+                    <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="JID-CB-vP9"/>
+                    <constraint firstItem="KKr-p9-fDk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="K7t-fy-Tjl"/>
+                    <constraint firstAttribute="bottom" secondItem="KKr-p9-fDk" secondAttribute="bottom" id="rMX-Ql-ape"/>
+                    <constraint firstItem="iuA-e8-fIk" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="xH5-fq-Get"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
