@@ -173,6 +173,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			data["name"] = university
 			educationData.append(data)
 			fullProfileData["education"] = educationData
+			updateProfile()
 			self.tableView?.reloadData()
 		} else if let work = item["work"] {
 			// Work item
@@ -181,7 +182,18 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			data["work"] = work
 			experienceData.append(data)
 			fullProfileData["experience"] = experienceData
+			updateProfile()
 			self.tableView?.reloadData()
+		}
+	}
+	
+	// MARK: UPDATING
+	
+	func updateProfile() {
+		ProfileHelper.updateMyProfile(fullProfileData) { (response) in
+			if response != true {
+				print("Update failed")
+			}
 		}
 	}
 }

@@ -41,4 +41,19 @@ class ProfileHelper: NSObject {
 		}
 	}
 	
+	class func updateMyProfile(myProfile: [String: AnyObject], completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/my/profile"
+		let headers = getHeaders()
+		
+		Alamofire.request(.PUT, urlString, parameters: myProfile, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			print(response)
+			let errorCode = response.result.value!["errorCode"] as! Int
+			
+			if errorCode != 0 {
+				completionHandler(false)
+			} else {
+				completionHandler(true)
+			}
+		}
+	}
 }
