@@ -50,6 +50,7 @@
 		0F4665471D05CCE70042932F /* ProjectPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4665461D05CCE70042932F /* ProjectPost.swift */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
+		0F50B7AE1D09CE1D0051AEAA /* EditInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50B7AD1D09CE1D0051AEAA /* EditInterestsViewController.swift */; };
 		0F5505811CF86830005229D7 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5505801CF86830005229D7 /* RootTabBarViewController.swift */; };
 		0F5505871CF8B7EC005229D7 /* sign-in-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505861CF8B7EC005229D7 /* sign-in-background.png */; };
 		0F5505891CF8BD5B005229D7 /* background-proja.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505881CF8BD5B005229D7 /* background-proja.png */; };
@@ -180,6 +181,7 @@
 		0F4665461D05CCE70042932F /* ProjectPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPost.swift; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		0F50B7AD1D09CE1D0051AEAA /* EditInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInterestsViewController.swift; sourceTree = "<group>"; };
 		0F5505801CF86830005229D7 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		0F5505861CF8B7EC005229D7 /* sign-in-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-background.png"; sourceTree = "<group>"; };
 		0F5505881CF8BD5B005229D7 /* background-proja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-proja.png"; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			children = (
 				0F3B68301D08F480003BB7E5 /* EditEducationViewController.swift */,
 				0F3B68341D08FC7E003BB7E5 /* EditExperienceViewController.swift */,
+				0F50B7AD1D09CE1D0051AEAA /* EditInterestsViewController.swift */,
 			);
 			name = "Edit forms";
 			sourceTree = "<group>";
@@ -406,6 +409,13 @@
 				0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		0F50B7A01D09C63C0051AEAA /* Tab bar icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Tab bar icons";
 			sourceTree = "<group>";
 		};
 		0F6785B01CC6C7DC00F89541 /* View */ = {
@@ -458,6 +468,7 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F50B7A01D09C63C0051AEAA /* Tab bar icons */,
 				0F43A3AA1D0892E8003B6503 /* settings */,
 				0F4171431CFDFCA10043A98B /* tab-bar-background.png */,
 				0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */,
@@ -913,6 +924,7 @@
 				0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */,
 				0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */,
 				0F4171461CFE37870043A98B /* PillLabel.swift in Sources */,
+				0F50B7AE1D09CE1D0051AEAA /* EditInterestsViewController.swift in Sources */,
 				0F3B68351D08FC7E003BB7E5 /* EditExperienceViewController.swift in Sources */,
 				0F09352C1CA81C4A00AC2C59 /* MyProfileViewController.swift in Sources */,
 				0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */,

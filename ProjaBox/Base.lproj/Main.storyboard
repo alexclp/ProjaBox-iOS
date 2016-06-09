@@ -223,7 +223,7 @@
                             <constraint firstItem="gMz-H5-fpt" firstAttribute="bottom" secondItem="cmx-by-uC1" secondAttribute="top" id="xBX-Um-nfU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" selectedImage="settings.png" id="cbO-n2-VyN"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="settings.png" id="cbO-n2-VyN"/>
                     <navigationItem key="navigationItem" title="Projabox" id="3jc-Dz-wl4"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -851,6 +851,7 @@
                         <outlet property="tableView" destination="2p3-Wr-BXf" id="ag6-qc-NlG"/>
                         <segue destination="iKA-I0-Fpz" kind="show" identifier="editEducationSegue" id="uRn-HA-72h"/>
                         <segue destination="mSB-fs-q8r" kind="show" identifier="editExperienceSegue" id="nX1-iU-8rQ"/>
+                        <segue destination="bwx-2Q-kY5" kind="show" identifier="editInterestsSegue" id="25A-yR-ibd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nj2-Oh-NyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -892,6 +893,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9JH-HX-zaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2559.5" y="-296.5"/>
+        </scene>
+        <!--Edit Interests View Controller-->
+        <scene sceneID="pBd-NJ-LeI">
+            <objects>
+                <viewController id="bwx-2Q-kY5" customClass="EditInterestsViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p3A-SV-FEH"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ui-Oe-LEA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ibW-ES-olY">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a new interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VBk-I8-G1Y">
+                                <rect key="frame" x="20" y="89" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la9-Ii-nMQ">
+                                <rect key="frame" x="172" y="136" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed" destination="bwx-2Q-kY5" eventType="touchUpInside" id="cGn-sZ-VzG"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7y-Ck-vKb" customClass="TagListView" customModule="TagListView">
+                                <rect key="frame" x="0.0" y="187" width="375" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tagListView" destination="s7y-Ck-vKb" id="JNI-ap-hEG"/>
+                        <outlet property="tagTextField" destination="VBk-I8-G1Y" id="Ctr-di-dAS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0iS-TC-Kt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2559.5" y="497.5"/>
         </scene>
     </scenes>
     <resources>

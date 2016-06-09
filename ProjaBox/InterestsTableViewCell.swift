@@ -12,6 +12,7 @@ import TagListView
 class InterestsTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var tagListView: TagListView?
+	@IBOutlet weak var editButton: UIButton?
 	
     override func awakeFromNib() {
         super.awakeFromNib()
