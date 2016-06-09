@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Eureka.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,16 +62,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>10DF388F510867E7CC26FE64FAEECF41</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1319F8171D9DA3DCE32322C1F7FA63DB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1520003FEBEC114D6C84F832AFEDB994</key>
 		<dict>
 			<key>primary</key>
@@ -92,12 +87,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82DBF44CE2F563FDA1F81D185E171608</key>
+		<key>7E82EF3158DC7672612EFE46DB8E4C8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83786BF0D78D3AA40D7AD9D725E82399</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE6EC64D79461AC18D188748D451FF1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>BC3D94F5977091FF3158085CB788939F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C38514DE12ED79A00630C5461561CD3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

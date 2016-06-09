@@ -11,6 +11,10 @@ import UIKit
 class MyProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
+	
+	let educationData = [[String: AnyObject]]()
+	let experienceData = [[String: AnyObject]]()
+	let interestsData = [String]()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,7 +25,6 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
 		
 		self.title = "My profile"
-		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(self.editButtonPressed(_:)))
 		
 		ProfileHelper.getMyFullProfile { (response) in
 			
@@ -29,6 +32,19 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	}
 	
 	// MARK: UITableView Methods
+	
+	func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		if section == 1 {
+			return "Interests"
+		} else if section == 2 {
+			return "Education"
+		} else if section == 3 {
+			return "Experience"
+		} else if section == 4 {
+			return "Posts"
+		}
+		return ""
+	}
 	
 	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		return 5
@@ -64,16 +80,27 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		} else if indexPath.section == 1 {
 			// SKILLS/INTERESTS
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
+			cell.tagListView?.addTag("Press to add interests")
 			
 			return cell
 		} else if indexPath.section == 2 {
 			// EDUCATION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
 			
+			if educationData.count == 0 {
+				cell.companyNameLabel?.text = "Add past education"
+			} else {
+				
+			}
+			
 			return cell
 		} else if indexPath.section == 3 {
 			// EXPERIENCE
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
+			
+			if experienceData.count == 0 {
+				cell.companyNameLabel?.text = "Add past experience"
+			}
 			
 			return cell
 		} else {
@@ -86,11 +113,31 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		
+		if indexPath.section == 1 {
+			
+		} else if indexPath.section == 2 {
+			performSegueWithIdentifier("editEducationSegue", sender: self)
+		} else if indexPath.section == 3 {
+			performSegueWithIdentifier("editExperienceSegue", sender: self)
+		}
 	}
 	
 	// MARK: User interaction
 	
-	func editButtonPressed(sender: UIBarButtonItem) {
+	func editPersonalInfoPressed(sender: UIButton) {
+		
+	}
+	
+	func editInterestsButtonPressed(sender: UIButton) {
+		
+	}
+	
+	func editEducationPressed(sender: UIButton) {
+		
+	}
+	
+	func editExperiencePressed(sender: UIButton) {
 		
 	}
 }

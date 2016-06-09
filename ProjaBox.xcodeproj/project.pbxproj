@@ -32,6 +32,8 @@
 		0F3B68281D08D158003BB7E5 /* Personal info.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B68221D08D158003BB7E5 /* Personal info.png */; };
 		0F3B68291D08D158003BB7E5 /* Privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B68231D08D158003BB7E5 /* Privacy.png */; };
 		0F3B682B1D08D9DF003BB7E5 /* ProfileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B682A1D08D9DF003BB7E5 /* ProfileHelper.swift */; };
+		0F3B68311D08F480003BB7E5 /* EditEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B68301D08F480003BB7E5 /* EditEducationViewController.swift */; };
+		0F3B68351D08FC7E003BB7E5 /* EditExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B68341D08FC7E003BB7E5 /* EditExperienceViewController.swift */; };
 		0F4171441CFDFCA10043A98B /* tab-bar-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4171431CFDFCA10043A98B /* tab-bar-background.png */; };
 		0F4171461CFE37870043A98B /* PillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4171451CFE37870043A98B /* PillLabel.swift */; };
 		0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */; };
@@ -160,6 +162,8 @@
 		0F3B68221D08D158003BB7E5 /* Personal info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Personal info.png"; sourceTree = "<group>"; };
 		0F3B68231D08D158003BB7E5 /* Privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Privacy.png; sourceTree = "<group>"; };
 		0F3B682A1D08D9DF003BB7E5 /* ProfileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHelper.swift; sourceTree = "<group>"; };
+		0F3B68301D08F480003BB7E5 /* EditEducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEducationViewController.swift; sourceTree = "<group>"; };
+		0F3B68341D08FC7E003BB7E5 /* EditExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditExperienceViewController.swift; sourceTree = "<group>"; };
 		0F4171431CFDFCA10043A98B /* tab-bar-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-bar-background.png"; sourceTree = "<group>"; };
 		0F4171451CFE37870043A98B /* PillLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillLabel.swift; sourceTree = "<group>"; };
 		0F4171471CFE6E340043A98B /* InterestsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsTableViewCell.swift; sourceTree = "<group>"; };
@@ -300,7 +304,7 @@
 				0F3A0C8E1CD2BD68005C6C23 /* Feed */,
 				0F4654B51D07471D005E2C5E /* Chat */,
 				0F4654B61D074726005E2C5E /* Settings */,
-				0F09352B1CA81C4A00AC2C59 /* MyProfileViewController.swift */,
+				0F3B682C1D08E68B003BB7E5 /* Profile */,
 				0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */,
 				0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */,
 			);
@@ -351,6 +355,24 @@
 				0F3B68231D08D158003BB7E5 /* Privacy.png */,
 			);
 			name = "my settings";
+			sourceTree = "<group>";
+		};
+		0F3B682C1D08E68B003BB7E5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0F09352B1CA81C4A00AC2C59 /* MyProfileViewController.swift */,
+				0F3B682F1D08F471003BB7E5 /* Edit forms */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		0F3B682F1D08F471003BB7E5 /* Edit forms */ = {
+			isa = PBXGroup;
+			children = (
+				0F3B68301D08F480003BB7E5 /* EditEducationViewController.swift */,
+				0F3B68341D08FC7E003BB7E5 /* EditExperienceViewController.swift */,
+			);
+			name = "Edit forms";
 			sourceTree = "<group>";
 		};
 		0F43A3AA1D0892E8003B6503 /* settings */ = {
@@ -885,11 +907,13 @@
 				0F4665451D05BA180042932F /* UserPost.swift in Sources */,
 				0F3B682B1D08D9DF003BB7E5 /* ProfileHelper.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
+				0F3B68311D08F480003BB7E5 /* EditEducationViewController.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
 				0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */,
 				0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */,
 				0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */,
 				0F4171461CFE37870043A98B /* PillLabel.swift in Sources */,
+				0F3B68351D08FC7E003BB7E5 /* EditExperienceViewController.swift in Sources */,
 				0F09352C1CA81C4A00AC2C59 /* MyProfileViewController.swift in Sources */,
 				0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */,
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,

@@ -16,6 +16,7 @@ pod 'TagListView', '~> 1.0'
 pod 'Alamofire'
 pod 'IQKeyboardManagerSwift'
 pod 'SwiftSpinner'
+pod 'Eureka', '~> 1.6'
 
 end
 
