@@ -10,14 +10,16 @@ import UIKit
 import Eureka
 
 class EditExperienceViewController: FormViewController {
-
+	
+	var delegate: ExperienceInputDelegate?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.form +++=  TextRow("Workplace name") {
+		self.form +++=  TextRow("work") {
 			$0.title = "Workplace"
 			$0.placeholder = "Type it in"
 			}
-			<<< DateRow("Start Date")	{
+			<<< DateRow("start-date")	{
 				$0.title = "Short style"
 				$0.value = NSDate()
 				let formatter = NSDateFormatter()
@@ -25,7 +27,7 @@ class EditExperienceViewController: FormViewController {
 				formatter.dateStyle = .ShortStyle
 				$0.dateFormatter = formatter
 			}
-			<<< DateRow("End Date") {
+			<<< DateRow("end-date") {
 				$0.title = "Short style"
 				$0.value = NSDate()
 				let formatter = NSDateFormatter()
@@ -36,6 +38,37 @@ class EditExperienceViewController: FormViewController {
 			<<< ButtonRow() { (row: ButtonRow) -> Void in
 				row.title = "Done"
 				}  .onCellSelection({ (cell, row) in
+					
 			})
 	}
+	
+	func sendData() {
+		var data = [String: String]()
+		let values = self.form.values()
+		
+		if let university = values["work"],
+			let startDate = values["start-date"],
+			let endDate = values["end-date"] {
+			let startDateString = formatDate(startDate as! NSDate)
+			let endDateString = formatDate(endDate as! NSDate)
+			
+			data["work"] = (university as! String)
+			data["startDate"] = startDateString
+			data["endDate"] = endDateString
+			
+			delegate?.finishedCompletingItem(data)
+		} else {
+			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+			self.presentViewController(alert, animated: true, completion: nil)
+		}
+	}
+	
+	private func formatDate(date: NSDate) -> String {
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd"
+		
+		return dateFormatter.stringFromDate(date)
+	}
+
 }

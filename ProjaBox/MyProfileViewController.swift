@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MyProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MyProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExperienceInputDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
 	
-	let educationData = [[String: AnyObject]]()
+	let educationData = [[String: String]]()
 	let experienceData = [[String: AnyObject]]()
 	let interestsData = [String]()
 
@@ -123,6 +123,18 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		}
 	}
 	
+	// MARK: Segue
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "editEducationSegue" {
+			let destination = segue.destinationViewController as! EditEducationViewController
+			destination.delegate = self
+		} else if segue.identifier == "editExperienceSegue" {
+			let destination = segue.destinationViewController as! EditExperienceViewController
+			destination.delegate = self
+		}
+ 	}
+	
 	// MARK: User interaction
 	
 	func editPersonalInfoPressed(sender: UIButton) {
@@ -138,6 +150,12 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	}
 	
 	func editExperiencePressed(sender: UIButton) {
+		
+	}
+	
+	// MARK: Finished entering data delegate
+	
+	func finishedCompletingItem(item: [String : String]) {
 		
 	}
 }

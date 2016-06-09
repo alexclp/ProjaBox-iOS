@@ -9,7 +9,13 @@
 import UIKit
 import Eureka
 
+protocol ExperienceInputDelegate {
+	func finishedCompletingItem(item: [String: String])
+}
+
 class EditEducationViewController: FormViewController {
+	
+	var delegate: ExperienceInputDelegate?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -35,11 +41,11 @@ class EditEducationViewController: FormViewController {
 			} <<< ButtonRow() { (row: ButtonRow) -> Void in
 				row.title = "Done"
 				}  .onCellSelection({ (cell, row) in
-					self.updateData()
+					self.sendData()
 				})
 	}
 	
-	func updateData() {
+	func sendData() {
 		var data = [String: String]()
 		let values = self.form.values()
 		
@@ -52,6 +58,8 @@ class EditEducationViewController: FormViewController {
 			data["university"] = (university as! String)
 			data["startDate"] = startDateString
 			data["endDate"] = endDateString
+			
+			delegate?.finishedCompletingItem(data)
 		} else {
 			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
 			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
