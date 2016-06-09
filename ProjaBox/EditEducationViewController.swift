@@ -13,11 +13,11 @@ class EditEducationViewController: FormViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.form +++=  TextRow("Institution name") {
+		self.form +++=  TextRow("university") {
 				$0.title = "University"
 				$0.placeholder = "Type it in"
 			}
-			<<< DateRow("Start Date")	{
+			<<< DateRow("start-date")	{
 				$0.title = "Short style"
 				$0.value = NSDate()
 				let formatter = NSDateFormatter()
@@ -25,7 +25,7 @@ class EditEducationViewController: FormViewController {
 				formatter.dateStyle = .ShortStyle
 				$0.dateFormatter = formatter
 			}
-			<<< DateRow("End Date") {
+			<<< DateRow("end-date") {
 				$0.title = "Short style"
 				$0.value = NSDate()
 				let formatter = NSDateFormatter()
@@ -35,7 +35,35 @@ class EditEducationViewController: FormViewController {
 			} <<< ButtonRow() { (row: ButtonRow) -> Void in
 				row.title = "Done"
 				}  .onCellSelection({ (cell, row) in
-			})
+					self.updateData()
+				})
+	}
+	
+	func updateData() {
+		var data = [String: String]()
+		let values = self.form.values()
+		
+		if let university = values["university"],
+			let startDate = values["start-date"],
+			let endDate = values["end-date"] {
+			let startDateString = formatDate(startDate as! NSDate)
+			let endDateString = formatDate(endDate as! NSDate)
+			
+			data["university"] = (university as! String)
+			data["startDate"] = startDateString
+			data["endDate"] = endDateString
+		} else {
+			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+			self.presentViewController(alert, animated: true, completion: nil)
+		}
+	}
+	
+	private func formatDate(date: NSDate) -> String {
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd"
+		
+		return dateFormatter.stringFromDate(date)
 	}
 }
 
