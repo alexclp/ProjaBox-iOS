@@ -895,10 +895,10 @@
             </objects>
             <point key="canvasLocation" x="2559.5" y="-296.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Bio View Controller-->
         <scene sceneID="1Ka-a4-JWE">
             <objects>
-                <viewController id="tnr-0c-s3C" sceneMemberID="viewController">
+                <viewController id="tnr-0c-s3C" customClass="EditBioViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ted-Pc-nmk"/>
                         <viewControllerLayoutGuide type="bottom" id="28n-gM-YAN"/>

@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileHeaderCell" rowHeight="293" id="KGk-i7-Jjw" customClass="ProfileHeaderTableViewCell" customModule="ProjaBox" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileHeaderCell" rowHeight="293" id="KGk-i7-Jjw" customClass="ProfileHeaderTableViewCell" customModule="ProjaBox" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="293"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -182,6 +182,7 @@
             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="descriptionLabel" destination="kBo-7J-93g" id="eft-WO-GoP"/>
+                <outlet property="editButton" destination="E1J-jh-oUg" id="Lw8-99-iEi"/>
                 <outlet property="likeButton" destination="LUm-Qj-N9W" id="g27-Fb-jz1"/>
                 <outlet property="likeLabel" destination="efc-2P-8MO" id="gmJ-Q9-htp"/>
                 <outlet property="locationLabel" destination="Lhw-rJ-vX5" id="TOz-Mh-eNE"/>
