@@ -31,7 +31,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		self.navigationController?.navigationBar.hidden = false
 		
-		self.tabBarController!.navigationItem.title = "Feed"
+//		self.tabBarController!.navigationItem.title = "Feed"
 		self.tabBarController!.navigationItem.hidesBackButton = true
 		
 		self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
