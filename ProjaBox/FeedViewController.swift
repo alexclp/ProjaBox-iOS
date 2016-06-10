@@ -89,6 +89,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		cell.moreButton?.tag = indexPath.row
 		cell.moreButton?.addTarget(self, action: #selector(FeedViewController.moreButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
+		cell.authorLocationLabel?.text = ""
+		cell.locationImageView?.hidden = true
+		cell.authorDetailsLabel?.text = ""
+		cell.profileImageView?.image = nil
+		
 		let currentPost = postsData[indexPath.row]
 		cell.postLabel?.text = currentPost.content
 		cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)

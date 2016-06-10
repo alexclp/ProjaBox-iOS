@@ -60,7 +60,7 @@ class NewsFeedHelper: NSObject {
 			let urlRequest = createAuthHeadersForURL(url, "GET")
 			Alamofire.request(urlRequest).responseJSON { response in
 //				print(response.request)
-//				print(response.result.value)
+				print(response.result.value)
 				
 				let errorCode = response.result.value!["errorCode"] as! Int
 				let data = response.result.value!["data"] as? [[String: AnyObject]]
@@ -79,6 +79,7 @@ class NewsFeedHelper: NSObject {
 							postToAdd.video = post["video"] as? NSData
 							postToAdd.likers = post["likers"] as? [[String: AnyObject]]
 							postToAdd.comments = post["comments"] as? [[String: AnyObject]]
+							postToAdd.ownerName = post["ownerName"] as? String
 							
 							posts.append(postToAdd)
 						} else {
