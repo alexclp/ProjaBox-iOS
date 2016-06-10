@@ -8,13 +8,15 @@
 
 import UIKit
 
-class MyProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExperienceInputDelegate, InterestsInputDelegate {
+class MyProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExperienceInputDelegate, InterestsInputDelegate, BioDataDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
 	
+	var bioData = [String: AnyObject]()
 	var educationData = [[String: String]]()
 	var experienceData = [[String: String]]()
 	var interestsData = [String]()
+	var posts = [UserPost]()
 	
 	var fullProfileData = [String: AnyObject]()
 
@@ -31,8 +33,62 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		ProfileHelper.getMyFullProfile { (response, data) in
 			if response == true {
 				self.fullProfileData = data!
+				self.getLatestPosts()
 			} else {
 				
+			}
+		}
+	}
+	
+	func fillData() {
+		if let education = fullProfileData["education"] {
+			educationData = education as! [[String : String]]
+		}
+		
+		if let experience = fullProfileData["experience"] {
+			experienceData = experience as! [[String : String]]
+		}
+		
+		if let interests = fullProfileData["interests"] {
+			interestsData = interests as! [String]
+		}
+		
+		// bio
+		
+		if let name = fullProfileData["name"] {
+			bioData["name"] = name as! String
+		}
+		
+		if let location = fullProfileData["location"] {
+			bioData["location"] = location as! String
+		}
+		
+		if let position = fullProfileData["occupation"] {
+			bioData["occupation"] = position as! String
+		}
+		
+		if let status = fullProfileData["status"] {
+			bioData["status"] = status as! String
+		}
+		
+		if let about = fullProfileData["about"] {
+			bioData["about"] = about
+		}
+		
+		if let sex = fullProfileData["sex"] {
+			if !sex.isEqual("U") {
+				bioData["sex"] = sex
+			}
+		}
+		
+		tableView?.reloadData()
+	}
+	
+	func getLatestPosts() {
+		ProfileHelper.getUsersLatestPosts(String(fullProfileData["id"]!)) { (response, posts) in
+			if response == true {
+				self.posts = posts!
+				self.tableView?.reloadData()
 			}
 		}
 	}
@@ -59,6 +115,14 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		let rows = 1
 		
+		if section == 2 {
+			return educationData.count + 1
+		} else if section == 3 {
+			return experienceData.count + 1
+		} else if section == 4 {
+			return posts.count
+		}
+		
 		return rows
 	}
 	
@@ -82,6 +146,41 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			// HEADER PART
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileHeaderCell", forIndexPath: indexPath) as! ProfileHeaderTableViewCell
 			cell.editButton?.addTarget(self, action: #selector(self.editBioPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.tagsLabel?.text = ""
+			
+			if let name = fullProfileData["name"] {
+				cell.nameLabel?.text = name as? String
+			}
+			
+			if let location = fullProfileData["location"] {
+				cell.locationLabel?.text = location as? String
+			}
+			
+			if let position = fullProfileData["occupation"] {
+				cell.positionLabel?.text = position as? String
+			}
+			
+			if let status = fullProfileData["status"] {
+				cell.statusLabel?.text = status as? String
+			}
+			
+			if let description = fullProfileData["about"] {
+				cell.descriptionLabel?.text = description as? String
+			}
+			
+			if let sex = fullProfileData["sex"] {
+				if !sex.isEqual("U") {
+					cell.nameLabel?.text = (cell.nameLabel?.text)! + ", " + (sex as? String)!
+				}
+			}
+			
+//			if ((fullProfileData["avatar"]?.isEqual(NSNull)) == nil) {
+//				let imageDataString = fullProfileData["avatar"] as! String
+//				let imageData = NSData(base64EncodedString: imageDataString, options: .IgnoreUnknownCharacters)
+//				if let data = imageData {
+//					cell.profileImageView?.image = UIImage(data: data)
+//				}
+//			}
 			
 			return cell
 		} else if indexPath.section == 1 {
@@ -122,6 +221,31 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			// POSTS
 			let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
 			
+			let currentPost = posts[indexPath.row]
+			cell.postLabel?.text = currentPost.content
+			cell.likesLabel?.text = String(currentPost.likers!.count)
+			cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
+			
+			if let name = fullProfileData["name"] {
+				cell.authorLabel?.text = name as? String
+			}
+			
+			if let position = fullProfileData["occupation"] {
+				cell.authorDetailsLabel?.text = position as? String
+			}
+			
+			if let location = fullProfileData["location"] {
+				cell.authorLocationLabel?.text = location as? String
+			}
+			
+//			if fullProfileData["avatar"] != nil {
+//				let imageDataString = fullProfileData["avatar"] as! String
+//				let imageData = NSData(base64EncodedString: imageDataString, options: .IgnoreUnknownCharacters)
+//				if let data = imageData {
+//					cell.profileImageView?.image = UIImage(data: data)
+//				}
+//			}
+			
 			return cell
 		}
 	}
@@ -152,7 +276,9 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			destination.interestsList = interestsData
 			destination.delegate = self
 		} else if segue.identifier == "editBioSegue" {
-			
+			let destination = segue.destinationViewController as! EditBioViewController
+			destination.formData = bioData
+			destination.delegate = self
 		}
  	}
 	
@@ -164,14 +290,6 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	
 	func editInterestsButtonPressed(sender: UIButton) {
 		performSegueWithIdentifier("editInterestsSegue", sender: self)
-	}
-	
-	func editEducationPressed(sender: UIButton) {
-		
-	}
-	
-	func editExperiencePressed(sender: UIButton) {
-		
 	}
 	
 	// MARK: Finished entering data delegate
@@ -203,6 +321,23 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		fullProfileData["interests"] = interestsData
 		tableView?.reloadData()
 		updateProfile()
+	}
+	
+	func userDidFinishCompletingData(bioData: [String : AnyObject]) {
+		self.bioData = bioData
+		unwrapBioData()
+		tableView?.reloadData()
+		updateProfile()
+	}
+	
+	func unwrapBioData() {
+		fullProfileData["name"] = bioData["name"]
+		fullProfileData["location"] = bioData["location"]
+		fullProfileData["occupation"] = bioData["occupation"]
+		fullProfileData["status"] = bioData["position"]
+		fullProfileData["about"] = bioData["about"]
+		fullProfileData["sex"] = bioData["sex"]
+//		fullProfileData["avatar"] = (bioData["avatar"] as! NSData).base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
 	}
 	
 	// MARK: UPDATING

@@ -9,8 +9,15 @@
 import UIKit
 import Eureka
 
+protocol BioDataDelegate {
+	func userDidFinishCompletingData(bioData: [String: AnyObject])
+}
+
 class EditBioViewController: FormViewController {
 
+	var delegate: BioDataDelegate?
+	var formData = [String: AnyObject]()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,15 +29,15 @@ class EditBioViewController: FormViewController {
     }
 	
 	func setupForm() {
-		self.form +++=  TextRow("work") {
-			$0.title = "Name"
-			$0.placeholder = "Type your name"
+		self.form +++=  TextRow("name") {
+				$0.title = "Name"
+				$0.placeholder = "Type your name"
 			}
 			<<< TextRow("location") {
 				$0.title = "Location"
 				$0.placeholder = "Type your location"
 			}
-			<<< TextRow("position") {
+			<<< TextRow("occupation") {
 				$0.title = "Position"
 				$0.placeholder = "Type in your position"
 			}
@@ -38,7 +45,7 @@ class EditBioViewController: FormViewController {
 				$0.title = "Status"
 				$0.placeholder = "e.g. Looking for a team"
 			}
-			<<< TextRow("description") {
+			<<< TextRow("about") {
 				$0.title = "Description"
 				$0.placeholder = "Short bio"
 			}
@@ -46,7 +53,7 @@ class EditBioViewController: FormViewController {
 				$0.title = "Sex"
 				$0.options = ["M", "F"]
 			}
-			<<< ImageRow("profile-picture"){
+			<<< ImageRow("avatar"){
 				$0.title = "Profile Picture"
 			}
 			<<< ButtonRow() { (row: ButtonRow) -> Void in
@@ -57,6 +64,24 @@ class EditBioViewController: FormViewController {
 	}
 	
 	func doneButtonPressed() {
-		self.navigationController?.popViewControllerAnimated(true)
+		
+		let rawData = self.form.values()
+		if let name = rawData["name"], let location = rawData["location"], let position = rawData["occupation"], let status = rawData["status"],
+			let description = rawData["about"], let sex = rawData["sex"], let avatar = rawData["avatar"]  {
+			
+			formData["name"] = name as! String
+			formData["location"] = location as! String
+			formData["occupation"] = position as! String
+			formData["status"] = status as! String
+			formData["about"] = description as! String
+			formData["sex"] = sex as! String
+			formData["avatar"] = UIImagePNGRepresentation(avatar as! UIImage)
+	
+//			print(formData)
+			delegate?.userDidFinishCompletingData(formData)
+			self.navigationController?.popViewControllerAnimated(true)
+		} else {
+			print("Please fill all the data alert")
+		}
 	}
 }
