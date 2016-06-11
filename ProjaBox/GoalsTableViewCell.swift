@@ -9,6 +9,8 @@
 import UIKit
 
 class GoalsTableViewCell: UITableViewCell {
+	
+	@IBOutlet weak var goalsTextView: UITextView?
 
     override func awakeFromNib() {
         super.awakeFromNib()

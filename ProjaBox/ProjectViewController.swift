@@ -18,6 +18,21 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	// MARK: UITableView Methods
 	
+	func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		if section == 2 {
+			return "Goals"
+		} else if section == 3 {
+			return "Photos"
+		} else if section == 4 {
+			return "Job"
+		} else if section == 5 {
+			return "Team"
+		} else if section == 6 {
+			return "Posts"
+		}
+		return ""
+	}
+	
 	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		return 7
 	}
