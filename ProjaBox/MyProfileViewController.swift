@@ -161,7 +161,10 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			}
 			
 			if let status = fullProfileData["status"] {
+				cell.statusLabel?.hidden = false
 				cell.statusLabel?.text = status as? String
+			} else {
+				cell.statusLabel?.hidden = true
 			}
 			
 			if let description = fullProfileData["about"] {
@@ -334,7 +337,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		fullProfileData["name"] = bioData["name"]
 		fullProfileData["location"] = bioData["location"]
 		fullProfileData["occupation"] = bioData["occupation"]
-		fullProfileData["status"] = bioData["position"]
+		fullProfileData["status"] = bioData["status"]
 		fullProfileData["about"] = bioData["about"]
 		fullProfileData["sex"] = bioData["sex"]
 //		fullProfileData["avatar"] = (bioData["avatar"] as! NSData).base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
