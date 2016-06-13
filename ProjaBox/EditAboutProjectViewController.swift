@@ -52,11 +52,12 @@ class EditAboutProjectViewController: FormViewController {
 	func doneButtonPressed() {
 		let formValues = self.form.values()
 		
-		if let name = formValues["name"], let location = formValues["location"], let description = formValues["description"], let avatar = formValues["avatar"] {
+		if let name = formValues["name"], let location = formValues["location"], let description = formValues["description"] {
+//			let avatar = formValues["avatar"] {
 			data["name"] = name as? String
 			data["location"] = location as? String
 			data["description"] = description as? String
-			data["avatar"] = avatar as? String
+//			data["avatar"] = avatar as? String
 			delegate!.userDidFinishCompletingData(data)
 			self.navigationController?.popViewControllerAnimated(true)
 		} else {

@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
+	
+	var headerData = [String: String]()
+	var teamData = [[String: String]]()
+	var goals = String()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -67,12 +71,29 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileHeaderCell", forIndexPath: indexPath) as! ProfileHeaderTableViewCell
 			cell.editButton?.addTarget(self, action: #selector(self.editHeaderButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			
+			if let location = headerData["location"] {
+				cell.locationLabel?.text = location
+			}
+			
+			if let name = headerData["name"] {
+				cell.nameLabel?.text = name
+			}
+			
+			if let type = headerData["type"] {
+				cell.positionLabel?.text = type
+			}
+			
+			if let desc = headerData["description"] {
+				cell.descriptionLabel?.text = desc
+			}
+			
 			return cell
 		} else if section == 1 {
 			// TODO: Video section
 		} else if section == 2 {
 			// GOALS
 			let cell = tableView.dequeueReusableCellWithIdentifier("goalsCell", forIndexPath: indexPath) as! GoalsTableViewCell
+			cell.goalsTextView?.text = goals
 			
 			return cell
 		} else if section == 3 {
@@ -81,12 +102,23 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			
 			return cell
 		} else if section == 4 {
-			// JOBS SECTION
+			// TEAM SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
+			let currentTeamMember = teamData[indexPath.row]
+			
+			if let name = currentTeamMember["name"] {
+				cell.companyNameLabel?.text = name
+			}
+			
+			if let position = currentTeamMember["position"] {
+				cell.positionLabel?.text = position
+			}
+			
+			cell.periodLabel?.text = ""
 			
 			return cell
 		} else if section == 5 {
-			// TEAM SECTION
+			// JOB SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
 			
 			return cell
@@ -102,9 +134,27 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
 	
-	// User Interaction
+	// MARK: User Interaction
 	
 	func editHeaderButtonPressed(sender: UIButton) {
+		performSegueWithIdentifier("editProjectHeaderSegue", sender: self)
+	}
+	
+	// MARK: Segue config
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "editProjectHeaderSegue" {
+			let destination = segue.destinationViewController as! EditAboutProjectViewController
+			destination.delegate = self
+			destination.data = headerData
+		}
+	}
+	
+	// MARK: Forms Delegates Methods
+	
+	func userDidFinishCompletingData(bioData: [String : AnyObject]) {
 		
 	}
+	
+	// MARK: Updating
 }
