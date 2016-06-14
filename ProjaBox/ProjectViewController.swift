@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate {
+class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate, GoalsInputDelegate, ExperienceInputDelegate, InterestsInputDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
 	
@@ -16,6 +16,13 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	var teamData = [[String: String]]()
 	var postsData = [ProjectPost]()
 	var goals = String()
+	var jobs = [String]()
+	
+	var fullProjectData = [String: AnyObject]()
+//	var projectData: [String: AnyObject?] = ["type": nil, "name": nil, "goals": nil, "description": nil, "location": nil, "video": nil, "links": nil, "jobs": nil]
+	var projectData = [String: AnyObject]()
+	
+	let profileParameters = ["type", "name", "goals", "avatar", "description", "location", "video", "links", "jobs"]
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -30,6 +37,14 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 	
 		teamData.append(["name": "Click me to add a team member"])
+		
+		getProfile()
+	}
+	
+	func getProfile() {
+		if NSUserDefaults.standardUserDefaults().objectForKey("projectId") != nil {
+			
+		}
 	}
 	
 	// MARK: UITableView Methods
@@ -198,9 +213,57 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		headerData["description"] = bioData["description"] as? String
 		headerData["type"] = bioData["type"] as? String
 		headerData["location"] = bioData["location"] as? String
+		
+		projectData["name"] = headerData["name"]
+		projectData["description"] = headerData["description"]
+		projectData["type"] = headerData["type"]
+		projectData["location"] = headerData["location"]
+		
 		tableView?.reloadData()
 		// TODO: Update online profile
+		updateProfile()
+	}
+	
+	func userFinishedEditingGoals(goals: String) {
+		self.goals = goals
+		projectData["goals"] = goals
+		tableView?.reloadData()
+		updateProfile()
+	}
+	
+	func finishedCompletingItem(item: [String : String]) {
+		teamData.append(item)
+//		projectData![""] = 
+	}
+	
+	func userDidFinishEditingInterests(interests: [String]) {
+		jobs = interests
+		projectData["jobs"] = jobs
+		tableView?.reloadData()
+		updateProfile()
 	}
 	
 	// MARK: Updating
+	
+	func updateProfile() {
+		if NSUserDefaults.standardUserDefaults().objectForKey("projectId") != nil {
+			let id = NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! String
+			ProjectHelper.updateProjectProfile(id, fullProfileData: projectData, completionHandler: { (response) in
+				print(response)
+			})
+		} else {
+			ProjectHelper.createProject(projectData, completionHandler: { (response, fullProfile) in
+				if response == true {
+					print(fullProfile)
+					let id = fullProfile!["id"]
+					self.fullProjectData = fullProfile!
+					NSUserDefaults.standardUserDefaults().setObject(id, forKey: "projectId")
+				}
+			})
+		}
+	}
+	
+	func createProjectTeamMate(teamMate: [String: String]) {
+		
+	}
 }

@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol GoalsInputDelegate {
+	func userFinishedEditingGoals(goals: String)
+}
+
 class EditGoalsViewController: UIViewController {
 
 	@IBOutlet weak var textView: UITextView?
+	
+	var delegate: GoalsInputDelegate?
 	
 	var goals = String()
 	
@@ -26,7 +32,7 @@ class EditGoalsViewController: UIViewController {
 		
 		if let text = textView?.text {
 			goals = text
-			// TODO: some delegate call here
+			delegate?.userFinishedEditingGoals(goals)
 			self.navigationController?.popViewControllerAnimated(true)
 		}
 	}
