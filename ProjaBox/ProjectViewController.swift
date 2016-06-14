@@ -43,7 +43,48 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	func getProfile() {
 		if NSUserDefaults.standardUserDefaults().objectForKey("projectId") != nil {
-			
+			let id = String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)
+			ProjectHelper.getFullProjectProfile(id, completionHandler: { (response, data) in
+				
+				if response == true {
+					print(data)
+					if let name = data!["name"] {
+						self.projectData["name"] = name as! String
+						self.headerData["name"] = name as? String
+					}
+					
+					if let description = data!["description"] {
+						self.projectData["description"] = description as! String
+						self.headerData["description"] = description as? String
+					}
+					
+					if let location = data!["location"] {
+						self.projectData["location"] = location as! String
+						self.headerData["location"] = location as? String
+					}
+					
+					if let goals = data!["goals"] as? String {
+						self.projectData["goals"] = goals 
+						self.headerData["goals"] = goals
+					}
+					
+					if let type = data!["type"] {
+						self.projectData["type"] = type as! String
+						self.headerData["type"] = type as? String
+					}
+					
+					if let team = data!["team"] as? [String: String] {
+						self.projectData["team"] = team
+						self.teamData.append(team)
+					}
+					
+					if let jobs = data!["jobs"] as? [String] {
+						self.projectData["jobs"] = jobs
+						self.jobs = jobs
+					}
+					self.tableView?.reloadData()
+				}
+			})
 		}
 	}
 	
