@@ -128,6 +128,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-ea-TkH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="l5y-tr-GjW" id="zGY-vs-3y0"/>
+                                    <outlet property="delegate" destination="l5y-tr-GjW" id="Lzp-J6-ikk"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,6 +144,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="project.png" id="YXa-oI-3v2"/>
                     <connections>
+                        <outlet property="tableView" destination="ZAF-ea-TkH" id="NEB-oH-G58"/>
                         <segue destination="w6m-F6-TIt" kind="show" identifier="editProjectHeaderSegue" id="rin-X0-Kme"/>
                         <segue destination="Ao3-Ou-Tcs" kind="show" identifier="editProjectGoalsSegue" id="WPs-dY-RuK"/>
                         <segue destination="nj2-2q-boa" kind="show" identifier="editTeamSegue" id="c6Z-Xs-l6B"/>

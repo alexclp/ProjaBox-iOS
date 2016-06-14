@@ -14,6 +14,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	var headerData = [String: String]()
 	var teamData = [[String: String]]()
+	var postsData = [ProjectPost]()
 	var goals = String()
 	
 	override func viewDidLoad() {
@@ -27,23 +28,41 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
 		tableView!.registerNib(UINib(nibName: "GoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "goalsCell")
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
+	
+		teamData.append(["name": "Click me to add a team member"])
 	}
 	
 	// MARK: UITableView Methods
-//	
-//	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//		
-//	}
 	
+	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		let section = indexPath.section
+		if section == 0 {
+			return 293.0
+		} else if section == 1 {
+			return 115.0
+		} else if section == 2 {
+			return 115.0
+		} else if section == 3 {
+			return 115.0
+		} else if section == 4 {
+			return 115.0
+		} else if section == 5 {
+			return 115.0
+		} else if section == 6 {
+			return 221.0
+		}
+		return 0
+	}
+
 	func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if section == 2 {
 			return "Goals"
 		} else if section == 3 {
 			return "Photos"
 		} else if section == 4 {
-			return "Job"
-		} else if section == 5 {
 			return "Team"
+		} else if section == 5 {
+			return "Jobs"
 		} else if section == 6 {
 			return "Posts"
 		}
@@ -55,12 +74,29 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if section == 6 || section == 3 {
-			// RETURN THE NO OF POSTS
-			return 0
-		} else {
+		if section == 0 {
+			// HEADER
 			return 1
+		} else if section == 1 {
+			// VIDEO
+			return 0
+		} else if section == 2 {
+			// GOALS
+			return 1
+		} else if section == 3 {
+			// PHOTOS
+			return 1
+		} else if section == 4 {
+			// TEAM
+			return teamData.count
+		} else if section == 5 {
+			// JOBS
+			return 1
+		} else if section == 6 {
+			// POSTS
+			return postsData.count
 		}
+		return 0
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -70,6 +106,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			// HEADER
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileHeaderCell", forIndexPath: indexPath) as! ProfileHeaderTableViewCell
 			cell.editButton?.addTarget(self, action: #selector(self.editHeaderButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.statusLabel?.hidden = true
+			cell.tagsLabel?.hidden = true
 			
 			if let location = headerData["location"] {
 				cell.locationLabel?.text = location
@@ -80,7 +118,9 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			}
 			
 			if let type = headerData["type"] {
-				cell.positionLabel?.text = type
+				cell.positionLabel?.hidden = true
+				cell.projectTypeLabel?.hidden = false
+				cell.projectTypeLabel?.text = type
 			}
 			
 			if let desc = headerData["description"] {
@@ -104,6 +144,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		} else if section == 4 {
 			// TEAM SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
+			
 			let currentTeamMember = teamData[indexPath.row]
 			
 			if let name = currentTeamMember["name"] {
@@ -153,7 +194,12 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	// MARK: Forms Delegates Methods
 	
 	func userDidFinishCompletingData(bioData: [String : AnyObject]) {
-		
+		headerData["name"] = bioData["name"] as? String
+		headerData["description"] = bioData["description"] as? String
+		headerData["type"] = bioData["type"] as? String
+		headerData["location"] = bioData["location"] as? String
+		tableView?.reloadData()
+		// TODO: Update online profile
 	}
 	
 	// MARK: Updating

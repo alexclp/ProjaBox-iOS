@@ -14,6 +14,7 @@ class ProfileHeaderTableViewCell: UITableViewCell {
 	@IBOutlet weak var nameLabel: UILabel?
 	@IBOutlet weak var locationLabel: UILabel?
 	@IBOutlet weak var positionLabel: UILabel?
+	@IBOutlet weak var projectTypeLabel: PillLabel?
 	@IBOutlet weak var statusLabel: PillLabel?
 	@IBOutlet weak var tagsLabel: UILabel?
 	@IBOutlet weak var descriptionLabel: UILabel?

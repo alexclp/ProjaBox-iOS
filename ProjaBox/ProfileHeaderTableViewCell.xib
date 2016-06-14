@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="293"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="292"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="293"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-q0-a5M">
@@ -121,6 +121,20 @@
                                 <rect key="frame" x="276" y="8" width="20" height="21"/>
                                 <state key="normal" image="My Posts.png"/>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmn-M1-G3i" customClass="PillLabel" customModule="ProjaBox" customModuleProvider="target">
+                                <rect key="frame" x="94" y="59" width="106" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fw6-EC-vqJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -130,6 +144,7 @@
                             <constraint firstItem="fgf-NJ-4np" firstAttribute="centerY" secondItem="Lhw-rJ-vX5" secondAttribute="centerY" id="2RA-fp-lfj"/>
                             <constraint firstAttribute="trailing" secondItem="guO-hW-fki" secondAttribute="trailing" constant="14" id="2ps-du-5BR"/>
                             <constraint firstItem="ONZ-TM-sRX" firstAttribute="leading" secondItem="gau-Py-5Ov" secondAttribute="trailing" constant="63" id="3Ad-zc-8ox"/>
+                            <constraint firstItem="xmn-M1-G3i" firstAttribute="leading" secondItem="mnP-xp-16N" secondAttribute="leading" id="5RB-sl-Tz5"/>
                             <constraint firstItem="fgf-NJ-4np" firstAttribute="top" secondItem="vxd-HK-JaB" secondAttribute="bottom" constant="3" id="7uE-L9-PSj"/>
                             <constraint firstItem="EEy-3l-6QS" firstAttribute="centerY" secondItem="rcW-q0-a5M" secondAttribute="centerY" id="8f9-Bl-iJn"/>
                             <constraint firstItem="Lhw-rJ-vX5" firstAttribute="top" secondItem="vxd-HK-JaB" secondAttribute="bottom" constant="1" id="8fk-hQ-Rv4"/>
@@ -150,12 +165,14 @@
                             <constraint firstItem="kBo-7J-93g" firstAttribute="leading" secondItem="rcW-q0-a5M" secondAttribute="leading" id="OGf-4p-JYJ"/>
                             <constraint firstItem="guO-hW-fki" firstAttribute="leading" secondItem="mnP-xp-16N" secondAttribute="trailing" constant="4" id="PTX-69-rCG"/>
                             <constraint firstItem="gau-Py-5Ov" firstAttribute="centerY" secondItem="ONZ-TM-sRX" secondAttribute="centerY" id="PWz-8v-2dY"/>
+                            <constraint firstItem="xmn-M1-G3i" firstAttribute="trailing" secondItem="gau-Py-5Ov" secondAttribute="trailing" id="RPp-SM-ddd"/>
                             <constraint firstItem="Ius-MM-ASl" firstAttribute="leading" secondItem="HTN-Sb-X68" secondAttribute="leading" id="RzD-Ll-RDU"/>
                             <constraint firstItem="vxd-HK-JaB" firstAttribute="leading" secondItem="Ius-MM-ASl" secondAttribute="trailing" constant="8" symbolic="YES" id="WZr-qU-qE9"/>
                             <constraint firstAttribute="trailing" secondItem="kBo-7J-93g" secondAttribute="trailing" id="WpY-8v-WKx"/>
                             <constraint firstItem="GY4-N5-B8b" firstAttribute="top" secondItem="efc-2P-8MO" secondAttribute="bottom" constant="8" symbolic="YES" id="XfT-uH-Rdt"/>
                             <constraint firstItem="EEy-3l-6QS" firstAttribute="trailing" secondItem="GY4-N5-B8b" secondAttribute="trailing" id="Y9M-Ei-TJ7"/>
                             <constraint firstItem="GY4-N5-B8b" firstAttribute="centerX" secondItem="kBo-7J-93g" secondAttribute="centerX" id="abZ-Be-xLx"/>
+                            <constraint firstItem="xmn-M1-G3i" firstAttribute="baseline" secondItem="guO-hW-fki" secondAttribute="baseline" id="bgT-04-tAw"/>
                             <constraint firstItem="Ius-MM-ASl" firstAttribute="top" secondItem="rcW-q0-a5M" secondAttribute="topMargin" id="eSP-TY-l8N"/>
                             <constraint firstItem="HTN-Sb-X68" firstAttribute="top" secondItem="Ius-MM-ASl" secondAttribute="bottom" constant="8" symbolic="YES" id="efV-Ji-CMy"/>
                             <constraint firstItem="vxd-HK-JaB" firstAttribute="bottom" secondItem="E1J-jh-oUg" secondAttribute="bottom" id="h4h-zC-gRr"/>
@@ -196,6 +213,7 @@
                 <outlet property="nameLabel" destination="vxd-HK-JaB" id="DNx-ke-i99"/>
                 <outlet property="positionLabel" destination="mnP-xp-16N" id="oPT-qc-wf1"/>
                 <outlet property="profileImageView" destination="Ius-MM-ASl" id="pgA-B6-w3u"/>
+                <outlet property="projectTypeLabel" destination="xmn-M1-G3i" id="ruX-UK-UiC"/>
                 <outlet property="statusLabel" destination="guO-hW-fki" id="MCY-8i-cp9"/>
                 <outlet property="tagsLabel" destination="HTN-Sb-X68" id="ahb-8Q-QcR"/>
             </connections>
