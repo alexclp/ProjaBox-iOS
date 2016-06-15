@@ -101,6 +101,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		ProjectHelper.getProjectsLatestPosts(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, posts) in
 			if response == true {
 				print("GOT PROJECT'S POSTS")
+				self.postsData = posts!
+				self.tableView?.reloadData()
 			}
 		}
 	}
