@@ -35,9 +35,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
 		tableView!.registerNib(UINib(nibName: "GoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "goalsCell")
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
-	
-		teamData.append(["name": "Click me to add a team member"])
-		
+
 		getProfile()
 	}
 	
@@ -65,7 +63,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					
 					if let goals = data!["goals"] as? String {
 						self.projectData["goals"] = goals 
-						self.headerData["goals"] = goals
+						self.goals = goals
 					}
 					
 					if let type = data!["type"] {
@@ -144,7 +142,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			return 1
 		} else if section == 4 {
 			// TEAM
-			return teamData.count
+			return teamData.count + 1
 		} else if section == 5 {
 			// JOBS
 			return 1
@@ -201,23 +199,31 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		} else if section == 4 {
 			// TEAM SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
-			
-			let currentTeamMember = teamData[indexPath.row]
-			
-			if let name = currentTeamMember["name"] {
-				cell.companyNameLabel?.text = name
-			}
-			
-			if let position = currentTeamMember["position"] {
-				cell.positionLabel?.text = position
-			}
-			
 			cell.periodLabel?.text = ""
+			if indexPath.row == teamData.count || teamData.count == 0 {
+				cell.companyNameLabel?.text = "Add a new team member"
+				
+			} else {
+				let currentTeamMember = teamData[indexPath.row]
+				
+				if let name = currentTeamMember["name"] {
+					cell.companyNameLabel?.text = name
+				}
+				
+				if let position = currentTeamMember["position"] {
+					cell.positionLabel?.text = position
+				}
+			}
 			
 			return cell
 		} else if section == 5 {
 			// JOB SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
+			cell.editButton?.addTarget(self, action: #selector(self.editJobsButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			
+			for job in jobs {
+				cell.tagListView?.addTag(job)
+			}
 			
 			return cell
 		}
@@ -230,6 +236,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		
+		if indexPath.section == 4 {
+			performSegueWithIdentifier("editTeamSegue", sender: self)
+		}
 	}
 	
 	// MARK: User Interaction
@@ -240,6 +250,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	func editHeaderButtonPressed(sender: UIButton) {
 		performSegueWithIdentifier("editProjectHeaderSegue", sender: self)
+	}
+	
+	func editJobsButtonPressed(sender: UIButton) {
+		performSegueWithIdentifier("editJobsSegue", sender: self)
 	}
 	
 	// MARK: Segue config
@@ -253,6 +267,13 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			let destination = segue.destinationViewController as! EditGoalsViewController
 			destination.delegate = self
 			destination.goals = goals
+		} else if segue.identifier == "editTeamSegue" {
+			let destination = segue.destinationViewController as! EditTeamViewController
+			destination.delegate = self
+		} else if segue.identifier == "editJobsSegue" {
+			let destination = segue.destinationViewController as! EditJobsFormViewController
+			destination.delegate = self
+			destination.jobsList = jobs
 		}
 	}
 	
@@ -282,8 +303,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func finishedCompletingItem(item: [String : String]) {
-		teamData.append(item)
-//		projectData![""] = 
+		tableView?.reloadData()
+		createProjectTeamMate(item)
 	}
 	
 	func userDidFinishEditingInterests(interests: [String]) {
@@ -319,6 +340,16 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func createProjectTeamMate(teamMate: [String: String]) {
-		
+		if let id = NSUserDefaults.standardUserDefaults().objectForKey("projectId") {
+			let idString = String(id as! Int)
+			ProjectHelper.createProjectTeamMate(idString, teammate: teamMate, completionHandler: { (response) in
+				if response == true {
+					print("Created a new team mate")
+					self.teamData.append(teamMate)
+					self.projectData["team"] = self.teamData
+					self.tableView?.reloadData()
+				}
+			})
+		}
 	}
 }

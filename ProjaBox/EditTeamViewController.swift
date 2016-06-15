@@ -35,7 +35,7 @@ class EditTeamViewController: FormViewController {
 			<<< ButtonRow() { (row: ButtonRow) -> Void in
 				row.title = "Done"
 				}  .onCellSelection({ (cell, row) in
-					
+					self.doneButtonPressed()
 				})
 	}
 	
