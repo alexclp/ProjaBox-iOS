@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'ECB4143196184B0E0EA02182DB2B9CCA'
-               BlueprintName = 'LiquidFloatingActionButton'
+               BlueprintIdentifier = '59C5734CBDBC16DD52556632EF13C40B'
+               BlueprintName = 'KCFloatingActionButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'LiquidFloatingActionButton.framework'>
+               BuildableName = 'KCFloatingActionButton.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

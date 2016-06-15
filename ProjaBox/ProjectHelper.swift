@@ -58,6 +58,37 @@ class ProjectHelper: NSObject {
 		}
 	}
 	
+	class func createPost(projectId: String, _ name: String, _ content: String, _ photo: NSData?, _ video: NSData?, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/posts"
+		let headers = getHeaders()
+		if let image = photo, let video = video {
+			let parameters: [String: AnyObject] = ["name": name, "content": content, "image": image, "video": video]
+			Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+				
+				//				print(response)
+				
+				let errorCode = response.result.value!["errorCode"] as! Int
+				if errorCode != 0 {
+					completionHandler(false)
+				} else {
+					completionHandler(true)
+				}
+			}
+		} else {
+			Alamofire.request(.POST, urlString, parameters: ["name": name, "content": content], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+				
+				//				print(response)
+				
+				let errorCode = response.result.value!["errorCode"] as! Int
+				if errorCode != 0 {
+					completionHandler(false)
+				} else {
+					completionHandler(true)
+				}
+			}
+		}
+	}
+	
 	// MARK: FETCHING
 	
 	class func getFullProjectProfile(projectId: String, completionHandler: (Bool, [String: AnyObject]?) -> Void) {
@@ -74,6 +105,45 @@ class ProjectHelper: NSObject {
 //				print(data)
 				completionHandler(true, data)
 			}
+		}
+	}
+	
+	class func getProjectsLatestPosts(projectId: String, completionHandler: (Bool, [ProjectPost]?) -> Void) {
+		let urlString = "http://139.59/161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/latest"
+		let headers = getHeaders()
+		
+		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			let data = response.result.value!["data"] as? [[String: AnyObject]]
+			
+			if let data = data {
+				var posts = [ProjectPost]()
+				for post in data {
+					let postToAdd = ProjectPost()
+					postToAdd.content = post["content"] as? String
+					postToAdd.createdTimestamp = post["created"] as? Int
+					postToAdd.id = post["id"] as? Int
+					postToAdd.isLikedByMe = post["isLikedByMe"] as? Bool
+					postToAdd.image = post["image"] as? NSData
+					postToAdd.video = post["video"] as? NSData
+					
+					postToAdd.projectAvatar = post["projectAvatar"] as? NSData
+					postToAdd.projectId = post["projectId"] as? Int
+					postToAdd.projectName = post["projectName"] as? String
+					postToAdd.projectOwnerId = post["projectOwnerId"] as? Int
+					postToAdd.likers = post["likers"] as? [[String: AnyObject]]
+					postToAdd.comments = post["comments"] as? [[String: AnyObject]]
+					
+					posts.append(postToAdd)
+				}
+				
+				if errorCode != 0 {
+					completionHandler(false, nil)
+				} else {
+					completionHandler(true, posts)
+				}
+		}
+
 		}
 	}
 	

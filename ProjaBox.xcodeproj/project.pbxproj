@@ -63,6 +63,9 @@
 		0F43A3B81D0893B3003B6503 /* Questions and Answers.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F43A3B11D0893B3003B6503 /* Questions and Answers.png */; };
 		0F4665451D05BA180042932F /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4665441D05BA180042932F /* UserPost.swift */; };
 		0F4665471D05CCE70042932F /* ProjectPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4665461D05CCE70042932F /* ProjectPost.swift */; };
+		0F46DEC31D11DAFD0057C479 /* share-float.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F46DEC01D11DAFD0057C479 /* share-float.png */; };
+		0F46DEC41D11DAFD0057C479 /* share-float@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F46DEC11D11DAFD0057C479 /* share-float@2x.png */; };
+		0F46DEC51D11DAFD0057C479 /* share-float@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F46DEC21D11DAFD0057C479 /* share-float@3x.png */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
 		0F50B7AE1D09CE1D0051AEAA /* EditInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50B7AD1D09CE1D0051AEAA /* EditInterestsViewController.swift */; };
@@ -214,6 +217,9 @@
 		0F43A3B11D0893B3003B6503 /* Questions and Answers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Questions and Answers.png"; sourceTree = "<group>"; };
 		0F4665441D05BA180042932F /* UserPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
 		0F4665461D05CCE70042932F /* ProjectPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPost.swift; sourceTree = "<group>"; };
+		0F46DEC01D11DAFD0057C479 /* share-float.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-float.png"; sourceTree = "<group>"; };
+		0F46DEC11D11DAFD0057C479 /* share-float@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-float@2x.png"; sourceTree = "<group>"; };
+		0F46DEC21D11DAFD0057C479 /* share-float@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-float@3x.png"; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		0F50B7AD1D09CE1D0051AEAA /* EditInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInterestsViewController.swift; sourceTree = "<group>"; };
@@ -485,6 +491,9 @@
 		0F43A3AA1D0892E8003B6503 /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				0F46DEC01D11DAFD0057C479 /* share-float.png */,
+				0F46DEC11D11DAFD0057C479 /* share-float@2x.png */,
+				0F46DEC21D11DAFD0057C479 /* share-float@3x.png */,
 				0F3B681D1D08D14E003BB7E5 /* my settings */,
 				0F43A3AB1D0893B3003B6503 /* About.png */,
 				0F43A3AC1D0893B3003B6503 /* accessory-view.png */,
@@ -811,11 +820,13 @@
 				0F6785E51CC983CE00F89541 /* settings@3x.png in Resources */,
 				0F351C091D0A69DE00E44371 /* home@3x.png in Resources */,
 				0F351BFD1D0A69D400E44371 /* search@3x.png in Resources */,
+				0F46DEC31D11DAFD0057C479 /* share-float.png in Resources */,
 				0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */,
 				0F3B68261D08D158003BB7E5 /* Delete account.png in Resources */,
 				0FD43C5C1CF5F6670061E4E9 /* background.png in Resources */,
 				0F43A3B61D0893B3003B6503 /* My Profile.png in Resources */,
 				0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */,
+				0F46DEC51D11DAFD0057C479 /* share-float@3x.png in Resources */,
 				0F41E0E11D0C1AD800BD0520 /* PhotoCollectionViewCell.xib in Resources */,
 				0F15C47D1CD427AC00E2E4B9 /* LikesTableViewCell.xib in Resources */,
 				0F6785D11CC6F69A00F89541 /* share selected.png in Resources */,
@@ -833,6 +844,7 @@
 				0F351BFB1D0A69D400E44371 /* search.png in Resources */,
 				0F6785CC1CC6F69A00F89541 /* message default.png in Resources */,
 				0F6785CD1CC6F69A00F89541 /* message selected.png in Resources */,
+				0F46DEC41D11DAFD0057C479 /* share-float@2x.png in Resources */,
 				0F3B68271D08D158003BB7E5 /* Notifications.png in Resources */,
 				0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */,
 				0F5505871CF8B7EC005229D7 /* sign-in-background.png in Resources */,

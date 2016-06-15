@@ -29,17 +29,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KCFloatingActionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KMPlaceholderTextView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>LiquidFloatingActionButton-LiquidFloatingActionButton.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>LiquidFloatingActionButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,17 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B16B8F9CB71F5E6AA3390DC79289ABA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2E4A37C88D68A62EA5C1BC7A2A4D19AE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>31246027096EA734F1B8E4839C3190A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A6163B3F516E5C49446D8686E66A871</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59C5734CBDBC16DD52556632EF13C40B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +107,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>885F7F15621AC854EDA399EDB5D14EA3</key>
+		<key>B5A24A7AE86FCC4281A6E0584A1FF6F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,17 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE264FA7BBA0F963F6CEA5E24E305C75</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>EC25B770E2E786F47106EE8F013163EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ECB4143196184B0E0EA02182DB2B9CCA</key>
+		<key>EFE367AB65EC2F5FDD91FD698ECFB023</key>
 		<dict>
 			<key>primary</key>
 			<true/>

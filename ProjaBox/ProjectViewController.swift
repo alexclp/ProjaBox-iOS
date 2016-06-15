@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import KCFloatingActionButton
 
 class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate, GoalsInputDelegate, ExperienceInputDelegate, InterestsInputDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
+	@IBOutlet weak var floatingButton = KCFloatingActionButton()
 	
 	var headerData = [String: String]()
 	var teamData = [[String: String]]()
@@ -35,8 +37,16 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
 		tableView!.registerNib(UINib(nibName: "GoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "goalsCell")
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
-
+		
 		getProfile()
+		setupPostButton()
+	}
+	
+	func setupPostButton() {
+		floatingButton!.addItem("Make a new post", icon: UIImage(named: "share-float.png")!, handler: { item in
+			self.performSegueWithIdentifier("showCreatePostSegue", sender: self)
+			self.floatingButton!.close()
+		})
 	}
 	
 	func getProfile() {
@@ -220,6 +230,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			// JOB SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
 			cell.editButton?.addTarget(self, action: #selector(self.editJobsButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.tagListView?.removeAllTags()
 			
 			for job in jobs {
 				cell.tagListView?.addTag(job)
@@ -274,6 +285,11 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			let destination = segue.destinationViewController as! EditJobsFormViewController
 			destination.delegate = self
 			destination.jobsList = jobs
+		} else if segue.identifier == "showCreatePostSegue" {
+			let destination = segue.destinationViewController as! CreatingPostViewController
+			destination.projectPost = true
+			let id = String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)
+			destination.projectId = id
 		}
 	}
 	

@@ -15,6 +15,9 @@ class CreatingPostViewController: UIViewController {
 	@IBOutlet weak var textView: UITextView?
 	@IBOutlet weak var profileImageView: UIImageView!
 	
+	var projectPost = Bool()
+	var projectId = String()
+	
 	// TODO: Add UI Elements to keyboard toolbar
 	
     override func viewDidLoad() {
@@ -41,13 +44,25 @@ class CreatingPostViewController: UIViewController {
 	}
 	
 	@IBAction func doneButtonPressed() {
-		NewsFeedHelper.createPost("Post", "Created a new post", nil, nil) { (response) in
-			if response == false {
-				let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
-				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-				self.presentViewController(alert, animated: true, completion: nil)
+		if projectPost == true {
+			ProjectHelper.createPost(projectId, "Post", "Project Post", nil, nil, completionHandler: { (response) in
+				if response  == false {
+					let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
+					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+					self.presentViewController(alert, animated: true, completion: nil)
+				}
+			})
+		} else {
+			NewsFeedHelper.createPost("Post", "Created a new post", nil, nil) { (response) in
+				if response == false {
+					let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
+					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+					self.presentViewController(alert, animated: true, completion: nil)
+				}
 			}
 		}
+		
+		
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 	
