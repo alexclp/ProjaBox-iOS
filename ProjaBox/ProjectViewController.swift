@@ -21,7 +21,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	var jobs = [String]()
 	
 	var fullProjectData = [String: AnyObject]()
-//	var projectData: [String: AnyObject?] = ["type": nil, "name": nil, "goals": nil, "description": nil, "location": nil, "video": nil, "links": nil, "jobs": nil]
 	var projectData = [String: AnyObject]()
 	
 	let profileParameters = ["type", "name", "goals", "avatar", "description", "location", "video", "links", "jobs"]
