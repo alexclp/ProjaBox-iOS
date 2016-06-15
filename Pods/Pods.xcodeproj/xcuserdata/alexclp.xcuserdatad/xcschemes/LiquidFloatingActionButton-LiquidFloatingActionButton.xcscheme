@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DE264FA7BBA0F963F6CEA5E24E305C75'
-               BlueprintName = 'TagListView'
+               BlueprintIdentifier = '2E4A37C88D68A62EA5C1BC7A2A4D19AE'
+               BlueprintName = 'LiquidFloatingActionButton-LiquidFloatingActionButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'TagListView.framework'>
+               BuildableName = 'LiquidFloatingActionButton.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

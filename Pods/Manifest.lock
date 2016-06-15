@@ -6,6 +6,7 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - KMPlaceholderTextView (1.2.0)
+  - LiquidFloatingActionButton (0.1.2)
   - SwiftSpinner (0.9.5)
   - TagListView (1.0.0)
 
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - JSQMessagesViewController
   - KMPlaceholderTextView (~> 1.2.0)
+  - LiquidFloatingActionButton
   - SwiftSpinner
   - TagListView (~> 1.0)
 
@@ -25,9 +27,10 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 3847120a97a7ab3bdc701f166c59f3955f7801c7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   KMPlaceholderTextView: cae8ee889bd38d20587eee6b2623b8218f31b8f5
+  LiquidFloatingActionButton: 12ed6f642365142f85c73eaebef8c40b6590511e
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
   TagListView: 6bf4bded034c4c90b1e90d8cd3d8e1d852dba0a8
 
-PODFILE CHECKSUM: 3d03633a788326b726b1a0e086c53797d5ad1da9
+PODFILE CHECKSUM: 2f77556680316edb678689dcf922de85c754bddf
 
 COCOAPODS: 1.0.0

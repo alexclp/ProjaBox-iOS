@@ -17,6 +17,7 @@ pod 'Alamofire'
 pod 'IQKeyboardManagerSwift'
 pod 'SwiftSpinner'
 pod 'Eureka', '~> 1.6'
+pod 'LiquidFloatingActionButton'
 
 end
 
