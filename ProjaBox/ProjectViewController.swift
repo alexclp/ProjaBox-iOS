@@ -39,6 +39,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 		
 		getProfile()
+		getLatestPosts()
 		setupPostButton()
 	}
 	
@@ -93,6 +94,14 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					self.tableView?.reloadData()
 				}
 			})
+		}
+	}
+	
+	func getLatestPosts() {
+		ProjectHelper.getProjectsLatestPosts(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, posts) in
+			if response == true {
+				print("GOT PROJECT'S POSTS")
+			}
 		}
 	}
 	
@@ -240,8 +249,26 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		}
 		
 		// POST SECTION
-		let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath)
-			
+		let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
+		
+		cell.authorLocationLabel?.text = ""
+		cell.locationImageView?.hidden = true
+		cell.authorDetailsLabel?.text = ""
+		cell.profileImageView?.image = nil
+		
+		let currentPost = postsData[indexPath.row]
+		cell.postLabel?.text = currentPost.content
+		cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
+		if let likers = currentPost.likers {
+			cell.likesLabel?.text = String(likers.count)
+		}
+		if currentPost.isLikedByMe == true {
+			cell.likeButton!.selected = true
+		}
+		if let name = currentPost.projectName {
+			cell.authorLabel?.text = name
+		}
+		
 		return cell
 	}
 	
@@ -286,7 +313,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			destination.delegate = self
 			destination.jobsList = jobs
 		} else if segue.identifier == "showCreatePostSegue" {
-			let destination = segue.destinationViewController as! CreatingPostViewController
+			let navcon = segue.destinationViewController as! UINavigationController
+			let destination = navcon.viewControllers[0] as! CreatingPostViewController
 			destination.projectPost = true
 			let id = String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)
 			destination.projectId = id
