@@ -11,10 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="128.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EZ7-nb-ojI">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EZ7-nb-ojI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fDi-CB-ZhD">
                             <size key="itemSize" width="70" height="70"/>
@@ -24,6 +24,12 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="EZ7-nb-ojI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TbO-Dt-P74"/>
+                    <constraint firstItem="EZ7-nb-ojI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cYj-eR-vIr"/>
+                    <constraint firstItem="EZ7-nb-ojI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fhQ-bq-Non"/>
+                    <constraint firstAttribute="trailing" secondItem="EZ7-nb-ojI" secondAttribute="trailing" id="s1c-nc-oDh"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="photosCollectionView" destination="EZ7-nb-ojI" id="H23-tp-623"/>

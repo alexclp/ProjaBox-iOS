@@ -11,6 +11,7 @@ import UIKit
 class GoalsTableViewCell: UITableViewCell {
 	
 	@IBOutlet weak var goalsTextView: UITextView?
+	@IBOutlet weak var editButton: UIButton?
 
     override func awakeFromNib() {
         super.awakeFromNib()

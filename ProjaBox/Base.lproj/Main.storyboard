@@ -185,13 +185,13 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qif-5Q-mF0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qif-5Q-mF0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="360"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKK-fQ-Tml">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKK-fQ-Tml">
                                 <rect key="frame" x="249" y="417" width="103" height="30"/>
                                 <state key="normal" title="Done and Save"/>
                                 <connections>
@@ -200,6 +200,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qif-5Q-mF0" firstAttribute="leading" secondItem="A2a-zP-FK1" secondAttribute="leading" id="2TB-0T-cSp"/>
+                            <constraint firstItem="qif-5Q-mF0" firstAttribute="top" secondItem="T7j-7M-a3A" secondAttribute="bottom" id="PKi-xc-nsu"/>
+                            <constraint firstItem="ujo-qL-OrX" firstAttribute="top" secondItem="hKK-fQ-Tml" secondAttribute="bottom" constant="40" id="cuL-Mf-BGy"/>
+                            <constraint firstItem="hKK-fQ-Tml" firstAttribute="top" secondItem="qif-5Q-mF0" secondAttribute="bottom" constant="57" id="fAw-Dz-DBq"/>
+                            <constraint firstItem="qif-5Q-mF0" firstAttribute="centerX" secondItem="hKK-fQ-Tml" secondAttribute="centerX" id="fLQ-bF-4y1"/>
+                            <constraint firstAttribute="trailing" secondItem="qif-5Q-mF0" secondAttribute="trailing" id="rgQ-uH-jiW"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="textView" destination="qif-5Q-mF0" id="lYk-mi-TfQ"/>

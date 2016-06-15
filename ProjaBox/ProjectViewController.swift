@@ -189,6 +189,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		} else if section == 2 {
 			// GOALS
 			let cell = tableView.dequeueReusableCellWithIdentifier("goalsCell", forIndexPath: indexPath) as! GoalsTableViewCell
+			cell.editButton?.addTarget(self, action: #selector(self.editGoalsButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			cell.goalsTextView?.text = goals
 			
 			return cell
@@ -233,6 +234,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	// MARK: User Interaction
 	
+	func editGoalsButtonPressed(sender: UIButton) {
+		performSegueWithIdentifier("editProjectGoalsSegue", sender: self)
+	}
+	
 	func editHeaderButtonPressed(sender: UIButton) {
 		performSegueWithIdentifier("editProjectHeaderSegue", sender: self)
 	}
@@ -244,6 +249,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			let destination = segue.destinationViewController as! EditAboutProjectViewController
 			destination.delegate = self
 			destination.data = headerData
+		} else if segue.identifier == "editProjectGoalsSegue" {
+			let destination = segue.destinationViewController as! EditGoalsViewController
+			destination.delegate = self
+			destination.goals = goals
 		}
 	}
 	
@@ -288,7 +297,12 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	func updateProfile() {
 		if NSUserDefaults.standardUserDefaults().objectForKey("projectId") != nil {
-			let id = NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! String
+			for parameter in profileParameters {
+				if projectData[parameter] == nil {
+					projectData[parameter] = NSNull()
+				}
+			}
+			let id = String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)
 			ProjectHelper.updateProjectProfile(id, fullProfileData: projectData, completionHandler: { (response) in
 				print(response)
 			})

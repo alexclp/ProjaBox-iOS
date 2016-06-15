@@ -79,11 +79,13 @@ class ProjectHelper: NSObject {
 	// MARK: UPDATING
 	
 	class func updateProjectProfile(projectId: String, fullProfileData: [String: AnyObject], completionHandler: (Bool) -> Void) {
-		
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)"
 		let headers = getHeaders()
 		
-		Alamofire.request(.PUT, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+		print("Data: \(fullProfileData)")
+		
+		Alamofire.request(.PUT, urlString, parameters: fullProfileData, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			print(response)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			if errorCode != 0 {

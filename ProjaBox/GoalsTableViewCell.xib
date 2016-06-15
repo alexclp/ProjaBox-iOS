@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,21 +12,41 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="190.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="Click to add goals for your team!" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8C-Sy-YdB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="Click to add goals for your team!" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8C-Sy-YdB">
+                        <rect key="frame" x="0.0" y="0.0" width="284" height="190"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EB4-02-1V0">
+                        <rect key="frame" x="292" y="8" width="20" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="aWC-mV-CvM"/>
+                            <constraint firstAttribute="height" constant="21" id="iLG-Px-BK2"/>
+                        </constraints>
+                        <state key="normal" image="My Posts.png"/>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="z8C-Sy-YdB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9Ie-P7-u4r"/>
+                    <constraint firstItem="EB4-02-1V0" firstAttribute="leading" secondItem="z8C-Sy-YdB" secondAttribute="trailing" constant="8" symbolic="YES" id="C5a-wU-0kP"/>
+                    <constraint firstItem="z8C-Sy-YdB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QRG-hr-PXv"/>
+                    <constraint firstItem="EB4-02-1V0" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="UI5-cu-PZx"/>
+                    <constraint firstItem="EB4-02-1V0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="V0g-oB-Qcj"/>
+                    <constraint firstItem="z8C-Sy-YdB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Wak-d3-eZb"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="editButton" destination="EB4-02-1V0" id="RJ6-4l-8GT"/>
                 <outlet property="goalsTextView" destination="z8C-Sy-YdB" id="p8c-MD-WXl"/>
             </connections>
             <point key="canvasLocation" x="547" y="410.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="My Posts.png" width="58" height="58"/>
+    </resources>
 </document>

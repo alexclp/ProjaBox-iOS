@@ -13,12 +13,18 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hi-c1-8QP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6hi-c1-8QP">
                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6hi-c1-8QP" secondAttribute="trailing" id="3Mm-Fy-HzG"/>
+                <constraint firstAttribute="bottom" secondItem="6hi-c1-8QP" secondAttribute="bottom" id="bbG-cu-LS5"/>
+                <constraint firstItem="6hi-c1-8QP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xZI-QA-4cI"/>
+                <constraint firstItem="6hi-c1-8QP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zJA-Qb-5qx"/>
+            </constraints>
             <connections>
                 <outlet property="photoImageView" destination="6hi-c1-8QP" id="fBh-i8-Iiy"/>
             </connections>
