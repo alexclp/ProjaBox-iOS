@@ -66,6 +66,7 @@
 		0F46DEC31D11DAFD0057C479 /* share-float.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F46DEC01D11DAFD0057C479 /* share-float.png */; };
 		0F46DEC41D11DAFD0057C479 /* share-float@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F46DEC11D11DAFD0057C479 /* share-float@2x.png */; };
 		0F46DEC51D11DAFD0057C479 /* share-float@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F46DEC21D11DAFD0057C479 /* share-float@3x.png */; };
+		0F46DEC81D120DC60057C479 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F46DEC71D120DC60057C479 /* DiscoverViewController.swift */; };
 		0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99621CCBB413006628CF /* ChatListViewController.swift */; };
 		0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */; };
 		0F50B7AE1D09CE1D0051AEAA /* EditInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F50B7AD1D09CE1D0051AEAA /* EditInterestsViewController.swift */; };
@@ -220,6 +221,7 @@
 		0F46DEC01D11DAFD0057C479 /* share-float.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-float.png"; sourceTree = "<group>"; };
 		0F46DEC11D11DAFD0057C479 /* share-float@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-float@2x.png"; sourceTree = "<group>"; };
 		0F46DEC21D11DAFD0057C479 /* share-float@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-float@3x.png"; sourceTree = "<group>"; };
+		0F46DEC71D120DC60057C479 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		0F4F99621CCBB413006628CF /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
 		0F50B7AD1D09CE1D0051AEAA /* EditInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInterestsViewController.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				0F4654B61D074726005E2C5E /* Settings */,
 				0F3B682C1D08E68B003BB7E5 /* Profile */,
 				0F41E0D21D0C0F4000BD0520 /* My project */,
+				0F46DEC61D120DA40057C479 /* Discover */,
 				0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */,
 			);
 			name = Controller;
@@ -522,6 +525,14 @@
 				0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		0F46DEC61D120DA40057C479 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				0F46DEC71D120DC60057C479 /* DiscoverViewController.swift */,
+			);
+			name = Discover;
 			sourceTree = "<group>";
 		};
 		0F50B7A01D09C63C0051AEAA /* Tab bar icons */ = {
@@ -1073,6 +1084,7 @@
 				0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */,
 				0FD43C5E1CF603560061E4E9 /* EducationExperienceTableViewCell.swift in Sources */,
 				0FEB21491D0CEA0F000385C3 /* EditTeamViewController.swift in Sources */,
+				0F46DEC81D120DC60057C479 /* DiscoverViewController.swift in Sources */,
 				0FFD3BBD1D0EE4D500E6010E /* ProjectHelper.swift in Sources */,
 				0FD43C631CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift in Sources */,
 				0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */,

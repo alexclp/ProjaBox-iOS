@@ -25,6 +25,14 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	let profileParameters = ["type", "name", "goals", "avatar", "description", "location", "video", "links", "jobs"]
 	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+	
+		self.tabBarController?.navigationItem.leftBarButtonItem = nil
+		self.tabBarController?.navigationItem.titleView = nil
+		self.tabBarController?.navigationItem.rightBarButtonItem = nil
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -38,8 +46,12 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 		
 		getProfile()
-		getLatestPosts()
+//		getLatestPosts()
 		setupPostButton()
+	}
+	
+	func setupBarButtons() {
+		
 	}
 	
 	func setupPostButton() {

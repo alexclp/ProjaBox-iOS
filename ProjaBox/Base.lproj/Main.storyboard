@@ -342,7 +342,7 @@
         <!--Discover-->
         <scene sceneID="sb8-JZ-nMu">
             <objects>
-                <viewController id="n5B-XR-4mZ" sceneMemberID="viewController">
+                <viewController id="n5B-XR-4mZ" customClass="DiscoverViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xqR-pE-WKi"/>
                         <viewControllerLayoutGuide type="bottom" id="uBZ-ht-kSr"/>

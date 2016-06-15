@@ -24,6 +24,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		getLatestPosts()
 	}
 	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		setupBarButtons()
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -44,7 +49,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			NSForegroundColorAttributeName : UIColor.whiteColor()
 		] // Title color
 		
-		setupBarButtons()
 		getLatestPosts()
 	}
 	
@@ -65,6 +69,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func setupBarButtons() {
+		self.tabBarController?.navigationItem.titleView = nil
 		self.tabBarController!.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "messages.png"), style: .Plain, target: self, action: #selector(FeedViewController.chatButtonPressed(_:)))
 		self.tabBarController!.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "settings.png"), style: .Plain, target: self, action: #selector(FeedViewController.settingsButtonPressed(_:)))
 	}
