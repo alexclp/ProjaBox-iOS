@@ -29,7 +29,7 @@ class DiscoverViewController: UIViewController {
 		self.tabBarController?.navigationItem.leftBarButtonItem = nil
 		self.tabBarController?.navigationItem.rightBarButtonItem = nil
 		
-		searchBar.placeholder = "search"
+		searchBar.placeholder = "search..."
 		self.tabBarController!.navigationItem.titleView = searchBar
 	}
 }
