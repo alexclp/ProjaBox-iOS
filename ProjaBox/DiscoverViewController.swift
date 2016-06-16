@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISearchBarDelegate {
 	
@@ -82,6 +83,10 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	// MARK: Search bar delegate
 	
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-//		let queryString = searchBar.text
+		let queryString = searchBar.text
+		SwiftSpinner.show("Searching...")
+		SearchHelper.searchForProjects(queryString!) { (response, results) in
+//			SwiftSpinner.hide()
+		}
 	}
 }
