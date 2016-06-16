@@ -836,10 +836,10 @@
             </objects>
             <point key="canvasLocation" x="2305.5" y="1654.5"/>
         </scene>
-        <!--Root Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="zKR-AJ-95r">
             <objects>
-                <tabBarController id="ewO-ei-b6I" customClass="RootTabBarViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="ewO-ei-b6I" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="qAe-BO-PLw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
