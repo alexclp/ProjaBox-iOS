@@ -108,6 +108,9 @@
 		0F6E014A1D12F45D00BC69FA /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01491D12F45D00BC69FA /* Location.png */; };
 		0F6E014D1D12F6A200BC69FA /* Type.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E014B1D12F6A200BC69FA /* Type.png */; };
 		0F6E014E1D12F6A200BC69FA /* Vacancies.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E014C1D12F6A200BC69FA /* Vacancies.png */; };
+		0F6E01521D12F97600BC69FA /* filter@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E014F1D12F97600BC69FA /* filter@3x.png */; };
+		0F6E01531D12F97600BC69FA /* filter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01501D12F97600BC69FA /* filter@2x.png */; };
+		0F6E01561D12F98600BC69FA /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01551D12F98600BC69FA /* filter.png */; };
 		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
 		0F79C78C1D0122210002D117 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79C7821D0122210002D117 /* AccountKit.framework */; };
 		0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79C7831D0122210002D117 /* AccountKitStrings.bundle */; };
@@ -274,6 +277,9 @@
 		0F6E01491D12F45D00BC69FA /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
 		0F6E014B1D12F6A200BC69FA /* Type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Type.png; sourceTree = "<group>"; };
 		0F6E014C1D12F6A200BC69FA /* Vacancies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vacancies.png; sourceTree = "<group>"; };
+		0F6E014F1D12F97600BC69FA /* filter@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter@3x.png"; sourceTree = "<group>"; };
+		0F6E01501D12F97600BC69FA /* filter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter@2x.png"; sourceTree = "<group>"; };
+		0F6E01551D12F98600BC69FA /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0F79C7821D0122210002D117 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
 		0F79C7831D0122210002D117 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
@@ -641,6 +647,9 @@
 				0F6E01491D12F45D00BC69FA /* Location.png */,
 				0F6E014B1D12F6A200BC69FA /* Type.png */,
 				0F6E014C1D12F6A200BC69FA /* Vacancies.png */,
+				0F6E014F1D12F97600BC69FA /* filter@3x.png */,
+				0F6E01501D12F97600BC69FA /* filter@2x.png */,
+				0F6E01551D12F98600BC69FA /* filter.png */,
 			);
 			name = filters;
 			sourceTree = "<group>";
@@ -945,6 +954,7 @@
 				0F6785CF1CC6F69A00F89541 /* other selected.png in Resources */,
 				0F43A3B71D0893B3003B6503 /* My Settings.png in Resources */,
 				0F3B68241D08D158003BB7E5 /* Blocked users.png in Resources */,
+				0F6E01521D12F97600BC69FA /* filter@3x.png in Resources */,
 				0F15C4871CD542F000E2E4B9 /* telegram.png in Resources */,
 				0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */,
 				0F6785CE1CC6F69A00F89541 /* other default.png in Resources */,
@@ -952,9 +962,11 @@
 				0F6E014E1D12F6A200BC69FA /* Vacancies.png in Resources */,
 				0F6785C41CC6F58600F89541 /* like default.png in Resources */,
 				0FD43C641CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib in Resources */,
+				0F6E01561D12F98600BC69FA /* filter.png in Resources */,
 				0F351BFC1D0A69D400E44371 /* search@2x.png in Resources */,
 				0F6785B41CC6D70200F89541 /* profile_pic.jpg in Resources */,
 				0F351C011D0A69D900E44371 /* project.png in Resources */,
+				0F6E01531D12F97600BC69FA /* filter@2x.png in Resources */,
 				0F41E0D91D0C156700BD0520 /* GoalsTableViewCell.xib in Resources */,
 				0F6785E41CC983CE00F89541 /* settings@2x.png in Resources */,
 				0F55058B1CF8BD61005229D7 /* signup-button.png in Resources */,

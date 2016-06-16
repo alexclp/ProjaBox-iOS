@@ -39,7 +39,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		searchBar.placeholder = "search..."
 		self.tabBarController!.navigationItem.titleView = searchBar
 		
-		let filtersButton = UIBarButtonItem(title: "Filters", style: .Plain, target: self, action: #selector(self.showFilters(_:)))
+		let filtersButton = UIBarButtonItem(image: UIImage(named: "filter.png")!, style: .Plain, target: self, action: #selector(self.showFilters(_:)))
 		self.tabBarController?.navigationItem.rightBarButtonItem = filtersButton
 	}
 	
