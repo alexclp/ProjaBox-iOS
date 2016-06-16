@@ -30,6 +30,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		
 		tableView!.registerNib(UINib(nibName: "DiscoverProjectTableViewCell", bundle: nil), forCellReuseIdentifier: "discoverProjectCell")
 		tableView!.registerNib(UINib(nibName: "DiscoverPeopleTableViewCell", bundle: nil), forCellReuseIdentifier: "discoverPeopleCell")
+		
+		loadLastAddedResults()
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -164,6 +166,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
 		selectedIndex = index
+		loadLastAddedResults()
 	}
 	
 	func showFilters(sender: UIBarButtonItem) {
@@ -182,23 +185,64 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		SwiftSpinner.show("Searching...")
 		
 		if selectedIndex == 0 {
+			SwiftSpinner.hide()
 			SearchHelper.searchForProjects(queryString!, completionHandler: { (response, results) in
 				if response == true {
-					SwiftSpinner.hide()
-					self.results = results!
-					self.tableView?.reloadData()
+					if let notNilResults = results {
+						self.results = notNilResults
+						self.tableView?.reloadData()
+					} else {
+						self.results.removeAll()
+						self.tableView?.reloadData()
+					}
 				} else {
 					
 				}
 			})
 		} else {
 			SearchHelper.searchForUsers(queryString!, completionHandler: { (response, results) in
+				SwiftSpinner.hide()
 				if response == true {
-					SwiftSpinner.hide()
-					self.results = results!
-					self.tableView?.reloadData()
+					if let notNilResults = results {
+						self.results = notNilResults
+						self.tableView?.reloadData()
+					} else {
+						self.results.removeAll()
+						self.tableView?.reloadData()
+					}
 				} else {
 					
+				}
+			})
+		}
+	}
+	
+	// MARK: Loading last added
+	
+	func loadLastAddedResults() {
+		SwiftSpinner.show("Loading data")
+		if selectedIndex == 0 {
+			SwiftSpinner.hide()
+			SearchHelper.getLatestProjects({ (response, results) in
+				if let notNilResults = results {
+					self.results = notNilResults
+					self.tableView?.reloadData()
+				} else {
+					self.results.removeAll()
+					self.tableView?.reloadData()
+				}
+			})
+		} else {
+			SearchHelper.getLatestUsers({ (response, results) in
+				SwiftSpinner.hide()
+				if response == true {
+					if let notNilResults = results {
+						self.results = notNilResults
+						self.tableView?.reloadData()
+					} else {
+						self.results.removeAll()
+						self.tableView?.reloadData()
+					}
 				}
 			})
 		}
