@@ -177,6 +177,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	// MARK: Search bar delegate
 	
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+		searchBar.resignFirstResponder()
 		let queryString = searchBar.text
 		SwiftSpinner.show("Searching...")
 		
