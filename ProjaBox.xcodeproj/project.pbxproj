@@ -114,6 +114,11 @@
 		0F6E01581D13112500BC69FA /* SearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E01571D13112500BC69FA /* SearchHelper.swift */; };
 		0F6E015A1D13115200BC69FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E01591D13115200BC69FA /* User.swift */; };
 		0F6E015C1D13115C00BC69FA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E015B1D13115C00BC69FA /* Project.swift */; };
+		0F6E01641D132EC600BC69FA /* DiscoverProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E01621D132EC600BC69FA /* DiscoverProjectTableViewCell.swift */; };
+		0F6E01651D132EC600BC69FA /* DiscoverProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01631D132EC600BC69FA /* DiscoverProjectTableViewCell.xib */; };
+		0F6E01681D132EDA00BC69FA /* DiscoverPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E01661D132EDA00BC69FA /* DiscoverPeopleTableViewCell.swift */; };
+		0F6E01691D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01671D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib */; };
+		0F6E016B1D13328500BC69FA /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E016A1D13328500BC69FA /* follow.png */; };
 		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
 		0F79C78C1D0122210002D117 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79C7821D0122210002D117 /* AccountKit.framework */; };
 		0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79C7831D0122210002D117 /* AccountKitStrings.bundle */; };
@@ -286,6 +291,11 @@
 		0F6E01571D13112500BC69FA /* SearchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHelper.swift; sourceTree = "<group>"; };
 		0F6E01591D13115200BC69FA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F6E015B1D13115C00BC69FA /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		0F6E01621D132EC600BC69FA /* DiscoverProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverProjectTableViewCell.swift; sourceTree = "<group>"; };
+		0F6E01631D132EC600BC69FA /* DiscoverProjectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverProjectTableViewCell.xib; sourceTree = "<group>"; };
+		0F6E01661D132EDA00BC69FA /* DiscoverPeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		0F6E01671D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverPeopleTableViewCell.xib; sourceTree = "<group>"; };
+		0F6E016A1D13328500BC69FA /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow.png; sourceTree = "<group>"; };
 		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0F79C7821D0122210002D117 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
 		0F79C7831D0122210002D117 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
@@ -620,6 +630,7 @@
 				0F41E0D01D0C0EA300BD0520 /* Settings */,
 				0F41E0D51D0C135D00BD0520 /* Project */,
 				0F41E0D11D0C0EAC00BD0520 /* Profile */,
+				0F6E015F1D132E6000BC69FA /* Discover */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -679,6 +690,17 @@
 			name = Wrappers;
 			sourceTree = "<group>";
 		};
+		0F6E015F1D132E6000BC69FA /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E01621D132EC600BC69FA /* DiscoverProjectTableViewCell.swift */,
+				0F6E01631D132EC600BC69FA /* DiscoverProjectTableViewCell.xib */,
+				0F6E01661D132EDA00BC69FA /* DiscoverPeopleTableViewCell.swift */,
+				0F6E01671D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +709,7 @@
 				0F43A3AA1D0892E8003B6503 /* settings */,
 				0F4171431CFDFCA10043A98B /* tab-bar-background.png */,
 				0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */,
+				0F6E016A1D13328500BC69FA /* follow.png */,
 				0F0D888D1CFC70CC0074E5E6 /* linked-button.png */,
 				0F55058A1CF8BD61005229D7 /* signup-button.png */,
 				0F5505881CF8BD5B005229D7 /* background-proja.png */,
@@ -952,6 +975,7 @@
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
 				0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */,
 				0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */,
+				0F6E01651D132EC600BC69FA /* DiscoverProjectTableViewCell.xib in Resources */,
 				0F351BFB1D0A69D400E44371 /* search.png in Resources */,
 				0F6E014D1D12F6A200BC69FA /* Type.png in Resources */,
 				0F6785CC1CC6F69A00F89541 /* message default.png in Resources */,
@@ -992,7 +1016,9 @@
 				0F6785B41CC6D70200F89541 /* profile_pic.jpg in Resources */,
 				0F351C011D0A69D900E44371 /* project.png in Resources */,
 				0F6E01531D12F97600BC69FA /* filter@2x.png in Resources */,
+				0F6E01691D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib in Resources */,
 				0F41E0D91D0C156700BD0520 /* GoalsTableViewCell.xib in Resources */,
+				0F6E016B1D13328500BC69FA /* follow.png in Resources */,
 				0F6785E41CC983CE00F89541 /* settings@2x.png in Resources */,
 				0F55058B1CF8BD61005229D7 /* signup-button.png in Resources */,
 				0F6785E31CC983CE00F89541 /* settings.png in Resources */,
@@ -1156,10 +1182,12 @@
 				0F6076DD1CFFAE3300926E6E /* SignInViewController.swift in Sources */,
 				0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */,
 				0F4665471D05CCE70042932F /* ProjectPost.swift in Sources */,
+				0F6E01681D132EDA00BC69FA /* DiscoverPeopleTableViewCell.swift in Sources */,
 				0F41E0D81D0C156700BD0520 /* GoalsTableViewCell.swift in Sources */,
 				0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */,
 				0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */,
 				0F6076DF1CFFB40B00926E6E /* SignInHelper.swift in Sources */,
+				0F6E01641D132EC600BC69FA /* DiscoverProjectTableViewCell.swift in Sources */,
 				0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */,
 				0F41E0DC1D0C158900BD0520 /* PhotosTableViewCell.swift in Sources */,
 				0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */,

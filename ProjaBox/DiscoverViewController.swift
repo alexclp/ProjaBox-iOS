@@ -85,8 +85,23 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
 		let queryString = searchBar.text
 		SwiftSpinner.show("Searching...")
-		SearchHelper.searchForProjects(queryString!) { (response, results) in
-//			SwiftSpinner.hide()
+		
+		if selectedIndex == 0 {
+			SearchHelper.searchForProjects(queryString!, completionHandler: { (response, results) in
+				if response == true {
+					SwiftSpinner.hide()
+				} else {
+					
+				}
+			})
+		} else {
+			SearchHelper.searchForUsers(queryString!, completionHandler: { (response, results) in
+				if response == true {
+					SwiftSpinner.hide()
+				} else {
+					
+				}
+			})
 		}
 	}
 }

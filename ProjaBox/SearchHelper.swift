@@ -27,7 +27,6 @@ class SearchHelper: NSObject {
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			let data = response.result.value!["data"] as? [[String: AnyObject]]
-			
 			if let data = data {
 				var results = [Project]()
 				for result in data {
@@ -60,7 +59,7 @@ class SearchHelper: NSObject {
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			let data = response.result.value!["data"] as? [[String: AnyObject]]
-			
+			print(response)
 			if let data = data {
 				var results = [User]()
 				for result in data {
