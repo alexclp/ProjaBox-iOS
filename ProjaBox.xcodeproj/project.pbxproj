@@ -25,6 +25,12 @@
 		0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */; };
 		0F15C4871CD542F000E2E4B9 /* telegram.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4861CD542F000E2E4B9 /* telegram.png */; };
 		0F2A99661D122449006C3540 /* YSSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A99651D122449006C3540 /* YSSegmentedControl.swift */; };
+		0F2A99691D12D76D006C3540 /* PeopleFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A99681D12D76D006C3540 /* PeopleFiltersViewController.swift */; };
+		0F2A996B1D12D782006C3540 /* OccupationFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A996A1D12D782006C3540 /* OccupationFilterViewController.swift */; };
+		0F2A996D1D12D78C006C3540 /* LocationFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A996C1D12D78C006C3540 /* LocationFilterViewController.swift */; };
+		0F2A99701D12D7A6006C3540 /* ProjectFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A996F1D12D7A6006C3540 /* ProjectFiltersViewController.swift */; };
+		0F2A99721D12D7BD006C3540 /* TypeFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A99711D12D7BD006C3540 /* TypeFilterViewController.swift */; };
+		0F2A99741D12D999006C3540 /* VacanciesFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A99731D12D999006C3540 /* VacanciesFilterViewController.swift */; };
 		0F351BFB1D0A69D400E44371 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F351BF81D0A69D400E44371 /* search.png */; };
 		0F351BFC1D0A69D400E44371 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F351BF91D0A69D400E44371 /* search@2x.png */; };
 		0F351BFD1D0A69D400E44371 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F351BFA1D0A69D400E44371 /* search@3x.png */; };
@@ -181,6 +187,12 @@
 		0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C4861CD542F000E2E4B9 /* telegram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telegram.png; sourceTree = "<group>"; };
 		0F2A99651D122449006C3540 /* YSSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSSegmentedControl.swift; sourceTree = "<group>"; };
+		0F2A99681D12D76D006C3540 /* PeopleFiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleFiltersViewController.swift; sourceTree = "<group>"; };
+		0F2A996A1D12D782006C3540 /* OccupationFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupationFilterViewController.swift; sourceTree = "<group>"; };
+		0F2A996C1D12D78C006C3540 /* LocationFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationFilterViewController.swift; sourceTree = "<group>"; };
+		0F2A996F1D12D7A6006C3540 /* ProjectFiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectFiltersViewController.swift; sourceTree = "<group>"; };
+		0F2A99711D12D7BD006C3540 /* TypeFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeFilterViewController.swift; sourceTree = "<group>"; };
+		0F2A99731D12D999006C3540 /* VacanciesFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacanciesFilterViewController.swift; sourceTree = "<group>"; };
 		0F351BF81D0A69D400E44371 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		0F351BF91D0A69D400E44371 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		0F351BFA1D0A69D400E44371 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
@@ -385,6 +397,26 @@
 			name = External;
 			sourceTree = "<group>";
 		};
+		0F2A99671D12D75C006C3540 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A99681D12D76D006C3540 /* PeopleFiltersViewController.swift */,
+				0F2A996A1D12D782006C3540 /* OccupationFilterViewController.swift */,
+				0F2A996C1D12D78C006C3540 /* LocationFilterViewController.swift */,
+			);
+			name = People;
+			sourceTree = "<group>";
+		};
+		0F2A996E1D12D793006C3540 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A996F1D12D7A6006C3540 /* ProjectFiltersViewController.swift */,
+				0F2A99711D12D7BD006C3540 /* TypeFilterViewController.swift */,
+				0F2A99731D12D999006C3540 /* VacanciesFilterViewController.swift */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
 		0F3A0C8D1CD2BD52005C6C23 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +573,8 @@
 			isa = PBXGroup;
 			children = (
 				0F46DEC71D120DC60057C479 /* DiscoverViewController.swift */,
+				0F2A99671D12D75C006C3540 /* People */,
+				0F2A996E1D12D793006C3540 /* Project */,
 			);
 			name = Discover;
 			sourceTree = "<group>";
@@ -1069,9 +1103,11 @@
 				0F41E0DC1D0C158900BD0520 /* PhotosTableViewCell.swift in Sources */,
 				0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */,
 				0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */,
+				0F2A99741D12D999006C3540 /* VacanciesFilterViewController.swift in Sources */,
 				0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */,
 				0FEF70051CFD1DC900A80D09 /* MoreSettingsViewController.swift in Sources */,
 				0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */,
+				0F2A99701D12D7A6006C3540 /* ProjectFiltersViewController.swift in Sources */,
 				0F4665451D05BA180042932F /* UserPost.swift in Sources */,
 				0F3B682B1D08D9DF003BB7E5 /* ProfileHelper.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
@@ -1089,6 +1125,7 @@
 				0FEB21471D0CE972000385C3 /* EditGoalsViewController.swift in Sources */,
 				0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */,
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
+				0F2A996D1D12D78C006C3540 /* LocationFilterViewController.swift in Sources */,
 				0FEB214B1D0CED55000385C3 /* EditJobsFormViewController.swift in Sources */,
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,
 				0F82D2301CE3803600C779E5 /* SettingsViewController.swift in Sources */,
@@ -1096,9 +1133,12 @@
 				0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */,
 				0FD43C5E1CF603560061E4E9 /* EducationExperienceTableViewCell.swift in Sources */,
 				0FEB21491D0CEA0F000385C3 /* EditTeamViewController.swift in Sources */,
+				0F2A996B1D12D782006C3540 /* OccupationFilterViewController.swift in Sources */,
 				0F46DEC81D120DC60057C479 /* DiscoverViewController.swift in Sources */,
+				0F2A99721D12D7BD006C3540 /* TypeFilterViewController.swift in Sources */,
 				0FFD3BBD1D0EE4D500E6010E /* ProjectHelper.swift in Sources */,
 				0FD43C631CF6111D0061E4E9 /* ProfileHeaderTableViewCell.swift in Sources */,
+				0F2A99691D12D76D006C3540 /* PeopleFiltersViewController.swift in Sources */,
 				0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */,
 				0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */,
 				0FB056691D01F3D800CDBC76 /* NoAnimationSegue.swift in Sources */,
