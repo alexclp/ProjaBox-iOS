@@ -106,6 +106,8 @@
 		0F6785EB1CC99F2300F89541 /* vertical_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6785EA1CC99F2300F89541 /* vertical_separator.png */; };
 		0F6E01441D12EDE500BC69FA /* Occupation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01431D12EDE500BC69FA /* Occupation.png */; };
 		0F6E014A1D12F45D00BC69FA /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01491D12F45D00BC69FA /* Location.png */; };
+		0F6E014D1D12F6A200BC69FA /* Type.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E014B1D12F6A200BC69FA /* Type.png */; };
+		0F6E014E1D12F6A200BC69FA /* Vacancies.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E014C1D12F6A200BC69FA /* Vacancies.png */; };
 		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
 		0F79C78C1D0122210002D117 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79C7821D0122210002D117 /* AccountKit.framework */; };
 		0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79C7831D0122210002D117 /* AccountKitStrings.bundle */; };
@@ -270,6 +272,8 @@
 		0F6785EA1CC99F2300F89541 /* vertical_separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical_separator.png; sourceTree = "<group>"; };
 		0F6E01431D12EDE500BC69FA /* Occupation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Occupation.png; sourceTree = "<group>"; };
 		0F6E01491D12F45D00BC69FA /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
+		0F6E014B1D12F6A200BC69FA /* Type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Type.png; sourceTree = "<group>"; };
+		0F6E014C1D12F6A200BC69FA /* Vacancies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vacancies.png; sourceTree = "<group>"; };
 		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0F79C7821D0122210002D117 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
 		0F79C7831D0122210002D117 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
@@ -635,6 +639,8 @@
 			children = (
 				0F6E01431D12EDE500BC69FA /* Occupation.png */,
 				0F6E01491D12F45D00BC69FA /* Location.png */,
+				0F6E014B1D12F6A200BC69FA /* Type.png */,
+				0F6E014C1D12F6A200BC69FA /* Vacancies.png */,
 			);
 			name = filters;
 			sourceTree = "<group>";
@@ -913,6 +919,7 @@
 				0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */,
 				0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */,
 				0F351BFB1D0A69D400E44371 /* search.png in Resources */,
+				0F6E014D1D12F6A200BC69FA /* Type.png in Resources */,
 				0F6785CC1CC6F69A00F89541 /* message default.png in Resources */,
 				0F6785CD1CC6F69A00F89541 /* message selected.png in Resources */,
 				0F46DEC41D11DAFD0057C479 /* share-float@2x.png in Resources */,
@@ -942,6 +949,7 @@
 				0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */,
 				0F6785CE1CC6F69A00F89541 /* other default.png in Resources */,
 				0F351C021D0A69D900E44371 /* project@2x.png in Resources */,
+				0F6E014E1D12F6A200BC69FA /* Vacancies.png in Resources */,
 				0F6785C41CC6F58600F89541 /* like default.png in Resources */,
 				0FD43C641CF6111D0061E4E9 /* ProfileHeaderTableViewCell.xib in Resources */,
 				0F351BFC1D0A69D400E44371 /* search@2x.png in Resources */,

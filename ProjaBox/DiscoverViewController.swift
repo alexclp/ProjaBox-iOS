@@ -71,9 +71,9 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate {
 	
 	func showFilters(sender: UIBarButtonItem) {
 		if selectedIndex == 0 {
-			performSegueWithIdentifier("showPeopleFiltersSegue", sender: self)
+			performSegueWithIdentifier("showProjectFiltersSegue", sender: self)
 		} else {
-			performSegueWithIdentifier("showProjectFilterSegue", sender: self)
+			performSegueWithIdentifier("showPeopleFilterSegue", sender: self)
 		}
 	}
 }
