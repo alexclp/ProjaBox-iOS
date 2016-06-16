@@ -24,6 +24,7 @@
 		0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */; };
 		0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */; };
 		0F15C4871CD542F000E2E4B9 /* telegram.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4861CD542F000E2E4B9 /* telegram.png */; };
+		0F2A99661D122449006C3540 /* YSSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A99651D122449006C3540 /* YSSegmentedControl.swift */; };
 		0F351BFB1D0A69D400E44371 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F351BF81D0A69D400E44371 /* search.png */; };
 		0F351BFC1D0A69D400E44371 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F351BF91D0A69D400E44371 /* search@2x.png */; };
 		0F351BFD1D0A69D400E44371 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F351BFA1D0A69D400E44371 /* search@3x.png */; };
@@ -179,6 +180,7 @@
 		0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C4861CD542F000E2E4B9 /* telegram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telegram.png; sourceTree = "<group>"; };
+		0F2A99651D122449006C3540 /* YSSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSSegmentedControl.swift; sourceTree = "<group>"; };
 		0F351BF81D0A69D400E44371 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		0F351BF91D0A69D400E44371 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		0F351BFA1D0A69D400E44371 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
@@ -373,6 +375,14 @@
 				0F4665461D05CCE70042932F /* ProjectPost.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		0F2A99641D12243F006C3540 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A99651D122449006C3540 /* YSSegmentedControl.swift */,
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 		0F3A0C8D1CD2BD52005C6C23 /* Login */ = {
@@ -637,6 +647,7 @@
 		0FC223AB1C99BFA1006DD18B /* ProjaBox */ = {
 			isa = PBXGroup;
 			children = (
+				0F2A99641D12243F006C3540 /* External */,
 				0F08DD291CB44C1F008B7C57 /* BridgingHeader.h */,
 				0FA4D7B91CB410630085371E /* Assets */,
 				0FC223AC1C99BFA1006DD18B /* AppDelegate.swift */,
@@ -1067,6 +1078,7 @@
 				0FEB21451D0CE711000385C3 /* EditAboutProjectViewController.swift in Sources */,
 				0F3B68311D08F480003BB7E5 /* EditEducationViewController.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
+				0F2A99661D122449006C3540 /* YSSegmentedControl.swift in Sources */,
 				0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */,
 				0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */,
 				0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */,
