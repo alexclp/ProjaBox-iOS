@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiscoverViewController: UIViewController {
+class DiscoverViewController: UIViewController, YSSegmentedControlDelegate {
 	
 	lazy var searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
 
@@ -25,12 +25,17 @@ class DiscoverViewController: UIViewController {
 		setupBarButtons()
 	}
 	
+	// MARK: UI Setup
+	
 	func setupBarButtons() {
 		self.tabBarController?.navigationItem.leftBarButtonItem = nil
 		self.tabBarController?.navigationItem.rightBarButtonItem = nil
 		
 		searchBar.placeholder = "search..."
 		self.tabBarController!.navigationItem.titleView = searchBar
+		
+		let filtersButton = UIBarButtonItem(title: "Filters", style: .Plain, target: self, action: #selector(self.showFilters(_:)))
+		self.tabBarController?.navigationItem.rightBarButtonItem = filtersButton
 	}
 	
 	func setupSegmentedControl() {
@@ -48,11 +53,21 @@ class DiscoverViewController: UIViewController {
 				control, index in
 				print ("segmented did pressed \(index)")
 		})
-//		segmented.delegate = self
+		segmented.delegate = self
 		segmented.appearance.selectedTextColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
 		segmented.appearance.bottomLineColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
 		segmented.appearance.selectorColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
 		
 		view.addSubview(segmented)
+	}
+	
+	// MARK: User Interaction
+	
+	func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
+		
+	}
+	
+	func showFilters(sender: UIBarButtonItem) {
+		
 	}
 }
