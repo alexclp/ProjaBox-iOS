@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiscoverViewController: UIViewController, YSSegmentedControlDelegate {
+class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISearchBarDelegate {
 	
 	lazy var searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
 	
@@ -20,6 +20,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate {
 
         // Do any additional setup after loading the view.
 		setupSegmentedControl()
+		
+		searchBar.delegate = self
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -75,5 +77,11 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate {
 		} else {
 			performSegueWithIdentifier("showPeopleFilterSegue", sender: self)
 		}
+	}
+	
+	// MARK: Search bar delegate
+	
+	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+//		let queryString = searchBar.text
 	}
 }
