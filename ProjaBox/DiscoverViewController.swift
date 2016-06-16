@@ -48,7 +48,7 @@ class DiscoverViewController: UIViewController {
 				control, index in
 				print ("segmented did pressed \(index)")
 		})
-		//		segmented.delegate = self
+//		segmented.delegate = self
 		segmented.appearance.selectedTextColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
 		segmented.appearance.bottomLineColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
 		segmented.appearance.selectorColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)

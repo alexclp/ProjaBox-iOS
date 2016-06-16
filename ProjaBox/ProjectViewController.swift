@@ -46,7 +46,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 		
 		getProfile()
-//		getLatestPosts()
+		getLatestPosts()
 		setupPostButton()
 	}
 	
