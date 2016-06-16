@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PillLabel : UILabel{
+class PillLabel : UILabel {
 	
 	@IBInspectable var color = UIColor.lightGrayColor()
 	@IBInspectable var cornerRadius: CGFloat = 8
@@ -30,7 +30,7 @@ class PillLabel : UILabel{
 		setup()
 	}
 	
-	func setup(){
+	func setup() {
 		// This has to be balanced with the borderWidth property
 		text = "  \(labelText)".uppercaseString
 		
@@ -52,7 +52,7 @@ class PillLabel : UILabel{
 
 extension UIColor {
 	// Credits to http://stackoverflow.com/a/29044899/784318
-	func isLight() -> Bool{
+	func isLight() -> Bool {
 		var green: CGFloat = 0.0, red: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
 		self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
 		let brightness = ((red * 299) + (green * 587) + (blue * 114) ) / 1000
