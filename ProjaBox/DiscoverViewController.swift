@@ -11,6 +11,9 @@ import UIKit
 class DiscoverViewController: UIViewController, YSSegmentedControlDelegate {
 	
 	lazy var searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
+	
+	var segmentedControl: YSSegmentedControl?
+	var selectedIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate {
 	}
 	
 	func setupSegmentedControl() {
-		let segmented = YSSegmentedControl(
+		segmentedControl = YSSegmentedControl(
 			frame: CGRect(
 				x: 0,
 				y: 0,
@@ -51,23 +54,26 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate {
 			],
 			action: {
 				control, index in
-				print ("segmented did pressed \(index)")
 		})
-		segmented.delegate = self
-		segmented.appearance.selectedTextColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
-		segmented.appearance.bottomLineColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
-		segmented.appearance.selectorColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
+		segmentedControl!.delegate = self
+		segmentedControl!.appearance.selectedTextColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
+		segmentedControl!.appearance.bottomLineColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
+		segmentedControl!.appearance.selectorColor = UIColor(red: 237/256, green: 84/256, blue: 84/256, alpha: 1)
 		
-		view.addSubview(segmented)
+		view.addSubview(segmentedControl!)
 	}
 	
 	// MARK: User Interaction
 	
 	func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
-		
+		selectedIndex = index
 	}
 	
 	func showFilters(sender: UIBarButtonItem) {
-		
+		if selectedIndex == 0 {
+			performSegueWithIdentifier("showPeopleFiltersSegue", sender: self)
+		} else {
+			performSegueWithIdentifier("showProjectFilterSegue", sender: self)
+		}
 	}
 }

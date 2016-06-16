@@ -339,6 +339,113 @@
             </objects>
             <point key="canvasLocation" x="1337.5" y="5175.5"/>
         </scene>
+        <!--People Filters View Controller-->
+        <scene sceneID="LZT-pE-laP">
+            <objects>
+                <viewController id="8RQ-tg-wNU" customClass="PeopleFiltersViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2In-Hn-xtg"/>
+                        <viewControllerLayoutGuide type="bottom" id="fPe-My-LoD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ush-FS-AsP">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mm1-9X-sEx">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8RQ-tg-wNU" id="3vx-g2-Qu3"/>
+                                    <outlet property="delegate" destination="8RQ-tg-wNU" id="Zrj-6o-hQ6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mm1-9X-sEx" firstAttribute="leading" secondItem="ush-FS-AsP" secondAttribute="leading" id="U0J-Fg-2Yx"/>
+                            <constraint firstAttribute="trailing" secondItem="mm1-9X-sEx" secondAttribute="trailing" id="WvF-X2-cEd"/>
+                            <constraint firstItem="mm1-9X-sEx" firstAttribute="top" secondItem="2In-Hn-xtg" secondAttribute="bottom" id="duN-xv-6yd"/>
+                            <constraint firstItem="mm1-9X-sEx" firstAttribute="bottom" secondItem="fPe-My-LoD" secondAttribute="top" id="mOy-hC-Wk8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="mm1-9X-sEx" id="e8G-cK-lPg"/>
+                        <segue destination="0MK-8x-dmW" kind="show" identifier="showOccupationFilterSegue" id="Mlr-JG-JZb"/>
+                        <segue destination="Baw-i6-Cms" kind="show" identifier="showLocationFilterSegue" id="gER-tP-Ik5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cz1-DY-25E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1378" y="5944"/>
+        </scene>
+        <!--Occupation Filter View Controller-->
+        <scene sceneID="DVc-Rc-Oiy">
+            <objects>
+                <viewController id="0MK-8x-dmW" customClass="OccupationFilterViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jew-Ja-4Mf"/>
+                        <viewControllerLayoutGuide type="bottom" id="n57-r6-78p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zer-sO-ffZ">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Db-2h-1HO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168" y="5534"/>
+        </scene>
+        <!--Location Filter View Controller-->
+        <scene sceneID="Czj-qI-a0d">
+            <objects>
+                <viewController id="Baw-i6-Cms" customClass="LocationFilterViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pIE-Vx-4Fe"/>
+                        <viewControllerLayoutGuide type="bottom" id="xcC-0y-RaD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s4p-Ph-OaC">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o59-F4-WC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="6250"/>
+        </scene>
+        <!--Project Filters View Controller-->
+        <scene sceneID="DYH-uu-zxE">
+            <objects>
+                <viewController id="Vzj-WD-COQ" customClass="ProjectFiltersViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jXy-kQ-wai"/>
+                        <viewControllerLayoutGuide type="bottom" id="amP-Ad-lR9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zl0-Bm-NKx">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MQZ-vm-BZW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MQZ-vm-BZW" firstAttribute="leading" secondItem="Zl0-Bm-NKx" secondAttribute="leading" id="EWm-rt-pCi"/>
+                            <constraint firstAttribute="trailing" secondItem="MQZ-vm-BZW" secondAttribute="trailing" id="TPT-BD-P90"/>
+                            <constraint firstItem="MQZ-vm-BZW" firstAttribute="top" secondItem="jXy-kQ-wai" secondAttribute="bottom" id="WfU-X9-W0h"/>
+                            <constraint firstItem="MQZ-vm-BZW" firstAttribute="bottom" secondItem="amP-Ad-lR9" secondAttribute="top" id="wgr-Mz-gl9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUa-8p-dkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1378" y="7494"/>
+        </scene>
         <!--Discover-->
         <scene sceneID="sb8-JZ-nMu">
             <objects>
@@ -353,10 +460,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" image="search.png" id="7P3-aN-jmN"/>
+                    <connections>
+                        <segue destination="8RQ-tg-wNU" kind="show" identifier="showPeopleFiltersSegue" id="XS9-PC-B7g"/>
+                        <segue destination="Vzj-WD-COQ" kind="show" identifier="showProjectFilterSegue" id="3EP-rg-2BX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-6r-BbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="5603"/>
+            <point key="canvasLocation" x="556" y="6699"/>
         </scene>
         <!--Projabox-->
         <scene sceneID="vi1-dz-HhZ">
