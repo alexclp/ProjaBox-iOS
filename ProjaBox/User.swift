@@ -9,5 +9,10 @@
 import UIKit
 
 class User: NSObject {
-
+	var id: Int?
+	var name: String?
+	var location: String?
+	var likers: [[String: AnyObject]]?
+	var about: String?
+	var status: String?
 }

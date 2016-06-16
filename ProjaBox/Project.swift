@@ -9,5 +9,12 @@
 import UIKit
 
 class Project: NSObject {
-
+	var id: Int?
+	var desc: String?
+	var name: String?
+	var location: String?
+	var jobs: [String]?
+	var isLikedByMe: Bool?
+	var type: String?
+	var likers: [[String: AnyObject]]?
 }
