@@ -19,6 +19,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	var segmentedControl: YSSegmentedControl?
 	var selectedIndex: Int = 0
+	var selectedName: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +98,10 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			let projectResult = result as! Project
 			
 			if let name = projectResult.name {
-				cell.nameLabel.text = name
+				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
+				cell.nameLabel?.text = name
+				cell.nameLabel!.tag = indexPath.row
+				cell.nameLabel?.addGestureRecognizer(tap)
 			}
 			
 			if let description = projectResult.desc {
@@ -174,6 +178,27 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			performSegueWithIdentifier("showProjectFiltersSegue", sender: self)
 		} else {
 			performSegueWithIdentifier("showPeopleFilterSegue", sender: self)
+		}
+	}
+	
+	func nameButtonPressed(sender: UIGestureRecognizer) {
+		selectedName = (sender.view?.tag)!
+		performSegueWithIdentifier("feedShowProfile", sender: self)
+	}
+	
+	// MARK: Segue
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "discoverShowProfile" {
+			if selectedIndex == 0 {
+				
+			} else {
+				let destination = segue.destinationViewController as! PersonProfileViewController
+				let userResult = results[selectedName] as! User
+				let id = String(userResult.id!)
+				destination.userId = id
+			}
+			
 		}
 	}
 	

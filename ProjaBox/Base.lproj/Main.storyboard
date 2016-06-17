@@ -491,6 +491,7 @@
                         <outlet property="tableView" destination="HHW-LN-ACE" id="Xte-zF-Rxz"/>
                         <segue destination="8RQ-tg-wNU" kind="show" identifier="showPeopleFiltersSegue" id="XS9-PC-B7g"/>
                         <segue destination="Vzj-WD-COQ" kind="show" identifier="showProjectFilterSegue" id="3EP-rg-2BX"/>
+                        <segue destination="u77-Zt-78J" kind="show" identifier="discoverShowProfile" id="HMW-90-tHn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-6r-BbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -578,6 +579,7 @@
                         <segue destination="0pi-1U-3nW" kind="presentation" identifier="showComposePostSegue" id="EX1-1V-TE0"/>
                         <segue destination="ytC-Tz-8Yr" kind="show" identifier="showPostDetailsSegue" id="aws-rB-jBW"/>
                         <segue destination="XUr-b7-zw9" kind="show" identifier="showSettingsSegue" id="fed-gc-PN4"/>
+                        <segue destination="u77-Zt-78J" kind="show" identifier="feedShowProfile" id="5cc-mP-Obj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1P-mm-mfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -854,6 +856,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3h-hc-40u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2305.5" y="1654.5"/>
+        </scene>
+        <!--Person Profile View Controller-->
+        <scene sceneID="mjg-U2-hKb">
+            <objects>
+                <viewController id="u77-Zt-78J" customClass="PersonProfileViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WjQ-td-UJt"/>
+                        <viewControllerLayoutGuide type="bottom" id="ffl-rC-76i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rlx-yz-Fie">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3K6-yB-qFk">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="u77-Zt-78J" id="580-R6-KaF"/>
+                                    <outlet property="delegate" destination="u77-Zt-78J" id="6Nf-kQ-v1b"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3K6-yB-qFk" firstAttribute="bottom" secondItem="ffl-rC-76i" secondAttribute="top" id="E9B-1E-0mS"/>
+                            <constraint firstAttribute="trailing" secondItem="3K6-yB-qFk" secondAttribute="trailing" id="chv-HH-xwA"/>
+                            <constraint firstItem="3K6-yB-qFk" firstAttribute="top" secondItem="WjQ-td-UJt" secondAttribute="bottom" id="gM3-ql-VnJ"/>
+                            <constraint firstItem="3K6-yB-qFk" firstAttribute="leading" secondItem="rlx-yz-Fie" secondAttribute="leading" id="s7F-ek-QjL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="3K6-yB-qFk" id="xy5-7k-B0r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIo-u8-sag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3697.5" y="1881.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zKR-AJ-95r">
@@ -1372,6 +1413,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="SCW-h2-cCE"/>
         <segue reference="HjA-FE-eog"/>
-        <segue reference="Mdg-mM-8eA"/>
+        <segue reference="EX1-1V-TE0"/>
+        <segue reference="HMW-90-tHn"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	internal var postsData = [UserPost]()
 	internal var selectedCellIndex = 0
+	internal var selectedName = 0
 	
 	let imagePicker = UIImagePickerController()
 	
@@ -112,11 +113,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		if currentPost is ProjectPost {
 			let projectPost = currentPost as! ProjectPost
 			if let name = projectPost.projectName {
+				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
 				cell.authorLabel?.text = name
+				cell.authorLabel!.tag = indexPath.row
+				cell.authorLabel?.addGestureRecognizer(tap)
 			}
 		} else {
 			if let name = currentPost.ownerName {
+				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
 				cell.authorLabel?.text = name
+				cell.authorLabel!.tag = indexPath.row
+				cell.authorLabel?.addGestureRecognizer(tap)
 			}
 		}
 		
@@ -171,6 +178,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 	}
 	
+	func nameButtonPressed(sender: UIGestureRecognizer) {
+		selectedName = (sender.view?.tag)!
+		performSegueWithIdentifier("feedShowProfile", sender: self)
+	}
+	
 	func shareButtonPressed(sender: UIButton) {
 		print("Share button tag: \(sender.tag)")
 	}
@@ -213,6 +225,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		} else if segue.identifier == "showSettingsSegue" {
 			let backItem = UIBarButtonItem()
 			backItem.title = ""
+		} else if segue.identifier == "feedShowProfile" {
+			let destination = segue.destinationViewController as! PersonProfileViewController
+			let id = String(postsData[selectedName].ownerId!)
+			destination.userId = id
 		}
 	}
 }

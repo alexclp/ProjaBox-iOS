@@ -80,6 +80,8 @@ class NewsFeedHelper: NSObject {
 							postToAdd.likers = post["likers"] as? [[String: AnyObject]]
 							postToAdd.comments = post["comments"] as? [[String: AnyObject]]
 							postToAdd.ownerName = post["ownerName"] as? String
+							postToAdd.ownerId = post["ownerId"] as? Int
+							print("ID: \(post["ownerId"])")
 							
 							posts.append(postToAdd)
 						} else {
