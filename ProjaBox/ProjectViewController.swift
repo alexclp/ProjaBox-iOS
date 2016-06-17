@@ -46,7 +46,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 		
 		getProfile()
-		getLatestPosts()
+		
 		setupPostButton()
 	}
 	
@@ -67,7 +67,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			ProjectHelper.getFullProjectProfile(id, completionHandler: { (response, data) in
 				
 				if response == true {
-					print(data)
+//					print(data)
+					self.getLatestPosts()
 					if let name = data!["name"] {
 						self.projectData["name"] = name as! String
 						self.headerData["name"] = name as? String
