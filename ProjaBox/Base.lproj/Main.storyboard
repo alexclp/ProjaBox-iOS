@@ -113,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="-131" y="-834"/>
         </scene>
-        <!--Project View Controller-->
+        <!--Project-->
         <scene sceneID="r7D-IY-n8S">
             <objects>
                 <viewController id="l5y-tr-GjW" customClass="ProjectViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,9 +125,11 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-ea-TkH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-ea-TkH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="l5y-tr-GjW" id="zGY-vs-3y0"/>
                                     <outlet property="delegate" destination="l5y-tr-GjW" id="Lzp-J6-ikk"/>
@@ -150,7 +152,7 @@
                             <constraint firstItem="TiV-Z9-Adn" firstAttribute="top" secondItem="sNe-i7-H8h" secondAttribute="bottom" constant="26" id="rs6-mv-w2l"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="project.png" id="YXa-oI-3v2"/>
+                    <tabBarItem key="tabBarItem" title="Project" image="project.png" id="YXa-oI-3v2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="floatingButton" destination="sNe-i7-H8h" id="C5W-ZC-6gl"/>
@@ -514,6 +516,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="221" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gMz-H5-fpt">
                                 <rect key="frame" x="0.0" y="67" width="375" height="487"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="3l0-kv-sff" id="duh-b7-TGX"/>
                                     <outlet property="delegate" destination="3l0-kv-sff" id="EKy-RX-YsB"/>
@@ -522,13 +526,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc6-jP-9mz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-JY-0dD" userLabel="Photo Button">
-                                        <rect key="frame" x="251" y="15" width="79" height="24"/>
-                                        <state key="normal" image="photo.png"/>
-                                        <connections>
-                                            <action selector="photoButtonPressed:" destination="3l0-kv-sff" eventType="touchUpInside" id="LEE-RE-d2g"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical_separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="fHu-fw-b8W">
                                         <rect key="frame" x="177" y="0.0" width="20" height="49"/>
                                         <constraints>
@@ -536,26 +533,33 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-oU-0UY" userLabel="Post Button">
-                                        <rect key="frame" x="41" y="15" width="71" height="24"/>
+                                        <rect key="frame" x="41" y="15" width="65" height="23"/>
                                         <state key="normal" image="post.png"/>
                                         <connections>
                                             <action selector="postButtonPressed:" destination="3l0-kv-sff" eventType="touchUpInside" id="5Dq-i4-xge"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-JY-0dD" userLabel="Photo Button">
+                                        <rect key="frame" x="250" y="16" width="81" height="21"/>
+                                        <state key="normal" image="photo.png"/>
+                                        <connections>
+                                            <action selector="photoButtonPressed:" destination="3l0-kv-sff" eventType="touchUpInside" id="LEE-RE-d2g"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Hfw-oU-0UY" secondAttribute="bottom" constant="30" id="CY9-7p-Akk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hfw-oU-0UY" secondAttribute="bottom" constant="31" id="CY9-7p-Akk"/>
                                     <constraint firstItem="Hfw-oU-0UY" firstAttribute="top" secondItem="mc6-jP-9mz" secondAttribute="top" constant="15" id="EuD-fA-pUp"/>
                                     <constraint firstItem="fHu-fw-b8W" firstAttribute="top" secondItem="mc6-jP-9mz" secondAttribute="top" id="P3t-l2-aT6"/>
-                                    <constraint firstItem="Hfw-oU-0UY" firstAttribute="bottom" secondItem="JYx-JY-0dD" secondAttribute="bottom" id="Pn8-Hz-Rbt"/>
-                                    <constraint firstAttribute="trailing" secondItem="JYx-JY-0dD" secondAttribute="trailing" constant="45" id="RNw-z1-lJ8"/>
+                                    <constraint firstItem="Hfw-oU-0UY" firstAttribute="bottom" secondItem="JYx-JY-0dD" secondAttribute="bottom" constant="1" id="Pn8-Hz-Rbt"/>
+                                    <constraint firstAttribute="trailing" secondItem="JYx-JY-0dD" secondAttribute="trailing" constant="44" id="RNw-z1-lJ8"/>
                                     <constraint firstItem="fHu-fw-b8W" firstAttribute="centerX" secondItem="mc6-jP-9mz" secondAttribute="centerX" id="RXY-bv-FgM"/>
                                     <constraint firstAttribute="bottom" secondItem="fHu-fw-b8W" secondAttribute="bottom" constant="20" id="krR-8n-XN4"/>
-                                    <constraint firstItem="JYx-JY-0dD" firstAttribute="leading" secondItem="fHu-fw-b8W" secondAttribute="trailing" constant="54" id="nRM-Wt-uLd"/>
+                                    <constraint firstItem="JYx-JY-0dD" firstAttribute="leading" secondItem="fHu-fw-b8W" secondAttribute="trailing" constant="53" id="nRM-Wt-uLd"/>
                                     <constraint firstItem="Hfw-oU-0UY" firstAttribute="leading" secondItem="mc6-jP-9mz" secondAttribute="leading" constant="41" id="sN0-gJ-T0K"/>
-                                    <constraint firstItem="Hfw-oU-0UY" firstAttribute="top" secondItem="JYx-JY-0dD" secondAttribute="top" id="x7G-vI-OsZ"/>
-                                    <constraint firstItem="fHu-fw-b8W" firstAttribute="leading" secondItem="Hfw-oU-0UY" secondAttribute="trailing" constant="65" id="xkv-Ov-eg5"/>
+                                    <constraint firstItem="Hfw-oU-0UY" firstAttribute="top" secondItem="JYx-JY-0dD" secondAttribute="top" constant="-1" id="x7G-vI-OsZ"/>
+                                    <constraint firstItem="fHu-fw-b8W" firstAttribute="leading" secondItem="Hfw-oU-0UY" secondAttribute="trailing" constant="71" id="xkv-Ov-eg5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1454,6 +1458,6 @@
         <segue reference="HjA-FE-eog"/>
         <segue reference="5cc-mP-Obj"/>
         <segue reference="UYV-KZ-4Gt"/>
-        <segue reference="Mdg-mM-8eA"/>
+        <segue reference="EX1-1V-TE0"/>
     </inferredMetricsTieBreakers>
 </document>
