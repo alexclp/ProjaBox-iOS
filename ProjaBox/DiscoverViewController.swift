@@ -183,22 +183,27 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	func nameButtonPressed(sender: UIGestureRecognizer) {
 		selectedName = (sender.view?.tag)!
-		performSegueWithIdentifier("feedShowProfile", sender: self)
+		if selectedIndex == 0 {
+			performSegueWithIdentifier("discoverShowProjectProfile", sender: self)
+		} else {
+			performSegueWithIdentifier("discoverShowProfile", sender: self)
+		}
+		
 	}
 	
 	// MARK: Segue
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "discoverShowProfile" {
-			if selectedIndex == 0 {
-				
-			} else {
-				let destination = segue.destinationViewController as! PersonProfileViewController
-				let userResult = results[selectedName] as! User
-				let id = String(userResult.id!)
-				destination.userId = id
-			}
-			
+			let destination = segue.destinationViewController as! PersonProfileViewController
+			let userResult = results[selectedName] as! User
+			let id = String(userResult.id!)
+			destination.userId = id
+		} else if segue.identifier == "discoverShowProjectProfile" {
+			let destination = segue.destinationViewController as! ProjectViewOnlyViewController
+			let projectResult = results[selectedName] as! Project
+			let id = String(projectResult.id!)
+			destination.projectId = id
 		}
 	}
 	

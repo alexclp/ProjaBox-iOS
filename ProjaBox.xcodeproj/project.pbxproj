@@ -120,6 +120,7 @@
 		0F6E01691D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01671D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib */; };
 		0F6E016B1D13328500BC69FA /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E016A1D13328500BC69FA /* follow.png */; };
 		0F6E016E1D14386E00BC69FA /* PersonProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E016D1D14386E00BC69FA /* PersonProfileViewController.swift */; };
+		0F6E01701D14707300BC69FA /* ProjectViewOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */; };
 		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
 		0F79C78C1D0122210002D117 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79C7821D0122210002D117 /* AccountKit.framework */; };
 		0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79C7831D0122210002D117 /* AccountKitStrings.bundle */; };
@@ -298,6 +299,7 @@
 		0F6E01671D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverPeopleTableViewCell.xib; sourceTree = "<group>"; };
 		0F6E016A1D13328500BC69FA /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow.png; sourceTree = "<group>"; };
 		0F6E016D1D14386E00BC69FA /* PersonProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProfileViewController.swift; sourceTree = "<group>"; };
+		0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewOnlyViewController.swift; sourceTree = "<group>"; };
 		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0F79C7821D0122210002D117 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
 		0F79C7831D0122210002D117 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 			isa = PBXGroup;
 			children = (
 				0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */,
+				0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */,
 				0FEB21431D0CE6C5000385C3 /* Edit forms */,
 			);
 			name = "My project";
@@ -1193,6 +1196,7 @@
 				0F6E01641D132EC600BC69FA /* DiscoverProjectTableViewCell.swift in Sources */,
 				0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */,
 				0F41E0DC1D0C158900BD0520 /* PhotosTableViewCell.swift in Sources */,
+				0F6E01701D14707300BC69FA /* ProjectViewOnlyViewController.swift in Sources */,
 				0F82D2321CE38F1300C779E5 /* ProfileTableViewCell.swift in Sources */,
 				0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */,
 				0F2A99741D12D999006C3540 /* VacanciesFilterViewController.swift in Sources */,

@@ -180,7 +180,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func nameButtonPressed(sender: UIGestureRecognizer) {
 		selectedName = (sender.view?.tag)!
-		performSegueWithIdentifier("feedShowProfile", sender: self)
+		if postsData[selectedName] is ProjectPost {
+			performSegueWithIdentifier("feedShowProjectProfile", sender: self)
+		} else {
+			performSegueWithIdentifier("feedShowProfile", sender: self)
+		}
+		
 	}
 	
 	func shareButtonPressed(sender: UIButton) {
@@ -229,6 +234,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			let destination = segue.destinationViewController as! PersonProfileViewController
 			let id = String(postsData[selectedName].ownerId!)
 			destination.userId = id
+		} else if segue.identifier == "feedShowProjectProfile" {
+			let destination = segue.destinationViewController as! ProjectViewOnlyViewController
+			let projectPost = postsData[selectedName] as! ProjectPost
+			let id = String(projectPost.projectId!)
+			destination.projectId = id
 		}
 	}
 }

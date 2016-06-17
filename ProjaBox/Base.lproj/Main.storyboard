@@ -492,6 +492,7 @@
                         <segue destination="8RQ-tg-wNU" kind="show" identifier="showPeopleFiltersSegue" id="XS9-PC-B7g"/>
                         <segue destination="Vzj-WD-COQ" kind="show" identifier="showProjectFilterSegue" id="3EP-rg-2BX"/>
                         <segue destination="u77-Zt-78J" kind="show" identifier="discoverShowProfile" id="HMW-90-tHn"/>
+                        <segue destination="q4e-4P-8dc" kind="show" identifier="discoverShowProjectProfile" id="76S-eJ-s7x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-6r-BbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,6 +581,7 @@
                         <segue destination="ytC-Tz-8Yr" kind="show" identifier="showPostDetailsSegue" id="aws-rB-jBW"/>
                         <segue destination="XUr-b7-zw9" kind="show" identifier="showSettingsSegue" id="fed-gc-PN4"/>
                         <segue destination="u77-Zt-78J" kind="show" identifier="feedShowProfile" id="5cc-mP-Obj"/>
+                        <segue destination="q4e-4P-8dc" kind="show" identifier="feedShowProjectProfile" id="UYV-KZ-4Gt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1P-mm-mfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -866,11 +868,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ffl-rC-76i"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rlx-yz-Fie">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3K6-yB-qFk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -895,6 +897,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIo-u8-sag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3697.5" y="1881.5"/>
+        </scene>
+        <!--Project View Only View Controller-->
+        <scene sceneID="iCv-eS-d3j">
+            <objects>
+                <viewController id="q4e-4P-8dc" customClass="ProjectViewOnlyViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BL8-3g-MFZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="r9n-Fv-lrG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YZY-kc-hhd">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-E1-vFY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="q4e-4P-8dc" id="8pP-3P-bcA"/>
+                                    <outlet property="delegate" destination="q4e-4P-8dc" id="Jiy-Ae-eHT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wf3-E1-vFY" firstAttribute="bottom" secondItem="r9n-Fv-lrG" secondAttribute="top" id="4Mr-cL-qli"/>
+                            <constraint firstAttribute="trailing" secondItem="Wf3-E1-vFY" secondAttribute="trailing" id="MPc-Df-Ci7"/>
+                            <constraint firstItem="Wf3-E1-vFY" firstAttribute="top" secondItem="BL8-3g-MFZ" secondAttribute="bottom" id="cfk-CS-IYm"/>
+                            <constraint firstItem="Wf3-E1-vFY" firstAttribute="leading" secondItem="YZY-kc-hhd" secondAttribute="leading" id="e5L-jH-Ahb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Wf3-E1-vFY" id="Z1i-cf-iOl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ViC-Gg-A5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3800.5" y="3041.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zKR-AJ-95r">
@@ -1413,7 +1452,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="SCW-h2-cCE"/>
         <segue reference="HjA-FE-eog"/>
-        <segue reference="EX1-1V-TE0"/>
-        <segue reference="HMW-90-tHn"/>
+        <segue reference="5cc-mP-Obj"/>
+        <segue reference="UYV-KZ-4Gt"/>
+        <segue reference="Mdg-mM-8eA"/>
     </inferredMetricsTieBreakers>
 </document>
