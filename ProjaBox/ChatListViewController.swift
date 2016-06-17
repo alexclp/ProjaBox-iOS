@@ -17,6 +17,9 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Do any additional setup after loading the view.
 		
+		self.tableView?.separatorColor = UIColor(red: 242/256, green: 242/256, blue: 242/256, alpha: 1.0)
+		self.tableView?.tableFooterView = UIView.init()
+		
 		self.tabBarController?.navigationItem.title = "Message List"
     }
 	
