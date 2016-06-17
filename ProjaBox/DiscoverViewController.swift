@@ -97,6 +97,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			let cell = tableView.dequeueReusableCellWithIdentifier("discoverProjectCell", forIndexPath: indexPath) as! DiscoverProjectTableViewCell
 			let projectResult = result as! Project
 			
+			cell.selectionStyle = .None
+			
 			if let name = projectResult.name {
 				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
 				cell.nameLabel?.text = name
@@ -139,8 +141,13 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		let cell = tableView.dequeueReusableCellWithIdentifier("discoverPeopleCell", forIndexPath: indexPath) as! DiscoverPeopleTableViewCell
 		let userResult = result as! User
 		
+		cell.selectionStyle = .None
+		
 		if let name = userResult.name {
-			cell.nameLabel.text = name
+			let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
+			cell.nameLabel?.text = name
+			cell.nameLabel!.tag = indexPath.row
+			cell.nameLabel?.addGestureRecognizer(tap)
 		}
 		
 		if let location = userResult.location {

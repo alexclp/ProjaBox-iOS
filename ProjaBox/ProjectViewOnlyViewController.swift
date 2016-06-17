@@ -46,7 +46,7 @@ class ProjectViewOnlyViewController: UIViewController {
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 		
 		getProfile()
-		getLatestPosts()
+		
 	}
 	
 	func setupBarButtons() {
@@ -54,53 +54,52 @@ class ProjectViewOnlyViewController: UIViewController {
 	}
 	
 	func getProfile() {
-		if NSUserDefaults.standardUserDefaults().objectForKey("projectId") != nil {
-			ProjectHelper.getFullProjectProfile(projectId, completionHandler: { (response, data) in
-				
-				if response == true {
-					print(data)
-					if let name = data!["name"] {
-						self.projectData["name"] = name as! String
-						self.headerData["name"] = name as? String
-					}
-					
-					if let description = data!["description"] {
-						self.projectData["description"] = description as! String
-						self.headerData["description"] = description as? String
-					}
-					
-					if let location = data!["location"] {
-						self.projectData["location"] = location as! String
-						self.headerData["location"] = location as? String
-					}
-					
-					if let goals = data!["goals"] as? String {
-						self.projectData["goals"] = goals
-						self.goals = goals
-					}
-					
-					if let type = data!["type"] {
-						self.projectData["type"] = type as! String
-						self.headerData["type"] = type as? String
-					}
-					
-					if let team = data!["team"] as? [String: String] {
-						self.projectData["team"] = team
-						self.teamData.append(team)
-					}
-					
-					if let jobs = data!["jobs"] as? [String] {
-						self.projectData["jobs"] = jobs
-						self.jobs = jobs
-					}
-					self.tableView?.reloadData()
+		ProjectHelper.getFullProjectProfile(projectId, completionHandler: { (response, data) in
+			print("project id: \(self.projectId)")
+			if response == true {
+				print(data)
+				self.getLatestPosts()
+				if let name = data!["name"] {
+					self.projectData["name"] = name as! String
+					self.headerData["name"] = name as? String
 				}
-			})
-		}
+				
+				if let description = data!["description"] {
+					self.projectData["description"] = description as! String
+					self.headerData["description"] = description as? String
+				}
+				
+				if let location = data!["location"] {
+					self.projectData["location"] = location as! String
+					self.headerData["location"] = location as? String
+				}
+				
+				if let goals = data!["goals"] as? String {
+					self.projectData["goals"] = goals
+					self.goals = goals
+				}
+				
+				if let type = data!["type"] {
+					self.projectData["type"] = type as! String
+					self.headerData["type"] = type as? String
+				}
+				
+				if let team = data!["team"] as? [String: String] {
+					self.projectData["team"] = team
+					self.teamData.append(team)
+				}
+				
+				if let jobs = data!["jobs"] as? [String] {
+					self.projectData["jobs"] = jobs
+					self.jobs = jobs
+				}
+				self.tableView?.reloadData()
+			}
+		})
 	}
 	
 	func getLatestPosts() {
-		ProjectHelper.getProjectsLatestPosts(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, posts) in
+		ProjectHelper.getProjectsLatestPosts(projectId) { (response, posts) in
 			if response == true {
 				print("GOT PROJECT'S POSTS")
 				self.postsData = posts!

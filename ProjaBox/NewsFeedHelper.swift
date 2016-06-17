@@ -109,9 +109,9 @@ class NewsFeedHelper: NSObject {
 					} else {
 						completionHandler(true, posts)
 					}
+				} else {
+					completionHandler(false, nil)
 				}
-				
-				
 			}
 		}
 	}
