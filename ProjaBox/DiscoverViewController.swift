@@ -209,6 +209,10 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	// MARK: Search bar delegate
 	
+	func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+		searchBar.showsCancelButton = true
+	}
+	
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
 		let queryString = searchBar.text
@@ -245,6 +249,11 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 				}
 			})
 		}
+	}
+	
+	func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+		searchBar.showsCancelButton = false
+		searchBar.resignFirstResponder()
 	}
 	
 	// MARK: Loading last added

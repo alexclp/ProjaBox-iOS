@@ -75,13 +75,24 @@ class EditBioViewController: FormViewController {
 			formData["status"] = status as! String
 			formData["about"] = description as! String
 			formData["sex"] = sex as! String
-			formData["avatar"] = UIImagePNGRepresentation(avatar as! UIImage)
-	
-//			print(formData)
+//			formData["avatar"] = UIImagePNGRepresentation(avatar as! UIImage)
+//			let image = avatar as! UIImage
+//			let imageData = image.lowestQualityJPEGNSData
+//			let base64String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+//			formData["avatar"] = base64String
 			delegate?.userDidFinishCompletingData(formData)
 			self.navigationController?.popViewControllerAnimated(true)
 		} else {
 			print("Please fill all the data alert")
 		}
 	}
+}
+
+extension UIImage {
+	var uncompressedPNGData: NSData      { return UIImagePNGRepresentation(self)!        }
+	var highestQualityJPEGNSData: NSData { return UIImageJPEGRepresentation(self, 1.0)!  }
+	var highQualityJPEGNSData: NSData    { return UIImageJPEGRepresentation(self, 0.75)! }
+	var mediumQualityJPEGNSData: NSData  { return UIImageJPEGRepresentation(self, 0.5)!  }
+	var lowQualityJPEGNSData: NSData     { return UIImageJPEGRepresentation(self, 0.25)! }
+	var lowestQualityJPEGNSData:NSData   { return UIImageJPEGRepresentation(self, 0.0)!  }
 }
