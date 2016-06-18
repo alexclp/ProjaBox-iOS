@@ -204,8 +204,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKK-fQ-Tml">
-                                <rect key="frame" x="137" y="484" width="103" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKK-fQ-Tml">
+                                <rect key="frame" x="136" y="484" width="103" height="30"/>
                                 <state key="normal" title="Done and Save"/>
                                 <connections>
                                     <action selector="doneButtonPressed" destination="Ao3-Ou-Tcs" eventType="touchUpInside" id="XFc-8T-1ft"/>
@@ -261,7 +261,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkQ-ZY-ETu" customClass="TagListView" customModule="TagListView">
-                                <rect key="frame" x="0.0" y="185" width="600" height="366"/>
+                                <rect key="frame" x="0.0" y="185" width="375" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">

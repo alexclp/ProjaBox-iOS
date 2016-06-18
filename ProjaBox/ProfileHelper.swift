@@ -74,6 +74,70 @@ class ProfileHelper: NSObject {
 		}
 	}
 	
+	class func followUser(userId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/users/\(userId)/follow"
+		let headers = getHeaders()
+		
+		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("failed")
+				completionHandler(false)
+			} else {
+				print("success")
+				completionHandler(true)
+			}
+		}
+	}
+	
+	class func unFollowUser(userId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/users/\(userId)/follow"
+		let headers = getHeaders()
+		
+		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("failed")
+				completionHandler(false)
+			} else {
+				print("success")
+				completionHandler(true)
+			}
+		}
+	}
+	
+	class func likeUser(userId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/users/\(userId)/like"
+		let headers = getHeaders()
+		
+		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("failed")
+				completionHandler(false)
+			} else {
+				print("success")
+				completionHandler(true)
+			}
+		}
+	}
+	
+	class func unLikeUser(userId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/users/\(userId)/like"
+		let headers = getHeaders()
+		
+		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("failed")
+				completionHandler(false)
+			} else {
+				print("success")
+				completionHandler(true)
+			}
+		}
+	}
+	
 	// MARK: POST METHODS
 	
 	class func getUsersLatestPosts(userId: String, completionHandler: (Bool, [UserPost]?) -> Void) {

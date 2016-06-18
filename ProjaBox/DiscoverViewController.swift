@@ -98,6 +98,11 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			let projectResult = result as! Project
 			
 			cell.selectionStyle = .None
+			cell.followButton.tag = indexPath.row
+			cell.likeButton.tag = indexPath.row
+			cell.messageButton.tag = indexPath.row
+			
+			cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			
 			if let name = projectResult.name {
 				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
@@ -135,6 +140,22 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 				cell.likesLabel.text = String(likers.count)
 			}
 			
+			if let isFollowed = projectResult.isFollowed {
+				if isFollowed == true {
+					cell.followButton.selected = true
+				} else {
+					cell.followButton.selected = true
+				}
+			}
+			
+			if let isLiked = projectResult.isLikedByMe {
+				if isLiked == true {
+					cell.likeButton.selected = true
+				} else {
+					cell.likeButton.selected = true
+				}
+			}
+			
 			return cell
 		}
 		
@@ -142,6 +163,11 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		let userResult = result as! User
 		
 		cell.selectionStyle = .None
+		cell.followButton.tag = indexPath.row
+		cell.likeButton.tag = indexPath.row
+		cell.messageButton.tag = indexPath.row
+		
+		cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
 		if let name = userResult.name {
 			let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
@@ -166,6 +192,22 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			cell.statusLabel.text = status
 		}
 		
+		if let isFollowed = userResult.isFollowed {
+			if isFollowed == true {
+				cell.followButton.selected = true
+			} else {
+				cell.followButton.selected = true
+			}
+		}
+		
+		if let isLiked = userResult.isLikedByMe {
+			if isLiked == true {
+				cell.likeButton.selected = true
+			} else {
+				cell.likeButton.selected = true
+			}
+		}
+		
 		return cell
 	}
 	
@@ -174,6 +216,70 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	}
 	
 	// MARK: User Interaction
+	
+	func likeButtonPressed(sender: UIButton) {
+		let index = sender.tag
+		let result = results[index]
+		
+		if selectedIndex == 0 {
+			let projectResult = result as! Project
+			if sender.selected == true {
+				let id = String(projectResult.id!)
+				ProjectHelper.unlikeProject(id, completionHandler: { (response) in
+					sender.selected = false
+				})
+			} else {
+				let id = String(projectResult.id!)
+				ProjectHelper.likeProject(id, completionHandler: { (response) in
+					sender.selected = true
+				})
+			}
+		} else {
+			let userResult = result as! User
+			if sender.selected == true {
+				let id = String(userResult.id!)
+				ProfileHelper.unLikeUser(id, completionHandler: { (response) in
+					sender.selected = false
+				})
+			} else {
+				let id = String(userResult.id!)
+				ProfileHelper.likeUser(id, completionHandler: { (response) in
+					sender.selected = true
+				})
+			}
+		}
+	}
+	
+	func followButtonPressed(sender: UIButton) {
+		let index = sender.tag
+		let result = results[index]
+		if selectedIndex == 0 {
+			let projectResult = result as! Project
+			if sender.selected == true {
+				let id = String(projectResult.id!)
+				ProjectHelper.unFollowProject(id, completionHandler: { (response) in
+					sender.selected = false
+				})
+			} else {
+				let id = String(projectResult.id!)
+				ProjectHelper.followProject(id, completionHandler: { (response) in
+					sender.selected = true
+				})
+			}
+		} else {
+			let userResult = result as! User
+			let id = String(userResult.id!)
+			if sender.selected == true {
+				ProfileHelper.unFollowUser(id, completionHandler: { (response) in
+					sender.selected = false
+				})
+			} else {
+				ProfileHelper.followUser(id, completionHandler: { (response) in
+					sender.selected = true
+				})
+			}
+		}
+	}
 	
 	func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
 		selectedIndex = index

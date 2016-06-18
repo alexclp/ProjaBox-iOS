@@ -89,6 +89,70 @@ class ProjectHelper: NSObject {
 		}
 	}
 	
+	class func followProject(projectId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/follow"
+		let headers = getHeaders()
+		
+		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("followed unsuccessfully")
+				completionHandler(false)
+			} else {
+				print("followed successfully")
+				completionHandler(true)
+			}
+		}
+	}
+	
+	class func unFollowProject(projectId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/follow"
+		let headers = getHeaders()
+		
+		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("followed unsuccessfully")
+				completionHandler(false)
+			} else {
+				print("followed successfully")
+				completionHandler(true)
+			}
+		}
+	}
+	
+	class func likeProject(projectId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/like"
+		let headers = getHeaders()
+		
+		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("liked unsuccessfully")
+				completionHandler(false)
+			} else {
+				print("liked successfully")
+				completionHandler(true)
+			}
+		}
+	}
+	
+	class func unlikeProject(projectId: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/like"
+		let headers = getHeaders()
+		
+		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("unliked unsuccessfully")
+				completionHandler(false)
+			} else {
+				print("unliked successfully")
+				completionHandler(true)
+			}
+		}
+	}
+	
 	// MARK: FETCHING
 	
 	class func getFullProjectProfile(projectId: String, completionHandler: (Bool, [String: AnyObject]?) -> Void) {

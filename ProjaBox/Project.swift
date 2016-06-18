@@ -17,4 +17,5 @@ class Project: NSObject {
 	var isLikedByMe: Bool?
 	var type: String?
 	var likers: [[String: AnyObject]]?
+	var isFollowed: Bool?
 }
