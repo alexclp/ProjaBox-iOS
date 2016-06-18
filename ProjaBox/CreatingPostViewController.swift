@@ -44,8 +44,9 @@ class CreatingPostViewController: UIViewController {
 	}
 	
 	@IBAction func doneButtonPressed() {
+		let textToShare = textView?.text
 		if projectPost == true {
-			ProjectHelper.createPost(projectId, "Post", "Project Post", nil, nil, completionHandler: { (response) in
+			ProjectHelper.createPost(projectId, "Post", textToShare!, nil, nil, completionHandler: { (response) in
 				if response  == false {
 					let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
 					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
@@ -53,7 +54,7 @@ class CreatingPostViewController: UIViewController {
 				}
 			})
 		} else {
-			NewsFeedHelper.createPost("Post", "Created a new post", nil, nil) { (response) in
+			NewsFeedHelper.createPost("Post", textToShare!, nil, nil) { (response) in
 				if response == false {
 					let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
 					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
