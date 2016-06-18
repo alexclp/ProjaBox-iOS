@@ -192,6 +192,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func shareButtonPressed(sender: UIButton) {
 		print("Share button tag: \(sender.tag)")
+		if let shareController = SharingHelper.shareStandardText() {
+			presentViewController(shareController, animated: true, completion: nil)
+		}
 	}
 	
 	func commentButtonPressed(sender: UIButton) {

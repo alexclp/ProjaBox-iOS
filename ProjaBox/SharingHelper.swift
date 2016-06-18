@@ -52,4 +52,23 @@ class SharingHelper {
 		return nil
 	}
 	
+	class func shareStandardText() -> UIActivityViewController? {
+		if let postURL = NSURL(string: "http://projabox.com") {
+			let objectsToShare: [AnyObject] = [postURL]
+			let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+			activityVC.excludedActivityTypes = [UIActivityTypeAirDrop,
+			                                    UIActivityTypeAddToReadingList,
+			                                    UIActivityTypePrint,
+			                                    UIActivityTypeOpenInIBooks,
+			                                    UIActivityTypeAssignToContact,
+			                                    UIActivityTypeSaveToCameraRoll,
+			                                    UIActivityTypePostToVimeo,
+			                                    UIActivityTypePostToFlickr,
+			                                    UIActivityTypePostToWeibo]
+			
+			return activityVC
+		}
+		return nil
+	}
+	
 }
