@@ -148,14 +148,6 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 				}
 			}
 			
-			if let isLiked = projectResult.isLikedByMe {
-				if isLiked == true {
-					cell.likeButton.selected = true
-				} else {
-					cell.likeButton.selected = true
-				}
-			}
-			
 			return cell
 		}
 		
