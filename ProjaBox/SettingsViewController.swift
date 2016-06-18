@@ -27,6 +27,26 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
 	// MARK: Table View Data Source
 	
+	func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		if section == 0 {
+			return 6.0
+		}
+		
+		return 1.0
+	}
+	
+	func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 5.0
+	}
+	
+	func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+		return UIView.init(frame: CGRectZero)
+	}
+	
+	func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		return UIView.init(frame: CGRectZero)
+	}
+	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 		if (indexPath.section == 0) {
 			return 189.0

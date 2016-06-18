@@ -18,7 +18,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxV-oB-zyY">
                         <rect key="frame" x="8" y="8" width="304" height="207"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="W78-hO-4EO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="W78-hO-4EO">
                                 <rect key="frame" x="8" y="7" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="AfQ-Hh-zFb"/>
@@ -250,7 +250,7 @@
         <image name="like default.png" width="64" height="62"/>
         <image name="location pin.png" width="22" height="30"/>
         <image name="other default.png" width="87" height="13"/>
-        <image name="profile_pic.jpg" width="160" height="160"/>
+        <image name="placeholder.png" width="240" height="268"/>
         <image name="share default.png" width="56" height="63"/>
         <image name="share selected.png" width="56" height="63"/>
     </resources>

@@ -615,7 +615,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-Vq-EJE">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-Vq-EJE">
                                                     <rect key="frame" x="8" y="8" width="63" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="74" id="1s2-4X-pQw"/>
@@ -1448,6 +1448,7 @@
         <image name="home.png" width="30" height="30"/>
         <image name="linked-button.png" width="982" height="169"/>
         <image name="photo.png" width="219" height="53"/>
+        <image name="placeholder.png" width="240" height="268"/>
         <image name="post.png" width="171" height="55"/>
         <image name="profile_pic.jpg" width="160" height="160"/>
         <image name="project.png" width="30" height="30"/>

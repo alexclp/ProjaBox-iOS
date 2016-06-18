@@ -121,6 +121,7 @@
 		0F6E016B1D13328500BC69FA /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E016A1D13328500BC69FA /* follow.png */; };
 		0F6E016E1D14386E00BC69FA /* PersonProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E016D1D14386E00BC69FA /* PersonProfileViewController.swift */; };
 		0F6E01701D14707300BC69FA /* ProjectViewOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */; };
+		0F6E01721D15577100BC69FA /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01711D15577100BC69FA /* placeholder.png */; };
 		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
 		0F79C78C1D0122210002D117 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79C7821D0122210002D117 /* AccountKit.framework */; };
 		0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79C7831D0122210002D117 /* AccountKitStrings.bundle */; };
@@ -300,6 +301,7 @@
 		0F6E016A1D13328500BC69FA /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow.png; sourceTree = "<group>"; };
 		0F6E016D1D14386E00BC69FA /* PersonProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProfileViewController.swift; sourceTree = "<group>"; };
 		0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewOnlyViewController.swift; sourceTree = "<group>"; };
+		0F6E01711D15577100BC69FA /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0F79C7821D0122210002D117 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
 		0F79C7831D0122210002D117 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F6E01711D15577100BC69FA /* placeholder.png */,
 				0F6E01421D12EDD900BC69FA /* filters */,
 				0F50B7A01D09C63C0051AEAA /* Tab bar icons */,
 				0F43A3AA1D0892E8003B6503 /* settings */,
@@ -978,6 +981,7 @@
 				0F6785BC1CC6F32400F89541 /* card separator.png in Resources */,
 				0F41E0DD1D0C158900BD0520 /* PhotosTableViewCell.xib in Resources */,
 				0FD43C601CF603650061E4E9 /* EducationExperienceTableViewCell.xib in Resources */,
+				0F6E01721D15577100BC69FA /* placeholder.png in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
 				0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */,
 				0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */,
