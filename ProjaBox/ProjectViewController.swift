@@ -268,7 +268,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		cell.authorLocationLabel?.text = ""
 		cell.locationImageView?.hidden = true
 		cell.authorDetailsLabel?.text = ""
-		cell.profileImageView?.image = nil
+//		cell.profileImageView?.image = nil
 		
 		let currentPost = postsData[indexPath.row]
 		cell.postLabel?.text = currentPost.content

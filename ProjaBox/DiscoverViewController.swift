@@ -190,9 +190,11 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	func nameButtonPressed(sender: UIGestureRecognizer) {
 		selectedName = (sender.view?.tag)!
+		print("selected index :\(selectedIndex)")
 		if selectedIndex == 0 {
 			performSegueWithIdentifier("discoverShowProjectProfile", sender: self)
 		} else {
+			print("name button pressed profile")
 			performSegueWithIdentifier("discoverShowProfile", sender: self)
 		}
 		
