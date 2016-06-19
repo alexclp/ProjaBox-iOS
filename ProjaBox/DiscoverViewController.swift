@@ -20,6 +20,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	var segmentedControl: YSSegmentedControl?
 	var selectedIndex: Int = 0
 	var selectedName: Int = 0
+	var selectedIdToMessage = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -209,6 +210,23 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	// MARK: User Interaction
 	
+	func messageButtonPressed(sender: UIButton) {
+		let index = sender.tag
+		let result = results[index]
+		
+		if selectedIndex == 0 {
+			let projectResult = result as! Project
+			let id = String(projectResult.id!)
+			selectedIdToMessage = id
+			performSegueWithIdentifier("discoverShowChat", sender: self)
+		} else {
+			let userResult = result as! User
+			let id = String(userResult.id!)
+			selectedIdToMessage = id
+			performSegueWithIdentifier("discoverShowChat", sender: self)
+		}
+	}
+	
 	func likeButtonPressed(sender: UIButton) {
 		let index = sender.tag
 		let result = results[index]
@@ -311,6 +329,9 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			let projectResult = results[selectedName] as! Project
 			let id = String(projectResult.id!)
 			destination.projectId = id
+		} else if segue.identifier == "discoverShowChat" {
+			let destination = segue.destinationViewController as! ConversationViewController
+			
 		}
 	}
 	

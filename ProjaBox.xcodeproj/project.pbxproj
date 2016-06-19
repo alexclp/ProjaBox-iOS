@@ -81,6 +81,7 @@
 		0F5505871CF8B7EC005229D7 /* sign-in-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505861CF8B7EC005229D7 /* sign-in-background.png */; };
 		0F5505891CF8BD5B005229D7 /* background-proja.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505881CF8BD5B005229D7 /* background-proja.png */; };
 		0F55058B1CF8BD61005229D7 /* signup-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F55058A1CF8BD61005229D7 /* signup-button.png */; };
+		0F58AB181D161C8B00ED5BF0 /* ChatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58AB171D161C8B00ED5BF0 /* ChatHelper.swift */; };
 		0F6076DD1CFFAE3300926E6E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */; };
 		0F6076DF1CFFB40B00926E6E /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */; };
 		0F6785B21CC6C7FC00F89541 /* FeedCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */; };
@@ -261,6 +262,7 @@
 		0F5505861CF8B7EC005229D7 /* sign-in-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-background.png"; sourceTree = "<group>"; };
 		0F5505881CF8BD5B005229D7 /* background-proja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-proja.png"; sourceTree = "<group>"; };
 		0F55058A1CF8BD61005229D7 /* signup-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signup-button.png"; sourceTree = "<group>"; };
+		0F58AB171D161C8B00ED5BF0 /* ChatHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatHelper.swift; sourceTree = "<group>"; };
 		0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
 		0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCardTableViewCell.swift; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 				0F3B682A1D08D9DF003BB7E5 /* ProfileHelper.swift */,
 				0FFD3BBC1D0EE4D500E6010E /* ProjectHelper.swift */,
 				0F6E01571D13112500BC69FA /* SearchHelper.swift */,
+				0F58AB171D161C8B00ED5BF0 /* ChatHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1207,6 +1210,7 @@
 				0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */,
 				0FEF70051CFD1DC900A80D09 /* MoreSettingsViewController.swift in Sources */,
 				0F3A0C901CD2BD81005C6C23 /* PostDetailsViewController.swift in Sources */,
+				0F58AB181D161C8B00ED5BF0 /* ChatHelper.swift in Sources */,
 				0F2A99701D12D7A6006C3540 /* ProjectFiltersViewController.swift in Sources */,
 				0F4665451D05BA180042932F /* UserPost.swift in Sources */,
 				0F3B682B1D08D9DF003BB7E5 /* ProfileHelper.swift in Sources */,

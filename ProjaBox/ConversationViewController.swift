@@ -14,6 +14,15 @@ class ConversationViewController: JSQMessagesViewController {
 	let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1.0))
 	let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 237/255, green: 84/255, blue: 84/255, alpha: 1))
 	var messages = [JSQMessage]()
+	
+	var profileId = String()
+	var myUserId: String {
+		get {
+			let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
+			let userId = userData!["userId"] as! Int
+			return String(userId)
+		}
+	}
 
 	// TODO: Add custom view to messages bubbles
 	
@@ -22,8 +31,27 @@ class ConversationViewController: JSQMessagesViewController {
 
         // Do any additional setup after loading the view.
 		self.setup()
-		self.addDemoMessages()
+		getConversationData()
+		//		self.addDemoMessages()
     }
+	
+	func getConversationData() {
+		ChatHelper.createChatForUserId(profileId) { (response, data) in
+			if response == true {
+				if let data = data {
+					let messages = data["messages"] as! [[String: AnyObject]]
+					for m in messages {
+						let senderId = String(m["authorId"] as! Int)
+						let content = m["content"] as! String
+						
+						let message = JSQMessage(senderId: senderId, displayName: nil, text: content)
+						self.messages += [message]
+					}
+					self.reloadMessagesView()
+				}
+			}
+		}
+	}
 	
 	func addDemoMessages() {
 		for i in 1...10 {
@@ -36,7 +64,7 @@ class ConversationViewController: JSQMessagesViewController {
 	}
 	
 	func setup() {
-		self.senderId = UIDevice.currentDevice().identifierForVendor?.UUIDString
+		self.senderId = profileId
 		self.senderDisplayName = UIDevice.currentDevice().identifierForVendor?.UUIDString
 	}
 	
