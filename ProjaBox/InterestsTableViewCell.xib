@@ -15,55 +15,72 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKr-p9-fDk" customClass="TagListView" customModule="TagListView">
-                        <rect key="frame" x="0.0" y="8" width="284" height="98"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07W-wK-NFY">
+                        <rect key="frame" x="13" y="8" width="299" height="90"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKr-p9-fDk" customClass="TagListView" customModule="TagListView">
+                                <rect key="frame" x="0.0" y="0.0" width="291" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuA-e8-fIk">
+                                        <rect key="frame" x="271" y="0.0" width="20" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="eCX-i7-8hQ"/>
+                                        </constraints>
+                                        <state key="normal" image="My Posts.png"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iuA-e8-fIk" secondAttribute="bottom" constant="69" id="5Ue-uc-5S9"/>
+                                    <constraint firstItem="iuA-e8-fIk" firstAttribute="top" secondItem="KKr-p9-fDk" secondAttribute="top" id="Gzv-PC-BkZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="iuA-e8-fIk" secondAttribute="trailing" id="mo6-mI-AL8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagHighlightedBackgroundColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagSelectedBackgroundColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
-                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tagHighlightedBackgroundColor">
-                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tagSelectedBackgroundColor">
-                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="8"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="NO"/>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuA-e8-fIk">
-                        <rect key="frame" x="292" y="8" width="20" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="02T-Hy-fnE"/>
-                            <constraint firstAttribute="height" constant="21" id="xww-2R-JTh"/>
+                            <constraint firstItem="KKr-p9-fDk" firstAttribute="leading" secondItem="07W-wK-NFY" secondAttribute="leading" id="5uX-yv-0Wd"/>
+                            <constraint firstItem="KKr-p9-fDk" firstAttribute="trailing" secondItem="07W-wK-NFY" secondAttribute="trailingMargin" id="RKo-Hc-sqL"/>
+                            <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="07W-wK-NFY" secondAttribute="top" id="nrQ-yO-2EU"/>
+                            <constraint firstAttribute="bottom" secondItem="KKr-p9-fDk" secondAttribute="bottom" id="qeN-p1-6NZ"/>
                         </constraints>
-                        <state key="normal" image="My Posts.png"/>
-                    </button>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="iuA-e8-fIk" secondAttribute="top" id="J2X-rN-ETa"/>
-                    <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="JID-CB-vP9"/>
-                    <constraint firstItem="KKr-p9-fDk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="K7t-fy-Tjl"/>
-                    <constraint firstAttribute="bottom" secondItem="KKr-p9-fDk" secondAttribute="bottom" id="rMX-Ql-ape"/>
-                    <constraint firstItem="iuA-e8-fIk" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="xH5-fq-Get"/>
+                    <constraint firstItem="07W-wK-NFY" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="HMv-nx-iBU"/>
+                    <constraint firstItem="07W-wK-NFY" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="InE-H6-XmH"/>
+                    <constraint firstItem="07W-wK-NFY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="WRG-cN-GyM"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
