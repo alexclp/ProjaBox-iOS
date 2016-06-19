@@ -150,7 +150,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		let postId = selectedPost.id
 		
 		NewsFeedHelper.createComment(String(postId!), commentContent: postContent!) { (response) in
-			
+			self.commentTextField?.resignFirstResponder()
 		}
 	}
 	
