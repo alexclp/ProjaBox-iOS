@@ -8,6 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
+import SwiftSpinner
 
 class ConversationViewController: JSQMessagesViewController {
 	
@@ -23,6 +24,8 @@ class ConversationViewController: JSQMessagesViewController {
 			return String(userId)
 		}
 	}
+	
+	var chatId = String()
 
 	// TODO: Add custom view to messages bubbles
 	
@@ -36,9 +39,12 @@ class ConversationViewController: JSQMessagesViewController {
     }
 	
 	func getConversationData() {
+		SwiftSpinner.show("Loading")
 		ChatHelper.createChatForUserId(profileId) { (response, data) in
+			SwiftSpinner.hide()
 			if response == true {
 				if let data = data {
+					self.chatId = String(data["id"] as! Int)
 					let messages = data["messages"] as! [[String: AnyObject]]
 					for m in messages {
 						let senderId = String(m["authorId"] as! Int)
@@ -107,6 +113,11 @@ class ConversationViewController: JSQMessagesViewController {
 		let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
 		self.messages += [message]
 		self.finishSendingMessage()
+		ChatHelper.sendMessage(senderId, content: text) { (response) in
+			if response == true {
+				print("sent message")
+			}
+		}
 	}
 	
 	override func didPressAccessoryButton(sender: UIButton!) {

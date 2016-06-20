@@ -12,6 +12,9 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 
 	@IBOutlet weak var tableView: UITableView?
 	
+	var selectedIndex = Int()
+	var chatData = [[String: AnyObject]]()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,18 +24,44 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 		self.tableView?.tableFooterView = UIView.init()
 		
 		self.tabBarController?.navigationItem.title = "Message List"
+		
+		loadChatList()
     }
+	
+	func loadChatList() {
+		ChatHelper.getChatList { (response, data) in
+			if response == true {
+				if let data = data {
+					self.chatData = data
+				}
+			}
+		}
+	}
 	
 	// MARK: Table View Data Source
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let rows = 3
+		let rows = chatData.count
 		
 		return rows
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("chatListCell", forIndexPath: indexPath) as! ChatListTableViewCell
+		
+		let current = chatData[indexPath.row]
+		
+		if let name = current["initiatorName"] {
+			cell.nameLabel?.text = name as? String
+		}
+		
+		if let lastMessage = current["message"] {
+			cell.previewLabel?.text = lastMessage as? String
+		}
+		
+		if let time = current["updated"] {
+			cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(time as! Int)
+		}
 		
 		return cell
 	}
@@ -41,6 +70,17 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		selectedIndex = indexPath.row
 		performSegueWithIdentifier("showConversationSegue", sender: self)
+	}
+	
+	// MARK: Segue
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "showConversationSegue" {
+			let destination = segue.destinationViewController as! ConversationViewController
+			let id = chatData[selectedIndex]["initiatorId"] as! String
+			destination.profileId = id
+		}
 	}
 }

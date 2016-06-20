@@ -104,6 +104,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			cell.messageButton.tag = indexPath.row
 			
 			cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.messageButton.addTarget(self, action: #selector(self.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			
 			if let name = projectResult.name {
 				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
@@ -159,6 +160,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		cell.followButton.tag = indexPath.row
 		cell.likeButton.tag = indexPath.row
 		cell.messageButton.tag = indexPath.row
+		
+		cell.messageButton.addTarget(self, action: #selector(self.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
 		cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
@@ -331,7 +334,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			destination.projectId = id
 		} else if segue.identifier == "discoverShowChat" {
 			let destination = segue.destinationViewController as! ConversationViewController
-			
+			destination.profileId = selectedIdToMessage
 		}
 	}
 	

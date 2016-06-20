@@ -1462,7 +1462,7 @@
         <segue reference="J2E-Sn-0IL"/>
         <segue reference="HjA-FE-eog"/>
         <segue reference="EX1-1V-TE0"/>
-        <segue reference="HMW-90-tHn"/>
         <segue reference="pO2-xq-4Qo"/>
+        <segue reference="HMW-90-tHn"/>
     </inferredMetricsTieBreakers>
 </document>
