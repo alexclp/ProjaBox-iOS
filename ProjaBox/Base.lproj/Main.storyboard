@@ -618,7 +618,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4fO-Zj-mQE" id="0Gx-vL-04D">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-Vq-EJE">
@@ -763,7 +763,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-ER-SqD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -792,13 +792,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VFd-ER-SqD" firstAttribute="bottom" secondItem="Wqc-Yl-fJ0" secondAttribute="top" id="0xy-JU-jTk"/>
-                            <constraint firstItem="13y-gt-Eum" firstAttribute="bottom" secondItem="Wqc-Yl-fJ0" secondAttribute="top" id="2YO-c0-A18"/>
-                            <constraint firstItem="VFd-ER-SqD" firstAttribute="top" secondItem="T5W-Mc-Fus" secondAttribute="bottom" id="ETl-3V-5Ly"/>
-                            <constraint firstItem="VFd-ER-SqD" firstAttribute="leading" secondItem="8Mt-8r-gWw" secondAttribute="leading" id="YfJ-4f-F9j"/>
-                            <constraint firstItem="VFd-ER-SqD" firstAttribute="trailing" secondItem="13y-gt-Eum" secondAttribute="trailing" id="aKP-AQ-fCn"/>
-                            <constraint firstAttribute="trailing" secondItem="VFd-ER-SqD" secondAttribute="trailing" id="mBL-qC-Lms"/>
-                            <constraint firstItem="VFd-ER-SqD" firstAttribute="leading" secondItem="13y-gt-Eum" secondAttribute="leading" id="wqZ-E9-3dy"/>
+                            <constraint firstAttribute="trailing" secondItem="VFd-ER-SqD" secondAttribute="trailing" id="0wp-qW-JoJ"/>
+                            <constraint firstItem="13y-gt-Eum" firstAttribute="bottom" secondItem="Wqc-Yl-fJ0" secondAttribute="top" id="8E9-s4-hB3"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="leading" secondItem="8Mt-8r-gWw" secondAttribute="leading" id="8Ic-cA-4ys"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="top" secondItem="T5W-Mc-Fus" secondAttribute="bottom" id="SIu-78-4SZ"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="leading" secondItem="13y-gt-Eum" secondAttribute="leading" id="T8e-Wh-P4J"/>
+                            <constraint firstItem="VFd-ER-SqD" firstAttribute="trailing" secondItem="13y-gt-Eum" secondAttribute="trailing" id="dw0-PX-Xdr"/>
+                            <constraint firstItem="13y-gt-Eum" firstAttribute="top" secondItem="VFd-ER-SqD" secondAttribute="bottom" id="i5l-Nj-58x"/>
                         </constraints>
                     </view>
                     <connections>

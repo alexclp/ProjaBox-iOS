@@ -19,22 +19,8 @@
                         <rect key="frame" x="13" y="8" width="299" height="90"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKr-p9-fDk" customClass="TagListView" customModule="TagListView">
-                                <rect key="frame" x="0.0" y="0.0" width="291" height="90"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuA-e8-fIk">
-                                        <rect key="frame" x="271" y="0.0" width="20" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="eCX-i7-8hQ"/>
-                                        </constraints>
-                                        <state key="normal" image="My Posts.png"/>
-                                    </button>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="0.0" width="262" height="90"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="iuA-e8-fIk" secondAttribute="bottom" constant="69" id="5Ue-uc-5S9"/>
-                                    <constraint firstItem="iuA-e8-fIk" firstAttribute="top" secondItem="KKr-p9-fDk" secondAttribute="top" id="Gzv-PC-BkZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="iuA-e8-fIk" secondAttribute="trailing" id="mo6-mI-AL8"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,21 +52,31 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuA-e8-fIk">
+                                <rect key="frame" x="270" y="6" width="20" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="rYF-qH-Emh"/>
+                                </constraints>
+                                <state key="normal" image="My Posts.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KKr-p9-fDk" firstAttribute="leading" secondItem="07W-wK-NFY" secondAttribute="leading" id="5uX-yv-0Wd"/>
-                            <constraint firstItem="KKr-p9-fDk" firstAttribute="trailing" secondItem="07W-wK-NFY" secondAttribute="trailingMargin" id="RKo-Hc-sqL"/>
-                            <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="07W-wK-NFY" secondAttribute="top" id="nrQ-yO-2EU"/>
-                            <constraint firstAttribute="bottom" secondItem="KKr-p9-fDk" secondAttribute="bottom" id="qeN-p1-6NZ"/>
+                            <constraint firstItem="iuA-e8-fIk" firstAttribute="top" secondItem="07W-wK-NFY" secondAttribute="top" constant="6" id="5mY-Eg-NA9"/>
+                            <constraint firstAttribute="bottom" secondItem="iuA-e8-fIk" secondAttribute="bottom" constant="63" id="BpS-KW-98K"/>
+                            <constraint firstItem="KKr-p9-fDk" firstAttribute="top" secondItem="07W-wK-NFY" secondAttribute="top" id="VKD-u4-uOm"/>
+                            <constraint firstItem="KKr-p9-fDk" firstAttribute="leading" secondItem="07W-wK-NFY" secondAttribute="leading" id="dEJ-Y7-7MA"/>
+                            <constraint firstAttribute="bottom" secondItem="KKr-p9-fDk" secondAttribute="bottom" id="gKo-HF-r0h"/>
+                            <constraint firstItem="iuA-e8-fIk" firstAttribute="leading" secondItem="KKr-p9-fDk" secondAttribute="trailing" constant="8" symbolic="YES" id="uub-Rj-AHj"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="07W-wK-NFY" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="HMv-nx-iBU"/>
-                    <constraint firstItem="07W-wK-NFY" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="InE-H6-XmH"/>
-                    <constraint firstItem="07W-wK-NFY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="WRG-cN-GyM"/>
+                    <constraint firstItem="07W-wK-NFY" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="CE9-wC-mXK"/>
+                    <constraint firstItem="07W-wK-NFY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="Php-Wj-eMg"/>
+                    <constraint firstItem="07W-wK-NFY" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="exH-Ds-7Xm"/>
+                    <constraint firstItem="07W-wK-NFY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="oQN-8a-IqD"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

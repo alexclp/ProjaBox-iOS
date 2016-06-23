@@ -110,7 +110,13 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		
 		let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTableViewCell
 		cell.selectionStyle = .None
-		cell.profileImageView?.image = UIImage(named: "telegram.png")
+//		cell.profileImageView?.image = UIImage(named: "telegram.png")
+		if let ownerName = currentComment["ownerName"] {
+			cell.nameLabel?.text = ownerName as? String
+		}
+		if let created = currentComment["created"] {
+			cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(created as! Int)
+		}
 		cell.commentLabel?.text = currentComment["content"] as? String
 		cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
 		

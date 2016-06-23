@@ -42,6 +42,11 @@ class FeedCardTableViewCell: UITableViewCell {
 	}
 	
 	private func setupButtons() {
+		likeButton?.imageView?.contentMode = .ScaleAspectFit
+		shareButton?.imageView?.contentMode = .ScaleAspectFit
+		commentButton?.imageView?.contentMode = .ScaleAspectFit
+		moreButton?.imageView?.contentMode = .ScaleAspectFit
+		
 		likeButton?.setBackgroundImage(UIImage(named: "like default.png"), forState: .Normal)
 		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Highlighted)
 		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Selected)
