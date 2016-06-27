@@ -45,15 +45,17 @@ class ConversationViewController: JSQMessagesViewController {
 			if response == true {
 				if let data = data {
 					self.chatId = String(data["id"] as! Int)
-					let messages = data["messages"] as! [[String: AnyObject]]
-					for m in messages {
-						let senderId = String(m["authorId"] as! Int)
-						let content = m["content"] as! String
-						
-						let message = JSQMessage(senderId: senderId, displayName: nil, text: content)
-						self.messages += [message]
+					let messages = data["messages"] as? [[String: AnyObject]]
+					if let messages = messages {
+						for m in messages {
+							let senderId = String(m["authorId"] as! Int)
+							let content = m["content"] as! String
+							
+							let message = JSQMessage(senderId: senderId, displayName: nil, text: content)
+							self.messages += [message]
+						}
+						self.reloadMessagesView()
 					}
-					self.reloadMessagesView()
 				}
 			}
 		}
