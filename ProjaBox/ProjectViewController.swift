@@ -70,17 +70,17 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 //					print(data)
 					self.getLatestPosts()
 					if let name = data!["name"] {
-						self.projectData["name"] = name as! String
+						self.projectData["name"] = name as? String
 						self.headerData["name"] = name as? String
 					}
 					
 					if let description = data!["description"] {
-						self.projectData["description"] = description as! String
+						self.projectData["description"] = description as? String
 						self.headerData["description"] = description as? String
 					}
 					
 					if let location = data!["location"] {
-						self.projectData["location"] = location as! String
+						self.projectData["location"] = location as? String
 						self.headerData["location"] = location as? String
 					}
 					
@@ -90,7 +90,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					}
 					
 					if let type = data!["type"] {
-						self.projectData["type"] = type as! String
+						self.projectData["type"] = type as? String
 						self.headerData["type"] = type as? String
 					}
 					
