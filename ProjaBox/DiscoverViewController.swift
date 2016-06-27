@@ -111,6 +111,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 				cell.nameLabel?.text = name
 				cell.nameLabel!.tag = indexPath.row
 				cell.nameLabel?.addGestureRecognizer(tap)
+				cell.profileImageView.addGestureRecognizer(tap)
 			}
 			
 			if let description = projectResult.desc {
@@ -170,6 +171,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			cell.nameLabel?.text = name
 			cell.nameLabel!.tag = indexPath.row
 			cell.nameLabel?.addGestureRecognizer(tap)
+			cell.profileImageView.addGestureRecognizer(tap)
 		}
 		
 		if let location = userResult.location {

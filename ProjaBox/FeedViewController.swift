@@ -102,6 +102,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		cell.authorDetailsLabel?.text = ""
 //		cell.profileImageView?.image = nil
 		
+		
+		
 		let currentPost = postsData[indexPath.row]
 		cell.postLabel?.text = currentPost.content
 		cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
@@ -119,6 +121,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				cell.authorLabel?.text = name
 				cell.authorLabel!.tag = indexPath.row
 				cell.authorLabel?.addGestureRecognizer(tap)
+				cell.profileImageView?.addGestureRecognizer(tap)
 			}
 		} else {
 			if let name = currentPost.ownerName {
@@ -126,6 +129,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				cell.authorLabel?.text = name
 				cell.authorLabel!.tag = indexPath.row
 				cell.authorLabel?.addGestureRecognizer(tap)
+				cell.profileImageView?.addGestureRecognizer(tap)
 			}
 		}
 		
