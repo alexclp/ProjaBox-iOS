@@ -182,7 +182,7 @@ class NewsFeedHelper: NSObject {
 	
 	// MARK: COMMENT METHODS
 	
-	class func createComment(postId: String, commentContent: String, completionHandler: (Bool) -> Void) {
+	class func createComment(postId: String, commentContent: String, completionHandler: (Bool, [String: AnyObject]?) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)/comments"
 		let headers = getHeaders()
 		let parameters = ["content": commentContent]
@@ -192,9 +192,12 @@ class NewsFeedHelper: NSObject {
 			
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				completionHandler(false)
+				completionHandler(false, nil)
 			} else {
-				completionHandler(true)
+				let data = response.result.value!["data"] as? [String: AnyObject]
+				if let data = data {
+					completionHandler(true, data)
+				}
 			}
 		}
 	}

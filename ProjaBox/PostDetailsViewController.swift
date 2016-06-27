@@ -28,11 +28,13 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		postDetailsTableView!.registerNib(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "commentCell")
 		
 		fillData()
+		
 	}
 	
 	func fillData() {
 		if let comments = selectedPost.comments {
 			commentsData = comments
+			print("comments data: \(comments)")
 		}
 		postDetailsTableView?.reloadData()
 	}
@@ -50,8 +52,8 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if let comments = selectedPost.comments {
-			return 2 + comments.count
+		if commentsData.count != 0 {
+			return 2 + commentsData.count
 		}
 		return 2
 	}
@@ -155,8 +157,23 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		let postContent = commentTextField?.text
 		let postId = selectedPost.id
 		
-		NewsFeedHelper.createComment(String(postId!), commentContent: postContent!) { (response) in
+		NewsFeedHelper.createComment(String(postId!), commentContent: postContent!) { (response, data) in
 			self.commentTextField?.resignFirstResponder()
+			self.commentTextField?.text = ""
+			
+			if response == true {
+				print("Comment success")
+				
+				if let data = data {
+					self.commentsData.append(data)
+//					self.postDetailsTableView!.beginUpdates()
+//					self.postDetailsTableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: self.commentsData.count + 3, inSection: 0)], withRowAnimation: .Automatic)
+//					self.postDetailsTableView!.endUpdates()
+					self.postDetailsTableView?.reloadData()
+				}
+			} else {
+				print("Comment failed")
+			}
 		}
 	}
 	
