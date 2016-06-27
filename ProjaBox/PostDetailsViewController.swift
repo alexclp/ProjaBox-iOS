@@ -205,7 +205,10 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	func sharePressed(sender: UIButton) {
-		
+		print("Share button tag: \(sender.tag)")
+		if let shareController = SharingHelper.shareStandardText() {
+			presentViewController(shareController, animated: true, completion: nil)
+		}
 	}
 	
 	func commentPressed(sender: UIButton) {
