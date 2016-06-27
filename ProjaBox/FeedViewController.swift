@@ -100,10 +100,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		cell.authorLocationLabel?.text = ""
 		cell.locationImageView?.hidden = true
 		cell.authorDetailsLabel?.text = ""
-//		cell.profileImageView?.image = nil
-		
-		
-		
+
 		let currentPost = postsData[indexPath.row]
 		cell.postLabel?.text = currentPost.content
 		cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
@@ -191,7 +188,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		} else {
 			performSegueWithIdentifier("feedShowProfile", sender: self)
 		}
-		
 	}
 	
 	func shareButtonPressed(sender: UIButton) {

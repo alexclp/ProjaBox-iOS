@@ -65,6 +65,10 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			let cell = tableView.dequeueReusableCellWithIdentifier("postDetailsCell", forIndexPath: indexPath) as! PostDetailsTableViewCell
 			cell.selectionStyle = .None
 			
+			let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
+			cell.nameLabel?.addGestureRecognizer(tap)
+			cell.profileImageView?.addGestureRecognizer(tap)
+			
 			cell.likeButton?.addTarget(self, action: #selector(PostDetailsViewController.likePressed(_:)), forControlEvents: .TouchUpInside)
 			cell.shareButton?.addTarget(self, action: #selector(PostDetailsViewController.sharePressed(_:)), forControlEvents: .TouchUpInside)
 			cell.commentsButton?.addTarget(self, action: #selector(PostDetailsViewController.commentPressed(_:)), forControlEvents: .TouchUpInside)
@@ -112,7 +116,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		
 		let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTableViewCell
 		cell.selectionStyle = .None
-//		cell.profileImageView?.image = UIImage(named: "telegram.png")
 		if let ownerName = currentComment["ownerName"] {
 			cell.nameLabel?.text = ownerName as? String
 		}
@@ -120,30 +123,9 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(created as! Int)
 		}
 		cell.commentLabel?.text = currentComment["content"] as? String
-		cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
 		
 		return cell
 	}
-//	
-//	func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//		if section == 0 {
-//			return 6.0
-//		}
-//		
-//		return CGFloat.min
-//	}
-//	
-//	func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//		return 5.0
-//	}
-//	
-//	func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//		return UIView.init(frame: CGRectZero)
-//	}
-//	
-//	func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//		return UIView.init(frame: CGRectZero)
-//	}
 	
 	// MARK: Table View Delegate
 	
@@ -166,9 +148,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 				
 				if let data = data {
 					self.commentsData.append(data)
-//					self.postDetailsTableView!.beginUpdates()
-//					self.postDetailsTableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: self.commentsData.count + 3, inSection: 0)], withRowAnimation: .Automatic)
-//					self.postDetailsTableView!.endUpdates()
 					self.postDetailsTableView?.reloadData()
 				}
 			} else {
@@ -217,5 +196,27 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	
 	func morePressed(sender: UIButton) {
 		
+	}
+	
+	func nameButtonPressed(sender: UIGestureRecognizer) {
+		if selectedPost is ProjectPost {
+			performSegueWithIdentifier("feedShowProjectProfile", sender: self)
+		} else {
+			performSegueWithIdentifier("feedShowProfile", sender: self)
+		}
+	}
+	
+	// MARK: SEGUE
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "feedShowProfile" {
+			let destination = segue.destinationViewController as! PersonProfileViewController
+			let id = String(selectedPost.id!)
+			destination.userId = id
+		} else if segue.identifier == "feedShowProjectProfile" {
+			let destination = segue.destinationViewController as! ProjectViewOnlyViewController
+			let id = String(selectedPost.id!)
+			destination.projectId = id
+		}
 	}
 }
