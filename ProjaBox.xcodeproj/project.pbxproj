@@ -17,6 +17,7 @@
 		0F0D888E1CFC70CC0074E5E6 /* facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */; };
 		0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888D1CFC70CC0074E5E6 /* linked-button.png */; };
 		0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */; };
+		0F10712C1D22C089001CBF02 /* CompressedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10712B1D22C089001CBF02 /* CompressedImage.swift */; };
 		0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */; };
 		0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */; };
 		0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */; };
@@ -198,6 +199,7 @@
 		0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-button.png"; sourceTree = "<group>"; };
 		0F0D888D1CFC70CC0074E5E6 /* linked-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linked-button.png"; sourceTree = "<group>"; };
 		0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
+		0F10712B1D22C089001CBF02 /* CompressedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressedImage.swift; sourceTree = "<group>"; };
 		0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC223B01C99BFA1006DD18B /* Main.storyboard */,
+				0F10712B1D22C089001CBF02 /* CompressedImage.swift */,
 				0F41E0CF1D0C0E1700BD0520 /* Feed */,
 				0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */,
 				0F41E0D01D0C0EA300BD0520 /* Settings */,
@@ -1198,6 +1201,7 @@
 				0F6E01681D132EDA00BC69FA /* DiscoverPeopleTableViewCell.swift in Sources */,
 				0F41E0D81D0C156700BD0520 /* GoalsTableViewCell.swift in Sources */,
 				0F4F99651CCBB4FC006628CF /* ChatListTableViewCell.swift in Sources */,
+				0F10712C1D22C089001CBF02 /* CompressedImage.swift in Sources */,
 				0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */,
 				0F6076DF1CFFB40B00926E6E /* SignInHelper.swift in Sources */,
 				0F6E01641D132EC600BC69FA /* DiscoverProjectTableViewCell.swift in Sources */,

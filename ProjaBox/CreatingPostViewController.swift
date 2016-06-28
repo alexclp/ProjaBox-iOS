@@ -54,7 +54,7 @@ class CreatingPostViewController: UIViewController {
 				}
 			})
 		} else {
-			NewsFeedHelper.createPost("Post", textToShare!, nil, nil) { (response) in
+			NewsFeedHelper.createTextPost("Post", textToShare!) { (response) in
 				if response == false {
 					let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
 					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))

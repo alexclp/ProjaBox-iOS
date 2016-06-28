@@ -142,6 +142,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
 		dismissViewControllerAnimated(true, completion: nil)
+		
+		if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+			let compressedData = pickedImage.lowestQualityJPEGNSData
+			let strBase64 = compressedData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+			
+			NewsFeedHelper.createPhotoPost(strBase64, completionHandler: { (response) in
+				
+			})
+		}
 	}
 	
 	func imagePickerControllerDidCancel(picker: UIImagePickerController) {

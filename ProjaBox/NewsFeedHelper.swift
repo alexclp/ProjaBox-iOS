@@ -117,33 +117,29 @@ class NewsFeedHelper: NSObject {
 		}
 	}
 	
-	class func createPost(name: String, _ content: String, _ photo: NSData?, _ video: NSData?, completionHandler: (Bool) -> Void) {
-		if let image = photo, let video = video {
-			let parameters: [String: AnyObject] = ["name": name, "content": content, "image": image, "video": video]
-			let headers = getHeaders()
-			Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: parameters, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
-				
-//				print(response)
-				
-				let errorCode = response.result.value!["errorCode"] as! Int
-				if errorCode != 0 {
-					completionHandler(false)
-				} else {
-					completionHandler(true)
-				}
+	class func createTextPost(name: String, _ content: String, completionHandler: (Bool) -> Void) {
+		let headers = getHeaders()
+		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: ["name": name, "content": content], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+			
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				completionHandler(false)
+			} else {
+				completionHandler(true)
 			}
-		} else {
-			let headers = getHeaders()
-			Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: ["name": name, "content": content], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
-				
-//				print(response)
-				
-				let errorCode = response.result.value!["errorCode"] as! Int
-				if errorCode != 0 {
-					completionHandler(false)
-				} else {
-					completionHandler(true)
-				}
+		}
+	}
+	
+	class func createPhotoPost(photo: String, completionHandler: (Bool) -> Void) {
+		let headers = getHeaders()
+		
+		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: ["name": "Post", "photo": photo], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			print(response)
+			if errorCode != 0 {
+				completionHandler(false)
+			} else {
+				completionHandler(true)
 			}
 		}
 	}
