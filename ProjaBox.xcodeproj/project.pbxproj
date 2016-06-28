@@ -18,6 +18,8 @@
 		0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888D1CFC70CC0074E5E6 /* linked-button.png */; };
 		0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */; };
 		0F10712C1D22C089001CBF02 /* CompressedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10712B1D22C089001CBF02 /* CompressedImage.swift */; };
+		0F10712F1D22C51F001CBF02 /* PhotoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10712D1D22C51F001CBF02 /* PhotoCardTableViewCell.swift */; };
+		0F1071301D22C51F001CBF02 /* PhotoCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F10712E1D22C51F001CBF02 /* PhotoCardTableViewCell.xib */; };
 		0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */; };
 		0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */; };
 		0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */; };
@@ -200,6 +202,8 @@
 		0F0D888D1CFC70CC0074E5E6 /* linked-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linked-button.png"; sourceTree = "<group>"; };
 		0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		0F10712B1D22C089001CBF02 /* CompressedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressedImage.swift; sourceTree = "<group>"; };
+		0F10712D1D22C51F001CBF02 /* PhotoCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCardTableViewCell.swift; sourceTree = "<group>"; };
+		0F10712E1D22C51F001CBF02 /* PhotoCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCardTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
@@ -513,6 +517,8 @@
 			children = (
 				0F6785B11CC6C7FC00F89541 /* FeedCardTableViewCell.swift */,
 				0F4171511CFF52CF0043A98B /* FeedCardTableViewCell.xib */,
+				0F10712D1D22C51F001CBF02 /* PhotoCardTableViewCell.swift */,
+				0F10712E1D22C51F001CBF02 /* PhotoCardTableViewCell.xib */,
 				0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */,
 				0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */,
 				0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */,
@@ -986,6 +992,7 @@
 				0F43A3B21D0893B3003B6503 /* About.png in Resources */,
 				0F6785BC1CC6F32400F89541 /* card separator.png in Resources */,
 				0F41E0DD1D0C158900BD0520 /* PhotosTableViewCell.xib in Resources */,
+				0F1071301D22C51F001CBF02 /* PhotoCardTableViewCell.xib in Resources */,
 				0FD43C601CF603650061E4E9 /* EducationExperienceTableViewCell.xib in Resources */,
 				0F6E01721D15577100BC69FA /* placeholder.png in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
@@ -1193,6 +1200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F10712F1D22C51F001CBF02 /* PhotoCardTableViewCell.swift in Sources */,
 				0FB0566B1D022FCC00CDBC76 /* NewsFeedHelper.swift in Sources */,
 				0F41E0E01D0C1AD800BD0520 /* PhotoCollectionViewCell.swift in Sources */,
 				0F6076DD1CFFAE3300926E6E /* SignInViewController.swift in Sources */,
