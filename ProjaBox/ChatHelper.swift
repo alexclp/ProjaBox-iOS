@@ -41,6 +41,7 @@ class ChatHelper: NSObject {
 		
 		Alamofire.request(.POST, urlString, parameters: ["content": content], encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
+			print(response)
 			if errorCode != 0 {
 				completionHandler(false)
 			} else {
@@ -55,6 +56,7 @@ class ChatHelper: NSObject {
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
+			print(response)
 			if errorCode != 0 {
 				completionHandler(false, nil)
 			} else {

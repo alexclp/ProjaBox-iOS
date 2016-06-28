@@ -33,6 +33,8 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 			if response == true {
 				if let data = data {
 					self.chatData = data
+					print("chat data: \(self.chatData)")
+					self.tableView?.reloadData()
 				}
 			}
 		}
@@ -79,7 +81,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "showConversationSegue" {
 			let destination = segue.destinationViewController as! ConversationViewController
-			let id = chatData[selectedIndex]["initiatorId"] as! String
+			let id = String(chatData[selectedIndex]["initiatorId"] as! Int)
 			destination.profileId = id
 		}
 	}
