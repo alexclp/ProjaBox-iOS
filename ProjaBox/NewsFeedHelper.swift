@@ -133,7 +133,7 @@ class NewsFeedHelper: NSObject {
 	class func createPhotoPost(photo: String, completionHandler: (Bool) -> Void) {
 		let headers = getHeaders()
 		
-		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: ["name": "Post", "photo": photo], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: ["name": "Post", "image": photo], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			print(response)
 			if errorCode != 0 {

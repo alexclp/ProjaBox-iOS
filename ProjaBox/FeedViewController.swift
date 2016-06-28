@@ -194,7 +194,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 			let compressedData = pickedImage.lowestQualityJPEGNSData
-			let strBase64 = compressedData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+			var strBase64 = compressedData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+			strBase64 = strBase64.stringByReplacingOccurrencesOfString("\r\n", withString: "")
 			
 			NewsFeedHelper.createPhotoPost(strBase64, completionHandler: { (response) in
 				
