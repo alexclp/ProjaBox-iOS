@@ -56,18 +56,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	func getLatestPosts() {
 		SwiftSpinner.show("Loading data")
 		NewsFeedHelper.getNewsFeed { (response, posts) in
-			print("got in here")
 			SwiftSpinner.hide()
 			if response == true {
 				if let data = posts {
 					self.postsData = data
 					self.tableView?.reloadData()
 				}
-				
 			} else {
 				
 			}
-			
 		}
 	}
 	

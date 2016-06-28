@@ -61,7 +61,7 @@ class NewsFeedHelper: NSObject {
 			Alamofire.request(urlRequest).responseJSON { response in
 //				print(response.request)
 //				print(response.result.value)
-				print(response)
+//				print(response)
 				
 				let errorCode = response.result.value!["errorCode"] as! Int
 				let data = response.result.value!["data"] as? [[String: AnyObject]]
@@ -82,7 +82,7 @@ class NewsFeedHelper: NSObject {
 							postToAdd.comments = post["comments"] as? [[String: AnyObject]]
 							postToAdd.ownerName = post["ownerName"] as? String
 							postToAdd.ownerId = post["ownerId"] as? Int
-							print("ID: \(post["ownerId"])")
+//							print("ID: \(post["ownerId"])")
 							
 							posts.append(postToAdd)
 						} else {
