@@ -82,6 +82,56 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let currentPost = postsData[indexPath.row]
+		if let image = currentPost.image {
+			let cell = tableView.dequeueReusableCellWithIdentifier("photoCardCell", forIndexPath: indexPath) as! PhotoCardTableViewCell
+			
+			cell.selectionStyle = .None
+			cell.likeButton?.tag = indexPath.row
+			cell.likeButton?.addTarget(self, action: #selector(FeedViewController.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.shareButton?.tag = indexPath.row
+			cell.shareButton?.addTarget(self, action: #selector(FeedViewController.shareButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.commentButton?.tag = indexPath.row
+			cell.commentButton?.addTarget(self, action: #selector(FeedViewController.commentButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.moreButton?.tag = indexPath.row
+			cell.moreButton?.addTarget(self, action: #selector(FeedViewController.moreButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			
+			cell.authorLocationLabel?.text = ""
+			cell.locationImageView?.hidden = true
+			cell.authorDetailsLabel?.text = ""
+			
+			// TODO: SETUP IMAGE
+			
+			cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
+			if let likers = currentPost.likers {
+				cell.likesLabel?.text = String(likers.count)
+			}
+			if currentPost.isLikedByMe == true {
+				cell.likeButton!.selected = true
+			}
+			
+			if currentPost is ProjectPost {
+				let projectPost = currentPost as! ProjectPost
+				if let name = projectPost.projectName {
+					let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
+					cell.authorLabel?.text = name
+					cell.authorLabel!.tag = indexPath.row
+					cell.authorLabel?.addGestureRecognizer(tap)
+					cell.profileImageView?.addGestureRecognizer(tap)
+				}
+			} else {
+				if let name = currentPost.ownerName {
+					let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
+					cell.authorLabel?.text = name
+					cell.authorLabel!.tag = indexPath.row
+					cell.authorLabel?.addGestureRecognizer(tap)
+					cell.profileImageView?.addGestureRecognizer(tap)
+				}
+			}
+			
+			return cell
+		}
+		
 		let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
 		
 		cell.selectionStyle = .None
@@ -97,8 +147,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		cell.authorLocationLabel?.text = ""
 		cell.locationImageView?.hidden = true
 		cell.authorDetailsLabel?.text = ""
-
-		let currentPost = postsData[indexPath.row]
+		
+		
 		cell.postLabel?.text = currentPost.content
 		cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
 		if let likers = currentPost.likers {
@@ -126,7 +176,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				cell.profileImageView?.addGestureRecognizer(tap)
 			}
 		}
-		
 		return cell
 	}
 	
