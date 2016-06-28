@@ -48,6 +48,8 @@ class SearchHelper: NSObject {
 				} else {
 					completionHandler(true, results)
 				}
+			} else {
+				completionHandler(false, nil)
 			}
 		}
 	}
@@ -79,6 +81,8 @@ class SearchHelper: NSObject {
 				} else {
 					completionHandler(true, results)
 				}
+			} else {
+				completionHandler(false, nil)
 			}
 		}
 	}

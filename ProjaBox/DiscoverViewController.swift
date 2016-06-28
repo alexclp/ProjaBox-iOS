@@ -363,7 +363,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 						self.tableView?.reloadData()
 					}
 				} else {
-					
+					self.results.removeAll()
+					self.tableView?.reloadData()
 				}
 			})
 		} else {
@@ -378,7 +379,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 						self.tableView?.reloadData()
 					}
 				} else {
-					
+					self.results.removeAll()
+					self.tableView?.reloadData()
 				}
 			})
 		}
