@@ -20,6 +20,8 @@
 		0F10712C1D22C089001CBF02 /* CompressedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10712B1D22C089001CBF02 /* CompressedImage.swift */; };
 		0F10712F1D22C51F001CBF02 /* PhotoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10712D1D22C51F001CBF02 /* PhotoCardTableViewCell.swift */; };
 		0F1071301D22C51F001CBF02 /* PhotoCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F10712E1D22C51F001CBF02 /* PhotoCardTableViewCell.xib */; };
+		0F1071351D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1071331D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.swift */; };
+		0F1071361D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1071341D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.xib */; };
 		0F15C4731CD3D65900E2E4B9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */; };
 		0F15C4751CD3D68400E2E4B9 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */; };
 		0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */; };
@@ -204,6 +206,8 @@
 		0F10712B1D22C089001CBF02 /* CompressedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressedImage.swift; sourceTree = "<group>"; };
 		0F10712D1D22C51F001CBF02 /* PhotoCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCardTableViewCell.swift; sourceTree = "<group>"; };
 		0F10712E1D22C51F001CBF02 /* PhotoCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCardTableViewCell.xib; sourceTree = "<group>"; };
+		0F1071331D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPostDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		0F1071341D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoPostDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C4721CD3D65900E2E4B9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C4741CD3D68400E2E4B9 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C47A1CD427AC00E2E4B9 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
@@ -525,6 +529,8 @@
 				0F15C47B1CD427AC00E2E4B9 /* LikesTableViewCell.xib */,
 				0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */,
 				0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */,
+				0F1071331D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.swift */,
+				0F1071341D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.xib */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -1007,6 +1013,7 @@
 				0F3B68271D08D158003BB7E5 /* Notifications.png in Resources */,
 				0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */,
 				0F5505871CF8B7EC005229D7 /* sign-in-background.png in Resources */,
+				0F1071361D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.xib in Resources */,
 				0F6785E91CC98C8C00F89541 /* post.png in Resources */,
 				0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */,
 				0F43A3B31D0893B3003B6503 /* accessory-view.png in Resources */,
@@ -1247,6 +1254,7 @@
 				0F82D2301CE3803600C779E5 /* SettingsViewController.swift in Sources */,
 				0F50B7B01D09F5990051AEAA /* EditBioViewController.swift in Sources */,
 				0FC223AD1C99BFA1006DD18B /* AppDelegate.swift in Sources */,
+				0F1071351D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.swift in Sources */,
 				0FD43C5E1CF603560061E4E9 /* EducationExperienceTableViewCell.swift in Sources */,
 				0FEB21491D0CEA0F000385C3 /* EditTeamViewController.swift in Sources */,
 				0F6E016E1D14386E00BC69FA /* PersonProfileViewController.swift in Sources */,

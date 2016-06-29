@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
@@ -24,6 +26,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
 		
 		postDetailsTableView!.registerNib(UINib(nibName: "PostDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "postDetailsCell")
+		postDetailsTableView!.registerNib(UINib(nibName: "PhotoPostDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "photoPostDetailsCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "LikesTableViewCell", bundle: nil), forCellReuseIdentifier: "likesCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "commentCell")
 		
@@ -62,41 +65,87 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		
 		if indexPath.row == 0 {
 			
-			let cell = tableView.dequeueReusableCellWithIdentifier("postDetailsCell", forIndexPath: indexPath) as! PostDetailsTableViewCell
-			cell.selectionStyle = .None
-			
-			let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
-			cell.nameLabel?.addGestureRecognizer(tap)
-			cell.profileImageView?.addGestureRecognizer(tap)
-			
-			cell.likeButton?.addTarget(self, action: #selector(PostDetailsViewController.likePressed(_:)), forControlEvents: .TouchUpInside)
-			cell.shareButton?.addTarget(self, action: #selector(PostDetailsViewController.sharePressed(_:)), forControlEvents: .TouchUpInside)
-			cell.commentsButton?.addTarget(self, action: #selector(PostDetailsViewController.commentPressed(_:)), forControlEvents: .TouchUpInside)
-			cell.moreButton?.addTarget(self, action: #selector(PostDetailsViewController.morePressed(_:)), forControlEvents: .TouchUpInside)
-			
-			cell.contentLabel?.text = selectedPost.content
-			if let likersData = selectedPost.likers {
-				 cell.likesLabel?.text = String(likersData.count)
-			}
-			
-			if selectedPost.isLikedByMe == true {
-				cell.likeButton?.selected = true
-			}
-			
-			cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
-			
-			if selectedPost is ProjectPost {
-				let projectPost = selectedPost as! ProjectPost
-				if let name = projectPost.projectName {
-					cell.nameLabel?.text = name
+			if let imageURL = selectedPost.image {
+				let cell = tableView.dequeueReusableCellWithIdentifier("photoPostDetailsCell", forIndexPath: indexPath) as! PhotoPostDetailsTableViewCell
+				cell.selectionStyle = .None
+				
+				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
+				cell.nameLabel?.addGestureRecognizer(tap)
+				cell.profileImageView?.addGestureRecognizer(tap)
+				
+				cell.likeButton?.addTarget(self, action: #selector(PostDetailsViewController.likePressed(_:)), forControlEvents: .TouchUpInside)
+				cell.shareButton?.addTarget(self, action: #selector(PostDetailsViewController.sharePressed(_:)), forControlEvents: .TouchUpInside)
+				cell.commentsButton?.addTarget(self, action: #selector(PostDetailsViewController.commentPressed(_:)), forControlEvents: .TouchUpInside)
+				cell.moreButton?.addTarget(self, action: #selector(PostDetailsViewController.morePressed(_:)), forControlEvents: .TouchUpInside)
+				
+//				cell.contentLabel?.text = selectedPost.content
+				Alamofire.request(.GET, imageURL)
+					.responseImage { response in
+						if let image = response.result.value {
+							print("image downloaded: \(image)")
+							cell.postPhoto?.image = image
+						}
 				}
+				if let likersData = selectedPost.likers {
+					cell.likesLabel?.text = String(likersData.count)
+				}
+				
+				if selectedPost.isLikedByMe == true {
+					cell.likeButton?.selected = true
+				}
+				
+				cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
+				
+				if selectedPost is ProjectPost {
+					let projectPost = selectedPost as! ProjectPost
+					if let name = projectPost.projectName {
+						cell.nameLabel?.text = name
+					}
+				} else {
+					if let name = selectedPost.ownerName {
+						cell.nameLabel?.text = name
+					}
+				}
+				return cell
 			} else {
-				if let name = selectedPost.ownerName {
-					cell.nameLabel?.text = name
+				let cell = tableView.dequeueReusableCellWithIdentifier("postDetailsCell", forIndexPath: indexPath) as! PostDetailsTableViewCell
+				cell.selectionStyle = .None
+				
+				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
+				cell.nameLabel?.addGestureRecognizer(tap)
+				cell.profileImageView?.addGestureRecognizer(tap)
+				
+				cell.likeButton?.addTarget(self, action: #selector(PostDetailsViewController.likePressed(_:)), forControlEvents: .TouchUpInside)
+				cell.shareButton?.addTarget(self, action: #selector(PostDetailsViewController.sharePressed(_:)), forControlEvents: .TouchUpInside)
+				cell.commentsButton?.addTarget(self, action: #selector(PostDetailsViewController.commentPressed(_:)), forControlEvents: .TouchUpInside)
+				cell.moreButton?.addTarget(self, action: #selector(PostDetailsViewController.morePressed(_:)), forControlEvents: .TouchUpInside)
+				
+				cell.contentLabel?.text = selectedPost.content
+				if let likersData = selectedPost.likers {
+					 cell.likesLabel?.text = String(likersData.count)
 				}
+				
+				if selectedPost.isLikedByMe == true {
+					cell.likeButton?.selected = true
+				}
+				
+				cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
+				
+				if selectedPost is ProjectPost {
+					let projectPost = selectedPost as! ProjectPost
+					if let name = projectPost.projectName {
+						cell.nameLabel?.text = name
+					}
+				} else {
+					if let name = selectedPost.ownerName {
+						cell.nameLabel?.text = name
+					}
+				}
+				
+				return cell
 			}
 			
-			return cell
+			
 			
 		} else if indexPath.row == 1 {
 			

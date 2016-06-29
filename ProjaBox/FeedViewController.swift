@@ -114,12 +114,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			let imageURL = image
 			Alamofire.request(.GET, imageURL)
 				.responseImage { response in
-					debugPrint(response)
-					
-					print(response.request)
-					print(response.response)
-					debugPrint(response.result)
-					
 					if let image = response.result.value {
 						print("image downloaded: \(image)")
 						cell.postImage?.image = image
