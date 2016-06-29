@@ -17,7 +17,7 @@ class UserPost: NSObject {
 	var ownerId: Int?
 	var ownerAvatar: NSData?
 	var ownerName: String?
-	var image: NSData?
+	var image: String?
 	var video: NSData?
 	var likers: [[String: AnyObject]]?
 	var comments: [[String: AnyObject]]?

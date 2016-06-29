@@ -18,6 +18,7 @@ pod 'IQKeyboardManagerSwift'
 pod 'SwiftSpinner'
 pod 'Eureka', '~> 1.6'
 pod 'KCFloatingActionButton'
+pod 'AlamofireImage', '~> 2.0'
 
 end
 

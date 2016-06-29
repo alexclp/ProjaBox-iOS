@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (3.4.0)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
   - Eureka (1.6.0)
   - IQKeyboardManagerSwift (4.0.3)
   - JSQMessagesViewController (7.3.1):
@@ -12,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage (~> 2.0)
   - Eureka (~> 1.6)
   - IQKeyboardManagerSwift
   - JSQMessagesViewController
@@ -22,6 +25,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   Eureka: ef5b9ac93aedeecfe50d98b1ac7678bf09a1fc62
   IQKeyboardManagerSwift: b6883b720b0e76473692fdc80828442566e1075f
   JSQMessagesViewController: 3847120a97a7ab3bdc701f166c59f3955f7801c7
@@ -31,6 +35,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
   TagListView: 6bf4bded034c4c90b1e90d8cd3d8e1d852dba0a8
 
-PODFILE CHECKSUM: 96540a1271bbdf752f3bb3535e15c8407901ecb6
+PODFILE CHECKSUM: c50f2f40e9c03f2e4bf53f8cf97031fa81638625
 
 COCOAPODS: 1.0.0

@@ -76,13 +76,12 @@ class NewsFeedHelper: NSObject {
 							postToAdd.createdTimestamp = post["created"] as? Int
 							postToAdd.id = post["id"] as? Int
 							postToAdd.isLikedByMe = post["isLikedByMe"] as? Bool
-							postToAdd.image = post["image"] as? NSData
+							postToAdd.image = post["image"] as? String
 							postToAdd.video = post["video"] as? NSData
 							postToAdd.likers = post["likers"] as? [[String: AnyObject]]
 							postToAdd.comments = post["comments"] as? [[String: AnyObject]]
 							postToAdd.ownerName = post["ownerName"] as? String
 							postToAdd.ownerId = post["ownerId"] as? Int
-//							print("ID: \(post["ownerId"])")
 							
 							posts.append(postToAdd)
 						} else {
@@ -91,7 +90,7 @@ class NewsFeedHelper: NSObject {
 							postToAdd.createdTimestamp = post["created"] as? Int
 							postToAdd.id = post["id"] as? Int
 							postToAdd.isLikedByMe = post["isLikedByMe"] as? Bool
-							postToAdd.image = post["image"] as? NSData
+							postToAdd.image = post["image"] as? String
 							postToAdd.video = post["video"] as? NSData
 							
 							postToAdd.projectAvatar = post["projectAvatar"] as? NSData

@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftSpinner
+import AlamofireImage
+import Alamofire
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -34,6 +36,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		super.viewDidLoad()
 		
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
+		tableView!.registerNib(UINib(nibName: "PhotoCardTableViewCell", bundle: nil), forCellReuseIdentifier: "photoCardCell")
 		
 		self.navigationController?.navigationBar.hidden = false
 		
@@ -76,6 +79,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	//	MARK: UITableView Data Source
 	
+	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		if let image = postsData[indexPath.row].image {
+			return 308
+		}
+		return 221
+	}
+	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		let rows = postsData.count
 		return rows
@@ -101,6 +111,20 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			cell.authorDetailsLabel?.text = ""
 			
 			// TODO: SETUP IMAGE
+			let imageURL = image
+			Alamofire.request(.GET, imageURL)
+				.responseImage { response in
+					debugPrint(response)
+					
+					print(response.request)
+					print(response.response)
+					debugPrint(response.result)
+					
+					if let image = response.result.value {
+						print("image downloaded: \(image)")
+						cell.postImage?.image = image
+					}
+			}
 			
 			cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
 			if let likers = currentPost.likers {

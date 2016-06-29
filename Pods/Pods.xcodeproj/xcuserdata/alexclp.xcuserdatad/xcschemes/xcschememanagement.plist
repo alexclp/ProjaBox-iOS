@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlamofireImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Eureka.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,6 +72,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>05094CC4A047119F7ADC14EE74C4881C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1520003FEBEC114D6C84F832AFEDB994</key>
 		<dict>
 			<key>primary</key>
@@ -78,11 +88,6 @@
 			<true/>
 		</dict>
 		<key>31246027096EA734F1B8E4839C3190A0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3A6163B3F516E5C49446D8686E66A871</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +107,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7CF145427F660CF35A7B2F2B71B1C81E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7E82EF3158DC7672612EFE46DB8E4C8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B5A24A7AE86FCC4281A6E0584A1FF6F3</key>
+		<key>880589768C5465718B7CC2C9AA04195F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90C0CE544C13354EF07B937578AA19FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -118,11 +133,6 @@
 			<true/>
 		</dict>
 		<key>EC25B770E2E786F47106EE8F013163EA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EFE367AB65EC2F5FDD91FD698ECFB023</key>
 		<dict>
 			<key>primary</key>
 			<true/>
