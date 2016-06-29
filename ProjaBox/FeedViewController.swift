@@ -80,7 +80,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	//	MARK: UITableView Data Source
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-		if let image = postsData[indexPath.row].image {
+		if postsData[indexPath.row].image != nil {
 			return 308
 		}
 		return 221
@@ -109,8 +109,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			cell.authorLocationLabel?.text = ""
 			cell.locationImageView?.hidden = true
 			cell.authorDetailsLabel?.text = ""
-			
-			// TODO: SETUP IMAGE
+		
 			let imageURL = image
 			Alamofire.request(.GET, imageURL)
 				.responseImage { response in
@@ -137,6 +136,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 					cell.authorLabel?.addGestureRecognizer(tap)
 					cell.profileImageView?.addGestureRecognizer(tap)
 				}
+				if ((projectPost.projectAvatar?.isEqual(NSNull)) != nil) {
+					if let url = projectPost.ownerAvatar {
+						Alamofire.request(.GET, url)
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.profileImageView!.image = image
+								}
+						}
+					}
+				}
 			} else {
 				if let name = currentPost.ownerName {
 					let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
@@ -145,7 +155,20 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 					cell.authorLabel?.addGestureRecognizer(tap)
 					cell.profileImageView?.addGestureRecognizer(tap)
 				}
+				if ((currentPost.ownerAvatar?.isEqual(NSNull)) != nil) {
+					if let url = currentPost.ownerAvatar {
+						Alamofire.request(.GET, url)
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.profileImageView!.image = image
+								}
+						}
+					}
+				}
 			}
+			
+			
 			
 			return cell
 		}
@@ -211,10 +234,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		dismissViewControllerAnimated(true, completion: nil)
 		
 		if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-			let compressedData = pickedImage.lowestQualityJPEGNSData
-			var strBase64 = compressedData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-			strBase64 = strBase64.stringByReplacingOccurrencesOfString("\r\n", withString: "")
-			
+			let strBase64 = CompressedImage.encodeImageLowetQuality(pickedImage)
 			NewsFeedHelper.createPhotoPost(strBase64, completionHandler: { (response) in
 				
 			})

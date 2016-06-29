@@ -58,7 +58,7 @@ class ProfileHelper: NSObject {
 		}
 	}
 	
-	class func updateMyProfile(myProfile: [String: AnyObject], completionHandler: (Bool) -> Void) {
+	class func updateMyProfile(myProfile: [String: AnyObject], completionHandler: (Bool, [String: AnyObject]?) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/my/profile"
 		let headers = getHeaders()
 		
@@ -67,9 +67,10 @@ class ProfileHelper: NSObject {
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			if errorCode != 0 {
-				completionHandler(false)
+				completionHandler(false, nil)
 			} else {
-				completionHandler(true)
+				let data = response.result.value!["data"] as! [String: AnyObject]
+				completionHandler(true, data)
 			}
 		}
 	}

@@ -13,6 +13,6 @@ class ProjectPost: UserPost {
 //	include projectId, projectName, projectAvatar, projectOwnerId
 	var projectId: Int?
 	var projectName: String?
-	var projectAvatar: NSData?
+	var projectAvatar: String?
 	var projectOwnerId: Int?
 }

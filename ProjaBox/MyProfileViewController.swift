@@ -8,6 +8,9 @@
 
 import UIKit
 
+import AlamofireImage
+import Alamofire
+
 class MyProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExperienceInputDelegate, InterestsInputDelegate, BioDataDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
@@ -177,14 +180,18 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 				}
 			}
 			
-//			if ((fullProfileData["avatar"]?.isEqual(NSNull)) == nil) {
-//				let imageDataString = fullProfileData["avatar"] as! String
-//				let imageData = NSData(base64EncodedString: imageDataString, options: .IgnoreUnknownCharacters)
-//				if let data = imageData {
-//					cell.profileImageView?.image = UIImage(data: data)
-//				}
-//			}
-			
+			if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
+				if let url = fullProfileData["avatar"] {
+					Alamofire.request(.GET, (url as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
+	
 			return cell
 		} else if indexPath.section == 1 {
 			// SKILLS/INTERESTS
@@ -249,13 +256,17 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 				cell.authorLocationLabel?.text = location as? String
 			}
 			
-//			if fullProfileData["avatar"] != nil {
-//				let imageDataString = fullProfileData["avatar"] as! String
-//				let imageData = NSData(base64EncodedString: imageDataString, options: .IgnoreUnknownCharacters)
-//				if let data = imageData {
-//					cell.profileImageView?.image = UIImage(data: data)
-//				}
-//			}
+			if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
+				if let url = fullProfileData["avatar"] {
+					Alamofire.request(.GET, (url as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
 			
 			return cell
 		}
@@ -337,7 +348,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	func userDidFinishCompletingData(bioData: [String : AnyObject]) {
 		self.bioData = bioData
 		unwrapBioData()
-		tableView?.reloadData()
+//		tableView?.reloadData()
 		updateProfile()
 	}
 	
@@ -348,17 +359,21 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		fullProfileData["status"] = bioData["status"]
 		fullProfileData["about"] = bioData["about"]
 		fullProfileData["sex"] = bioData["sex"]
-//		fullProfileData["avatar"] = (bioData["avatar"] as! NSData).base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+		fullProfileData["avatar"] = bioData["avatar"]
 	}
 	
 	// MARK: UPDATING
 	
 	func updateProfile() {
-		ProfileHelper.updateMyProfile(fullProfileData) { (response) in
+		ProfileHelper.updateMyProfile(fullProfileData) { (response, data) in
 			if response != true {
 				print("Update failed")
 			} else {
 				print("Update successful")
+				if let data = data {
+					self.fullProfileData = data
+					self.tableView?.reloadData()
+				}
 			}
 		}
 	}
