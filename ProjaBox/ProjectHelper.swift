@@ -221,7 +221,7 @@ class ProjectHelper: NSObject {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)"
 		let headers = getHeaders()
 		
-		print("Data: \(fullProfileData)")
+//		print("Data: \(fullProfileData)")
 		
 		Alamofire.request(.PUT, urlString, parameters: fullProfileData, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			print(response)

@@ -9,6 +9,9 @@
 import UIKit
 import KCFloatingActionButton
 
+import Alamofire
+import AlamofireImage
+
 class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate, GoalsInputDelegate, ExperienceInputDelegate, InterestsInputDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
@@ -67,7 +70,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			ProjectHelper.getFullProjectProfile(id, completionHandler: { (response, data) in
 				
 				if response == true {
-//					print(data)
+					print(data)
+					self.fullProjectData = data!
 					self.getLatestPosts()
 					if let name = data!["name"] {
 						self.projectData["name"] = name as? String
@@ -214,6 +218,18 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 				cell.descriptionLabel?.text = desc
 			}
 			
+			if ((fullProjectData["avatar"]?.isEqual(NSNull)) == false) {
+				if let url = fullProjectData["avatar"] {
+					Alamofire.request(.GET, (url as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
+			
 			return cell
 		} else if section == 1 {
 			// TODO: Video section
@@ -342,14 +358,15 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		headerData["description"] = bioData["description"] as? String
 		headerData["type"] = bioData["type"] as? String
 		headerData["location"] = bioData["location"] as? String
+		headerData["avatar"] = bioData["avatar"] as? String
 		
 		projectData["name"] = headerData["name"]
 		projectData["description"] = headerData["description"]
 		projectData["type"] = headerData["type"]
 		projectData["location"] = headerData["location"]
+		projectData["avatar"] = headerData["avatar"]
 		
-		tableView?.reloadData()
-		// TODO: Update online profile
+//		tableView?.reloadData()
 		updateProfile()
 	}
 	
@@ -383,7 +400,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			}
 			let id = String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)
 			ProjectHelper.updateProjectProfile(id, fullProfileData: projectData, completionHandler: { (response) in
-				print(response)
+//				print(response)
+				if response == true {
+					self.getProfile()
+				}
 			})
 		} else {
 			ProjectHelper.createProject(projectData, completionHandler: { (response, fullProfile) in
