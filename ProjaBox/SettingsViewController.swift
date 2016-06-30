@@ -9,22 +9,22 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+	
 	@IBOutlet weak var tableView: UITableView?
 	
 	let cellTitles = [1: ["My Profile", "My Posts"], 2: ["My Settings"], 3: ["Questions and Answers", "About"], 4: ["Log out"]]
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		tableView?.registerNib(UINib(nibName: "ProfileTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "profileCell")
 		tableView?.registerNib(UINib(nibName: "SettingsTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "settingsCell")
 		
 		self.navigationItem.title = "Settings"
-    }
-
+	}
+	
 	// MARK: Table View Data Source
 	
 	func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

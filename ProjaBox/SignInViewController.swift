@@ -13,15 +13,15 @@ class SignInViewController: UIViewController {
 	
 	@IBOutlet weak var emailTextField: UITextField?
 	@IBOutlet weak var passwordTextField: UITextField?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		self.navigationController?.navigationBar.hidden = true
 		self.view.layer.contents = UIImage(named:"background-proja.png")!.CGImage
-    }
+	}
 	
 	@IBAction func singInPressed(sender: UIButton) {
 		SwiftSpinner.show("Logging in")
@@ -29,7 +29,7 @@ class SignInViewController: UIViewController {
 			if response == true {
 				SwiftSpinner.hide()
 				self.performSegueWithIdentifier("showFeedSegue", sender: self)
-			} 
+			}
 		}
 	}
 }

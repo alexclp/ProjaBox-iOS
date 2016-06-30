@@ -211,7 +211,6 @@ class ProjectHelper: NSObject {
 			} else {
 				completionHandler(false, nil)
 			}
-
 		}
 	}
 	

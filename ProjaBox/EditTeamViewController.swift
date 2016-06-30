@@ -10,22 +10,22 @@ import UIKit
 import Eureka
 
 class EditTeamViewController: FormViewController {
-
+	
 	var data = [String: String]()
 	var delegate: ExperienceInputDelegate?
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		setupForm()
-    }
+	}
 	
 	func setupForm() {
 		self.form +++=  TextRow("name") {
-				$0.title = "Name"
-				$0.placeholder = "Team member name"
+			$0.title = "Name"
+			$0.placeholder = "Team member name"
 			}
 			
 			<<< TextRow("position") {
@@ -51,6 +51,6 @@ class EditTeamViewController: FormViewController {
 			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
 			self.presentViewController(alert, animated: true, completion: nil)
 		}
-
+		
 	}
 }

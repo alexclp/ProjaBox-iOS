@@ -9,19 +9,19 @@
 import UIKit
 
 class ProjectFiltersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+	
 	@IBOutlet weak var tableView: UITableView?
 	
 	let rowTitles = ["Type", "Location", "Vacancies"]
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		self.title = "Filter Projects"
 		tableView?.registerNib(UINib(nibName: "SettingsTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "settingsCell")
-    }
+	}
 	
 	// MARK: Table View methods
 	

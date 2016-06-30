@@ -9,19 +9,19 @@
 import UIKit
 
 class PeopleFiltersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+	
 	@IBOutlet weak var tableView: UITableView?
 	
 	let rowTitles = ["Occupation", "Location"]
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		tableView?.registerNib(UINib(nibName: "SettingsTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "settingsCell")
 		self.title = "Filter People"
-    }
+	}
 	
 	// MARK: Table View methods
 	
@@ -48,10 +48,10 @@ class PeopleFiltersViewController: UIViewController, UITableViewDataSource, UITa
 		
 		if indexPath.row == 0 {
 			// OCCUPATION
-//			performSegueWithIdentifier("showPeopleFiltersSegue", sender: self)
+			//			performSegueWithIdentifier("showPeopleFiltersSegue", sender: self)
 		} else {
 			// LOCATION
-//			performSegueWithIdentifier("showProjectFilterSegue", sender: self)
+			//			performSegueWithIdentifier("showProjectFilterSegue", sender: self)
 		}
 	}
 }

@@ -26,17 +26,17 @@ class ConversationViewController: JSQMessagesViewController {
 	}
 	
 	var chatId = String()
-
+	
 	// TODO: Add custom view to messages bubbles
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		self.setup()
 		getConversationData()
 		//		self.addDemoMessages()
-    }
+	}
 	
 	func getConversationData() {
 		SwiftSpinner.show("Loading")
@@ -125,5 +125,5 @@ class ConversationViewController: JSQMessagesViewController {
 	override func didPressAccessoryButton(sender: UIButton!) {
 		
 	}
-
+	
 }

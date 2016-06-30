@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class ProfileHelper: NSObject {
-
+	
 	// MARK: UTILITY METHODS
 	
 	private class func getHeaders() -> [String: String] {

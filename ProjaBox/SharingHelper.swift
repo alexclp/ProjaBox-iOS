@@ -9,10 +9,10 @@
 import UIKit
 
 class SharingHelper {
-//	TODO: Static method for sharing stuff
+	//	TODO: Static method for sharing stuff
 	
 	class func shareProjectOrPerson(url: String) -> UIActivityViewController? {
-//		let textToShare = "Project Default text"
+		//		let textToShare = "Project Default text"
 		let imageToShare = UIImage(named: "testimage.jpeg")
 		
 		if let postURL = NSURL(string: url), let postImage = imageToShare {

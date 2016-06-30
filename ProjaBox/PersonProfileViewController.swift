@@ -12,7 +12,7 @@ import Alamofire
 import AlamofireImage
 
 class PersonProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+	
 	@IBOutlet weak var tableView: UITableView?
 	
 	var userId = String()
@@ -229,7 +229,7 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 			// EXPERIENCE
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
 			cell.userInteractionEnabled = false
-		
+			
 			cell.companyNameLabel?.text = experienceData[indexPath.row]["name"]
 			cell.periodLabel?.text = experienceData[indexPath.row]["start"]! + " - " + experienceData[indexPath.row]["finish"]!
 			

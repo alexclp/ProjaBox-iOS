@@ -22,7 +22,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	var posts = [UserPost]()
 	
 	var fullProfileData = [String: AnyObject]()
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -133,9 +133,9 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		if indexPath.section == 0 {
 			return 293.0
 		} else if indexPath.section == 1 {
-//			let cell = tableView.cellForRowAtIndexPath(indexPath) as! InterestsTableViewCell
-//			let height = cell.tagListView?.bounds.height
-//			return height!
+			//			let cell = tableView.cellForRowAtIndexPath(indexPath) as! InterestsTableViewCell
+			//			let height = cell.tagListView?.bounds.height
+			//			return height!
 			return 115.0
 		} else if indexPath.section == 2 || indexPath.section == 3 {
 			return 115.0
@@ -146,7 +146,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			}
 			return 221.0
 		}
- 	}
+	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		if indexPath.section == 0 {
@@ -195,7 +195,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 					}
 				}
 			}
-	
+			
 			return cell
 		} else if indexPath.section == 1 {
 			// SKILLS/INTERESTS
@@ -352,7 +352,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			destination.formData = bioData
 			destination.delegate = self
 		}
- 	}
+	}
 	
 	// MARK: User interaction
 	
@@ -398,7 +398,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	func userDidFinishCompletingData(bioData: [String : AnyObject]) {
 		self.bioData = bioData
 		unwrapBioData()
-//		tableView?.reloadData()
+		//		tableView?.reloadData()
 		updateProfile()
 	}
 	

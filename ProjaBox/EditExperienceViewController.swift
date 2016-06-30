@@ -39,7 +39,7 @@ class EditExperienceViewController: FormViewController {
 				row.title = "Done"
 				}  .onCellSelection({ (cell, row) in
 					
-			})
+				})
 	}
 	
 	func sendData() {
@@ -71,5 +71,5 @@ class EditExperienceViewController: FormViewController {
 		
 		return dateFormatter.stringFromDate(date)
 	}
-
+	
 }

@@ -22,18 +22,18 @@ class EditInterestsViewController: UIViewController, TagListViewDelegate {
 	var delegate: InterestsInputDelegate?
 	
 	var interestsList = [String]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		self.navigationItem.hidesBackButton = true
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(self.donePressed(_:)))
 		tagListView?.delegate = self
 		
 		fillData()
-    }
+	}
 	
 	func fillData() {
 		for interest in interestsList {

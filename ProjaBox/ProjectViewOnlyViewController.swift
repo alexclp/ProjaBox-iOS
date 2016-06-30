@@ -9,7 +9,7 @@
 import UIKit
 
 class ProjectViewOnlyViewController: UIViewController {
-
+	
 	@IBOutlet weak var tableView: UITableView?
 	
 	var headerData = [String: String]()
@@ -253,7 +253,7 @@ class ProjectViewOnlyViewController: UIViewController {
 		cell.authorLocationLabel?.text = ""
 		cell.locationImageView?.hidden = true
 		cell.authorDetailsLabel?.text = ""
-//		cell.profileImageView?.image = nil
+		//		cell.profileImageView?.image = nil
 		
 		let currentPost = postsData[indexPath.row]
 		cell.postLabel?.text = currentPost.content
@@ -274,5 +274,5 @@ class ProjectViewOnlyViewController: UIViewController {
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
-
+	
 }

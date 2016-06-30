@@ -11,7 +11,7 @@ import UIKit
 class SignUpViewController: UIViewController {
 	
 	@IBOutlet weak var emailTextField: UITextField?
-
+	
 	// TODO: SCROLL VIEW WHEN KEYBOARD APPEARS
 	
 	override func viewDidLoad() {

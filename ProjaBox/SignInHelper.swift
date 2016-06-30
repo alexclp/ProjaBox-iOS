@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class SignInHelper: NSObject {
-
+	
 	class func signUpFirstStep(emailAddress: String, completionHandler: (Bool) -> Void) {
 		let parameters: [String: String] = ["email": emailAddress]
 		

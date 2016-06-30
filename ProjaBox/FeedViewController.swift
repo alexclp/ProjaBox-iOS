@@ -12,7 +12,7 @@ import AlamofireImage
 import Alamofire
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+	
 	@IBOutlet weak var tableView: UITableView?
 	
 	internal var postsData = [UserPost]()
@@ -40,7 +40,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		self.navigationController?.navigationBar.hidden = false
 		
-//		self.tabBarController!.navigationItem.title = "Feed"
+		//		self.tabBarController!.navigationItem.title = "Feed"
 		self.tabBarController!.navigationItem.hidesBackButton = true
 		
 		self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
@@ -109,7 +109,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			cell.authorLocationLabel?.text = ""
 			cell.locationImageView?.hidden = true
 			cell.authorDetailsLabel?.text = ""
-		
+			
 			let imageURL = image
 			Alamofire.request(.GET, imageURL)
 				.responseImage { response in

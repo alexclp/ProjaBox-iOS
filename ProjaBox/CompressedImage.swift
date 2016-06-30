@@ -9,7 +9,7 @@
 import UIKit
 
 class CompressedImage: UIImage {
-
+	
 	class func encodeImageLowetQuality(image: UIImage) -> String {
 		let compressedData = image.lowestQualityJPEGNSData
 		var strBase64 = compressedData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)

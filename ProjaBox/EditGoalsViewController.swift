@@ -13,19 +13,19 @@ protocol GoalsInputDelegate {
 }
 
 class EditGoalsViewController: UIViewController {
-
+	
 	@IBOutlet weak var textView: UITextView?
 	
 	var delegate: GoalsInputDelegate?
 	
 	var goals = String()
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
-    }
+		// Do any additional setup after loading the view.
+		
+	}
 	
 	@IBAction func doneButtonPressed() {
 		// save/send the data

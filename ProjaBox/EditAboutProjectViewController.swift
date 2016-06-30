@@ -13,19 +13,19 @@ class EditAboutProjectViewController: FormViewController {
 	
 	var data = [String: String]()
 	var delegate: BioDataDelegate?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		setupForm()
 	}
 	
 	func setupForm() {
 		self.form +++=  TextRow("name") {
-				$0.title = "Name"
-				$0.placeholder = "Type your project name"
+			$0.title = "Name"
+			$0.placeholder = "Type your project name"
 			}
 			<<< TextRow("location") {
 				$0.title = "Location"

@@ -9,7 +9,7 @@
 import UIKit
 
 class PhotoCardTableViewCell: UITableViewCell {
-
+	
 	@IBOutlet weak var authorLabel: UILabel?
 	@IBOutlet weak var authorDetailsLabel: UILabel?
 	@IBOutlet weak var authorLocationLabel: UILabel?
@@ -24,16 +24,16 @@ class PhotoCardTableViewCell: UITableViewCell {
 	@IBOutlet weak var moreButton: UIButton?
 	@IBOutlet weak var likesLabel: UILabel?
 	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		// Initialization code
+	}
+	
+	override func setSelected(selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 	
 	override func layoutSubviews() {
 		cardSetup()
@@ -82,5 +82,5 @@ class PhotoCardTableViewCell: UITableViewCell {
 		profileImageView?.contentMode = .ScaleAspectFit
 		profileImageView?.backgroundColor = UIColor.whiteColor()
 	}
-
+	
 }

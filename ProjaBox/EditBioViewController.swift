@@ -14,24 +14,24 @@ protocol BioDataDelegate {
 }
 
 class EditBioViewController: FormViewController {
-
+	
 	var delegate: BioDataDelegate?
 	var formData = [String: AnyObject]()
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		self.navigationItem.hidesBackButton = true
 		
 		setupForm()
-    }
+	}
 	
 	func setupForm() {
 		self.form +++=  TextRow("name") {
-				$0.title = "Name"
-				$0.placeholder = "Type your name"
+			$0.title = "Name"
+			$0.placeholder = "Type your name"
 			}
 			<<< TextRow("location") {
 				$0.title = "Location"
@@ -60,7 +60,7 @@ class EditBioViewController: FormViewController {
 				row.title = "Done"
 				}  .onCellSelection({ (cell, row) in
 					self.doneButtonPressed()
-			})
+				})
 	}
 	
 	func doneButtonPressed() {

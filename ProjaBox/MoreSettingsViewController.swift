@@ -9,20 +9,20 @@
 import UIKit
 
 class MoreSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+	
 	@IBOutlet weak var tableView: UITableView?
 	
 	let tableData = ["Personal info", "Notifications", "Blocked users", "Privacy", "Change password", "Delete account"]
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		tableView?.registerNib(UINib(nibName: "SettingsTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "settingsCell")
 		
 		self.navigationItem.title = "My settings"
-    }
+	}
 	
 	// MARK: UITableView Methods
 	

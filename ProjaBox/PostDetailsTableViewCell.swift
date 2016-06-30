@@ -20,17 +20,17 @@ class PostDetailsTableViewCell: UITableViewCell {
 	@IBOutlet weak var commentsButton: UIButton?
 	@IBOutlet weak var moreButton: UIButton?
 	@IBOutlet weak var timeLabel: UILabel?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		// Initialization code
+	}
+	
+	override func setSelected(selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 	
 	override func layoutSubviews() {
 		imageSetup()
@@ -49,5 +49,5 @@ class PostDetailsTableViewCell: UITableViewCell {
 		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Highlighted)
 		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Selected)
 	}
-
+	
 }

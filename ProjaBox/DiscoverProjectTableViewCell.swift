@@ -10,7 +10,7 @@ import UIKit
 import TagListView
 
 class DiscoverProjectTableViewCell: UITableViewCell {
-
+	
 	@IBOutlet weak var profileImageView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var locationLabel: UILabel!
@@ -23,16 +23,16 @@ class DiscoverProjectTableViewCell: UITableViewCell {
 	@IBOutlet weak var moreButton: UIButton!
 	@IBOutlet weak var followButton: UIButton!
 	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		// Initialization code
+	}
+	
+	override func setSelected(selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 	
 	override func layoutSubviews() {
 		setupButtons()
@@ -55,5 +55,5 @@ class DiscoverProjectTableViewCell: UITableViewCell {
 		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Highlighted)
 		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Selected)
 	}
-    
+	
 }

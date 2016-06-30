@@ -24,11 +24,11 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	var selectedIndex: Int = 0
 	var selectedName: Int = 0
 	var selectedIdToMessage = String()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		setupSegmentedControl()
 		
 		searchBar.delegate = self
@@ -54,8 +54,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		searchBar.placeholder = "search..."
 		self.tabBarController!.navigationItem.titleView = searchBar
 		
-//		let filtersButton = UIBarButtonItem(image: UIImage(named: "filter.png")!, style: .Plain, target: self, action: #selector(self.showFilters(_:)))
-//		self.tabBarController?.navigationItem.rightBarButtonItem = filtersButton
+		//		let filtersButton = UIBarButtonItem(image: UIImage(named: "filter.png")!, style: .Plain, target: self, action: #selector(self.showFilters(_:)))
+		//		self.tabBarController?.navigationItem.rightBarButtonItem = filtersButton
 	}
 	
 	func setupSegmentedControl() {
@@ -88,7 +88,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		} else {
 			return 274.0
 		}
- 	}
+	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return results.count
@@ -165,7 +165,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 					}
 				}
 			}
-
+			
 			
 			return cell
 		}

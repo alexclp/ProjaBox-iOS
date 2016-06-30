@@ -25,17 +25,17 @@ class ProfileHeaderTableViewCell: UITableViewCell {
 	@IBOutlet weak var followButton: UIButton?
 	@IBOutlet weak var followersLabel: UILabel?
 	@IBOutlet weak var editButton: UIButton?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		// Initialization code
+	}
+	
+	override func setSelected(selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 	
 	override func layoutSubviews() {
 		imageSetup()
@@ -47,5 +47,5 @@ class ProfileHeaderTableViewCell: UITableViewCell {
 		profileImageView?.contentMode = .ScaleAspectFit
 		profileImageView?.backgroundColor = UIColor.whiteColor()
 	}
-    
+	
 }

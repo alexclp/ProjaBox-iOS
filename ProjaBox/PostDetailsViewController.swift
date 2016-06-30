@@ -19,11 +19,11 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	var commentsData = [[String: AnyObject]]()
 	
 	var selectedPost = UserPost()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		postDetailsTableView!.registerNib(UINib(nibName: "PostDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "postDetailsCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "PhotoPostDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "photoPostDetailsCell")
@@ -78,7 +78,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 				cell.commentsButton?.addTarget(self, action: #selector(PostDetailsViewController.commentPressed(_:)), forControlEvents: .TouchUpInside)
 				cell.moreButton?.addTarget(self, action: #selector(PostDetailsViewController.morePressed(_:)), forControlEvents: .TouchUpInside)
 				
-//				cell.contentLabel?.text = selectedPost.content
+				//				cell.contentLabel?.text = selectedPost.content
 				Alamofire.request(.GET, imageURL)
 					.responseImage { response in
 						if let image = response.result.value {
@@ -148,7 +148,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 				
 				cell.contentLabel?.text = selectedPost.content
 				if let likersData = selectedPost.likers {
-					 cell.likesLabel?.text = String(likersData.count)
+					cell.likesLabel?.text = String(likersData.count)
 				}
 				
 				if selectedPost.isLikedByMe == true {
@@ -195,7 +195,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 				
 				return cell
 			}
-	
+			
 		} else if indexPath.row == 1 {
 			
 			// 7 images in total for the likes table view cell

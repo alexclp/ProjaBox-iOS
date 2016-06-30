@@ -9,16 +9,16 @@
 import UIKit
 
 class ChatListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+	
 	@IBOutlet weak var tableView: UITableView?
 	
 	var selectedIndex = Int()
 	var chatData = [[String: AnyObject]]()
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		self.tableView?.separatorColor = UIColor(red: 242/256, green: 242/256, blue: 242/256, alpha: 1.0)
 		self.tableView?.tableFooterView = UIView.init()
@@ -26,7 +26,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 		self.tabBarController?.navigationItem.title = "Message List"
 		
 		loadChatList()
-    }
+	}
 	
 	func loadChatList() {
 		ChatHelper.getChatList { (response, data) in
@@ -69,7 +69,7 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 	}
 	
 	// MARK: Table View Delegate
-
+	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		selectedIndex = indexPath.row

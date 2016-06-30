@@ -9,26 +9,26 @@
 import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
-
+	
 	@IBOutlet weak var cellImageView: UIImageView?
 	@IBOutlet weak var cellTitleLabel: UILabel?
 	@IBOutlet weak var cellAccessoryImageView: UIImageView?
 	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		// Initialization code
+	}
+	
+	override func setSelected(selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 	
 	override func layoutSubviews() {
-//		imageSetup()
+		//		imageSetup()
 	}
-
+	
 	func imageSetup() {
 		cellImageView?.layer.cornerRadius = (cellImageView?.frame.size.width)!/2
 		cellImageView?.clipsToBounds = true
@@ -40,5 +40,5 @@ class SettingsTableViewCell: UITableViewCell {
 		cellAccessoryImageView?.contentMode = .ScaleAspectFit
 		cellAccessoryImageView?.backgroundColor = UIColor.whiteColor()
 	}
-
+	
 }

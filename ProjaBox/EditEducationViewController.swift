@@ -20,8 +20,8 @@ class EditEducationViewController: FormViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.form +++=  TextRow("university") {
-				$0.title = "University"
-				$0.placeholder = "Type it in"
+			$0.title = "University"
+			$0.placeholder = "Type it in"
 			}
 			<<< DateRow("start-date")	{
 				$0.title = "Short style"

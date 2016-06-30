@@ -30,7 +30,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-	
+		
 		self.tabBarController?.navigationItem.leftBarButtonItem = nil
 		self.tabBarController?.navigationItem.titleView = nil
 		self.tabBarController?.navigationItem.rightBarButtonItem = nil
@@ -89,7 +89,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					}
 					
 					if let goals = data!["goals"] as? String {
-						self.projectData["goals"] = goals 
+						self.projectData["goals"] = goals
 						self.goals = goals
 					}
 					
@@ -142,9 +142,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		} else if section == 6 {
 			return 221.0
 		}
+		
 		return 0
 	}
-
+	
 	func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if section == 2 {
 			return "Goals"
@@ -284,7 +285,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		cell.authorLocationLabel?.text = ""
 		cell.locationImageView?.hidden = true
 		cell.authorDetailsLabel?.text = ""
-//		cell.profileImageView?.image = nil
+		//		cell.profileImageView?.image = nil
 		
 		let currentPost = postsData[indexPath.row]
 		cell.postLabel?.text = currentPost.content
@@ -366,7 +367,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		projectData["location"] = headerData["location"]
 		projectData["avatar"] = headerData["avatar"]
 		
-//		tableView?.reloadData()
+		//		tableView?.reloadData()
 		updateProfile()
 	}
 	
@@ -400,7 +401,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			}
 			let id = String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)
 			ProjectHelper.updateProjectProfile(id, fullProfileData: projectData, completionHandler: { (response) in
-//				print(response)
+				//				print(response)
 				if response == true {
 					self.getProfile()
 				}

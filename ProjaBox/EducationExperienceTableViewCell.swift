@@ -14,17 +14,17 @@ class EducationExperienceTableViewCell: UITableViewCell {
 	@IBOutlet weak var companyNameLabel: UILabel?
 	@IBOutlet weak var positionLabel: UILabel?
 	@IBOutlet weak var periodLabel: UILabel?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		// Initialization code
+	}
+	
+	override func setSelected(selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 	
 	override func layoutSubviews() {
 		imageSetup()
@@ -36,5 +36,5 @@ class EducationExperienceTableViewCell: UITableViewCell {
 		profileImageView?.contentMode = .ScaleAspectFit
 		profileImageView?.backgroundColor = UIColor.whiteColor()
 	}
-
+	
 }

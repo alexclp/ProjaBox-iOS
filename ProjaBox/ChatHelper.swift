@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class ChatHelper: NSObject {
-
+	
 	private class func getHeaders() -> [String: String] {
 		let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
 		let userId = userData!["userId"] as! Int

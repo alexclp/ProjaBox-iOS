@@ -24,16 +24,16 @@ class FeedCardTableViewCell: UITableViewCell {
 	@IBOutlet weak var moreButton: UIButton?
 	@IBOutlet weak var likesLabel: UILabel?
 	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		// Initialization code
+	}
+	
+	override func setSelected(selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		
+		// Configure the view for the selected state
+	}
 	
 	override func layoutSubviews() {
 		cardSetup()
@@ -56,8 +56,8 @@ class FeedCardTableViewCell: UITableViewCell {
 		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Selected)
 		
 		commentButton?.setBackgroundImage(UIImage(named: "comment-default.png"), forState: .Normal)
-//		commentButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Highlighted)
-//		commentButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Selected)
+		//		commentButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Highlighted)
+		//		commentButton?.setBackgroundImage(UIImage(named: "message selected.png"), forState: .Selected)
 		
 		moreButton?.setBackgroundImage(UIImage(named: "other default.png"), forState: .Normal)
 		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Highlighted)
@@ -84,5 +84,5 @@ class FeedCardTableViewCell: UITableViewCell {
 		profileImageView?.contentMode = .ScaleAspectFit
 		profileImageView?.backgroundColor = UIColor.whiteColor()
 	}
-
+	
 }

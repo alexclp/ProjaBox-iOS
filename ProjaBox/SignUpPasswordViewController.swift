@@ -11,19 +11,19 @@ import UIKit
 class SignUpPasswordViewController: UIViewController {
 	
 	var email = ""
-
+	
 	@IBOutlet weak var passwordTextField: UITextField?
 	
 	// TODO: SCROLL VIEW WHEN KEYBOARD APPEARS
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Do any additional setup after loading the view.
 		
 		self.navigationController?.navigationBar.hidden = true
 		self.view.layer.contents = UIImage(named:"background-proja.png")!.CGImage
-    }
+	}
 	
 	@IBAction func signUpPressed(sender: UIButton) {
 		let password = passwordTextField?.text
@@ -38,5 +38,5 @@ class SignUpPasswordViewController: UIViewController {
 			}
 		}
 	}
-
+	
 }
