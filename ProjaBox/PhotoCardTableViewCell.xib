@@ -60,12 +60,6 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:41" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-qV-5Fj">
-                                <rect key="frame" x="262" y="8" width="34" height="16"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-DS-lnA">
                                 <rect key="frame" x="36" y="262" width="20" height="21"/>
                                 <constraints>
@@ -88,7 +82,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTv-lD-NeI">
-                                <rect key="frame" x="83" y="7" width="171" height="21"/>
+                                <rect key="frame" x="83" y="7" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -134,6 +128,12 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:41" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-qV-5Fj">
+                                <rect key="frame" x="229" y="8" width="67" height="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -154,7 +154,7 @@
                             <constraint firstItem="jXX-xQ-RzQ" firstAttribute="top" secondItem="L2O-ca-z1L" secondAttribute="bottom" constant="8" symbolic="YES" id="Ph3-1L-Bj0"/>
                             <constraint firstItem="pSe-Ku-XUe" firstAttribute="leading" secondItem="UAY-DS-lnA" secondAttribute="trailing" constant="31" id="Rqu-02-PNq"/>
                             <constraint firstItem="637-BW-ldJ" firstAttribute="centerX" secondItem="gTm-t1-3Pg" secondAttribute="centerX" id="Unx-sw-8gQ"/>
-                            <constraint firstItem="637-BW-ldJ" firstAttribute="trailing" secondItem="bTv-lD-NeI" secondAttribute="trailing" id="Vb6-kT-aPR"/>
+                            <constraint firstItem="637-BW-ldJ" firstAttribute="trailing" secondItem="bTv-lD-NeI" secondAttribute="trailing" constant="33" id="Vb6-kT-aPR"/>
                             <constraint firstItem="CIy-Tv-WyS" firstAttribute="leading" secondItem="rXL-tA-KEI" secondAttribute="leadingMargin" id="WAE-6N-0Gg"/>
                             <constraint firstItem="gTm-t1-3Pg" firstAttribute="leading" secondItem="pSe-Ku-XUe" secondAttribute="trailing" constant="53" id="ZC0-qA-qhs"/>
                             <constraint firstItem="CIy-Tv-WyS" firstAttribute="top" secondItem="rXL-tA-KEI" secondAttribute="top" constant="7" id="a19-G7-NA8"/>

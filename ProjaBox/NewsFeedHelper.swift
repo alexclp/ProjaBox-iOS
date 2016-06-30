@@ -15,13 +15,22 @@ class NewsFeedHelper: NSObject {
 	// MARK: UTILITY METHODS
 	
 	class func getTimeFromTimestamp(timestamp: Int) -> String {
+		let currentDate = NSDate()
 		let date = NSDate(timeIntervalSince1970: Double(timestamp))
+		let timeElapsed = currentDate.timeIntervalSinceDate(date)
+		let hoursElapsed = Int(timeElapsed) / 3600
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		let calendar = NSCalendar.currentCalendar()
-		let comp = calendar.components([.Hour, .Minute], fromDate: date)
+		let comp = calendar.components([.Hour, .Minute, .Day, .Month], fromDate: date)
 		let hour = comp.hour
 		let minute = comp.minute
+		let month = dateFormatter.monthSymbols[comp.month]
+		let day = comp.day
+		
+		if hoursElapsed > 24 {
+			return "\(month) \(day)"
+		}
 		
 		return "\(hour):\(minute)"
 	}
