@@ -101,11 +101,37 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 					if let name = projectPost.projectName {
 						cell.nameLabel?.text = name
 					}
+					
+					if ((projectPost.projectAvatar?.isEqual(NSNull)) != nil) {
+						if let url = projectPost.projectAvatar {
+							Alamofire.request(.GET, url)
+								.responseImage { response in
+									if let image = response.result.value {
+										print("image downloaded: \(image)")
+										cell.profileImageView!.image = image
+									}
+							}
+						}
+					}
 				} else {
 					if let name = selectedPost.ownerName {
 						cell.nameLabel?.text = name
 					}
+					
+					if ((selectedPost.ownerAvatar?.isEqual(NSNull)) != nil) {
+						if let url = selectedPost.ownerAvatar {
+							Alamofire.request(.GET, url)
+								.responseImage { response in
+									if let image = response.result.value {
+										print("image downloaded: \(image)")
+										cell.profileImageView!.image = image
+									}
+							}
+						}
+					}
 				}
+				
+				
 				return cell
 			} else {
 				let cell = tableView.dequeueReusableCellWithIdentifier("postDetailsCell", forIndexPath: indexPath) as! PostDetailsTableViewCell
@@ -131,22 +157,45 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 				
 				cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
 				
+				
 				if selectedPost is ProjectPost {
 					let projectPost = selectedPost as! ProjectPost
 					if let name = projectPost.projectName {
 						cell.nameLabel?.text = name
 					}
+					
+					if ((projectPost.projectAvatar?.isEqual(NSNull)) != nil) {
+						if let url = projectPost.projectAvatar {
+							Alamofire.request(.GET, url)
+								.responseImage { response in
+									if let image = response.result.value {
+										print("image downloaded: \(image)")
+										cell.profileImageView!.image = image
+									}
+							}
+						}
+					}
 				} else {
 					if let name = selectedPost.ownerName {
 						cell.nameLabel?.text = name
+					}
+					
+					if ((selectedPost.ownerAvatar?.isEqual(NSNull)) != nil) {
+						if let url = selectedPost.ownerAvatar {
+							Alamofire.request(.GET, url)
+								.responseImage { response in
+									if let image = response.result.value {
+										print("image downloaded: \(image)")
+										cell.profileImageView!.image = image
+									}
+							}
+						}
 					}
 				}
 				
 				return cell
 			}
-			
-			
-			
+	
 		} else if indexPath.row == 1 {
 			
 			// 7 images in total for the likes table view cell

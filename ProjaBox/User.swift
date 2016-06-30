@@ -17,4 +17,5 @@ class User: NSObject {
 	var status: String?
 	var isFollowed: Bool?
 	var isLikedByMe: Bool?
+	var avatar: String?
 }

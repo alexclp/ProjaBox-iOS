@@ -9,6 +9,9 @@
 import UIKit
 import SwiftSpinner
 
+import AlamofireImage
+import Alamofire
+
 class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
 	
 	@IBOutlet weak var tableView: UITableView?
@@ -151,6 +154,19 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 				}
 			}
 			
+			if ((projectResult.avatar?.isEqual(NSNull)) != nil) {
+				if let url = projectResult.avatar {
+					Alamofire.request(.GET, url)
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
+
+			
 			return cell
 		}
 		
@@ -203,6 +219,18 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 				cell.likeButton.selected = true
 			} else {
 				cell.likeButton.selected = true
+			}
+		}
+		
+		if ((userResult.avatar?.isEqual(NSNull)) != nil) {
+			if let url = userResult.avatar {
+				Alamofire.request(.GET, url)
+					.responseImage { response in
+						if let image = response.result.value {
+							print("image downloaded: \(image)")
+							cell.profileImageView!.image = image
+						}
+				}
 			}
 		}
 		

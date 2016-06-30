@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftSpinner
+import Alamofire
+import AlamofireImage
 
 class PersonProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -30,6 +32,7 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 		tableView!.registerNib(UINib(nibName: "ProfileHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "profileHeaderCell")
 		tableView!.registerNib(UINib(nibName: "InterestsTableViewCell", bundle: nil), forCellReuseIdentifier: "interestsCell")
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
+		tableView!.registerNib(UINib(nibName: "PhotoCardTableViewCell", bundle: nil), forCellReuseIdentifier: "photoCardCell")
 		
 		self.title = "Profile"
 		
@@ -143,6 +146,10 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 		} else if indexPath.section == 2 || indexPath.section == 3 {
 			return 115.0
 		} else {
+			let post = posts[indexPath.row]
+			if post.image != nil {
+				return 308.0
+			}
 			return 221.0
 		}
 	}
@@ -183,13 +190,17 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 				}
 			}
 			
-			//			if ((fullProfileData["avatar"]?.isEqual(NSNull)) == nil) {
-			//				let imageDataString = fullProfileData["avatar"] as! String
-			//				let imageData = NSData(base64EncodedString: imageDataString, options: .IgnoreUnknownCharacters)
-			//				if let data = imageData {
-			//					cell.profileImageView?.image = UIImage(data: data)
-			//				}
-			//			}
+			if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
+				if let url = fullProfileData["avatar"] {
+					Alamofire.request(.GET, (url as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
 			
 			return cell
 		} else if indexPath.section == 1 {
@@ -225,9 +236,56 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 			return cell
 		} else {
 			// POSTS
-			let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
+			
 			let currentPost = posts[indexPath.row]
 			
+			if let imageURL = currentPost.image {
+				let cell = tableView.dequeueReusableCellWithIdentifier("photoCardCell", forIndexPath: indexPath) as! PhotoCardTableViewCell
+				
+				Alamofire.request(.GET, imageURL)
+					.responseImage { response in
+						if let image = response.result.value {
+							print("image downloaded: \(image)")
+							cell.postImage!.image = image
+						}
+				}
+				
+				if let likers = currentPost.likers {
+					cell.likesLabel?.text = String(likers.count)
+				}
+				
+				if let time = currentPost.createdTimestamp {
+					cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(time)
+				}
+				
+				if let name = fullProfileData["name"] {
+					cell.authorLabel?.text = name as? String
+				}
+				
+				if let position = fullProfileData["occupation"] {
+					cell.authorDetailsLabel?.text = position as? String
+				}
+				
+				if let location = fullProfileData["location"] {
+					cell.authorLocationLabel?.text = location as? String
+				}
+				
+				if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
+					if let url = fullProfileData["avatar"] {
+						Alamofire.request(.GET, (url as! String))
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.profileImageView!.image = image
+								}
+						}
+					}
+				}
+				
+				return cell
+			}
+			
+			let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
 			if let content = currentPost.content {
 				cell.postLabel?.text = content
 			}
@@ -239,9 +297,6 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 			if let time = currentPost.createdTimestamp {
 				cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(time)
 			}
-			
-//			print("POST OWNER NAME = \(currentPost.ownerName)")
-//			print("FULL PROFILE NAME = \(fullProfileData["name"])")
 			
 			if let name = fullProfileData["name"] {
 				cell.authorLabel?.text = name as? String
@@ -255,14 +310,17 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 				cell.authorLocationLabel?.text = location as? String
 			}
 			
-			//			if fullProfileData["avatar"] != nil {
-			//				let imageDataString = fullProfileData["avatar"] as! String
-			//				let imageData = NSData(base64EncodedString: imageDataString, options: .IgnoreUnknownCharacters)
-			//				if let data = imageData {
-			//					cell.profileImageView?.image = UIImage(data: data)
-			//				}
-			//			}
-			
+			if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
+				if let url = fullProfileData["avatar"] {
+					Alamofire.request(.GET, (url as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
 			return cell
 		}
 	}
