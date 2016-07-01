@@ -267,7 +267,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 					cell.authorLocationLabel?.text = location as? String
 				}
 				
-				if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
+				if ((fullProfileData["avatar"]?.isEqual(NSNull)) == false) {
 					if let url = fullProfileData["avatar"] {
 						Alamofire.request(.GET, (url as! String))
 							.responseImage { response in

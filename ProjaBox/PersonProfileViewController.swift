@@ -190,7 +190,7 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 				}
 			}
 			
-			if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
+			if ((fullProfileData["avatar"]?.isEqual(NSNull)) == false) {
 				if let url = fullProfileData["avatar"] {
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in

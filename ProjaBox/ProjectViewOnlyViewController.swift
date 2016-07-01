@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+import Alamofire
 
 class ProjectViewOnlyViewController: UIViewController {
 	
@@ -202,6 +204,18 @@ class ProjectViewOnlyViewController: UIViewController {
 			
 			if let desc = headerData["description"] {
 				cell.descriptionLabel?.text = desc
+			}
+			
+			if ((fullProjectData["avatar"]?.isEqual(NSNull)) == false) {
+				if let url = fullProjectData["avatar"] {
+					Alamofire.request(.GET, (url as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
 			}
 			
 			return cell
