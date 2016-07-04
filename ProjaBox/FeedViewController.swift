@@ -205,6 +205,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				cell.authorLabel?.addGestureRecognizer(tap)
 				cell.profileImageView?.addGestureRecognizer(tap)
 			}
+			if ((projectPost.projectAvatar?.isEqual(NSNull)) != nil) {
+				if let url = projectPost.ownerAvatar {
+					Alamofire.request(.GET, url)
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
 		} else {
 			if let name = currentPost.ownerName {
 				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
@@ -212,6 +223,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				cell.authorLabel!.tag = indexPath.row
 				cell.authorLabel?.addGestureRecognizer(tap)
 				cell.profileImageView?.addGestureRecognizer(tap)
+			}
+			if ((currentPost.ownerAvatar?.isEqual(NSNull)) != nil) {
+				if let url = currentPost.ownerAvatar {
+					Alamofire.request(.GET, url)
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
 			}
 		}
 		return cell
