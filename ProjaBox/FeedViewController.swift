@@ -311,6 +311,29 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	func moreButtonPressed(sender: UIButton) {
 		print("More button tag: \(sender.tag)")
+		
+		let alertController = UIAlertController(title: nil, message: "Edit or delete post", preferredStyle: .ActionSheet)
+		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+			self.dismissViewControllerAnimated(true, completion: nil)
+		}
+		alertController.addAction(cancelAction)
+		
+		let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) in
+			let postId = String(sender.tag)
+			NewsFeedHelper.deletePost(postId, completionHandler: { (response) in
+				if response == true {
+					self.tableView?.reloadData()
+				}
+			})
+		}
+		alertController.addAction(deleteAction)
+		
+		let editAction = UIAlertAction(title: "Edit", style: .Default) { (action) in
+			
+		}
+		alertController.addAction(editAction)
+		
+		presentViewController(alertController, animated: true, completion: nil)
 	}
 	
 	func settingsButtonPressed(sender: UIBarButtonItem) {

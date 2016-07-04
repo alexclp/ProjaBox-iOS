@@ -155,11 +155,11 @@ class NewsFeedHelper: NSObject {
 	
 	class func deletePost(postId: String, completionHandler: (Bool) -> Void) {
 		let headers = getHeaders()
-		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId))"
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)"
+		print(urlString)
 		
 		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
-			
 			if errorCode != 0 {
 				print("Failed deleting")
 				completionHandler(false)
