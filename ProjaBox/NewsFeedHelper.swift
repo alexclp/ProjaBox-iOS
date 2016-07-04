@@ -170,6 +170,21 @@ class NewsFeedHelper: NSObject {
 		}
 	}
 	
+	class func editPost(postId: String, content: [String: AnyObject], completionHandler: (Bool) -> Void) {
+		let headers = getHeaders()
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)"
+		
+		Alamofire.request(.PUT, urlString, parameters: content, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				print("Failed editing")
+				completionHandler(false)
+			} else {
+				completionHandler(true)
+			}
+		}
+	}
+	
 	// MARK: LIKE METHODS
 	
 	class func likePost(postId: String, completionHandler: (Bool) -> Void) {
