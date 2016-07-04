@@ -70,5 +70,12 @@ class SignInHelper: NSObject {
 	private class func saveUserData(userData: [String: AnyObject]) {
 		print(userData)
 		NSUserDefaults.standardUserDefaults().setObject(userData, forKey: "userData")
+		NSUserDefaults.standardUserDefaults().synchronize()
+	}
+	
+	private class func clearUserData() {
+		if let appDomain = NSBundle.mainBundle().bundleIdentifier {
+			NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
+		}
 	}
 }

@@ -99,6 +99,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 			}
 		} else if indexPath.section == 2 {
 			performSegueWithIdentifier("showMoreSettingsSegue", sender: self)
+		} else if indexPath.section == 4 {
+			
 		}
 	}
 	

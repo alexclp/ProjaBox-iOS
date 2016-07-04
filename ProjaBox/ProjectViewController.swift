@@ -413,6 +413,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					let id = fullProfile!["id"]
 					self.fullProjectData = fullProfile!
 					NSUserDefaults.standardUserDefaults().setObject(id, forKey: "projectId")
+					NSUserDefaults.standardUserDefaults().synchronize()
 				}
 			})
 		}
