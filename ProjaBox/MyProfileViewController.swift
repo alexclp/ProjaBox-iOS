@@ -185,8 +185,9 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 				}
 			}
 			
-			if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
-				if let url = fullProfileData["avatar"] {
+			if let url = fullProfileData["avatar"] {
+				let urlString = url as? String
+				if urlString != nil {
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
@@ -268,8 +269,9 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 					cell.authorLocationLabel?.text = location as? String
 				}
 				
-				if ((fullProfileData["avatar"]?.isEqual(NSNull)) == false) {
-					if let url = fullProfileData["avatar"] {
+				if let url = fullProfileData["avatar"] {
+					let urlString = url as? String
+					if urlString != nil {
 						Alamofire.request(.GET, (url as! String))
 							.responseImage { response in
 								if let image = response.result.value {
@@ -308,8 +310,9 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 				cell.authorLocationLabel?.text = location as? String
 			}
 			
-			if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
-				if let url = fullProfileData["avatar"] {
+			if let url = fullProfileData["avatar"] {
+				let urlString = url as? String
+				if urlString != nil {
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
@@ -319,6 +322,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 					}
 				}
 			}
+			
 			return cell
 		}
 	}

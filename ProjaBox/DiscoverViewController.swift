@@ -101,7 +101,6 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			let cell = tableView.dequeueReusableCellWithIdentifier("discoverProjectCell", forIndexPath: indexPath) as! DiscoverProjectTableViewCell
 			let projectResult = result as! Project
 			
-			cell.selectionStyle = .None
 			cell.followButton.tag = indexPath.row
 			cell.likeButton.tag = indexPath.row
 			cell.messageButton.tag = indexPath.row
@@ -173,7 +172,6 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		let cell = tableView.dequeueReusableCellWithIdentifier("discoverPeopleCell", forIndexPath: indexPath) as! DiscoverPeopleTableViewCell
 		let userResult = result as! User
 		
-		cell.selectionStyle = .None
 		cell.followButton.tag = indexPath.row
 		cell.likeButton.tag = indexPath.row
 		cell.messageButton.tag = indexPath.row
@@ -239,9 +237,20 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		
+		cellGotSelected(indexPath.row)
 	}
 	
 	// MARK: User Interaction
+	
+	func cellGotSelected(index: Int) {
+		selectedName = index
+		if selectedIndex == 0 {
+			performSegueWithIdentifier("discoverShowProjectProfile", sender: self)
+		} else {
+			performSegueWithIdentifier("discoverShowProfile", sender: self)
+		}
+	}
 	
 	func messageButtonPressed(sender: UIButton) {
 		let index = sender.tag

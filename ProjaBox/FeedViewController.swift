@@ -136,15 +136,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 					cell.authorLabel?.addGestureRecognizer(tap)
 					cell.profileImageView?.addGestureRecognizer(tap)
 				}
-				if ((projectPost.projectAvatar?.isEqual(NSNull)) != nil) {
-					if let url = projectPost.ownerAvatar {
-						Alamofire.request(.GET, url)
-							.responseImage { response in
-								if let image = response.result.value {
-									print("image downloaded: \(image)")
-									cell.profileImageView!.image = image
-								}
-						}
+				if let url = projectPost.ownerAvatar {
+					Alamofire.request(.GET, url)
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
 					}
 				}
 			} else {
@@ -155,15 +153,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 					cell.authorLabel?.addGestureRecognizer(tap)
 					cell.profileImageView?.addGestureRecognizer(tap)
 				}
-				if ((currentPost.ownerAvatar?.isEqual(NSNull)) != nil) {
-					if let url = currentPost.ownerAvatar {
-						Alamofire.request(.GET, url)
-							.responseImage { response in
-								if let image = response.result.value {
-									print("image downloaded: \(image)")
-									cell.profileImageView!.image = image
-								}
-						}
+				if let url = currentPost.ownerAvatar {
+					Alamofire.request(.GET, url)
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
 					}
 				}
 			}
@@ -205,15 +201,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				cell.authorLabel?.addGestureRecognizer(tap)
 				cell.profileImageView?.addGestureRecognizer(tap)
 			}
-			if ((projectPost.projectAvatar?.isEqual(NSNull)) != nil) {
-				if let url = projectPost.ownerAvatar {
-					Alamofire.request(.GET, url)
-						.responseImage { response in
-							if let image = response.result.value {
-								print("image downloaded: \(image)")
-								cell.profileImageView!.image = image
-							}
-					}
+			if let url = projectPost.ownerAvatar {
+				Alamofire.request(.GET, url)
+					.responseImage { response in
+						if let image = response.result.value {
+							print("image downloaded: \(image)")
+							cell.profileImageView!.image = image
+						}
 				}
 			}
 		} else {
@@ -224,15 +218,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				cell.authorLabel?.addGestureRecognizer(tap)
 				cell.profileImageView?.addGestureRecognizer(tap)
 			}
-			if ((currentPost.ownerAvatar?.isEqual(NSNull)) != nil) {
-				if let url = currentPost.ownerAvatar {
-					Alamofire.request(.GET, url)
-						.responseImage { response in
-							if let image = response.result.value {
-								print("image downloaded: \(image)")
-								cell.profileImageView!.image = image
-							}
-					}
+			
+			if let url = currentPost.ownerAvatar {
+				Alamofire.request(.GET, url)
+					.responseImage { response in
+						if let image = response.result.value {
+							print("image downloaded: \(image)")
+							cell.profileImageView!.image = image
+						}
 				}
 			}
 		}

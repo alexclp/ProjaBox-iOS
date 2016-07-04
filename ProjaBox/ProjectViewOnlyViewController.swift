@@ -206,8 +206,9 @@ class ProjectViewOnlyViewController: UIViewController {
 				cell.descriptionLabel?.text = desc
 			}
 			
-			if ((fullProjectData["avatar"]?.isEqual(NSNull)) == false) {
-				if let url = fullProjectData["avatar"] {
+			if let url = fullProjectData["avatar"] {
+				let urlString = url as? String
+				if urlString != nil {
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {

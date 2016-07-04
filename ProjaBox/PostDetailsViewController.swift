@@ -102,15 +102,13 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						cell.nameLabel?.text = name
 					}
 					
-					if ((projectPost.projectAvatar?.isEqual(NSNull)) != nil) {
-						if let url = projectPost.projectAvatar {
-							Alamofire.request(.GET, url)
-								.responseImage { response in
-									if let image = response.result.value {
-										print("image downloaded: \(image)")
-										cell.profileImageView!.image = image
-									}
-							}
+					if let url = projectPost.ownerAvatar {
+						Alamofire.request(.GET, url)
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.profileImageView!.image = image
+								}
 						}
 					}
 				} else {
@@ -118,15 +116,13 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						cell.nameLabel?.text = name
 					}
 					
-					if ((selectedPost.ownerAvatar?.isEqual(NSNull)) != nil) {
-						if let url = selectedPost.ownerAvatar {
-							Alamofire.request(.GET, url)
-								.responseImage { response in
-									if let image = response.result.value {
-										print("image downloaded: \(image)")
-										cell.profileImageView!.image = image
-									}
-							}
+					if let url = selectedPost.ownerAvatar {
+						Alamofire.request(.GET, url)
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.profileImageView!.image = image
+								}
 						}
 					}
 				}
@@ -164,15 +160,13 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						cell.nameLabel?.text = name
 					}
 					
-					if ((projectPost.projectAvatar?.isEqual(NSNull)) != nil) {
-						if let url = projectPost.projectAvatar {
-							Alamofire.request(.GET, url)
-								.responseImage { response in
-									if let image = response.result.value {
-										print("image downloaded: \(image)")
-										cell.profileImageView!.image = image
-									}
-							}
+					if let url = projectPost.ownerAvatar {
+						Alamofire.request(.GET, url)
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.profileImageView!.image = image
+								}
 						}
 					}
 				} else {
@@ -180,15 +174,13 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						cell.nameLabel?.text = name
 					}
 					
-					if ((selectedPost.ownerAvatar?.isEqual(NSNull)) != nil) {
-						if let url = selectedPost.ownerAvatar {
-							Alamofire.request(.GET, url)
-								.responseImage { response in
-									if let image = response.result.value {
-										print("image downloaded: \(image)")
-										cell.profileImageView!.image = image
-									}
-							}
+					if let url = selectedPost.ownerAvatar {
+						Alamofire.request(.GET, url)
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.profileImageView!.image = image
+								}
 						}
 					}
 				}

@@ -40,7 +40,7 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 		ProfileHelper.getUserFullProfile(userId) { (response, data) in
 			if response == true {
 				self.fullProfileData = data!
-				self.tableView?.reloadData()
+//				self.tableView?.reloadData()
 				self.getLatestPosts()
 			} else {
 				
@@ -89,7 +89,7 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 			}
 		}
 		
-		tableView?.reloadData()
+//		tableView?.reloadData()
 	}
 	
 	func getLatestPosts() {
@@ -190,8 +190,11 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 				}
 			}
 			
-			if ((fullProfileData["avatar"]?.isEqual(NSNull)) == false) {
-				if let url = fullProfileData["avatar"] {
+			print("RESULT : \(fullProfileData["avatar"]?.isEqual(NSNull))")
+			
+			if let url = fullProfileData["avatar"] {
+				let urlString = url as? String
+				if urlString != nil {
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
@@ -270,8 +273,9 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 					cell.authorLocationLabel?.text = location as? String
 				}
 				
-				if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
-					if let url = fullProfileData["avatar"] {
+				if let url = fullProfileData["avatar"] {
+					let urlString = url as? String
+					if urlString != nil {
 						Alamofire.request(.GET, (url as! String))
 							.responseImage { response in
 								if let image = response.result.value {
@@ -310,8 +314,9 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 				cell.authorLocationLabel?.text = location as? String
 			}
 			
-			if ((fullProfileData["avatar"]?.isEqual(NSNull)) != nil) {
-				if let url = fullProfileData["avatar"] {
+			if let url = fullProfileData["avatar"] {
+				let urlString = url as? String
+				if urlString != nil {
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
@@ -321,6 +326,7 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 					}
 				}
 			}
+			
 			return cell
 		}
 	}
