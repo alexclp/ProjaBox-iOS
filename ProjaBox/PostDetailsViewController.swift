@@ -290,20 +290,20 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	
 	func nameButtonPressed(sender: UIGestureRecognizer) {
 		if selectedPost is ProjectPost {
-			performSegueWithIdentifier("feedShowProjectProfile", sender: self)
+			performSegueWithIdentifier("projectShowProfileSegue", sender: self)
 		} else {
-			performSegueWithIdentifier("feedShowProfile", sender: self)
+			performSegueWithIdentifier("personShowProfileSegue", sender: self)
 		}
 	}
 	
 	// MARK: SEGUE
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "feedShowProfile" {
+		if segue.identifier == "personShowProfileSegue" {
 			let destination = segue.destinationViewController as! PersonProfileViewController
 			let id = String(selectedPost.id!)
 			destination.userId = id
-		} else if segue.identifier == "feedShowProjectProfile" {
+		} else if segue.identifier == "projectShowProfileSegue" {
 			let destination = segue.destinationViewController as! ProjectViewOnlyViewController
 			let id = String(selectedPost.id!)
 			destination.projectId = id

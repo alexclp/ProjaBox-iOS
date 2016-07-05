@@ -355,10 +355,10 @@
                         <viewControllerLayoutGuide type="bottom" id="fPe-My-LoD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ush-FS-AsP">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mm1-9X-sEx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mm1-9X-sEx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -396,7 +396,7 @@
                         <viewControllerLayoutGuide type="bottom" id="n57-r6-78p"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zer-sO-ffZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -414,7 +414,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xcC-0y-RaD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="s4p-Ph-OaC">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -432,10 +432,10 @@
                         <viewControllerLayoutGuide type="bottom" id="amP-Ad-lR9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zl0-Bm-NKx">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MQZ-vm-BZW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MQZ-vm-BZW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -471,10 +471,10 @@
                         <viewControllerLayoutGuide type="bottom" id="uBZ-ht-kSr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1vq-Tq-HZQ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HHW-LN-ACE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HHW-LN-ACE">
                                 <rect key="frame" x="0.0" y="44" width="375" height="510"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -721,7 +721,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aGv-d6-7hB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jua-JF-6Zp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -762,15 +762,6 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-ER-SqD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ytC-Tz-8Yr" id="UnD-dW-Wwr"/>
-                                    <outlet property="delegate" destination="ytC-Tz-8Yr" id="Wfb-xY-Y3n"/>
-                                </connections>
-                            </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13y-gt-Eum">
                                 <rect key="frame" x="0.0" y="510" width="375" height="44"/>
                                 <items>
@@ -789,6 +780,15 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-ER-SqD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ytC-Tz-8Yr" id="UnD-dW-Wwr"/>
+                                    <outlet property="delegate" destination="ytC-Tz-8Yr" id="Wfb-xY-Y3n"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1195,8 +1195,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zSP-jU-1hP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zSP-jU-1hP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1208,10 +1208,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zSP-jU-1hP" secondAttribute="trailing" id="4x7-Ky-dtN"/>
-                            <constraint firstItem="zSP-jU-1hP" firstAttribute="bottom" secondItem="GxW-NJ-AFa" secondAttribute="top" id="PHF-h1-slG"/>
-                            <constraint firstItem="zSP-jU-1hP" firstAttribute="leading" secondItem="VUl-0b-rGn" secondAttribute="leading" id="l2o-4k-zss"/>
-                            <constraint firstItem="zSP-jU-1hP" firstAttribute="top" secondItem="vFY-iz-Ziw" secondAttribute="bottom" id="vrs-4Z-u1Q"/>
+                            <constraint firstItem="zSP-jU-1hP" firstAttribute="top" secondItem="VUl-0b-rGn" secondAttribute="top" id="Mie-pd-9sT"/>
+                            <constraint firstItem="zSP-jU-1hP" firstAttribute="leading" secondItem="VUl-0b-rGn" secondAttribute="leading" id="Qyq-DP-tfV"/>
+                            <constraint firstAttribute="trailing" secondItem="zSP-jU-1hP" secondAttribute="trailing" id="iuQ-ec-afh"/>
+                            <constraint firstItem="zSP-jU-1hP" firstAttribute="bottom" secondItem="GxW-NJ-AFa" secondAttribute="top" id="sv8-pr-136"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1223,7 +1223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0e-ta-6uW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="702.5" y="-122.5"/>
+            <point key="canvasLocation" x="736" y="-121"/>
         </scene>
         <!--More Settings View Controller-->
         <scene sceneID="V92-86-hmP">
@@ -1237,8 +1237,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-hw-O5R">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-hw-O5R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1250,10 +1250,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="top" secondItem="TD0-fB-VuU" secondAttribute="bottom" id="4aa-cq-THW"/>
-                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="bottom" secondItem="2bn-qg-NRp" secondAttribute="top" id="IEI-jR-dNw"/>
-                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="leading" secondItem="2Vr-Vp-WR5" secondAttribute="leading" id="ZtG-h2-n0G"/>
-                            <constraint firstAttribute="trailing" secondItem="Hr5-hw-O5R" secondAttribute="trailing" id="tne-5x-Ijs"/>
+                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="bottom" secondItem="2bn-qg-NRp" secondAttribute="top" id="8FC-7E-3xK"/>
+                            <constraint firstAttribute="trailing" secondItem="Hr5-hw-O5R" secondAttribute="trailing" id="OUU-cv-Fgg"/>
+                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="top" secondItem="2Vr-Vp-WR5" secondAttribute="top" id="Ofu-7n-p8E"/>
+                            <constraint firstItem="Hr5-hw-O5R" firstAttribute="leading" secondItem="2Vr-Vp-WR5" secondAttribute="leading" id="wOe-k5-TGo"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1262,7 +1262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwu-fC-pqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271.5" y="219.5"/>
+            <point key="canvasLocation" x="1271" y="219"/>
         </scene>
         <!--My Profile View Controller-->
         <scene sceneID="fSz-ko-6KY">
@@ -1466,12 +1466,12 @@
         <image name="vertical_separator.png" width="4" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ziA-ll-Ldg"/>
-        <segue reference="J2E-Sn-0IL"/>
-        <segue reference="HjA-FE-eog"/>
+        <segue reference="BLr-eM-Win"/>
+        <segue reference="SCW-h2-cCE"/>
         <segue reference="pO2-xq-4Qo"/>
         <segue reference="Mdg-mM-8eA"/>
         <segue reference="5Ir-dQ-6B8"/>
         <segue reference="SCm-DV-508"/>
+        <segue reference="HjA-FE-eog"/>
     </inferredMetricsTieBreakers>
 </document>
