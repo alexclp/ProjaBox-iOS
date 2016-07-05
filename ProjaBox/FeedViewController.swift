@@ -347,7 +347,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				
 				self.presentViewController(self.imagePicker, animated: true, completion: nil)
 			} else {
-				
+				self.performSegueWithIdentifier("showComposePostSegue", sender: self)
 			}
 		}
 		alertController.addAction(editAction)
@@ -393,7 +393,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			let id = String(projectPost.projectId!)
 			destination.projectId = id
 		} else if segue.identifier == "showComposePostSegue" {
-			let destination = segue.destinationViewController as! CreatingPostViewController
+			let navCon = segue.destinationViewController as! UINavigationController
+			let destination = navCon.viewControllers[0] as! CreatingPostViewController
 			if isEditingPost == true {
 				destination.isEditingPost = true
 				let editingPost = postsData[editingPostIndex]
