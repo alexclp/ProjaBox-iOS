@@ -18,12 +18,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	internal var postsData = [UserPost]()
 	internal var selectedCellIndex = 0
 	internal var selectedName = 0
+	internal var isEditingPost = false
+	internal var editingPostIndex = 0
 	
 	let imagePicker = UIImagePickerController()
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		
 		getLatestPosts()
 	}
 	
@@ -247,9 +248,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 			let strBase64 = CompressedImage.encodeImageLowetQuality(pickedImage)
-			NewsFeedHelper.createPhotoPost(strBase64, completionHandler: { (response) in
-				
-			})
+			if isEditingPost == true {
+				let editedPost = postsData[editingPostIndex]
+				let postId = String(editedPost.id!)
+				NewsFeedHelper.editPost(postId, content: ["image": strBase64], completionHandler: { (response) in
+					print(response)
+					self.isEditingPost = false
+				})
+			} else {
+				NewsFeedHelper.createPhotoPost(strBase64, completionHandler: { (response) in
+				})
+			}
 		}
 	}
 	
@@ -329,7 +338,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		alertController.addAction(deleteAction)
 		
 		let editAction = UIAlertAction(title: "Edit", style: .Default) { (action) in
+			self.isEditingPost = true
+			self.editingPostIndex = sender.tag
 			
+			if self.postsData[self.editingPostIndex].image != nil {
+				self.imagePicker.allowsEditing = false
+				self.imagePicker.sourceType = .PhotoLibrary
+				
+				self.presentViewController(self.imagePicker, animated: true, completion: nil)
+			} else {
+				
+			}
 		}
 		alertController.addAction(editAction)
 		
@@ -373,6 +392,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			let projectPost = postsData[selectedName] as! ProjectPost
 			let id = String(projectPost.projectId!)
 			destination.projectId = id
+		} else if segue.identifier == "showComposePostSegue" {
+			let destination = segue.destinationViewController as! CreatingPostViewController
+			if isEditingPost == true {
+				destination.isEditingPost = true
+				let editingPost = postsData[editingPostIndex]
+				if editingPost is ProjectPost {
+					let projectPost = editingPost as! ProjectPost
+					destination.editedProjectPost = projectPost
+				} else {
+					destination.editedUserPost = editingPost
+				}
+			}
 		}
 	}
 }

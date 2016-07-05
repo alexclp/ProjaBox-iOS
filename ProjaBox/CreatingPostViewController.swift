@@ -17,6 +17,9 @@ class CreatingPostViewController: UIViewController {
 	
 	var projectPost = Bool()
 	var projectId = String()
+	var isEditingPost = false
+	var editedUserPost = UserPost()
+	var editedProjectPost = ProjectPost()
 	
 	// TODO: Add UI Elements to keyboard toolbar
 	
@@ -34,6 +37,13 @@ class CreatingPostViewController: UIViewController {
 		textView!.becomeFirstResponder()
 		
 		textView!.selectedTextRange = textView!.textRangeFromPosition(textView!.beginningOfDocument, toPosition: textView!.beginningOfDocument)
+		
+		if editedProjectPost.id != nil {
+			textView?.text = editedProjectPost.content
+			projectPost = true
+		} else if editedUserPost.id != nil {
+			textView?.text = editedUserPost.content
+		}
 	}
 	
 	func setupImageView() {
@@ -45,25 +55,38 @@ class CreatingPostViewController: UIViewController {
 	
 	@IBAction func doneButtonPressed() {
 		let textToShare = textView?.text
-		if projectPost == true {
-			ProjectHelper.createPost(projectId, "Post", textToShare!, nil, nil, completionHandler: { (response) in
-				if response  == false {
-					let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
-					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-					self.presentViewController(alert, animated: true, completion: nil)
-				}
-			})
+		if isEditingPost == true {
+			if projectPost == true {
+				let projectId = String(editedProjectPost.projectId!)
+				let postId = String(editedProjectPost.id!)
+				ProjectHelper.editPost(projectId, postId: postId, content: ["content": textToShare!], completionHandler: { (response) in
+					self.isEditingPost = false
+				})
+			} else {
+				let postId = String(editedUserPost.id!)
+				NewsFeedHelper.editPost(postId, content: ["content": textToShare!], completionHandler: { (response) in
+					self.isEditingPost = false
+				})
+			}
 		} else {
-			NewsFeedHelper.createTextPost("Post", textToShare!) { (response) in
-				if response == false {
-					let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
-					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-					self.presentViewController(alert, animated: true, completion: nil)
+			if projectPost == true {
+				ProjectHelper.createPost(projectId, "Post", textToShare!, nil, nil, completionHandler: { (response) in
+					if response  == false {
+						let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
+						alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+						self.presentViewController(alert, animated: true, completion: nil)
+					}
+				})
+			} else {
+				NewsFeedHelper.createTextPost("Post", textToShare!) { (response) in
+					if response == false {
+						let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
+						alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+						self.presentViewController(alert, animated: true, completion: nil)
+					}
 				}
 			}
 		}
-		
-		
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 	
