@@ -29,6 +29,7 @@
 		0F15C4831CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */; };
 		0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */; };
 		0F15C4871CD542F000E2E4B9 /* telegram.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15C4861CD542F000E2E4B9 /* telegram.png */; };
+		0F1BF70F1D2C7D1400A6479C /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1BF70E1D2C7D1400A6479C /* white.png */; };
 		0F2A99661D122449006C3540 /* YSSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A99651D122449006C3540 /* YSSegmentedControl.swift */; };
 		0F2A99691D12D76D006C3540 /* PeopleFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A99681D12D76D006C3540 /* PeopleFiltersViewController.swift */; };
 		0F2A996B1D12D782006C3540 /* OccupationFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A996A1D12D782006C3540 /* OccupationFilterViewController.swift */; };
@@ -215,6 +216,7 @@
 		0F15C4821CD42DDA00E2E4B9 /* PostDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		0F15C4841CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		0F15C4861CD542F000E2E4B9 /* telegram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telegram.png; sourceTree = "<group>"; };
+		0F1BF70E1D2C7D1400A6479C /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		0F2A99651D122449006C3540 /* YSSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSSegmentedControl.swift; sourceTree = "<group>"; };
 		0F2A99681D12D76D006C3540 /* PeopleFiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleFiltersViewController.swift; sourceTree = "<group>"; };
 		0F2A996A1D12D782006C3540 /* OccupationFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupationFilterViewController.swift; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F1BF70E1D2C7D1400A6479C /* white.png */,
 				0F6E01711D15577100BC69FA /* placeholder.png */,
 				0F6E01421D12EDD900BC69FA /* filters */,
 				0F50B7A01D09C63C0051AEAA /* Tab bar icons */,
@@ -982,6 +985,7 @@
 				0F351BFD1D0A69D400E44371 /* search@3x.png in Resources */,
 				0F46DEC31D11DAFD0057C479 /* share-float.png in Resources */,
 				0F6E014A1D12F45D00BC69FA /* Location.png in Resources */,
+				0F1BF70F1D2C7D1400A6479C /* white.png in Resources */,
 				0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */,
 				0F3B68261D08D158003BB7E5 /* Delete account.png in Resources */,
 				0FD43C5C1CF5F6670061E4E9 /* background.png in Resources */,
