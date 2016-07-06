@@ -204,6 +204,8 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
 			cell.editButton?.addTarget(self, action: #selector(self.editInterestsButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			
+			cell.tagListView?.removeAllTags()
+			
 			for interest in interestsData {
 				cell.tagListView?.addTag(interest)
 			}
