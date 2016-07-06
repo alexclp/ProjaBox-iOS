@@ -37,6 +37,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		ProfileHelper.getMyFullProfile { (response, data) in
 			if response == true {
 				self.fullProfileData = data!
+				print(self.fullProfileData)
 				self.getLatestPosts()
 			} else {
 				
@@ -217,9 +218,10 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			
 			cell.profileImageView?.image = UIImage(named: "education-placeholder.png")
 			
-			if educationData.count == 0 || indexPath.row == educationData.count {
+			if educationData.count == 0 && indexPath.row == educationData.count && fullProfileData["education"] == nil  {
 				cell.companyNameLabel?.text = "Add past education"
 			} else {
+				educationData = fullProfileData["education"] as! [[String: String]]
 				cell.companyNameLabel?.text = educationData[indexPath.row]["name"]
 				cell.periodLabel?.text = educationData[indexPath.row]["start"]! + " - " + educationData[indexPath.row]["finish"]!
 			}
@@ -231,9 +233,10 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			
 			cell.profileImageView?.image = UIImage(named: "experience-placeholder.png")
 			
-			if experienceData.count == 0 || indexPath.row == experienceData.count {
+			if experienceData.count == 0 && indexPath.row == experienceData.count && fullProfileData["experience"] == nil {
 				cell.companyNameLabel?.text = "Add past experience"
 			} else {
+				experienceData = fullProfileData["experience"] as! [[String: String]]
 				cell.companyNameLabel?.text = experienceData[indexPath.row]["name"]
 				cell.periodLabel?.text = experienceData[indexPath.row]["start"]! + " - " + experienceData[indexPath.row]["finish"]!
 			}
@@ -391,7 +394,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			// Work item
 			var data = item
 			data.removeValueForKey("work")
-			data["work"] = work
+			data["name"] = work
 			experienceData.append(data)
 			fullProfileData["experience"] = experienceData
 			updateProfile()

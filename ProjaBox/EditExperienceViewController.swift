@@ -38,7 +38,7 @@ class EditExperienceViewController: FormViewController {
 			<<< ButtonRow() { (row: ButtonRow) -> Void in
 				row.title = "Done"
 				}  .onCellSelection({ (cell, row) in
-					
+					self.sendData()
 				})
 	}
 	
