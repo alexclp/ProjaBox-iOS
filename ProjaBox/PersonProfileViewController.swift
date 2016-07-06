@@ -211,6 +211,8 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
 			cell.editButton?.hidden = true
 			
+			cell.tagListView?.removeAllTags()
+			
 			for interest in interestsData {
 				cell.tagListView?.addTag(interest)
 			}
