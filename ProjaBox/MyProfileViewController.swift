@@ -215,6 +215,8 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			// EDUCATION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
 			
+			cell.profileImageView?.image = UIImage(named: "education-placeholder.png")
+			
 			if educationData.count == 0 || indexPath.row == educationData.count {
 				cell.companyNameLabel?.text = "Add past education"
 			} else {
@@ -226,6 +228,8 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		} else if indexPath.section == 3 {
 			// EXPERIENCE
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
+			
+			cell.profileImageView?.image = UIImage(named: "experience-placeholder.png")
 			
 			if experienceData.count == 0 || indexPath.row == experienceData.count {
 				cell.companyNameLabel?.text = "Add past experience"

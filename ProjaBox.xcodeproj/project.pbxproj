@@ -157,6 +157,8 @@
 		0FC223C21C99BFA1006DD18B /* ProjaBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223C11C99BFA1006DD18B /* ProjaBoxTests.swift */; };
 		0FC223CD1C99BFA1006DD18B /* ProjaBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */; };
 		0FCCBAB01C9EDEC90007F427 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */; };
+		0FD404621D2D6D3B00373C84 /* experience-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD404611D2D6D3B00373C84 /* experience-placeholder.png */; };
+		0FD404641D2D6E0900373C84 /* education-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD404631D2D6E0900373C84 /* education-placeholder.png */; };
 		0FD43C5C1CF5F6670061E4E9 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD43C5B1CF5F6670061E4E9 /* background.png */; };
 		0FD43C5E1CF603560061E4E9 /* EducationExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD43C5D1CF603560061E4E9 /* EducationExperienceTableViewCell.swift */; };
 		0FD43C601CF603650061E4E9 /* EducationExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD43C5F1CF603650061E4E9 /* EducationExperienceTableViewCell.xib */; };
@@ -350,6 +352,8 @@
 		0FC223CC1C99BFA1006DD18B /* ProjaBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjaBoxUITests.swift; sourceTree = "<group>"; };
 		0FC223CE1C99BFA1006DD18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FCCBAAF1C9EDEC90007F427 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0FD404611D2D6D3B00373C84 /* experience-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "experience-placeholder.png"; sourceTree = "<group>"; };
+		0FD404631D2D6E0900373C84 /* education-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "education-placeholder.png"; sourceTree = "<group>"; };
 		0FD43C5B1CF5F6670061E4E9 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		0FD43C5D1CF603560061E4E9 /* EducationExperienceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		0FD43C5F1CF603650061E4E9 /* EducationExperienceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EducationExperienceTableViewCell.xib; sourceTree = "<group>"; };
@@ -732,6 +736,8 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0FD404631D2D6E0900373C84 /* education-placeholder.png */,
+				0FD404611D2D6D3B00373C84 /* experience-placeholder.png */,
 				0F1BF70E1D2C7D1400A6479C /* white.png */,
 				0F6E01711D15577100BC69FA /* placeholder.png */,
 				0F6E01421D12EDD900BC69FA /* filters */,
@@ -1018,6 +1024,7 @@
 				0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */,
 				0F5505871CF8B7EC005229D7 /* sign-in-background.png in Resources */,
 				0F1071361D243ADE001CBF02 /* PhotoPostDetailsTableViewCell.xib in Resources */,
+				0FD404641D2D6E0900373C84 /* education-placeholder.png in Resources */,
 				0F6785E91CC98C8C00F89541 /* post.png in Resources */,
 				0FC223B21C99BFA1006DD18B /* Main.storyboard in Resources */,
 				0F43A3B31D0893B3003B6503 /* accessory-view.png in Resources */,
@@ -1054,6 +1061,7 @@
 				0F41E0D91D0C156700BD0520 /* GoalsTableViewCell.xib in Resources */,
 				0F6E016B1D13328500BC69FA /* follow.png in Resources */,
 				0F6785E41CC983CE00F89541 /* settings@2x.png in Resources */,
+				0FD404621D2D6D3B00373C84 /* experience-placeholder.png in Resources */,
 				0F55058B1CF8BD61005229D7 /* signup-button.png in Resources */,
 				0F6785E31CC983CE00F89541 /* settings.png in Resources */,
 				0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */,

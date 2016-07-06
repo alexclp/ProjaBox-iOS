@@ -221,6 +221,8 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 		} else if indexPath.section == 2 {
 			// EDUCATION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
+		
+			cell.profileImageView?.image = UIImage(named: "education-placeholder.png")
 			
 			if educationData.count == 0 || indexPath.row == educationData.count {
 				cell.companyNameLabel?.text = "Add past education"
@@ -234,6 +236,8 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 			// EXPERIENCE
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
 			cell.userInteractionEnabled = false
+			
+			cell.profileImageView?.image = UIImage(named: "experience-placeholder.png")
 			
 			cell.companyNameLabel?.text = experienceData[indexPath.row]["name"]
 			cell.periodLabel?.text = experienceData[indexPath.row]["start"]! + " - " + experienceData[indexPath.row]["finish"]!
