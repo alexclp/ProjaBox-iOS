@@ -273,6 +273,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			cell.editButton?.addTarget(self, action: #selector(self.editJobsButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			cell.tagListView?.removeAllTags()
 			
+			cell.tagListView?.removeAllTags()
+			
 			for job in jobs {
 				cell.tagListView?.addTag(job)
 			}
