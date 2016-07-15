@@ -46,6 +46,7 @@ class ProjectViewOnlyViewController: UIViewController {
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
 		tableView!.registerNib(UINib(nibName: "GoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "goalsCell")
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
+		tableView!.registerNib(UINib(nibName: "PhotoCardTableViewCell", bundle: nil), forCellReuseIdentifier: "photoCardCell")
 		
 		getProfile()
 		
@@ -127,8 +128,12 @@ class ProjectViewOnlyViewController: UIViewController {
 		} else if section == 5 {
 			return 115.0
 		} else if section == 6 {
+			if postsData[indexPath.row].image != nil {
+				return 308.0
+			}
 			return 221.0
 		}
+		
 		return 0
 	}
 	
@@ -262,15 +267,62 @@ class ProjectViewOnlyViewController: UIViewController {
 			return cell
 		}
 		
+		
 		// POST SECTION
+		let currentPost = postsData[indexPath.row]
+		
+		if let imageURL = currentPost.image {
+			let cell = tableView.dequeueReusableCellWithIdentifier("photoCardCell", forIndexPath: indexPath) as! PhotoCardTableViewCell
+			cell.authorLocationLabel?.text = ""
+			cell.locationImageView?.hidden = true
+			cell.authorDetailsLabel?.text = ""
+			
+			Alamofire.request(.GET, imageURL)
+				.responseImage { response in
+					if let image = response.result.value {
+						print("image downloaded: \(image)")
+						cell.postImage!.image = image
+					}
+			}
+			
+			if let likers = currentPost.likers {
+				cell.likesLabel?.text = String(likers.count)
+			}
+			
+			if let time = currentPost.createdTimestamp {
+				cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(time)
+			}
+			
+			if let name = fullProjectData["name"] {
+				cell.authorLabel?.text = name as? String
+			}
+			
+			if let position = fullProjectData["type"] {
+				cell.authorDetailsLabel?.text = position as? String
+			}
+			
+			if let location = fullProjectData["location"] {
+				cell.authorLocationLabel?.text = location as? String
+			}
+			
+			if let url = fullProjectData["avatar"] {
+				let urlString = url as? String
+				if urlString != nil {
+					Alamofire.request(.GET, (url as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
+			
+			return cell
+		}
+		
 		let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
 		
-		cell.authorLocationLabel?.text = ""
-		cell.locationImageView?.hidden = true
-		cell.authorDetailsLabel?.text = ""
-		//		cell.profileImageView?.image = nil
-		
-		let currentPost = postsData[indexPath.row]
 		cell.postLabel?.text = currentPost.content
 		cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
 		if let likers = currentPost.likers {
@@ -281,6 +333,15 @@ class ProjectViewOnlyViewController: UIViewController {
 		}
 		if let name = currentPost.projectName {
 			cell.authorLabel?.text = name
+		}
+		if let url = currentPost.ownerAvatar {
+			Alamofire.request(.GET, url)
+				.responseImage { response in
+					if let image = response.result.value {
+						print("image downloaded: \(image)")
+						cell.profileImageView!.image = image
+					}
+			}
 		}
 		
 		return cell

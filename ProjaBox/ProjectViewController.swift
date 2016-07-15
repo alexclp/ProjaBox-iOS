@@ -49,6 +49,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "FeedCardTableViewCell", bundle: nil), forCellReuseIdentifier: "cardCell")
 		tableView!.registerNib(UINib(nibName: "GoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "goalsCell")
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
+		tableView!.registerNib(UINib(nibName: "PhotoCardTableViewCell", bundle: nil), forCellReuseIdentifier: "photoCardCell")
 		
 		imagePicker.delegate = self
 		imagePicker.navigationBar.translucent = false
@@ -147,7 +148,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		let strBase64 = CompressedImage.encodeImageLowetQuality(image)
 		ProjectHelper.createPost(String(fullProjectData["id"] as! Int), "Post", "Image Post", strBase64, nil) { (response) in
 			if response == true {
-				
+				self.getLatestPosts()
 			}
 		}
 	}
@@ -173,6 +174,9 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		} else if section == 5 {
 			return 115.0
 		} else if section == 6 {
+			if postsData[indexPath.row].image != nil {
+				return 308.0
+			}
 			return 221.0
 		}
 		
