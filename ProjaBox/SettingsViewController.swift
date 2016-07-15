@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	@IBOutlet weak var tableView: UITableView?
 	
 	let cellTitles = [1: ["My Profile", "My Posts"], 2: ["My Settings"], 3: ["Questions and Answers", "About"], 4: ["Log out"]]
+	
+	var myProfileData = [String: AnyObject]()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,6 +27,18 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		tableView?.registerNib(UINib(nibName: "SettingsTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "settingsCell")
 		
 		self.navigationItem.title = "Settings"
+		getMyProfile()
+	}
+	
+	func getMyProfile() {
+		ProfileHelper.getMyFullProfile { (response, data) in
+			if response == true {
+				if let data = data {
+					self.myProfileData = data
+					self.tableView?.reloadData()
+				}
+			}
+		}
 	}
 	
 	// MARK: Table View Data Source
@@ -56,7 +72,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		
 		if (section == 0 || section == 2 || section == 4) {
 			return 1
 		}
@@ -74,6 +89,18 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		if (indexPath.section == 0) {
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as! ProfileTableViewCell
 			
+			cell.nameLabel?.text = myProfileData["name"] as? String
+			cell.positionLabel?.text = myProfileData["occupation"] as? String
+			
+			if let imageURL = myProfileData["avatar"] {
+				Alamofire.request(.GET, (imageURL as! String))
+					.responseImage { response in
+						if let image = response.result.value {
+							print("image downloaded: \(image)")
+							cell.profileImageView?.image = image
+						}
+				}
+			}
 			return cell
 		}
 		
