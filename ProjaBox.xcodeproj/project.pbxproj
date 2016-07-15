@@ -1423,6 +1423,7 @@
 			baseConfigurationReference = 3F5062BD9F28C8A9F1382FE1 /* Pods-ProjaBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1440,6 +1441,7 @@
 			baseConfigurationReference = 4BEDE38E9DEAB171D992EEAC /* Pods-ProjaBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
