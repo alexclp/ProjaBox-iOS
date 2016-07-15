@@ -25,12 +25,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		getLatestPosts()
+//		getLatestPosts()
 	}
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		setupBarButtons()
+		getLatestPosts()
 	}
 	
 	override func viewDidLoad() {
@@ -254,9 +255,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				NewsFeedHelper.editPost(postId, content: ["image": strBase64], completionHandler: { (response) in
 					print(response)
 					self.isEditingPost = false
+					self.getLatestPosts()
 				})
 			} else {
 				NewsFeedHelper.createPhotoPost(strBase64, completionHandler: { (response) in
+					self.getLatestPosts()
 				})
 			}
 		}
@@ -331,6 +334,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			let postId = String(sender.tag)
 			NewsFeedHelper.deletePost(postId, completionHandler: { (response) in
 				if response == true {
+					self.postsData.removeAtIndex(sender.tag)
 					self.tableView?.reloadData()
 				}
 			})

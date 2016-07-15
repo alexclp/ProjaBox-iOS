@@ -161,6 +161,7 @@ class NewsFeedHelper: NSObject {
 		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
+				print(response)
 				print("Failed deleting")
 				completionHandler(false)
 			} else {

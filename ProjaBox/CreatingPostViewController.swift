@@ -40,9 +40,11 @@ class CreatingPostViewController: UIViewController {
 		
 		if editedProjectPost.id != nil {
 			textView?.text = editedProjectPost.content
+			textView?.textColor = UIColor.blackColor()
 			projectPost = true
 		} else if editedUserPost.id != nil {
 			textView?.text = editedUserPost.content
+			textView?.textColor = UIColor.blackColor()
 		}
 	}
 	
