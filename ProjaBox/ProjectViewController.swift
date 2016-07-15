@@ -12,10 +12,12 @@ import KCFloatingActionButton
 import Alamofire
 import AlamofireImage
 
-class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate, GoalsInputDelegate, ExperienceInputDelegate, InterestsInputDelegate {
+class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate, GoalsInputDelegate, ExperienceInputDelegate, InterestsInputDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
 	@IBOutlet weak var floatingButton = KCFloatingActionButton()
+	
+	let imagePicker = UIImagePickerController()
 	
 	var headerData = [String: String]()
 	var teamData = [[String: String]]()
@@ -48,6 +50,15 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "GoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "goalsCell")
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 		
+		imagePicker.delegate = self
+		imagePicker.navigationBar.translucent = false
+		imagePicker.navigationBar.barTintColor = UIColor(red: 237/255, green: 84/255, blue: 84/255, alpha: 1.0) // Background color
+		imagePicker.navigationBar.tintColor = .whiteColor() // Cancel button ~ any UITabBarButton items
+		imagePicker.navigationBar.titleTextAttributes = [
+			NSForegroundColorAttributeName : UIColor.whiteColor()
+		] // Title color
+
+		
 		getProfile()
 		
 		setupPostButton()
@@ -63,7 +74,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			self.floatingButton!.close()
 		})
 		floatingButton!.addItem("Make a new image post", icon: UIImage(named: "share-float.png")!, handler: { item in
+			self.imagePicker.allowsEditing = false
+			self.imagePicker.sourceType = .PhotoLibrary
 			
+			self.presentViewController(self.imagePicker, animated: true, completion: nil)
 		})
 	}
 	
@@ -124,6 +138,16 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 				self.tableView?.reloadData()
 			}
 		}
+	}
+	
+	// MARK: UIImagePicker Delegate
+	
+	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+		
+	}
+	
+	func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+		
 	}
 	
 	// MARK: UITableView Methods
