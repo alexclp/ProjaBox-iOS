@@ -58,11 +58,11 @@ class ProjectHelper: NSObject {
 		}
 	}
 	
-	class func createPost(projectId: String, _ name: String, _ content: String, _ photo: NSData?, _ video: NSData?, completionHandler: (Bool) -> Void) {
+	class func createPost(projectId: String, _ name: String, _ content: String, _ photo: String?, _ video: NSData?, completionHandler: (Bool) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/posts"
 		let headers = getHeaders()
-		if let image = photo, let video = video {
-			let parameters: [String: AnyObject] = ["name": name, "content": content, "image": image, "video": video]
+		if let image = photo {
+			let parameters: [String: AnyObject] = ["name": name, "content": content, "image": image]
 			Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
 				
 				//				print(response)

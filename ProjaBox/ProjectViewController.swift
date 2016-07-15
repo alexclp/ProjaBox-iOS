@@ -71,13 +71,14 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	func setupPostButton() {
 		floatingButton!.addItem("Make a new text post", icon: UIImage(named: "share-float.png")!, handler: { item in
 			self.performSegueWithIdentifier("showCreatePostSegue", sender: self)
-			self.floatingButton!.close()
+			self.floatingButton?.close()
 		})
 		floatingButton!.addItem("Make a new image post", icon: UIImage(named: "share-float.png")!, handler: { item in
 			self.imagePicker.allowsEditing = false
 			self.imagePicker.sourceType = .PhotoLibrary
 			
 			self.presentViewController(self.imagePicker, animated: true, completion: nil)
+			self.floatingButton?.close()
 		})
 	}
 	
@@ -131,9 +132,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func getLatestPosts() {
-		ProjectHelper.getProjectsLatestPosts(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, posts) in
+	ProjectHelper.getProjectsLatestPosts(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, posts) in
 			if response == true {
-				print("GOT PROJECT'S POSTS")
 				self.postsData = posts!
 				self.tableView?.reloadData()
 			}
@@ -143,11 +143,17 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	// MARK: UIImagePicker Delegate
 	
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-		
+		dismissViewControllerAnimated(true, completion: nil)
+		let strBase64 = CompressedImage.encodeImageLowetQuality(image)
+		ProjectHelper.createPost(String(fullProjectData["id"] as! Int), "Post", "Image Post", strBase64, nil) { (response) in
+			if response == true {
+				
+			}
+		}
 	}
 	
 	func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-		
+		dismissViewControllerAnimated(true, completion: nil)
 	}
 	
 	// MARK: UITableView Methods
@@ -310,14 +316,60 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		}
 		
 		// POST SECTION
+		let currentPost = postsData[indexPath.row]
+		
+		if let imageURL = currentPost.image {
+			let cell = tableView.dequeueReusableCellWithIdentifier("photoCardCell", forIndexPath: indexPath) as! PhotoCardTableViewCell
+			cell.authorLocationLabel?.text = ""
+			cell.locationImageView?.hidden = true
+			cell.authorDetailsLabel?.text = ""
+			
+			Alamofire.request(.GET, imageURL)
+				.responseImage { response in
+					if let image = response.result.value {
+						print("image downloaded: \(image)")
+						cell.postImage!.image = image
+					}
+			}
+			
+			if let likers = currentPost.likers {
+				cell.likesLabel?.text = String(likers.count)
+			}
+			
+			if let time = currentPost.createdTimestamp {
+				cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(time)
+			}
+			
+			if let name = fullProjectData["name"] {
+				cell.authorLabel?.text = name as? String
+			}
+			
+			if let position = fullProjectData["type"] {
+				cell.authorDetailsLabel?.text = position as? String
+			}
+			
+			if let location = fullProjectData["location"] {
+				cell.authorLocationLabel?.text = location as? String
+			}
+			
+			if let url = fullProjectData["avatar"] {
+				let urlString = url as? String
+				if urlString != nil {
+					Alamofire.request(.GET, (url as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
+			}
+			
+			return cell
+		}
+		
 		let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! FeedCardTableViewCell
 		
-		cell.authorLocationLabel?.text = ""
-		cell.locationImageView?.hidden = true
-		cell.authorDetailsLabel?.text = ""
-		//		cell.profileImageView?.image = nil
-		
-		let currentPost = postsData[indexPath.row]
 		cell.postLabel?.text = currentPost.content
 		cell.currentTimeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(currentPost.createdTimestamp!)
 		if let likers = currentPost.likers {
@@ -328,6 +380,15 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		}
 		if let name = currentPost.projectName {
 			cell.authorLabel?.text = name
+		}
+		if let url = currentPost.ownerAvatar {
+			Alamofire.request(.GET, url)
+				.responseImage { response in
+					if let image = response.result.value {
+						print("image downloaded: \(image)")
+						cell.profileImageView!.image = image
+					}
+			}
 		}
 		
 		return cell
