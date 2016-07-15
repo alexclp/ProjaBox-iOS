@@ -58,9 +58,12 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func setupPostButton() {
-		floatingButton!.addItem("Make a new post", icon: UIImage(named: "share-float.png")!, handler: { item in
+		floatingButton!.addItem("Make a new text post", icon: UIImage(named: "share-float.png")!, handler: { item in
 			self.performSegueWithIdentifier("showCreatePostSegue", sender: self)
 			self.floatingButton!.close()
+		})
+		floatingButton!.addItem("Make a new image post", icon: UIImage(named: "share-float.png")!, handler: { item in
+			
 		})
 	}
 	
