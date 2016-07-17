@@ -84,7 +84,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 		if results[0] is Project {
-			return 277.0
+			return 288.0
 		} else {
 			return 232.0
 		}
