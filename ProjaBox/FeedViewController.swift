@@ -278,8 +278,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				if response == true {
 					print("Liked successfully")
 					sender.selected = true
-					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
-					cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
+					if self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) is PhotoCardTableViewCell {
+						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! PhotoCardTableViewCell
+						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
+					} else {
+						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
+						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
+					}
 				} else {
 					print("Error while liking post id: \(postId)")
 				}
@@ -289,8 +294,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				if response == true {
 					print("Unliked successfully")
 					sender.selected = false
-					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
-					cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
+					if self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) is PhotoCardTableViewCell {
+						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! PhotoCardTableViewCell
+						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
+					} else {
+						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
+						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
+					}
 				} else {
 					print("Error while unliking post id: \(postId)")
 				}

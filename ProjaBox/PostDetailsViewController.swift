@@ -325,8 +325,13 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 				if response == true {
 					print("Liked successfully")
 					sender.selected = true
-					let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! PostDetailsTableViewCell
-					cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
+					if self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) is PhotoCardTableViewCell {
+						let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! PhotoCardTableViewCell
+						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
+					} else {
+						let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
+						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
+					}
 				} else {
 					print("Error while liking post id: \(postId)")
 				}
@@ -336,8 +341,13 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 				if response == true {
 					print("Unliked successfully")
 					sender.selected = false
-					let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! PostDetailsTableViewCell
-					cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
+					if self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) is PhotoCardTableViewCell {
+						let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! PhotoCardTableViewCell
+						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
+					} else {
+						let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
+						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
+					}
 				} else {
 					print("Error while unliking post id: \(postId)")
 				}
