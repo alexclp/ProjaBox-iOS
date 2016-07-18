@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 	
 	@IBOutlet weak var postDetailsTableView: UITableView?
 	@IBOutlet weak var commentTextField: UITextField?
@@ -19,6 +19,9 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	var commentsData = [[String: AnyObject]]()
 	
 	var selectedPost = UserPost()
+	
+	let imagePicker = UIImagePickerController()
+	var isEditingPost = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -30,8 +33,15 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		postDetailsTableView!.registerNib(UINib(nibName: "LikesTableViewCell", bundle: nil), forCellReuseIdentifier: "likesCell")
 		postDetailsTableView!.registerNib(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "commentCell")
 		
-		fillData()
+		imagePicker.delegate = self
+		imagePicker.navigationBar.translucent = false
+		imagePicker.navigationBar.barTintColor = UIColor(red: 237/255, green: 84/255, blue: 84/255, alpha: 1.0) // Background color
+		imagePicker.navigationBar.tintColor = .whiteColor() // Cancel button ~ any UITabBarButton items
+		imagePicker.navigationBar.titleTextAttributes = [
+			NSForegroundColorAttributeName : UIColor.whiteColor()
+		] // Title color
 		
+		fillData()
 	}
 	
 	func fillData() {
@@ -127,7 +137,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 					}
 				}
 				
-				
 				return cell
 			} else {
 				let cell = tableView.dequeueReusableCellWithIdentifier("postDetailsCell", forIndexPath: indexPath) as! PostDetailsTableViewCell
@@ -199,7 +208,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			cell.selectionStyle = .Gray
 			
 			return cell
-			
 		}
 		
 		let currentComment = commentsData[indexPath.row - 2]
@@ -221,6 +229,28 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+	}
+	
+	// MARK: UIImagePickerDelegate Methods
+	
+	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+		dismissViewControllerAnimated(true, completion: nil)
+		let editedPost = selectedPost
+		let postId = String(editedPost.id!)
+		let strBase64 = CompressedImage.encodeImageLowetQuality(image)
+		NewsFeedHelper.editPost(postId, content: ["image": strBase64], completionHandler: { (response) in
+			print(response)
+			self.isEditingPost = false
+			if response == true {
+				self.navigationController?.popViewControllerAnimated(true)
+			} else {
+				print("update failed")
+			}
+		})
+	}
+	
+	func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+		dismissViewControllerAnimated(true, completion: nil)
 	}
 	
 	// MARK: User Interaction
@@ -285,7 +315,37 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	func morePressed(sender: UIButton) {
+		let alertController = UIAlertController(title: nil, message: "Edit or delete post", preferredStyle: .ActionSheet)
+		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+			self.dismissViewControllerAnimated(true, completion: nil)
+		}
+		alertController.addAction(cancelAction)
 		
+		let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) in
+			let postId = String(sender.tag)
+			NewsFeedHelper.deletePost(postId, completionHandler: { (response) in
+				if response == true {
+					self.navigationController?.popViewControllerAnimated(true)
+				}
+			})
+		}
+		alertController.addAction(deleteAction)
+		
+		let editAction = UIAlertAction(title: "Edit", style: .Default) { (action) in
+			self.isEditingPost = true
+			
+			if self.selectedPost.image != nil {
+				self.imagePicker.allowsEditing = false
+				self.imagePicker.sourceType = .PhotoLibrary
+				
+				self.presentViewController(self.imagePicker, animated: true, completion: nil)
+			} else {
+				self.performSegueWithIdentifier("showComposePostSegue", sender: self)
+			}
+		}
+		alertController.addAction(editAction)
+		
+		presentViewController(alertController, animated: true, completion: nil)
 	}
 	
 	func nameButtonPressed(sender: UIGestureRecognizer) {
@@ -307,6 +367,19 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			let destination = segue.destinationViewController as! ProjectViewOnlyViewController
 			let id = String(selectedPost.id!)
 			destination.projectId = id
+		} else if segue.identifier == "showComposePostSegue" {
+			let navCon = segue.destinationViewController as! UINavigationController
+			let destination = navCon.viewControllers[0] as! CreatingPostViewController
+			if isEditingPost == true {
+				destination.isEditingPost = true
+				let editingPost = selectedPost
+				if editingPost is ProjectPost {
+					let projectPost = editingPost as! ProjectPost
+					destination.editedProjectPost = projectPost
+				} else {
+					destination.editedUserPost = editingPost
+				}
+			}
 		}
 	}
 }

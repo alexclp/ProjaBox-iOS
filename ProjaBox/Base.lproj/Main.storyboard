@@ -807,6 +807,7 @@
                         <outlet property="postDetailsTableView" destination="VFd-ER-SqD" id="cfp-sG-f9u"/>
                         <segue destination="u77-Zt-78J" kind="show" identifier="personShowProfileSegue" id="SCm-DV-508"/>
                         <segue destination="q4e-4P-8dc" kind="show" identifier="projectShowProfileSegue" id="5Ir-dQ-6B8"/>
+                        <segue destination="3Cf-Mc-Dde" kind="show" identifier="showComposeViewSegue" id="XYx-HJ-KCE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0e3-ad-aR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1466,12 +1467,13 @@
         <image name="vertical_separator.png" width="4" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BLr-eM-Win"/>
         <segue reference="SCW-h2-cCE"/>
-        <segue reference="pO2-xq-4Qo"/>
-        <segue reference="Mdg-mM-8eA"/>
-        <segue reference="5Ir-dQ-6B8"/>
-        <segue reference="SCm-DV-508"/>
+        <segue reference="BLr-eM-Win"/>
         <segue reference="HjA-FE-eog"/>
+        <segue reference="Mdg-mM-8eA"/>
+        <segue reference="XYx-HJ-KCE"/>
+        <segue reference="SCm-DV-508"/>
+        <segue reference="5Ir-dQ-6B8"/>
+        <segue reference="pO2-xq-4Qo"/>
     </inferredMetricsTieBreakers>
 </document>
