@@ -52,6 +52,21 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		postDetailsTableView?.reloadData()
 	}
 	
+	func getUserProfileImage(userId: String, completionHandler: (Bool, String?) -> Void) {
+		ProfileHelper.getUserFullProfile(userId) { (response, data) in
+			if response == true {
+				if let data = data {
+					let imageURL = data["avatar"] as? String
+					completionHandler(true, imageURL)
+				} else {
+					completionHandler(false, nil)
+				}
+			} else {
+				completionHandler(false, nil)
+			}
+		}
+	}
+	
 	// MARK: Table View Data Source
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -203,9 +218,36 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			// if likes >= 7 make the last one as a three dot icon (to show that there are many likes for the post)
 			
 			let cell = tableView.dequeueReusableCellWithIdentifier("likesCell", forIndexPath: indexPath) as! LikesTableViewCell
-			cell.profileImageView1?.hidden = false
-			cell.profileImageView1?.image = UIImage(named: "profile_pic.jpg")
-			cell.selectionStyle = .Gray
+			
+			cell.selectionStyle = .None
+			
+			print(selectedPost.likers)
+			
+			if let likers = selectedPost.likers {
+				if likers.count <= 6 {
+					for i in 0..<likers.count {
+						Alamofire.request(.GET, (likers[i]["avatar"] as! String))
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.imageViewList[i].image = image
+								}
+						}
+					}
+					cell.imageViewList[selectedPost.likers!.count + 1].image = UIImage(named: "more_likes_icon.png")!
+				} else {
+					for i in 0..<6 {
+						Alamofire.request(.GET, (likers[i]["avatar"] as! String))
+							.responseImage { response in
+								if let image = response.result.value {
+									print("image downloaded: \(image)")
+									cell.imageViewList[i].image = image
+								}
+						}
+					}
+					cell.imageViewList[6].image = UIImage(named: "more_likes_icon.png")!
+				}
+			}
 			
 			return cell
 		}

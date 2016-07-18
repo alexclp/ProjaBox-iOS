@@ -145,6 +145,7 @@
 		0F82D2341CE38F2100C779E5 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */; };
 		0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */; };
 		0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */; };
+		0F8AAD2B1D3D8D9F00E87847 /* more_likes_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8AAD2A1D3D8D9F00E87847 /* more_likes_icon.png */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */; };
 		0FB056691D01F3D800CDBC76 /* NoAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */; };
@@ -334,6 +335,7 @@
 		0F82D2331CE38F2100C779E5 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		0F8AAD2A1D3D8D9F00E87847 /* more_likes_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_likes_icon.png; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAnimationSegue.swift; sourceTree = "<group>"; };
@@ -736,6 +738,7 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F8AAD2A1D3D8D9F00E87847 /* more_likes_icon.png */,
 				0FD404631D2D6E0900373C84 /* education-placeholder.png */,
 				0FD404611D2D6D3B00373C84 /* experience-placeholder.png */,
 				0F1BF70E1D2C7D1400A6479C /* white.png */,
@@ -1059,6 +1062,7 @@
 				0F6E01531D12F97600BC69FA /* filter@2x.png in Resources */,
 				0F6E01691D132EDA00BC69FA /* DiscoverPeopleTableViewCell.xib in Resources */,
 				0F41E0D91D0C156700BD0520 /* GoalsTableViewCell.xib in Resources */,
+				0F8AAD2B1D3D8D9F00E87847 /* more_likes_icon.png in Resources */,
 				0F6E016B1D13328500BC69FA /* follow.png in Resources */,
 				0F6785E41CC983CE00F89541 /* settings@2x.png in Resources */,
 				0FD404621D2D6D3B00373C84 /* experience-placeholder.png in Resources */,
