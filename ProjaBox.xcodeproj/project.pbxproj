@@ -74,6 +74,7 @@
 		0F43A3B61D0893B3003B6503 /* My Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F43A3AF1D0893B3003B6503 /* My Profile.png */; };
 		0F43A3B71D0893B3003B6503 /* My Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F43A3B01D0893B3003B6503 /* My Settings.png */; };
 		0F43A3B81D0893B3003B6503 /* Questions and Answers.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F43A3B11D0893B3003B6503 /* Questions and Answers.png */; };
+		0F462B051D3E8B3F00CE5111 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F462B041D3E8B3F00CE5111 /* AutoCompleteTextField.swift */; };
 		0F4665451D05BA180042932F /* UserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4665441D05BA180042932F /* UserPost.swift */; };
 		0F4665471D05CCE70042932F /* ProjectPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4665461D05CCE70042932F /* ProjectPost.swift */; };
 		0F46DEC31D11DAFD0057C479 /* share-float.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F46DEC01D11DAFD0057C479 /* share-float.png */; };
@@ -264,6 +265,7 @@
 		0F43A3AF1D0893B3003B6503 /* My Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "My Profile.png"; sourceTree = "<group>"; };
 		0F43A3B01D0893B3003B6503 /* My Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "My Settings.png"; sourceTree = "<group>"; };
 		0F43A3B11D0893B3003B6503 /* Questions and Answers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Questions and Answers.png"; sourceTree = "<group>"; };
+		0F462B041D3E8B3F00CE5111 /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		0F4665441D05BA180042932F /* UserPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPost.swift; sourceTree = "<group>"; };
 		0F4665461D05CCE70042932F /* ProjectPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPost.swift; sourceTree = "<group>"; };
 		0F46DEC01D11DAFD0057C479 /* share-float.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-float.png"; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				0F2A99651D122449006C3540 /* YSSegmentedControl.swift */,
+				0F462B041D3E8B3F00CE5111 /* AutoCompleteTextField.swift */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -1264,6 +1267,7 @@
 				0FEB21471D0CE972000385C3 /* EditGoalsViewController.swift in Sources */,
 				0F4171491CFE6E340043A98B /* InterestsTableViewCell.swift in Sources */,
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
+				0F462B051D3E8B3F00CE5111 /* AutoCompleteTextField.swift in Sources */,
 				0F2A996D1D12D78C006C3540 /* LocationFilterViewController.swift in Sources */,
 				0FEB214B1D0CED55000385C3 /* EditJobsFormViewController.swift in Sources */,
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,
