@@ -42,15 +42,37 @@ class EditTeamViewController: FormViewController {
 	func doneButtonPressed() {
 		let values = self.form.values()
 		if let name = values["name"], let position = values["position"] {
-			data["name"] = name as? String
-			data["position"] = position as? String
-			delegate?.finishedCompletingItem(data)
-			self.navigationController?.popViewControllerAnimated(true)
+			searchForTeammate(name as! String, completionHandler: { (response, result) in
+				if response == true {
+					if let userData = result {
+						self.data["id"] = String(userData[0].id!)
+						self.data["position"] = position as? String
+						self.delegate?.finishedCompletingItem(self.data)
+						self.navigationController?.popViewControllerAnimated(true)
+						print("found team mate, got back")
+					}
+				} else {
+					let alert = UIAlertController(title: "Alert", message: "No user was found with this name", preferredStyle: UIAlertControllerStyle.Alert)
+					alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+					self.presentViewController(alert, animated: true, completion: nil)
+				}
+			})
 		} else {
-			let alert = UIAlertController(title: "Alert", message: "Enter an interest please", preferredStyle: UIAlertControllerStyle.Alert)
+			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
 			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
 			self.presentViewController(alert, animated: true, completion: nil)
 		}
 		
+	}
+	
+	func searchForTeammate(name: String, completionHandler: (Bool, [User]?) -> Void) {
+		SearchHelper.searchForUsers(name) { (response, result) in
+			print("result: \(result)")
+			if response == true {
+				completionHandler(true, result)
+			} else {
+				completionHandler(false, nil)
+			}
+		}
 	}
 }

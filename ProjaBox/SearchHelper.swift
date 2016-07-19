@@ -21,7 +21,8 @@ class SearchHelper: NSObject {
 	}
 	
 	class func searchForProjects(queryString: String, completionHandler: (Bool, [Project]?) -> Void) {
-		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/search/projects/\(queryString)"
+		var urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/search/projects/\(queryString)"
+		urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
 		let headers = getHeaders()
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
@@ -56,13 +57,17 @@ class SearchHelper: NSObject {
 	}
 	
 	class func searchForUsers(queryString: String, completionHandler: (Bool, [User]?) -> Void) {
-		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/search/peoples/\(queryString)"
+		var urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/search/peoples/\(queryString)"
+		urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
 		let headers = getHeaders()
 		
+		print("will search for name: \(urlString)")
+		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			print(response)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			let data = response.result.value!["data"] as? [[String: AnyObject]]
-			print(response)
+			
 			if let data = data {
 				var results = [User]()
 				for result in data {

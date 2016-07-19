@@ -228,6 +228,26 @@ class ProjectHelper: NSObject {
 		}
 	}
 	
+	class func getProjectTeammates(projectId: String, completionHandler: (Bool, [[String: AnyObject]]?) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/team"
+		let headers = getHeaders()
+		
+		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			let data = response.result.value!["data"] as? [[String: AnyObject]]
+			
+			if errorCode != 0 {
+				if let data = data {
+					completionHandler(true, data)
+				} else {
+					completionHandler(false, nil)
+				}
+			} else {
+				completionHandler(false, nil)
+			}
+		}
+	}
+	
 	// MARK: UPDATING
 	
 	class func updateProjectProfile(projectId: String, fullProfileData: [String: AnyObject], completionHandler: (Bool) -> Void) {

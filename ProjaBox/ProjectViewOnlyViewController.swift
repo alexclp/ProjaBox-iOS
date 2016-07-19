@@ -15,7 +15,7 @@ class ProjectViewOnlyViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView?
 	
 	var headerData = [String: String]()
-	var teamData = [[String: String]]()
+	var teamData = [[String: AnyObject]]()
 	var postsData = [ProjectPost]()
 	var goals = String()
 	var jobs = [String]()
@@ -87,9 +87,9 @@ class ProjectViewOnlyViewController: UIViewController {
 					self.headerData["type"] = type as? String
 				}
 				
-				if let team = data!["team"] as? [String: String] {
+				if let team = data!["team"] as? [[String: AnyObject]] {
 					self.projectData["team"] = team
-					self.teamData.append(team)
+					self.teamData = team
 				}
 				
 				if let jobs = data!["jobs"] as? [String] {
@@ -243,14 +243,29 @@ class ProjectViewOnlyViewController: UIViewController {
 			// TEAM SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
 			cell.periodLabel?.text = ""
-			let currentTeamMember = teamData[indexPath.row]
-			
-			if let name = currentTeamMember["name"] {
-				cell.companyNameLabel?.text = name
-			}
-			
-			if let position = currentTeamMember["position"] {
-				cell.positionLabel?.text = position
+			if indexPath.row == teamData.count || teamData.count == 0 {
+				cell.companyNameLabel?.text = "Add a new team member"
+				
+			} else {
+				let currentTeamMember = teamData[indexPath.row]
+				
+				if let name = currentTeamMember["name"] {
+					cell.companyNameLabel?.text = name as? String
+				}
+				
+				if let position = currentTeamMember["position"] {
+					cell.positionLabel?.text = position as? String
+				}
+				
+				if let imageURL = currentTeamMember["avatar"] {
+					Alamofire.request(.GET, (imageURL as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
+				}
 			}
 			
 			return cell

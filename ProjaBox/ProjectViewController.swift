@@ -20,7 +20,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	let imagePicker = UIImagePickerController()
 	
 	var headerData = [String: String]()
-	var teamData = [[String: String]]()
+	var teamData = [[String: AnyObject]]()
 	var postsData = [ProjectPost]()
 	var goals = String()
 	var jobs = [String]()
@@ -61,7 +61,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 		
 		getProfile()
-		
 		setupPostButton()
 	}
 	
@@ -117,9 +116,9 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 						self.headerData["type"] = type as? String
 					}
 					
-					if let team = data!["team"] as? [String: String] {
+					if let team = data!["team"] as? [[String: AnyObject]] {
 						self.projectData["team"] = team
-						self.teamData.append(team)
+						self.teamData = team
 					}
 					
 					if let jobs = data!["jobs"] as? [String] {
@@ -133,9 +132,18 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func getLatestPosts() {
-	ProjectHelper.getProjectsLatestPosts(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, posts) in
+		ProjectHelper.getProjectsLatestPosts(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, posts) in
 			if response == true {
 				self.postsData = posts!
+				self.tableView?.reloadData()
+			}
+		}
+	}
+	
+	func getTeammates() {
+		ProjectHelper.getProjectTeammates(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, mates) in
+			if response == true {
+				self.teamData = mates!
 				self.tableView?.reloadData()
 			}
 		}
@@ -295,11 +303,21 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 				let currentTeamMember = teamData[indexPath.row]
 				
 				if let name = currentTeamMember["name"] {
-					cell.companyNameLabel?.text = name
+					cell.companyNameLabel?.text = name as? String
 				}
 				
 				if let position = currentTeamMember["position"] {
-					cell.positionLabel?.text = position
+					cell.positionLabel?.text = position as? String
+				}
+				
+				if let imageURL = currentTeamMember["avatar"] {
+					Alamofire.request(.GET, (imageURL as! String))
+						.responseImage { response in
+							if let image = response.result.value {
+								print("image downloaded: \(image)")
+								cell.profileImageView!.image = image
+							}
+					}
 				}
 			}
 			
@@ -474,8 +492,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func finishedCompletingItem(item: [String : String]) {
-		tableView?.reloadData()
 		createProjectTeamMate(item)
+		getTeammates()
 	}
 	
 	func userDidFinishEditingInterests(interests: [String]) {
