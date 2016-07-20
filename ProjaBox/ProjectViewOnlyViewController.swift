@@ -282,7 +282,6 @@ class ProjectViewOnlyViewController: UIViewController {
 			return cell
 		}
 		
-		
 		// POST SECTION
 		let currentPost = postsData[indexPath.row]
 		
@@ -349,13 +348,16 @@ class ProjectViewOnlyViewController: UIViewController {
 		if let name = currentPost.projectName {
 			cell.authorLabel?.text = name
 		}
-		if let url = currentPost.ownerAvatar {
-			Alamofire.request(.GET, url)
-				.responseImage { response in
-					if let image = response.result.value {
-						print("image downloaded: \(image)")
-						cell.profileImageView!.image = image
-					}
+		if let url = fullProjectData["avatar"] {
+			let urlString = url as? String
+			if urlString != nil {
+				Alamofire.request(.GET, (url as! String))
+					.responseImage { response in
+						if let image = response.result.value {
+							print("image downloaded: \(image)")
+							cell.profileImageView!.image = image
+						}
+				}
 			}
 		}
 		
