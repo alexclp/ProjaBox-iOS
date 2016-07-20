@@ -94,6 +94,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					print(data)
 					self.fullProjectData = data!
 					self.getLatestPosts()
+					self.getProjectPhotos()
 					if let name = data!["name"] {
 						self.projectData["name"] = name as? String
 						self.headerData["name"] = name as? String
@@ -463,6 +464,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionPhotoCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
 		
 		let imageURL = collectionViewSourceArray[indexPath.item]["image"]
+		print("IMAGE URL: \(imageURL)")
 		Alamofire.request(.GET, (imageURL as! String))
 			.responseImage { response in
 				if let image = response.result.value {
