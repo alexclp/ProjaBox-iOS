@@ -88,6 +88,7 @@
 		0F5505871CF8B7EC005229D7 /* sign-in-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505861CF8B7EC005229D7 /* sign-in-background.png */; };
 		0F5505891CF8BD5B005229D7 /* background-proja.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5505881CF8BD5B005229D7 /* background-proja.png */; };
 		0F55058B1CF8BD61005229D7 /* signup-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F55058A1CF8BD61005229D7 /* signup-button.png */; };
+		0F5772ED1D3FAB3800F7CCC3 /* DHCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5772EC1D3FAB3800F7CCC3 /* DHCollectionTableViewCell.swift */; };
 		0F58AB181D161C8B00ED5BF0 /* ChatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58AB171D161C8B00ED5BF0 /* ChatHelper.swift */; };
 		0F6076DD1CFFAE3300926E6E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */; };
 		0F6076DF1CFFB40B00926E6E /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */; };
@@ -279,6 +280,7 @@
 		0F5505861CF8B7EC005229D7 /* sign-in-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-background.png"; sourceTree = "<group>"; };
 		0F5505881CF8BD5B005229D7 /* background-proja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-proja.png"; sourceTree = "<group>"; };
 		0F55058A1CF8BD61005229D7 /* signup-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signup-button.png"; sourceTree = "<group>"; };
+		0F5772EC1D3FAB3800F7CCC3 /* DHCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		0F58AB171D161C8B00ED5BF0 /* ChatHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatHelper.swift; sourceTree = "<group>"; };
 		0F6076DC1CFFAE3300926E6E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0F6076DE1CFFB40B00926E6E /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 				0F41E0DB1D0C158900BD0520 /* PhotosTableViewCell.xib */,
 				0F41E0DE1D0C1AD800BD0520 /* PhotoCollectionViewCell.swift */,
 				0F41E0DF1D0C1AD800BD0520 /* PhotoCollectionViewCell.xib */,
+				0F5772EC1D3FAB3800F7CCC3 /* DHCollectionTableViewCell.swift */,
 			);
 			name = Project;
 			sourceTree = "<group>";
@@ -1239,6 +1242,7 @@
 				0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */,
 				0F6076DF1CFFB40B00926E6E /* SignInHelper.swift in Sources */,
 				0F6E01641D132EC600BC69FA /* DiscoverProjectTableViewCell.swift in Sources */,
+				0F5772ED1D3FAB3800F7CCC3 /* DHCollectionTableViewCell.swift in Sources */,
 				0F15C47C1CD427AC00E2E4B9 /* LikesTableViewCell.swift in Sources */,
 				0F41E0DC1D0C158900BD0520 /* PhotosTableViewCell.swift in Sources */,
 				0F6E01701D14707300BC69FA /* ProjectViewOnlyViewController.swift in Sources */,
