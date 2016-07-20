@@ -230,10 +230,12 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 							.responseImage { response in
 								if let image = response.result.value {
 									print("image downloaded: \(image)")
+									cell.imageViewList[i].hidden = false
 									cell.imageViewList[i].image = image
 								}
 						}
 					}
+					cell.imageViewList[selectedPost.likers!.count + 1].hidden = false
 					cell.imageViewList[selectedPost.likers!.count + 1].image = UIImage(named: "more_likes_icon.png")!
 				} else {
 					for i in 0..<6 {
@@ -241,10 +243,12 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 							.responseImage { response in
 								if let image = response.result.value {
 									print("image downloaded: \(image)")
+									cell.imageViewList[i].hidden = false
 									cell.imageViewList[i].image = image
 								}
 						}
 					}
+					cell.imageViewList[6].hidden = false
 					cell.imageViewList[6].image = UIImage(named: "more_likes_icon.png")!
 				}
 			}
