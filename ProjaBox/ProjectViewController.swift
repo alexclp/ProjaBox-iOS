@@ -12,7 +12,7 @@ import KCFloatingActionButton
 import Alamofire
 import AlamofireImage
 
-class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate, GoalsInputDelegate, ExperienceInputDelegate, InterestsInputDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BioDataDelegate, GoalsInputDelegate, ExperienceInputDelegate, InterestsInputDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 	
 	@IBOutlet weak var tableView: UITableView?
 	@IBOutlet weak var floatingButton = KCFloatingActionButton()
@@ -27,8 +27,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	var fullProjectData = [String: AnyObject]()
 	var projectData = [String: AnyObject]()
-	
+
 	let profileParameters = ["type", "name", "goals", "avatar", "description", "location", "video", "links", "jobs"]
+
+	var collectionViewSourceArray: [UIColor] = [UIColor.greenColor(), UIColor.blueColor(), UIColor.blackColor()]
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
@@ -50,6 +52,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		tableView!.registerNib(UINib(nibName: "GoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "goalsCell")
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 		tableView!.registerNib(UINib(nibName: "PhotoCardTableViewCell", bundle: nil), forCellReuseIdentifier: "photoCardCell")
+		tableView!.registerClass(DHCollectionTableViewCell.self, forCellReuseIdentifier: "TableViewCell")
 		
 		imagePicker.delegate = self
 		imagePicker.navigationBar.translucent = false
@@ -289,7 +292,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			return cell
 		} else if section == 3 {
 			// PHOTOS
-			let cell = tableView.dequeueReusableCellWithIdentifier("photosCell", forIndexPath: indexPath)
+			let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as! DHCollectionTableViewCell
 			
 			return cell
 		} else if section == 4 {
@@ -423,6 +426,51 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			performSegueWithIdentifier("editTeamSegue", sender: self)
 		}
 	}
+	
+	func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+		if indexPath.section == 3 {
+			let collectionCell = cell as! DHCollectionTableViewCell
+			collectionCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, index: indexPath.row)
+			
+//			let index = collectionCell.collectionView.tag
+//			let value = contentOffsetDictionary[index]
+//			let horizontalOffset = CGFloat(value != nil ? value!.floatValue : 0)
+//			collectionCell.collectionView.setContentOffset(CGPointMake(horizontalOffset, 0), animated: false)
+		}
+	}
+	
+	// MARK: Collection View Methods
+	
+	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return collectionViewSourceArray.count
+	}
+	
+	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+		let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath)
+		
+		cell.backgroundColor = collectionViewSourceArray[indexPath.item]
+		return cell
+	}
+	
+	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+		let itemColor: UIColor = collectionViewSourceArray[indexPath.item]
+		
+		let alert = UIAlertController(title: "第\(collectionView.tag)行", message: "第\(indexPath.item)个元素", preferredStyle: UIAlertControllerStyle.Alert)
+		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+		let v: UIView = UIView(frame: CGRectMake(10, 20, 50, 50))
+		v.backgroundColor = itemColor
+		alert.view.addSubview(v)
+		presentViewController(alert, animated: true, completion: nil)
+	}
+//	
+//	func scrollViewDidScroll(scrollView: UIScrollView) {
+//		if !(scrollView is UICollectionView) {
+//			return
+//		}
+//		let horizontalOffset = scrollView.contentOffset.x
+//		let collectionView = scrollView as! UICollectionView
+//		contentOffsetDictionary[collectionView.tag] = horizontalOffset
+//	}
 	
 	// MARK: User Interaction
 	
