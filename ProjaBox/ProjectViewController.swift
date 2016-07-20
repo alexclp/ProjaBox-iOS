@@ -30,7 +30,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 	let profileParameters = ["type", "name", "goals", "avatar", "description", "location", "video", "links", "jobs"]
 
-	var collectionViewSourceArray: [UIColor] = [UIColor.greenColor(), UIColor.blueColor(), UIColor.blackColor()]
+	var collectionViewSourceArray = [[String: AnyObject]]()
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
@@ -134,6 +134,15 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		}
 	}
 	
+	func getProjectPhotos() {
+		ProjectHelper.getProjectPhotos(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, data) in
+			if response == true {
+				self.collectionViewSourceArray = data!
+				self.tableView?.reloadData()
+			}
+		}
+	}
+	
 	func getLatestPosts() {
 		ProjectHelper.getProjectsLatestPosts(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, posts) in
 			if response == true {
@@ -161,6 +170,9 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			if response == true {
 				self.getLatestPosts()
 			}
+		}
+		ProjectHelper.createProjectPhoto(String(fullProjectData["id"] as! Int), image: strBase64) { (response) in
+			self.getProjectPhotos()
 		}
 	}
 	
@@ -448,21 +460,22 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-		let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath)
+		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionPhotoCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
 		
-		cell.backgroundColor = collectionViewSourceArray[indexPath.item]
+		let imageURL = collectionViewSourceArray[indexPath.item]["image"]
+		Alamofire.request(.GET, (imageURL as! String))
+			.responseImage { response in
+				if let image = response.result.value {
+					print("image downloaded: \(image)")
+					cell.photoImageView!.image = image
+				}
+		}
+		
 		return cell
 	}
 	
 	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-		let itemColor: UIColor = collectionViewSourceArray[indexPath.item]
 		
-		let alert = UIAlertController(title: "第\(collectionView.tag)行", message: "第\(indexPath.item)个元素", preferredStyle: UIAlertControllerStyle.Alert)
-		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-		let v: UIView = UIView(frame: CGRectMake(10, 20, 50, 50))
-		v.backgroundColor = itemColor
-		alert.view.addSubview(v)
-		presentViewController(alert, animated: true, completion: nil)
 	}
 //	
 //	func scrollViewDidScroll(scrollView: UIScrollView) {

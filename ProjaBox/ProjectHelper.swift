@@ -173,13 +173,13 @@ class ProjectHelper: NSObject {
 		
 		Alamofire.request(.POST, urlString, parameters: ["image": image], encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
-			
+			print(response)
 			if errorCode != 0 {
-				print("photo was uploaded successfully")
-				completionHandler(true)
-			} else {
 				print("failed to upload photo")
 				completionHandler(false)
+			} else {
+				print("photo was uploaded successfully")
+				completionHandler(true)
 			}
 		}
 	}
