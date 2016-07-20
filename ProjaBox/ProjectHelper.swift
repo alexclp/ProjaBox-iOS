@@ -22,7 +22,7 @@ class ProjectHelper: NSObject {
 		return ["Z-UserId": String(userId), "Z-DeviceId": String(deviceId), "Z-Token": token]
 	}
 	
-	// MAR: CREATING
+	// MARK: CREATING
 	
 	class func createProject(projectData: [String: AnyObject], completionHandler: (Bool, [String: AnyObject]?) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects"
@@ -167,6 +167,23 @@ class ProjectHelper: NSObject {
 		}
 	}
 	
+	class func createProjectPhoto(projectId: String, image: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/photos"
+		let headers = getHeaders()
+		
+		Alamofire.request(.POST, urlString, parameters: ["image": image], encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			
+			if errorCode != 0 {
+				print("photo was uploaded successfully")
+				completionHandler(true)
+			} else {
+				print("failed to upload photo")
+				completionHandler(false)
+			}
+		}
+	}
+	
 	// MARK: FETCHING
 	
 	class func getFullProjectProfile(projectId: String, completionHandler: (Bool, [String: AnyObject]?) -> Void) {
@@ -230,6 +247,26 @@ class ProjectHelper: NSObject {
 	
 	class func getProjectTeammates(projectId: String, completionHandler: (Bool, [[String: AnyObject]]?) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/team"
+		let headers = getHeaders()
+		
+		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			let data = response.result.value!["data"] as? [[String: AnyObject]]
+			
+			if errorCode != 0 {
+				if let data = data {
+					completionHandler(true, data)
+				} else {
+					completionHandler(false, nil)
+				}
+			} else {
+				completionHandler(false, nil)
+			}
+		}
+	}
+	
+	class func getProjectPhotos(projectId: String, completionHandler: (Bool, [[String: AnyObject]]?) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/photos"
 		let headers = getHeaders()
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
