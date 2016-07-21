@@ -28,6 +28,7 @@
             <connections>
                 <outlet property="photoImageView" destination="6hi-c1-8QP" id="fBh-i8-Iiy"/>
             </connections>
+            <point key="canvasLocation" x="572" y="476"/>
         </collectionViewCell>
     </objects>
 </document>

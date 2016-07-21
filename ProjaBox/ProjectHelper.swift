@@ -252,7 +252,7 @@ class ProjectHelper: NSObject {
 			let errorCode = response.result.value!["errorCode"] as! Int
 			let data = response.result.value!["data"] as? [[String: AnyObject]]
 			
-			if errorCode != 0 {
+			if errorCode == 0 {
 				if let data = data {
 					completionHandler(true, data)
 				} else {
@@ -271,7 +271,7 @@ class ProjectHelper: NSObject {
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			let data = response.result.value!["data"] as? [[String: AnyObject]]
-			if errorCode != 0 {
+			if errorCode == 0 {
 				if let data = data {
 					completionHandler(true, data)
 				} else {

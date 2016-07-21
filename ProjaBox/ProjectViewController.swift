@@ -137,8 +137,10 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	func getProjectPhotos() {
 		ProjectHelper.getProjectPhotos(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, data) in
+			print("response: \(response)")
 			if response == true {
 				self.collectionViewSourceArray = data!
+				print("image array = \(self.collectionViewSourceArray)")
 				self.tableView?.reloadData()
 			}
 		}
@@ -306,7 +308,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		} else if section == 3 {
 			// PHOTOS
 			let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as! DHCollectionTableViewCell
-			
+			print(cell)
 			return cell
 		} else if section == 4 {
 			// TEAM SECTION
@@ -456,21 +458,28 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	// MARK: Collection View Methods
 	
 	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return collectionViewSourceArray.count
+		print("count: \(collectionViewSourceArray.count)")
+//		return collectionViewSourceArray.count
+		return 1
 	}
 	
 	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionPhotoCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
 		
-		let imageURL = collectionViewSourceArray[indexPath.item]["image"]
-		print("IMAGE URL: \(imageURL)")
-		Alamofire.request(.GET, (imageURL as! String))
-			.responseImage { response in
-				if let image = response.result.value {
-					print("image downloaded: \(image)")
-					cell.photoImageView!.image = image
-				}
-		}
+//		let imageURL = collectionViewSourceArray[indexPath.item]["image"]
+//		print("IMAGE URL: \(imageURL)")
+//		Alamofire.request(.GET, (imageURL as! String))
+//			.responseImage { response in
+//				if let image = response.result.value {
+//					print("image downloaded: \(image)")
+//					cell.photoImageView?.image = image
+//				}
+//		}
+		cell.photoImageView?.image = UIImage(named: "placeholder.png")
+		print(cell)
+		cell.hidden = false
+		cell.photoImageView?.hidden = false
+		print(cell)
 		
 		return cell
 	}

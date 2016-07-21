@@ -34,7 +34,7 @@ class DHCollectionTableViewCell: UITableViewCell {
 		layout.itemSize = CGSizeMake(91, 91)
 		layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
 		self.collectionView = DHIndexedCollectionView(frame: CGRectZero, collectionViewLayout: layout)
-		self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: collectionViewCellIdentifier as String)
+		self.collectionView.registerClass(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "collectionPhotoCell" as String)
 		self.collectionView.backgroundColor = UIColor.lightGrayColor()
 		self.collectionView.showsHorizontalScrollIndicator = false
 		self.contentView.addSubview(self.collectionView)
