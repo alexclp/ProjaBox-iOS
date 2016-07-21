@@ -446,7 +446,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		if indexPath.section == 3 {
 			let collectionCell = cell as! DHCollectionTableViewCell
 			collectionCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, index: indexPath.row)
-			
 //			let index = collectionCell.collectionView.tag
 //			let value = contentOffsetDictionary[index]
 //			let horizontalOffset = CGFloat(value != nil ? value!.floatValue : 0)
