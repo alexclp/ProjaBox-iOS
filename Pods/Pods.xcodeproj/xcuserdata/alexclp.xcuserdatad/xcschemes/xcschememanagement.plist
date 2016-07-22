@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SKPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,7 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2E955F3261A0275D20D26D982EAB6E40</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>31246027096EA734F1B8E4839C3190A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>473A793FAD71BC40D728D9FE8BE2E8E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7CF145427F660CF35A7B2F2B71B1C81E</key>
+		<key>7B3A1CC1A4658765C096425969E7CCA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>880589768C5465718B7CC2C9AA04195F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>90C0CE544C13354EF07B937578AA19FF</key>
+		<key>953C9E5E79D17CC7D9E5C7AF93AC5EFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

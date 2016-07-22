@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '473A793FAD71BC40D728D9FE8BE2E8E2'
-               BlueprintName = 'SwiftSpinner'
+               BlueprintIdentifier = '953C9E5E79D17CC7D9E5C7AF93AC5EFE'
+               BlueprintName = 'SKPhotoBrowser'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftSpinner.framework'>
+               BuildableName = 'SKPhotoBrowser.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

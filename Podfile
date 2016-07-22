@@ -10,6 +10,7 @@ target 'ProjaBox' do
 #pod 'FBSDKCoreKit', '~> 4.2.0'
 #pod 'FBSDKShareKit', '~> 4.1.0'
 #pod 'FBSDKLoginKit', '~> 4.1.0'
+pod 'SKPhotoBrowser'
 pod 'JSQMessagesViewController'
 pod 'KMPlaceholderTextView', '~> 1.2.0'
 pod 'TagListView', '~> 1.0'
