@@ -25,6 +25,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	var selectedName: Int = 0
 	var selectedIdToMessage = String()
 	
+	var blurEffectView = UIVisualEffectView()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -35,6 +37,11 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		
 		tableView!.registerNib(UINib(nibName: "DiscoverProjectTableViewCell", bundle: nil), forCellReuseIdentifier: "discoverProjectCell")
 		tableView!.registerNib(UINib(nibName: "DiscoverPeopleTableViewCell", bundle: nil), forCellReuseIdentifier: "discoverPeopleCell")
+		
+		let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+		blurEffectView = UIVisualEffectView(effect: blurEffect)
+		blurEffectView.frame = view.bounds
+		blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
 		
 		loadLastAddedResults()
 	}
@@ -381,6 +388,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
 		searchBar.showsCancelButton = true
+		
+		tableView?.addSubview(blurEffectView)
 	}
 	
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -395,13 +404,16 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 					if let notNilResults = results {
 						self.results = notNilResults
 						self.tableView?.reloadData()
+						self.blurEffectView.removeFromSuperview()
 					} else {
 						self.results.removeAll()
 						self.tableView?.reloadData()
+						self.blurEffectView.removeFromSuperview()
 					}
 				} else {
 					self.results.removeAll()
 					self.tableView?.reloadData()
+					self.blurEffectView.removeFromSuperview()
 				}
 			})
 		} else {
@@ -411,13 +423,16 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 					if let notNilResults = results {
 						self.results = notNilResults
 						self.tableView?.reloadData()
+						self.blurEffectView.removeFromSuperview()
 					} else {
 						self.results.removeAll()
 						self.tableView?.reloadData()
+						self.blurEffectView.removeFromSuperview()
 					}
 				} else {
 					self.results.removeAll()
 					self.tableView?.reloadData()
+					self.blurEffectView.removeFromSuperview()
 				}
 			})
 		}
@@ -426,6 +441,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	func searchBarCancelButtonClicked(searchBar: UISearchBar) {
 		searchBar.showsCancelButton = false
 		searchBar.resignFirstResponder()
+		blurEffectView.removeFromSuperview()
 	}
 	
 	// MARK: Loading last added
