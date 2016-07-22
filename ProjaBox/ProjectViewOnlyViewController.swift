@@ -9,8 +9,9 @@
 import UIKit
 import AlamofireImage
 import Alamofire
+import SKPhotoBrowser
 
-class ProjectViewOnlyViewController: UIViewController {
+class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
 	
 	@IBOutlet weak var tableView: UITableView?
 	
@@ -22,6 +23,7 @@ class ProjectViewOnlyViewController: UIViewController {
 	
 	var fullProjectData = [String: AnyObject]()
 	var projectData = [String: AnyObject]()
+	var collectionViewSourceArray = [[String: AnyObject]]()
 	
 	var projectId = String()
 	
@@ -47,6 +49,7 @@ class ProjectViewOnlyViewController: UIViewController {
 		tableView!.registerNib(UINib(nibName: "GoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "goalsCell")
 		tableView!.registerNib(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "photosCell")
 		tableView!.registerNib(UINib(nibName: "PhotoCardTableViewCell", bundle: nil), forCellReuseIdentifier: "photoCardCell")
+		tableView!.registerClass(DHCollectionTableViewCell.self, forCellReuseIdentifier: "TableViewCell")
 		
 		getProfile()
 		
@@ -62,6 +65,7 @@ class ProjectViewOnlyViewController: UIViewController {
 			if response == true {
 				print(data)
 				self.getLatestPosts()
+				self.getProjectPhotos()
 				if let name = data!["name"] {
 					self.projectData["name"] = name as! String
 					self.headerData["name"] = name as? String
@@ -111,7 +115,19 @@ class ProjectViewOnlyViewController: UIViewController {
 		}
 	}
 	
+	func getProjectPhotos() {
+		ProjectHelper.getProjectPhotos(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, data) in
+			print("response: \(response)")
+			if response == true {
+				self.collectionViewSourceArray = data!
+				print("image array = \(self.collectionViewSourceArray)")
+				self.tableView?.reloadData()
+			}
+		}
+	}
+	
 	// MARK: UITableView Methods
+	
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 		let section = indexPath.section
@@ -171,7 +187,7 @@ class ProjectViewOnlyViewController: UIViewController {
 			return 1
 		} else if section == 4 {
 			// TEAM
-			return teamData.count
+			return teamData.count + 1
 		} else if section == 5 {
 			// JOBS
 			return 1
@@ -188,10 +204,8 @@ class ProjectViewOnlyViewController: UIViewController {
 		if section == 0 {
 			// HEADER
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileHeaderCell", forIndexPath: indexPath) as! ProfileHeaderTableViewCell
-			cell.editButton?.hidden = true
 			cell.statusLabel?.hidden = true
 			cell.tagsLabel?.hidden = true
-			cell.selectionStyle = .None
 			
 			if let location = headerData["location"] {
 				cell.locationLabel?.text = location
@@ -230,14 +244,12 @@ class ProjectViewOnlyViewController: UIViewController {
 		} else if section == 2 {
 			// GOALS
 			let cell = tableView.dequeueReusableCellWithIdentifier("goalsCell", forIndexPath: indexPath) as! GoalsTableViewCell
-			cell.editButton?.hidden = true
 			cell.goalsTextView?.text = goals
 			
 			return cell
 		} else if section == 3 {
 			// PHOTOS
-			let cell = tableView.dequeueReusableCellWithIdentifier("photosCell", forIndexPath: indexPath)
-			
+			let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as! DHCollectionTableViewCell
 			return cell
 		} else if section == 4 {
 			// TEAM SECTION
@@ -272,7 +284,8 @@ class ProjectViewOnlyViewController: UIViewController {
 		} else if section == 5 {
 			// JOB SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
-			cell.editButton?.hidden = true
+			cell.tagListView?.removeAllTags()
+			
 			cell.tagListView?.removeAllTags()
 			
 			for job in jobs {
@@ -360,12 +373,64 @@ class ProjectViewOnlyViewController: UIViewController {
 				}
 			}
 		}
-		
 		return cell
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		
+		if indexPath.section == 4 {
+			performSegueWithIdentifier("editTeamSegue", sender: self)
+		}
+	}
+	
+	func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+		if indexPath.section == 3 {
+			let collectionCell = cell as! DHCollectionTableViewCell
+			collectionCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, index: indexPath.row)
+			//			let index = collectionCell.collectionView.tag
+			//			let value = contentOffsetDictionary[index]
+			//			let horizontalOffset = CGFloat(value != nil ? value!.floatValue : 0)
+			//			collectionCell.collectionView.setContentOffset(CGPointMake(horizontalOffset, 0), animated: false)
+		}
+	}
+	
+	// MARK: Collection View Methods
+	
+	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return collectionViewSourceArray.count
+	}
+	
+	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionPhotoCell", forIndexPath: indexPath)
+		let imageURL = collectionViewSourceArray[indexPath.item]["image"]
+		print("IMAGE URL: \(imageURL)")
+		Alamofire.request(.GET, (imageURL as! String))
+			.responseImage { response in
+				if let image = response.result.value {
+					print("image downloaded: \(image)")
+					let imageView = UIImageView(image: image)
+					imageView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
+					imageView.contentMode = .ScaleToFill
+					cell.addSubview(imageView)
+				}
+		}
+		
+		return cell
+	}
+	
+	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+		var images = [SKPhoto]()
+		
+		for imageBundle in collectionViewSourceArray {
+			let photo = SKPhoto.photoWithImageURL(imageBundle["image"] as! String)
+			photo.shouldCachePhotoURLImage = true // you can use image cache by true(NSCache)
+			images.append(photo)
+		}
+		
+		// create PhotoBrowser Instance, and present.
+		let browser = SKPhotoBrowser(photos: images)
+		presentViewController(browser, animated: true, completion: {})
 	}
 	
 }

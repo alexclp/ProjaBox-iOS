@@ -8,6 +8,7 @@
 
 import UIKit
 import KCFloatingActionButton
+import SKPhotoBrowser
 
 import Alamofire
 import AlamofireImage
@@ -479,7 +480,17 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+		var images = [SKPhoto]()
 		
+		for imageBundle in collectionViewSourceArray {
+			let photo = SKPhoto.photoWithImageURL(imageBundle["image"] as! String)
+			photo.shouldCachePhotoURLImage = true // you can use image cache by true(NSCache)
+			images.append(photo)
+		}
+		
+		// create PhotoBrowser Instance, and present.
+		let browser = SKPhotoBrowser(photos: images)
+		presentViewController(browser, animated: true, completion: {})
 	}
 //	
 //	func scrollViewDidScroll(scrollView: UIScrollView) {
