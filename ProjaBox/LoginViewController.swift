@@ -31,31 +31,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 		self.view.layer.contents = UIImage(named:"sign-in-background.png")!.CGImage
 	}
 	
-	//	MARK: LinkedIn Stuff
-	
-	@IBAction func linkedinLoginButtonPressed() {
-		print("LinkedIn login")
-		LISDKSessionManager.createSessionWithAuth([LISDK_BASIC_PROFILE_PERMISSION], state: nil, showGoToAppStoreDialog: false, successBlock: { (returnState) -> Void in
-			print("Success!")
-			//			let session = LISDKSessionManager.sharedInstance().session
-			self.fetchLinkedInData()
-		}) { (error) -> Void in
-			print("Error: \(error)")
-		}
-	}
-	
-	func fetchLinkedInData() {
-		let url = "https://api.linkedin.com/v1/people/~"
-		
-		if LISDKSessionManager.hasValidSession() {
-			LISDKAPIHelper.sharedInstance().getRequest(url, success: { (response) -> Void in
-				print(response.data)
-				}, error: { (error) -> Void in
-					print(error)
-			})
-		}
-	}
-	
 	//	MARK: Facebook Login Delegate + Fetching Data
 	
 	func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
