@@ -380,7 +380,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		alertController.addAction(cancelAction)
 		
 		let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) in
-			let postId = String(sender.tag)
+			let postId = String(self.selectedPost.id!)
 			NewsFeedHelper.deletePost(postId, completionHandler: { (response) in
 				if response == true {
 					self.navigationController?.popViewControllerAnimated(true)
