@@ -341,7 +341,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		alertController.addAction(cancelAction)
 		
 		let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) in
-			let postId = String(sender.tag)
+			let postId = String(self.postsData[sender.tag].id!)
 			NewsFeedHelper.deletePost(postId, completionHandler: { (response) in
 				if response == true {
 					self.postsData.removeAtIndex(sender.tag)

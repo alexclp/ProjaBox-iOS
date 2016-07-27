@@ -41,6 +41,8 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			NSForegroundColorAttributeName : UIColor.whiteColor()
 		] // Title color
 		
+		print("ID: \(selectedPost.id)")
+		
 		fillData()
 	}
 	
