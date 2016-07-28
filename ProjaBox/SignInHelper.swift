@@ -67,6 +67,29 @@ class SignInHelper: NSObject {
 		}
 	}
 	
+	class func signOut(completionHandler: (Bool) -> Void) {
+		let headers = getHeaders()
+		
+		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/auth/signout", parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				completionHandler(false)
+			} else {
+				self.clearUserData()
+				completionHandler(true)
+			}
+		}
+	}
+	
+	private class func getHeaders() -> [String: String] {
+		let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
+		let userId = userData!["userId"] as! Int
+		let deviceId = userData!["deviceId"] as! Int
+		let token = userData!["token"] as! String
+		
+		return ["Z-UserId": String(userId), "Z-DeviceId": String(deviceId), "Z-Token": token]
+	}
+	
 	private class func saveUserData(userData: [String: AnyObject]) {
 		print(userData)
 		NSUserDefaults.standardUserDefaults().setObject(userData, forKey: "userData")

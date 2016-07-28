@@ -110,7 +110,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		cell.cellImageView?.image = UIImage(named: cellTitles[indexPath.section]![indexPath.row] + ".png")
 		
 		return cell
-		
 	}
 	
 	// MARK: Table View Delegate
@@ -127,7 +126,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		} else if indexPath.section == 2 {
 			performSegueWithIdentifier("showMoreSettingsSegue", sender: self)
 		} else if indexPath.section == 4 {
-			
+			SignInHelper.signOut({ (response) in
+				if response == true {
+					self.performSegueWithIdentifier("logoutSegue", sender: self)
+				} else {
+					print("logout failed")
+				}
+			})
 		}
 	}
 	
