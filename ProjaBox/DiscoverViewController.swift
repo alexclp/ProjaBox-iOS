@@ -376,6 +376,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			let destination = segue.destinationViewController as! PersonProfileViewController
 			let userResult = results[selectedName] as! User
 			let id = String(userResult.id!)
+			print("ID: \(id)")
 			destination.userId = id
 		} else if segue.identifier == "discoverShowProjectProfile" {
 			let destination = segue.destinationViewController as! ProjectViewOnlyViewController

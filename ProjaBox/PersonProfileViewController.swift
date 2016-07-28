@@ -40,7 +40,8 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 		ProfileHelper.getUserFullProfile(userId) { (response, data) in
 			if response == true {
 				self.fullProfileData = data!
-//				self.tableView?.reloadData()
+				print("Data: \(data)")
+				self.tableView?.reloadData()
 				self.getLatestPosts()
 			} else {
 				
