@@ -116,7 +116,7 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 	}
 	
 	func getProjectPhotos() {
-		ProjectHelper.getProjectPhotos(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, data) in
+		ProjectHelper.getProjectPhotos(projectId) { (response, data) in
 			print("response: \(response)")
 			if response == true {
 				self.collectionViewSourceArray = data!
