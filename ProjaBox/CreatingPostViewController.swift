@@ -12,6 +12,8 @@ import KMPlaceholderTextView
 
 class CreatingPostViewController: UIViewController {
 	
+	let placeholderText = "Write something or use @ to mention someone"
+	
 	@IBOutlet weak var textView: UITextView?
 	@IBOutlet weak var profileImageView: UIImageView!
 	
@@ -56,7 +58,7 @@ class CreatingPostViewController: UIViewController {
 	}
 	
 	@IBAction func doneButtonPressed() {
-		let textToShare = textView?.text
+		var textToShare = textView?.text
 		if isEditingPost == true {
 			if projectPost == true {
 				let projectId = String(editedProjectPost.projectId!)
@@ -72,6 +74,9 @@ class CreatingPostViewController: UIViewController {
 			}
 		} else {
 			if projectPost == true {
+				if textToShare == placeholderText {
+					textToShare = ""
+				}
 				ProjectHelper.createPost(projectId, "Post", textToShare!, nil, nil, completionHandler: { (response) in
 					if response  == false {
 						let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -105,7 +110,7 @@ class CreatingPostViewController: UIViewController {
 		// and set the cursor to the beginning of the text view
 		if updatedText.isEmpty {
 			
-			textView.text = "Write something or use @ to mention someone"
+			textView.text = placeholderText
 			textView.textColor = UIColor.lightGrayColor()
 			
 			textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
