@@ -211,6 +211,10 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			cell.statusLabel.text = status
 		}
 		
+		if let position = userResult.position {
+			cell.positionLabel.text = position
+		}
+		
 		if let isFollowed = userResult.isFollowed {
 			if isFollowed == true {
 				cell.followButton.selected = true

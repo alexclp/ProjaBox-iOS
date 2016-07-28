@@ -79,6 +79,7 @@ class SearchHelper: NSObject {
 					currentUser.about = result["about"] as? String
 					currentUser.status = result["status"] as? String
 					currentUser.avatar = result["avatar"] as? String
+					currentUser.position = result["position"] as? String
 					
 					results.append(currentUser)
 				}
