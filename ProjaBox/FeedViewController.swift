@@ -112,6 +112,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			cell.locationImageView?.hidden = true
 			cell.authorDetailsLabel?.text = ""
 			
+			cell.postImage?.image = UIImage(named: "white.png")
+			
 			let imageURL = image
 			Alamofire.request(.GET, imageURL)
 				.responseImage { response in
