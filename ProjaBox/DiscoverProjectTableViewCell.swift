@@ -14,7 +14,7 @@ class DiscoverProjectTableViewCell: UITableViewCell {
 	@IBOutlet weak var profileImageView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var locationLabel: UILabel!
-	@IBOutlet weak var typeLabel: PillLabel!
+	@IBOutlet weak var typeLabel: UILabel!
 	@IBOutlet weak var descriptionLabel: UILabel!
 	@IBOutlet weak var jobsTagListView: TagListView!
 	@IBOutlet weak var likeButton: UIButton!
@@ -37,6 +37,7 @@ class DiscoverProjectTableViewCell: UITableViewCell {
 	override func layoutSubviews() {
 		setupButtons()
 		setupImageView()
+		setupLabel()
 	}
 	
 	private func setupImageView() {
@@ -44,6 +45,14 @@ class DiscoverProjectTableViewCell: UITableViewCell {
 		profileImageView?.clipsToBounds = true
 		profileImageView?.contentMode = .ScaleAspectFit
 		profileImageView?.backgroundColor = UIColor.whiteColor()
+	}
+	
+	private func setupLabel() {
+		typeLabel.layer.backgroundColor = UIColor.whiteColor().CGColor
+		typeLabel.textColor = UIColor.blackColor()
+		typeLabel.layer.cornerRadius = 5
+		typeLabel.layer.borderColor = UIColor.lightGrayColor().CGColor
+		typeLabel.layer.borderWidth = 0.5
 	}
 	
 	private func setupButtons() {

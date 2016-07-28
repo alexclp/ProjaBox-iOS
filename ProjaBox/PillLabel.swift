@@ -10,7 +10,7 @@ import UIKit
 
 class PillLabel : UILabel {
 	
-	@IBInspectable var color = UIColor.lightGrayColor()
+	@IBInspectable var color: UIColor = UIColor.lightGrayColor()
 	@IBInspectable var cornerRadius: CGFloat = 8
 	@IBInspectable var labelText: String = "None"
 	@IBInspectable var fontSize: CGFloat = 10.5

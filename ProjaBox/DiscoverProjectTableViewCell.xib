@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="288"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="288"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xid-Ne-08B">
@@ -65,19 +65,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="tagHighlightedBackgroundColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="tagSelectedBackgroundColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -87,13 +87,13 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX8-fo-bEo" customClass="PillLabel" customModule="ProjaBox" customModuleProvider="target">
-                                <rect key="frame" x="94" y="65" width="202" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX8-fo-bEo">
+                                <rect key="frame" x="94" y="65" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -151,7 +151,7 @@
                             <constraint firstItem="kgf-sg-RUe" firstAttribute="top" secondItem="fbW-Za-ifN" secondAttribute="bottom" constant="23" id="4XP-nP-dtW"/>
                             <constraint firstItem="ZV1-Pl-NDM" firstAttribute="leading" secondItem="fbW-Za-ifN" secondAttribute="leading" id="8Tr-ft-N40"/>
                             <constraint firstAttribute="bottom" secondItem="f7q-0G-Ezi" secondAttribute="bottom" constant="20" id="8z4-lr-k7s"/>
-                            <constraint firstItem="LL8-PL-HBa" firstAttribute="trailing" secondItem="KX8-fo-bEo" secondAttribute="trailing" id="954-2h-yhW"/>
+                            <constraint firstItem="LL8-PL-HBa" firstAttribute="trailing" secondItem="KX8-fo-bEo" secondAttribute="trailing" constant="85" id="954-2h-yhW"/>
                             <constraint firstItem="5CE-Vf-EiL" firstAttribute="bottom" secondItem="KX8-fo-bEo" secondAttribute="bottom" id="AfN-vo-I1N"/>
                             <constraint firstItem="ZV1-Pl-NDM" firstAttribute="centerX" secondItem="kgf-sg-RUe" secondAttribute="centerX" id="AuI-8b-o1L"/>
                             <constraint firstItem="j6s-2M-ozf" firstAttribute="leading" secondItem="fbW-Za-ifN" secondAttribute="trailing" constant="8" symbolic="YES" id="C5G-1i-WFu"/>
@@ -171,7 +171,7 @@
                             <constraint firstItem="ZV1-Pl-NDM" firstAttribute="top" secondItem="5CE-Vf-EiL" secondAttribute="bottom" constant="19" id="XgP-tv-GNe"/>
                             <constraint firstItem="BOx-7o-GeZ" firstAttribute="leading" secondItem="vXa-69-prH" secondAttribute="trailing" constant="12" id="YA6-Qq-r8e"/>
                             <constraint firstItem="5CE-Vf-EiL" firstAttribute="top" secondItem="xid-Ne-08B" secondAttribute="topMargin" id="YxB-nX-eQe"/>
-                            <constraint firstItem="KX8-fo-bEo" firstAttribute="trailing" secondItem="ZV1-Pl-NDM" secondAttribute="trailing" id="brG-99-W9l"/>
+                            <constraint firstItem="KX8-fo-bEo" firstAttribute="trailing" secondItem="ZV1-Pl-NDM" secondAttribute="trailing" constant="-85" id="brG-99-W9l"/>
                             <constraint firstItem="BOx-7o-GeZ" firstAttribute="centerY" secondItem="OqH-wj-g3O" secondAttribute="centerY" id="c2m-Na-6Rt"/>
                             <constraint firstItem="j6s-2M-ozf" firstAttribute="trailing" secondItem="TcI-7m-drn" secondAttribute="trailing" id="dCe-rK-FKF"/>
                             <constraint firstItem="f7q-0G-Ezi" firstAttribute="bottom" secondItem="vXa-69-prH" secondAttribute="bottom" id="e3q-Qo-pt3"/>
