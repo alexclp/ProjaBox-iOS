@@ -121,7 +121,9 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 					cell.likeButton?.selected = true
 				}
 				
-				cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
+				if let time = selectedPost.createdTimestamp {
+					cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(time)
+				}
 				
 				if selectedPost is ProjectPost {
 					let projectPost = selectedPost as! ProjectPost
@@ -177,8 +179,9 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 					cell.likeButton?.selected = true
 				}
 				
-				cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(selectedPost.createdTimestamp!)
-				
+				if let time = selectedPost.createdTimestamp {
+					cell.timeLabel?.text = NewsFeedHelper.getTimeFromTimestamp(time)
+				}
 				
 				if selectedPost is ProjectPost {
 					let projectPost = selectedPost as! ProjectPost

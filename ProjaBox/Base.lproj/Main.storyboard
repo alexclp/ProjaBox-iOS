@@ -1250,6 +1250,8 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="n4v-fn-gC1" id="5aD-Os-RlE"/>
+                        <segue destination="ytC-Tz-8Yr" kind="show" identifier="postDetailsSegue" id="EuD-lO-c6a"/>
+                        <segue destination="3Cf-Mc-Dde" kind="show" identifier="postingSegue" id="72N-GC-lTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjg-8i-6Jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1496,13 +1498,14 @@
         <image name="vertical_separator.png" width="4" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UYV-KZ-4Gt"/>
         <segue reference="kb7-Mb-Q0E"/>
         <segue reference="w2E-d4-klN"/>
         <segue reference="ziA-ll-Ldg"/>
-        <segue reference="5cc-mP-Obj"/>
-        <segue reference="UYV-KZ-4Gt"/>
+        <segue reference="EuD-lO-c6a"/>
+        <segue reference="72N-GC-lTe"/>
         <segue reference="EX1-1V-TE0"/>
+        <segue reference="5cc-mP-Obj"/>
         <segue reference="oEf-Fv-bcB"/>
-        <segue reference="XYx-HJ-KCE"/>
     </inferredMetricsTieBreakers>
 </document>
