@@ -1212,6 +1212,7 @@
                         <segue destination="VeF-zS-5tW" kind="show" identifier="showMoreSettingsSegue" id="VNH-az-yg6"/>
                         <segue destination="89u-Dd-E0B" kind="show" identifier="showMyProfileSegue" id="HtI-ez-lY0"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="logoutSegue" id="ziA-ll-Ldg"/>
+                        <segue destination="bBR-Dz-QjW" kind="show" identifier="showMyPostsSegue" id="QCT-vM-6dH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0e-ta-6uW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1230,9 +1231,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n4v-fn-gC1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n4v-fn-gC1">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bBR-Dz-QjW" id="CIR-zd-V6y"/>
                                     <outlet property="delegate" destination="bBR-Dz-QjW" id="Exs-o1-F1p"/>
@@ -1240,6 +1241,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n4v-fn-gC1" firstAttribute="top" secondItem="xow-Kb-op3" secondAttribute="top" id="64i-HX-6BX"/>
+                            <constraint firstItem="n4v-fn-gC1" firstAttribute="leading" secondItem="xow-Kb-op3" secondAttribute="leading" id="TJm-YL-Q8C"/>
+                            <constraint firstItem="n4v-fn-gC1" firstAttribute="bottom" secondItem="N5h-ja-15W" secondAttribute="top" id="pVp-rA-jYV"/>
+                            <constraint firstAttribute="trailing" secondItem="n4v-fn-gC1" secondAttribute="trailing" id="x0I-cl-eVE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="n4v-fn-gC1" id="5aD-Os-RlE"/>

@@ -121,7 +121,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 			if indexPath.row == 0 {
 				performSegueWithIdentifier("showMyProfileSegue", sender: self)
 			} else {
-				
+				performSegueWithIdentifier("showMyPostsSegue", sender: self)
 			}
 		} else if indexPath.section == 2 {
 			performSegueWithIdentifier("showMoreSettingsSegue", sender: self)
