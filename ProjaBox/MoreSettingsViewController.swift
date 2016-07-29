@@ -48,5 +48,10 @@ class MoreSettingsViewController: UIViewController, UITableViewDelegate, UITable
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		
+		if indexPath.row == 4 {
+			let vc = ChangePasswordViewController()
+			self.presentViewController(vc, animated: true, completion: nil)
+		}
 	}
 }

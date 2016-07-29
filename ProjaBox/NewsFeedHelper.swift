@@ -62,9 +62,7 @@ class NewsFeedHelper: NSObject {
 	// MARK: POST RELATED METHODS
 	
 	class func getNewsFeed(completionHandler: (Bool, [UserPost]?) -> Void) {
-		let userData = NSUserDefaults.standardUserDefaults().objectForKey("userData")
-		let userId = userData!["userId"] as! Int
-		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/users/\(userId)/feed"
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/my/stream"
 		if let url = NSURL(string: urlString) {
 			let urlRequest = createAuthHeadersForURL(url, "GET")
 			Alamofire.request(urlRequest).responseJSON { response in

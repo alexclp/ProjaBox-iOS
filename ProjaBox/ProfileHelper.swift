@@ -177,4 +177,23 @@ class ProfileHelper: NSObject {
 			}
 		}
 	}
+	
+	// MARK: PUT METHODS
+	
+	class func changePassword(newPassword: String, completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/my/passwd"
+		let headers = getHeaders()
+		
+		Alamofire.request(.PUT, urlString, parameters: ["password": newPassword], encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			
+			if errorCode != 0 {
+				print("failed changing password")
+				completionHandler(false)
+			} else {
+				print("changed password successfully")
+				completionHandler(true)
+			}
+		}
+	}
 }

@@ -15,6 +15,8 @@
 		0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */; };
 		0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */; };
 		0F0BF5881D4BB6CE00189BBD /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0BF5871D4BB6CE00189BBD /* MyPostsViewController.swift */; };
+		0F0BF58B1D4BB9C700189BBD /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0BF5891D4BB9C700189BBD /* ChangePasswordViewController.swift */; };
+		0F0BF58C1D4BB9C700189BBD /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0BF58A1D4BB9C700189BBD /* ChangePasswordViewController.xib */; };
 		0F0D888E1CFC70CC0074E5E6 /* facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */; };
 		0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888D1CFC70CC0074E5E6 /* linked-button.png */; };
 		0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */; };
@@ -209,6 +211,8 @@
 		0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatingPostViewController.swift; sourceTree = "<group>"; };
 		0F0BF5871D4BB6CE00189BBD /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
+		0F0BF5891D4BB9C700189BBD /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		0F0BF58A1D4BB9C700189BBD /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-button.png"; sourceTree = "<group>"; };
 		0F0D888D1CFC70CC0074E5E6 /* linked-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linked-button.png"; sourceTree = "<group>"; };
 		0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
@@ -634,6 +638,8 @@
 				0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */,
 				0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */,
 				0F0BF5871D4BB6CE00189BBD /* MyPostsViewController.swift */,
+				0F0BF5891D4BB9C700189BBD /* ChangePasswordViewController.swift */,
+				0F0BF58A1D4BB9C700189BBD /* ChangePasswordViewController.xib */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1012,6 +1018,7 @@
 				0FD43C5C1CF5F6670061E4E9 /* background.png in Resources */,
 				0F43A3B61D0893B3003B6503 /* My Profile.png in Resources */,
 				0F08DD311CB7C91B008B7C57 /* testimage.jpeg in Resources */,
+				0F0BF58C1D4BB9C700189BBD /* ChangePasswordViewController.xib in Resources */,
 				0F46DEC51D11DAFD0057C479 /* share-float@3x.png in Resources */,
 				0F41E0E11D0C1AD800BD0520 /* PhotoCollectionViewCell.xib in Resources */,
 				0F15C47D1CD427AC00E2E4B9 /* LikesTableViewCell.xib in Resources */,
@@ -1280,6 +1287,7 @@
 				0F09352A1CA81C4000AC2C59 /* FeedViewController.swift in Sources */,
 				0F462B051D3E8B3F00CE5111 /* AutoCompleteTextField.swift in Sources */,
 				0F2A996D1D12D78C006C3540 /* LocationFilterViewController.swift in Sources */,
+				0F0BF58B1D4BB9C700189BBD /* ChangePasswordViewController.swift in Sources */,
 				0FEB214B1D0CED55000385C3 /* EditJobsFormViewController.swift in Sources */,
 				0F4F99631CCBB413006628CF /* ChatListViewController.swift in Sources */,
 				0F82D2301CE3803600C779E5 /* SettingsViewController.swift in Sources */,
