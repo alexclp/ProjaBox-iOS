@@ -20,7 +20,7 @@ class EditExperienceViewController: FormViewController {
 			$0.placeholder = "Type it in"
 			}
 			<<< DateRow("start-date")	{
-				$0.title = "Short style"
+				$0.title = "Start date"
 				$0.value = NSDate()
 				let formatter = NSDateFormatter()
 				formatter.locale = .currentLocale()
@@ -28,7 +28,7 @@ class EditExperienceViewController: FormViewController {
 				$0.dateFormatter = formatter
 			}
 			<<< DateRow("end-date") {
-				$0.title = "Short style"
+				$0.title = "End date"
 				$0.value = NSDate()
 				let formatter = NSDateFormatter()
 				formatter.locale = .currentLocale()
