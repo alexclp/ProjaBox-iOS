@@ -112,6 +112,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			cell.likeButton.tag = indexPath.row
 			cell.messageButton.tag = indexPath.row
 			
+			cell.likeButton.addTarget(self, action: #selector(self.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			cell.messageButton.addTarget(self, action: #selector(self.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			
@@ -183,8 +184,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		cell.likeButton.tag = indexPath.row
 		cell.messageButton.tag = indexPath.row
 		
+		cell.likeButton.addTarget(self, action: #selector(self.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		cell.messageButton.addTarget(self, action: #selector(self.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
-		
 		cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
 		if let name = userResult.name {
@@ -289,12 +290,20 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			if sender.selected == true {
 				let id = String(projectResult.id!)
 				ProjectHelper.unlikeProject(id, completionHandler: { (response) in
-					sender.selected = false
+					if response == true {
+						sender.selected = false
+						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! DiscoverProjectTableViewCell
+						cell.likesLabel.text = String(Int((cell.likesLabel?.text)!)! - 1)
+					}
 				})
 			} else {
 				let id = String(projectResult.id!)
 				ProjectHelper.likeProject(id, completionHandler: { (response) in
-					sender.selected = true
+					if response == true {
+						sender.selected = true
+						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! DiscoverProjectTableViewCell
+						cell.likesLabel.text = String(Int((cell.likesLabel?.text)!)! + 1)
+					}
 				})
 			}
 		} else {
@@ -302,12 +311,20 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			if sender.selected == true {
 				let id = String(userResult.id!)
 				ProfileHelper.unLikeUser(id, completionHandler: { (response) in
-					sender.selected = false
+					if response == true {
+						sender.selected = false
+						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! DiscoverPeopleTableViewCell
+						cell.likesLabel.text = String(Int((cell.likesLabel?.text)!)! - 1)
+					}
 				})
 			} else {
 				let id = String(userResult.id!)
 				ProfileHelper.likeUser(id, completionHandler: { (response) in
-					sender.selected = true
+					if response == true {
+						sender.selected = true
+						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! DiscoverPeopleTableViewCell
+						cell.likesLabel.text = String(Int((cell.likesLabel?.text)!)! + 1)
+					}
 				})
 			}
 		}

@@ -17,11 +17,11 @@ class DiscoverProjectTableViewCell: UITableViewCell {
 	@IBOutlet weak var typeLabel: UILabel!
 	@IBOutlet weak var descriptionLabel: UILabel!
 	@IBOutlet weak var jobsTagListView: TagListView!
-	@IBOutlet weak var likeButton: UIButton!
+	@IBOutlet weak var likeButton: LargerTouchAreaButton!
 	@IBOutlet weak var likesLabel: UILabel!
-	@IBOutlet weak var messageButton: UIButton!
-	@IBOutlet weak var moreButton: UIButton!
-	@IBOutlet weak var followButton: UIButton!
+	@IBOutlet weak var messageButton: LargerTouchAreaButton!
+	@IBOutlet weak var moreButton: LargerTouchAreaButton!
+	@IBOutlet weak var followButton: LargerTouchAreaButton!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()

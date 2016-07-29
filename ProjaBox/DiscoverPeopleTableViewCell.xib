@@ -193,7 +193,7 @@
                 <outlet property="profileImageView" destination="xtr-Ji-EpN" id="LUY-j9-ojW"/>
                 <outlet property="statusLabel" destination="eum-ti-ZJe" id="JKM-oq-phi"/>
             </connections>
-            <point key="canvasLocation" x="855" y="476"/>
+            <point key="canvasLocation" x="1010" y="592"/>
         </tableViewCell>
     </objects>
     <resources>
