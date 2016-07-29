@@ -163,6 +163,8 @@ class ProfileHelper: NSObject {
 					postToAdd.video = post["video"] as? NSData
 					postToAdd.likers = post["likers"] as? [[String: AnyObject]]
 					postToAdd.comments = post["comments"] as? [[String: AnyObject]]
+					postToAdd.ownerName = post["ownerName"] as? String
+					postToAdd.ownerAvatar = post["ownerAvatar"] as? String
 					
 					posts.append(postToAdd)
 				}
