@@ -14,11 +14,11 @@ class PostDetailsTableViewCell: UITableViewCell {
 	@IBOutlet weak var nameLabel: UILabel?
 	@IBOutlet weak var locationLabel: UILabel?
 	@IBOutlet weak var contentLabel: UILabel?
-	@IBOutlet weak var likeButton: UIButton?
+	@IBOutlet weak var likeButton: LargerTouchAreaButton?
 	@IBOutlet weak var likesLabel: UILabel?
-	@IBOutlet weak var shareButton: UIButton?
-	@IBOutlet weak var commentsButton: UIButton?
-	@IBOutlet weak var moreButton: UIButton?
+	@IBOutlet weak var shareButton: LargerTouchAreaButton?
+	@IBOutlet weak var commentsButton: LargerTouchAreaButton?
+	@IBOutlet weak var moreButton: LargerTouchAreaButton?
 	@IBOutlet weak var timeLabel: UILabel?
 	
 	override func awakeFromNib() {

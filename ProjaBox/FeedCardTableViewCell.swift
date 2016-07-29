@@ -18,10 +18,10 @@ class FeedCardTableViewCell: UITableViewCell {
 	@IBOutlet weak var profileImageView: UIImageView?
 	@IBOutlet weak var locationImageView: UIImageView?
 	@IBOutlet weak var cardView: UIView?
-	@IBOutlet weak var likeButton: UIButton?
-	@IBOutlet weak var shareButton: UIButton?
-	@IBOutlet weak var commentButton: UIButton?
-	@IBOutlet weak var moreButton: UIButton?
+	@IBOutlet weak var likeButton: LargerTouchAreaButton?
+	@IBOutlet weak var shareButton: LargerTouchAreaButton?
+	@IBOutlet weak var commentButton: LargerTouchAreaButton?
+	@IBOutlet weak var moreButton: LargerTouchAreaButton?
 	@IBOutlet weak var likesLabel: UILabel?
 	
 	override func awakeFromNib() {

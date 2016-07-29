@@ -148,6 +148,7 @@
 		0F82D2371CE3E59000C779E5 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */; };
 		0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */; };
 		0F8AAD2B1D3D8D9F00E87847 /* more_likes_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8AAD2A1D3D8D9F00E87847 /* more_likes_icon.png */; };
+		0F9150EB1D4B869800F02B3C /* LargerTouchAreaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9150EA1D4B869700F02B3C /* LargerTouchAreaButton.swift */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */; };
 		0FB056691D01F3D800CDBC76 /* NoAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */; };
@@ -340,6 +341,7 @@
 		0F82D2351CE3E58F00C779E5 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		0F8AAD2A1D3D8D9F00E87847 /* more_likes_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_likes_icon.png; sourceTree = "<group>"; };
+		0F9150EA1D4B869700F02B3C /* LargerTouchAreaButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargerTouchAreaButton.swift; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAnimationSegue.swift; sourceTree = "<group>"; };
@@ -664,6 +666,7 @@
 			children = (
 				0FC223B01C99BFA1006DD18B /* Main.storyboard */,
 				0F10712B1D22C089001CBF02 /* CompressedImage.swift */,
+				0F9150EA1D4B869700F02B3C /* LargerTouchAreaButton.swift */,
 				0F41E0CF1D0C0E1700BD0520 /* Feed */,
 				0F4F99641CCBB4FC006628CF /* ChatListTableViewCell.swift */,
 				0F41E0D01D0C0EA300BD0520 /* Settings */,
@@ -1258,6 +1261,7 @@
 				0F3B682B1D08D9DF003BB7E5 /* ProfileHelper.swift in Sources */,
 				0F08DD2F1CB722BA008B7C57 /* SharingHelper.swift in Sources */,
 				0FEB21451D0CE711000385C3 /* EditAboutProjectViewController.swift in Sources */,
+				0F9150EB1D4B869800F02B3C /* LargerTouchAreaButton.swift in Sources */,
 				0F3B68311D08F480003BB7E5 /* EditEducationViewController.swift in Sources */,
 				0FC223AF1C99BFA1006DD18B /* LoginViewController.swift in Sources */,
 				0F2A99661D122449006C3540 /* YSSegmentedControl.swift in Sources */,
