@@ -14,6 +14,7 @@
 		0F09352C1CA81C4A00AC2C59 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352B1CA81C4A00AC2C59 /* MyProfileViewController.swift */; };
 		0F09352E1CA81C5800AC2C59 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */; };
 		0F0B62411CD0206200F209B8 /* CreatingPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */; };
+		0F0BF5881D4BB6CE00189BBD /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0BF5871D4BB6CE00189BBD /* MyPostsViewController.swift */; };
 		0F0D888E1CFC70CC0074E5E6 /* facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */; };
 		0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D888D1CFC70CC0074E5E6 /* linked-button.png */; };
 		0F0D88911CFC74330074E5E6 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */; };
@@ -207,6 +208,7 @@
 		0F09352B1CA81C4A00AC2C59 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		0F09352D1CA81C5800AC2C59 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		0F0B62401CD0206200F209B8 /* CreatingPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatingPostViewController.swift; sourceTree = "<group>"; };
+		0F0BF5871D4BB6CE00189BBD /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
 		0F0D888C1CFC70CC0074E5E6 /* facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-button.png"; sourceTree = "<group>"; };
 		0F0D888D1CFC70CC0074E5E6 /* linked-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linked-button.png"; sourceTree = "<group>"; };
 		0F0D88901CFC74330074E5E6 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 			children = (
 				0F82D22F1CE3803600C779E5 /* SettingsViewController.swift */,
 				0FEF70041CFD1DC900A80D09 /* MoreSettingsViewController.swift */,
+				0F0BF5871D4BB6CE00189BBD /* MyPostsViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1288,6 +1291,7 @@
 				0F6E016E1D14386E00BC69FA /* PersonProfileViewController.swift in Sources */,
 				0F6E015A1D13115200BC69FA /* User.swift in Sources */,
 				0F2A996B1D12D782006C3540 /* OccupationFilterViewController.swift in Sources */,
+				0F0BF5881D4BB6CE00189BBD /* MyPostsViewController.swift in Sources */,
 				0F46DEC81D120DC60057C479 /* DiscoverViewController.swift in Sources */,
 				0F6E01581D13112500BC69FA /* SearchHelper.swift in Sources */,
 				0F6E015C1D13115C00BC69FA /* Project.swift in Sources */,
