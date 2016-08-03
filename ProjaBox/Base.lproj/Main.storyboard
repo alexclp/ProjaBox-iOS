@@ -126,7 +126,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="plusColor">
+                                        <color key="value" red="0.92941176469999998" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -1498,14 +1501,14 @@
         <image name="vertical_separator.png" width="4" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UYV-KZ-4Gt"/>
+        <segue reference="oEf-Fv-bcB"/>
         <segue reference="kb7-Mb-Q0E"/>
         <segue reference="w2E-d4-klN"/>
         <segue reference="ziA-ll-Ldg"/>
         <segue reference="EuD-lO-c6a"/>
         <segue reference="72N-GC-lTe"/>
-        <segue reference="EX1-1V-TE0"/>
+        <segue reference="Mdg-mM-8eA"/>
         <segue reference="5cc-mP-Obj"/>
-        <segue reference="oEf-Fv-bcB"/>
+        <segue reference="UYV-KZ-4Gt"/>
     </inferredMetricsTieBreakers>
 </document>
