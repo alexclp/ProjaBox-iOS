@@ -133,7 +133,6 @@
 		0F6E016B1D13328500BC69FA /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E016A1D13328500BC69FA /* follow.png */; };
 		0F6E016E1D14386E00BC69FA /* PersonProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E016D1D14386E00BC69FA /* PersonProfileViewController.swift */; };
 		0F6E01701D14707300BC69FA /* ProjectViewOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */; };
-		0F6E01721D15577100BC69FA /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E01711D15577100BC69FA /* placeholder.png */; };
 		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
 		0F79C78C1D0122210002D117 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79C7821D0122210002D117 /* AccountKit.framework */; };
 		0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79C7831D0122210002D117 /* AccountKitStrings.bundle */; };
@@ -152,6 +151,7 @@
 		0F82D2381CE3E59000C779E5 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */; };
 		0F8AAD2B1D3D8D9F00E87847 /* more_likes_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8AAD2A1D3D8D9F00E87847 /* more_likes_icon.png */; };
 		0F9150EB1D4B869800F02B3C /* LargerTouchAreaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9150EA1D4B869700F02B3C /* LargerTouchAreaButton.swift */; };
+		0F92488F1D57DEE8003F19C3 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F92488E1D57DEE8003F19C3 /* placeholder.png */; };
 		0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4D7BA1CB410710085371E /* linkedinbutton.png */; };
 		0FB056671D01F2AB00CDBC76 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */; };
 		0FB056691D01F3D800CDBC76 /* NoAnimationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */; };
@@ -329,7 +329,6 @@
 		0F6E016A1D13328500BC69FA /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow.png; sourceTree = "<group>"; };
 		0F6E016D1D14386E00BC69FA /* PersonProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProfileViewController.swift; sourceTree = "<group>"; };
 		0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewOnlyViewController.swift; sourceTree = "<group>"; };
-		0F6E01711D15577100BC69FA /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0F79C7821D0122210002D117 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
 		0F79C7831D0122210002D117 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
@@ -348,6 +347,7 @@
 		0F82D2361CE3E58F00C779E5 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		0F8AAD2A1D3D8D9F00E87847 /* more_likes_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_likes_icon.png; sourceTree = "<group>"; };
 		0F9150EA1D4B869700F02B3C /* LargerTouchAreaButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargerTouchAreaButton.swift; sourceTree = "<group>"; };
+		0F92488E1D57DEE8003F19C3 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		0FA4D7BA1CB410710085371E /* linkedinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedinbutton.png; sourceTree = "<group>"; };
 		0FB056661D01F2AB00CDBC76 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		0FB056681D01F3D800CDBC76 /* NoAnimationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAnimationSegue.swift; sourceTree = "<group>"; };
@@ -756,11 +756,11 @@
 		0FA4D7B91CB410630085371E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F92488E1D57DEE8003F19C3 /* placeholder.png */,
 				0F8AAD2A1D3D8D9F00E87847 /* more_likes_icon.png */,
 				0FD404631D2D6E0900373C84 /* education-placeholder.png */,
 				0FD404611D2D6D3B00373C84 /* experience-placeholder.png */,
 				0F1BF70E1D2C7D1400A6479C /* white.png */,
-				0F6E01711D15577100BC69FA /* placeholder.png */,
 				0F6E01421D12EDD900BC69FA /* filters */,
 				0F50B7A01D09C63C0051AEAA /* Tab bar icons */,
 				0F43A3AA1D0892E8003B6503 /* settings */,
@@ -1032,7 +1032,6 @@
 				0F41E0DD1D0C158900BD0520 /* PhotosTableViewCell.xib in Resources */,
 				0F1071301D22C51F001CBF02 /* PhotoCardTableViewCell.xib in Resources */,
 				0FD43C601CF603650061E4E9 /* EducationExperienceTableViewCell.xib in Resources */,
-				0F6E01721D15577100BC69FA /* placeholder.png in Resources */,
 				0FC223B41C99BFA1006DD18B /* Assets.xcassets in Resources */,
 				0F0D888F1CFC70CC0074E5E6 /* linked-button.png in Resources */,
 				0F15C4851CD42DE700E2E4B9 /* PostDetailsTableViewCell.xib in Resources */,
@@ -1086,6 +1085,7 @@
 				0F6785E41CC983CE00F89541 /* settings@2x.png in Resources */,
 				0FD404621D2D6D3B00373C84 /* experience-placeholder.png in Resources */,
 				0F55058B1CF8BD61005229D7 /* signup-button.png in Resources */,
+				0F92488F1D57DEE8003F19C3 /* placeholder.png in Resources */,
 				0F6785E31CC983CE00F89541 /* settings.png in Resources */,
 				0FA4D7BB1CB410710085371E /* linkedinbutton.png in Resources */,
 				0F6785D01CC6F69A00F89541 /* share default.png in Resources */,
