@@ -43,8 +43,6 @@ class SignInHelper: NSObject {
 				
 				completionHandler(true)
 			}
-			
-			
 		}
 	}
 	
@@ -76,6 +74,25 @@ class SignInHelper: NSObject {
 				completionHandler(false)
 			} else {
 				self.clearUserData()
+				completionHandler(true)
+			}
+		}
+	}
+	
+	class func facebookSignIn(parameters: [String: String], completionHandler: (Bool) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/auth/fb"		
+		
+		Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: nil) .validate() .responseJSON() { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			print(response)
+			if errorCode != 0 {
+				print("facebook sign in unsuccessful")
+				completionHandler(false)
+			} else {
+				print("facebook sign in successful")
+				let userData = response.result.value!["data"] as! [String: AnyObject]
+				saveUserData(userData)
+				
 				completionHandler(true)
 			}
 		}
