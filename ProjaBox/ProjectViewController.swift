@@ -39,6 +39,7 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		self.tabBarController?.navigationItem.leftBarButtonItem = nil
 		self.tabBarController?.navigationItem.titleView = nil
 		self.tabBarController?.navigationItem.rightBarButtonItem = nil
+		self.tabBarController?.navigationItem.hidesBackButton = true
 	}
 	
 	override func viewDidLoad() {

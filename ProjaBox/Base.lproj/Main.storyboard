@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILi-pB-Lu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="547.5" y="3727.5"/>
+            <point key="canvasLocation" x="519.5" y="3811.5"/>
         </scene>
         <!--Edit About Project View Controller-->
         <scene sceneID="PHG-YB-vWW">
@@ -172,7 +172,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7at-df-ihp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zct-5a-Ia4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -190,7 +190,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ujo-qL-OrX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="A2a-zP-FK1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qif-5Q-mF0">
@@ -234,7 +234,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uxz-VA-mIr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sqM-PK-GZn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -615,6 +615,43 @@
             </objects>
             <point key="canvasLocation" x="668.5" y="739.5"/>
         </scene>
+        <!--Project-->
+        <scene sceneID="RHb-41-u27">
+            <objects>
+                <viewController id="kWy-W2-5Y1" customClass="CreateProjectViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VE0-W4-B5v"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ff-tL-kJs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iaa-ih-sdE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAS-EP-JOx">
+                                <rect key="frame" x="118" y="488" width="139" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="wqT-ap-CP9"/>
+                                    <constraint firstAttribute="width" constant="139" id="ztE-Cr-WhW"/>
+                                </constraints>
+                                <state key="normal" image="create_project_button.png"/>
+                                <connections>
+                                    <segue destination="l5y-tr-GjW" kind="show" id="KZU-Sg-DHO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zAS-EP-JOx" firstAttribute="centerY" secondItem="Iaa-ih-sdE" secondAttribute="centerY" constant="177" id="YO2-bt-kry"/>
+                            <constraint firstItem="zAS-EP-JOx" firstAttribute="centerX" secondItem="Iaa-ih-sdE" secondAttribute="centerX" id="sPB-Qk-fHD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Project" image="project.png" id="qxF-YK-dOA"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5HA-wI-KCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661.5" y="2940.5"/>
+        </scene>
         <!--Chat List View Controller-->
         <scene sceneID="emb-Rz-uv3">
             <objects>
@@ -766,6 +803,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcH-si-SD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1736.5" y="1972.5"/>
+        </scene>
+        <!--Project-->
+        <scene sceneID="ifD-XV-t3u">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="avU-qv-RQp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Project" image="project.png" id="fug-OF-isO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="S6s-7O-XBa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92941176469999998" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qRH-Hx-Mqp" kind="relationship" relationship="rootViewController" id="mb5-GA-8t2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNT-FX-YmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="1654"/>
+        </scene>
+        <!--Project-->
+        <scene sceneID="YEW-07-Ui7">
+            <objects>
+                <viewController id="qRH-Hx-Mqp" customClass="ProjectCheckerViewController" customModule="ProjaBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KGS-Ch-t5b"/>
+                        <viewControllerLayoutGuide type="bottom" id="ViL-77-wwu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y02-hw-li6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Project" image="project.png" id="Rai-Yk-up9"/>
+                    <navigationItem key="navigationItem" id="RgG-e7-nUa"/>
+                    <connections>
+                        <segue destination="kWy-W2-5Y1" kind="show" identifier="showProjectCreaterSegue" animates="NO" id="yhJ-cI-tNs"/>
+                        <segue destination="l5y-tr-GjW" kind="show" identifier="showProjectSegue" animates="NO" id="3dr-dw-hYy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zou-G5-Tkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="2390"/>
         </scene>
         <!--Post Details View Controller-->
         <scene sceneID="vYQ-Nw-PtD">
@@ -980,7 +1059,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="3l0-kv-sff" kind="relationship" relationship="viewControllers" id="SLV-mW-UOK"/>
-                        <segue destination="l5y-tr-GjW" kind="relationship" relationship="viewControllers" id="8bm-O1-phA"/>
+                        <segue destination="avU-qv-RQp" kind="relationship" relationship="viewControllers" id="LaL-DN-Leq"/>
                         <segue destination="n5B-XR-4mZ" kind="relationship" relationship="viewControllers" id="Wdm-jg-nre"/>
                     </connections>
                 </tabBarController>
@@ -1511,6 +1590,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="create_project_button.png" width="564" height="180"/>
         <image name="facebook-button.png" width="982" height="169"/>
         <image name="home.png" width="30" height="30"/>
         <image name="photo.png" width="219" height="53"/>
@@ -1523,12 +1603,13 @@
         <image name="vertical_separator.png" width="4" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3dr-dw-hYy"/>
+        <segue reference="Mdg-mM-8eA"/>
         <segue reference="ziA-ll-Ldg"/>
         <segue reference="iWm-FE-hGQ"/>
-        <segue reference="UYV-KZ-4Gt"/>
-        <segue reference="5cc-mP-Obj"/>
         <segue reference="aws-rB-jBW"/>
-        <segue reference="EX1-1V-TE0"/>
+        <segue reference="5cc-mP-Obj"/>
+        <segue reference="UYV-KZ-4Gt"/>
         <segue reference="oEf-Fv-bcB"/>
         <segue reference="72N-GC-lTe"/>
         <segue reference="w2E-d4-klN"/>
