@@ -79,7 +79,7 @@ class SignInHelper: NSObject {
 		}
 	}
 	
-	class func facebookSignIn(parameters: [String: String], completionHandler: (Bool) -> Void) {
+	class func facebookSignIn(parameters: [String: AnyObject], completionHandler: (Bool) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/auth/fb"		
 		
 		Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: nil) .validate() .responseJSON() { response in

@@ -29,6 +29,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	override func viewDidAppear(animated: Bool) {
+		print("did appear")
 		super.viewDidAppear(animated)
 		setupBarButtons()
 		getLatestPosts()

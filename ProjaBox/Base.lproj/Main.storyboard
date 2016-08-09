@@ -93,7 +93,7 @@
                     <navigationItem key="navigationItem" title="Sign in" id="I0S-Cr-rjx"/>
                     <connections>
                         <outlet property="facebookButton" destination="B8E-sW-hNy" id="Hqp-JL-Lo5"/>
-                        <segue destination="3l0-kv-sff" kind="show" identifier="showFeed" id="MHT-Kw-drU"/>
+                        <segue destination="ewO-ei-b6I" kind="show" identifier="showFeed" id="iWm-FE-hGQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1523,15 +1523,14 @@
         <image name="vertical_separator.png" width="4" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kb7-Mb-Q0E"/>
-        <segue reference="w2E-d4-klN"/>
         <segue reference="ziA-ll-Ldg"/>
-        <segue reference="MHT-Kw-drU"/>
-        <segue reference="aws-rB-jBW"/>
-        <segue reference="5cc-mP-Obj"/>
+        <segue reference="iWm-FE-hGQ"/>
         <segue reference="UYV-KZ-4Gt"/>
+        <segue reference="5cc-mP-Obj"/>
+        <segue reference="aws-rB-jBW"/>
         <segue reference="EX1-1V-TE0"/>
         <segue reference="oEf-Fv-bcB"/>
         <segue reference="72N-GC-lTe"/>
+        <segue reference="w2E-d4-klN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -53,42 +53,49 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	}
 	
 	func fetchFacebookData() {
-		let parameters: [String : String] = ["fields": "id, name, birthday, picture, location, gender, email, education, work"]
+		let parameters: [String : String] = ["fields": "name, birthday, picture, location, gender, email"]
 		FBSDKGraphRequest.init(graphPath: "me", parameters: parameters) .startWithCompletionHandler { (connection, result, error) in
-//			print(result)
-			var parameters = [String: String]()
+			print(result)
+			var signInParameters = [String: AnyObject]()
 			if let birthday = result["birthday"] as? String {
-				parameters["dob"] = birthday
+				let dateFormatter = NSDateFormatter()
+				dateFormatter.dateFormat = "dd/MM/yyyy"
+				let date = dateFormatter.dateFromString(birthday)
+				dateFormatter.dateFormat = "yyyy-MM-dd"
+				let dateString = dateFormatter.stringFromDate(date!)
+				signInParameters["dob"] = dateString
 			}
 			if let email = result["email"] as? String {
-				parameters["email"] = email
+				signInParameters["email"] = email
 			}
 			if let socialId = result["id"] as? String {
-				parameters["socialId"] = socialId
+				signInParameters["socialId"] = socialId
 			}
 			if let name = result["name"] as? String {
-				parameters["name"] = name
+				signInParameters["name"] = name
 			}
 			if let avatarData = result["picture"] {
-				parameters["avatar"] = (avatarData["data"]!["url"] as! String)
+				signInParameters["avatar"] = (avatarData["data"]!["url"] as! String)
 			}
 			if let dob = result["dob"] as? String {
-				parameters["dob"] = dob
+				signInParameters["dob"] = dob
 			}
 			if let locationData = result["location"] {
-				parameters["location"] = locationData["name"] as? String
+				signInParameters["location"] = locationData["name"] as? String
 			}
 			if let gender = result["gender"] as? String {
 				if gender == "male" {
-					parameters["sex"] = "M"
+					signInParameters["sex"] = "M"
 				} else if gender == "female" {
-					parameters["sex"] = "F"
+					signInParameters["sex"] = "F"
 				}
 			}
-			parameters["os"] = "iOS"
-			print(parameters)
-			SignInHelper.facebookSignIn(parameters, completionHandler: { (response) in
-				self.performSegueWithIdentifier("showFeed", sender: self)
+			signInParameters["os"] = "iOS"
+			print(signInParameters)
+			SignInHelper.facebookSignIn(signInParameters, completionHandler: { (response) in
+				if response == true {
+					self.performSegueWithIdentifier("showFeed", sender: self)
+				}
 			})
 		}
 	}
