@@ -88,7 +88,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 		
 		if (indexPath.section == 0) {
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as! ProfileTableViewCell
-			
+			cell.editButton!.hidden = true
 			cell.nameLabel?.text = myProfileData["name"] as? String
 			cell.positionLabel?.text = myProfileData["occupation"] as? String
 			
