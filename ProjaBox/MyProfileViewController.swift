@@ -220,6 +220,10 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 			
 			if educationData.count == 0 && indexPath.row == educationData.count && fullProfileData["education"] == nil  {
 				cell.companyNameLabel?.text = "Add past education"
+				cell.periodLabel?.text = ""
+			} else if educationData.count != 0 && educationData.count == indexPath.row {
+				cell.companyNameLabel?.text = "Add past education"
+				cell.periodLabel?.text = ""
 			} else {
 				educationData = fullProfileData["education"] as! [[String: String]]
 				cell.companyNameLabel?.text = educationData[indexPath.row]["name"]
@@ -230,11 +234,14 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		} else if indexPath.section == 3 {
 			// EXPERIENCE
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
-			
 			cell.profileImageView?.image = UIImage(named: "experience-placeholder.png")
 			
 			if experienceData.count == 0 && indexPath.row == experienceData.count && fullProfileData["experience"] == nil {
 				cell.companyNameLabel?.text = "Add past experience"
+				cell.periodLabel?.text = ""
+			} else if experienceData.count != 0 && experienceData.count == indexPath.row {
+				cell.companyNameLabel?.text = "Add past experience"
+				cell.periodLabel?.text = ""
 			} else {
 				experienceData = fullProfileData["experience"] as! [[String: String]]
 				cell.companyNameLabel?.text = experienceData[indexPath.row]["name"]
