@@ -228,7 +228,7 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			if isLiked == true {
 				cell.likeButton.selected = true
 			} else {
-				cell.likeButton.selected = true
+				cell.likeButton.selected = false
 			}
 		}
 		
