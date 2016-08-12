@@ -206,6 +206,11 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 			let cell = tableView.dequeueReusableCellWithIdentifier("profileHeaderCell", forIndexPath: indexPath) as! ProfileHeaderTableViewCell
 			cell.statusLabel?.hidden = true
 			cell.tagsLabel?.hidden = true
+			cell.editButton?.hidden = true
+			
+			cell.likeButton?.addTarget(self, action: #selector(self.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.followButton?.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.messageButton?.addTarget(self, action: #selector(self.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			
 			if let location = headerData["location"] {
 				cell.locationLabel?.text = location
@@ -238,12 +243,37 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 				}
 			}
 			
+			if let likers = fullProjectData["likers"] as? [[String: AnyObject]] {
+				cell.likeLabel?.text = String(likers.count)
+			}
+			
+			if let isLikedByMe = fullProjectData["isLikedByMe"] as? Int {
+				if isLikedByMe == 1 {
+					cell.likeButton?.selected = true
+				} else {
+					cell.likeButton?.selected = false
+				}
+			}
+			
+			if let followers = fullProjectData["followers"] as? [[String: AnyObject]] {
+				cell.followersLabel?.text = String(followers.count)
+			}
+			
+			if let isFollowedByMe = fullProjectData["isFollowedByMe"] as? Int {
+				if isFollowedByMe == 1 {
+					cell.followButton?.selected = true
+				} else {
+					cell.followButton?.selected = false
+				}
+			}
+			
 			return cell
 		} else if section == 1 {
 			// TODO: Video section
 		} else if section == 2 {
 			// GOALS
 			let cell = tableView.dequeueReusableCellWithIdentifier("goalsCell", forIndexPath: indexPath) as! GoalsTableViewCell
+			cell.editButton?.hidden = true
 			cell.goalsTextView?.text = goals
 			
 			return cell
@@ -284,7 +314,7 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 		} else if section == 5 {
 			// JOB SECTION
 			let cell = tableView.dequeueReusableCellWithIdentifier("interestsCell", forIndexPath: indexPath) as! InterestsTableViewCell
-			cell.tagListView?.removeAllTags()
+			cell.editButton?.hidden = true
 			
 			cell.tagListView?.removeAllTags()
 			
@@ -433,4 +463,58 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 		presentViewController(browser, animated: true, completion: {})
 	}
 	
+	// MARK: User Interaction
+	
+	func likeButtonPressed(sender: UIButton) {
+		if sender.selected == false {
+			ProjectHelper.likeProject(projectId) { (response) in
+				if response == true {
+					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ProfileHeaderTableViewCell
+					cell.likeLabel!.text = String(Int((cell.likeLabel!.text)!)! + 1)
+					cell.likeButton?.selected = true
+				}
+			}
+		} else {
+			ProjectHelper.unlikeProject(projectId, completionHandler: { (response) in
+				if response == true {
+					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ProfileHeaderTableViewCell
+					cell.likeLabel!.text = String(Int((cell.likeLabel!.text)!)! - 1)
+					cell.likeButton?.selected = false
+				}
+			})
+		}
+	}
+	
+	func followButtonPressed(sender: UIButton) {
+		if sender.selected == false {
+			ProjectHelper.followProject(projectId, completionHandler: { (response) in
+				if response == true {
+					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ProfileHeaderTableViewCell
+					cell.followersLabel!.text = String(Int((cell.followersLabel!.text)!)! + 1)
+					cell.followButton?.selected = true
+				}
+			})
+		} else {
+			ProjectHelper.unFollowProject(projectId, completionHandler: { (response) in
+				if response == true {
+					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ProfileHeaderTableViewCell
+					cell.followersLabel!.text = String(Int((cell.followersLabel!.text)!)! - 1)
+					cell.followButton?.selected = false
+				}
+			})
+		}
+	}
+	
+	func messageButtonPressed(sender: UIButton) {
+		performSegueWithIdentifier("showChatSegue", sender: self)
+	}
+	
+	// MARK: Segue
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "showChatSegue" {
+			let destination = segue.destinationViewController as! ConversationViewController
+			destination.profileId = projectId
+		}
+	}
 }
