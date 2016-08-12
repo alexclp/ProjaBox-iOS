@@ -172,7 +172,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7at-df-ihp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zct-5a-Ia4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -190,7 +190,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ujo-qL-OrX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="A2a-zP-FK1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qif-5Q-mF0">
@@ -234,7 +234,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uxz-VA-mIr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sqM-PK-GZn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -672,7 +672,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4fO-Zj-mQE" id="0Gx-vL-04D">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-Vq-EJE">
@@ -922,14 +922,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile_pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7s0-2a-tYC">
-                                <rect key="frame" x="20" y="8" width="51" height="51"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="7s0-2a-tYC">
+                                <rect key="frame" x="24" y="20" width="51" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="51" id="hrm-kf-L0m"/>
+                                    <constraint firstAttribute="width" constant="51" id="HO3-52-mnJ"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M7z-2H-oGV">
-                                <rect key="frame" x="79" y="0.0" width="296" height="667"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M7z-2H-oGV">
+                                <rect key="frame" x="83" y="20" width="517" height="644"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -943,13 +943,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7s0-2a-tYC" firstAttribute="top" secondItem="X31-yd-uwu" secondAttribute="bottom" constant="8" symbolic="YES" id="4Cg-qS-hdQ"/>
-                            <constraint firstItem="M7z-2H-oGV" firstAttribute="leading" secondItem="7s0-2a-tYC" secondAttribute="trailing" constant="8" symbolic="YES" id="775-ij-kbh"/>
-                            <constraint firstAttribute="trailing" secondItem="M7z-2H-oGV" secondAttribute="trailing" id="7wa-c7-eR0"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="M7z-2H-oGV" secondAttribute="bottom" constant="-64" id="eSL-jU-fgZ"/>
-                            <constraint firstItem="M7z-2H-oGV" firstAttribute="top" secondItem="X31-yd-uwu" secondAttribute="bottom" id="j3a-yg-6xP"/>
-                            <constraint firstItem="clc-82-Qaa" firstAttribute="top" secondItem="7s0-2a-tYC" secondAttribute="bottom" constant="544" id="mLc-1F-tAl"/>
-                            <constraint firstItem="7s0-2a-tYC" firstAttribute="leading" secondItem="eav-7F-anY" secondAttribute="leadingMargin" constant="4" id="uC6-xO-bXh"/>
+                            <constraint firstItem="7s0-2a-tYC" firstAttribute="top" secondItem="M7z-2H-oGV" secondAttribute="top" id="12m-iH-G1A"/>
+                            <constraint firstAttribute="trailing" secondItem="M7z-2H-oGV" secondAttribute="trailing" id="FMu-Bc-5kb"/>
+                            <constraint firstItem="7s0-2a-tYC" firstAttribute="leading" secondItem="eav-7F-anY" secondAttribute="leadingMargin" constant="4" id="OWg-kh-t0o"/>
+                            <constraint firstItem="7s0-2a-tYC" firstAttribute="top" secondItem="X31-yd-uwu" secondAttribute="bottom" id="emw-Zb-e95"/>
+                            <constraint firstItem="M7z-2H-oGV" firstAttribute="leading" secondItem="7s0-2a-tYC" secondAttribute="trailing" constant="8" symbolic="YES" id="n7H-pY-KKt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="M7z-2H-oGV" secondAttribute="bottom" constant="-64" id="ocE-Tg-W5o"/>
+                            <constraint firstItem="clc-82-Qaa" firstAttribute="top" secondItem="7s0-2a-tYC" secondAttribute="bottom" constant="529" id="uOA-VR-yl1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="cOU-7e-5NU">
@@ -966,7 +966,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3h-hc-40u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2305.5" y="1654.5"/>
+            <point key="canvasLocation" x="2305" y="1654"/>
         </scene>
         <!--Person Profile View Controller-->
         <scene sceneID="mjg-U2-hKb">
@@ -1596,22 +1596,21 @@
         <image name="photo.png" width="219" height="53"/>
         <image name="placeholder.png" width="240" height="240"/>
         <image name="post.png" width="171" height="55"/>
-        <image name="profile_pic.jpg" width="160" height="160"/>
         <image name="project.png" width="30" height="30"/>
         <image name="search.png" width="30" height="30"/>
         <image name="signup-button.png" width="982" height="169"/>
         <image name="vertical_separator.png" width="4" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3dr-dw-hYy"/>
-        <segue reference="Mdg-mM-8eA"/>
-        <segue reference="ziA-ll-Ldg"/>
         <segue reference="iWm-FE-hGQ"/>
-        <segue reference="aws-rB-jBW"/>
+        <segue reference="ziA-ll-Ldg"/>
+        <segue reference="w2E-d4-klN"/>
+        <segue reference="3dr-dw-hYy"/>
         <segue reference="5cc-mP-Obj"/>
+        <segue reference="aws-rB-jBW"/>
+        <segue reference="EX1-1V-TE0"/>
         <segue reference="UYV-KZ-4Gt"/>
         <segue reference="oEf-Fv-bcB"/>
         <segue reference="72N-GC-lTe"/>
-        <segue reference="w2E-d4-klN"/>
     </inferredMetricsTieBreakers>
 </document>
