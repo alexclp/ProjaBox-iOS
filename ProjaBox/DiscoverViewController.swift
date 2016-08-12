@@ -417,10 +417,10 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		}
 		alertController.addAction(hideAction)
 		
-		let reportAction = UIAlertAction(title: "Report", style: .Default) { (action) in
-			
-		}
-		alertController.addAction(reportAction)
+//		let reportAction = UIAlertAction(title: "Report", style: .Default) { (action) in
+//			
+//		}
+//		alertController.addAction(reportAction)
 		
 		presentViewController(alertController, animated: true, completion: nil)
 	}
