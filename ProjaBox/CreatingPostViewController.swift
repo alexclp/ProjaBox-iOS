@@ -33,7 +33,7 @@ class CreatingPostViewController: UIViewController {
 		addToolBar(textView!)
 		setupImageView()
 		
-		textView!.text = "Write something or use @ to mention someone"
+		textView!.text = placeholderText
 		textView!.textColor = UIColor.lightGrayColor()
 		
 		textView!.becomeFirstResponder()
@@ -85,6 +85,9 @@ class CreatingPostViewController: UIViewController {
 					}
 				})
 			} else {
+				if textToShare == placeholderText {
+					textToShare = ""
+				}
 				NewsFeedHelper.createTextPost("Post", textToShare!) { (response) in
 					if response == false {
 						let alert = UIAlertController(title: "Alert", message: "There was an error while creating the post. Please try again later.", preferredStyle: UIAlertControllerStyle.Alert)
