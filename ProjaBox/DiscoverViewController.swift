@@ -27,6 +27,8 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	var blurEffectView = UIVisualEffectView()
 	
+	var hiddenIds = Set<Int>()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -90,6 +92,22 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	// MARK: Table View Methods
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		let result = results[indexPath.row]
+		if selectedIndex == 0 {
+			let projectResult = result as! Project
+			if let id = projectResult.id {
+				if hiddenIds.contains(id) {
+					return 0.0
+				}
+			}
+		} else {
+			let userResult = result as! User
+			if let id = userResult.id {
+				if hiddenIds.contains(id) {
+					return 0.0
+				}
+			}
+		}
 		if results[0] is Project {
 			return 288.0
 		} else {
@@ -111,10 +129,12 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			cell.followButton.tag = indexPath.row
 			cell.likeButton.tag = indexPath.row
 			cell.messageButton.tag = indexPath.row
+			cell.moreButton.tag = indexPath.row
 			
 			cell.likeButton.addTarget(self, action: #selector(self.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
-			cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			cell.messageButton.addTarget(self, action: #selector(self.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.moreButton.addTarget(self, action: #selector(self.moreButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			
 			if let name = projectResult.name {
 				let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
@@ -183,10 +203,12 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		cell.followButton.tag = indexPath.row
 		cell.likeButton.tag = indexPath.row
 		cell.messageButton.tag = indexPath.row
+		cell.moreButton.tag = indexPath.row
 		
 		cell.likeButton.addTarget(self, action: #selector(self.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		cell.messageButton.addTarget(self, action: #selector(self.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		cell.followButton.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
+		cell.moreButton.addTarget(self, action: #selector(self.moreButtonPressed(_:)), forControlEvents: .TouchUpInside)
 		
 		if let name = userResult.name {
 			let tap = UITapGestureRecognizer(target: self, action: #selector(self.nameButtonPressed(_:)))
@@ -251,6 +273,14 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		
 		cellGotSelected(indexPath.row)
+	}
+	
+	// MARK: Reloading UI
+	
+	func refreshUI() {
+		dispatch_async(dispatch_get_main_queue(),{
+			self.tableView!.reloadData()
+		});
 	}
 	
 	// MARK: User Interaction
@@ -359,6 +389,40 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 				})
 			}
 		}
+	}
+	
+	func moreButtonPressed(sender: UIButton) {
+		let alertController = UIAlertController(title: nil, message: "Report or hide", preferredStyle: .ActionSheet)
+		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+			self.dismissViewControllerAnimated(true, completion: nil)
+		}
+		alertController.addAction(cancelAction)
+		
+		let hideAction = UIAlertAction(title: "Hide", style: .Default) { (action) in
+			let postIndex = sender.tag
+			if self.selectedIndex == 0 {
+				let result = self.results[postIndex] as! Project
+				if let projectId = result.id {
+					self.hiddenIds.insert(projectId)
+					self.refreshUI()
+				}
+			} else {
+				let result = self.results[postIndex] as! User
+				if let userId = result.id {
+					self.hiddenIds.insert(userId)
+					self.tableView?.reloadData()
+					self.refreshUI()
+				}
+			}
+		}
+		alertController.addAction(hideAction)
+		
+		let reportAction = UIAlertAction(title: "Report", style: .Default) { (action) in
+			
+		}
+		alertController.addAction(reportAction)
+		
+		presentViewController(alertController, animated: true, completion: nil)
 	}
 	
 	func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
