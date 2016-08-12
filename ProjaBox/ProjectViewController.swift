@@ -136,6 +136,12 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					self.tableView?.reloadData()
 				}
 			})
+		} else {
+			ProjectHelper.createProject(["name": ""], completionHandler: { (response, projectData) in
+				if response == true {
+					NSUserDefaults.standardUserDefaults().setObject((projectData!["id"] as! Int), forKey: "projectId")
+				}
+			})
 		}
 	}
 	
