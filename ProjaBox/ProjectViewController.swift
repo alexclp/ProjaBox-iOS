@@ -65,6 +65,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		] // Title color
 
 		
+		print("ID: \(NSUserDefaults.standardUserDefaults().objectForKey("projectId"))")
+		
 		getProfile()
 		setupPostButton()
 	}

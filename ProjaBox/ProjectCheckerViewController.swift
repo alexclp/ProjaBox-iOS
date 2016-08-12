@@ -15,7 +15,7 @@ class ProjectCheckerViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 		setupBarButtons()
-		if NSUserDefaults.standardUserDefaults().objectForKey("projectId") == nil {
+		if NSUserDefaults.standardUserDefaults().objectForKey("projectId") != nil {
 			// has project
 			performSegueWithIdentifier("showProjectSegue", sender: self)
 		} else {
