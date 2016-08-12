@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="293"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="292"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="293"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-q0-a5M">
@@ -135,6 +135,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxn-2v-30k">
+                                <rect key="frame" x="92" y="150" width="20" height="18"/>
+                                <state key="normal" image="follow.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkb-BF-mW3">
+                                <rect key="frame" x="129" y="148" width="26" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -205,6 +215,8 @@
             <connections>
                 <outlet property="descriptionLabel" destination="kBo-7J-93g" id="eft-WO-GoP"/>
                 <outlet property="editButton" destination="E1J-jh-oUg" id="Lw8-99-iEi"/>
+                <outlet property="followButton" destination="Uxn-2v-30k" id="8JW-5L-v3h"/>
+                <outlet property="followersLabel" destination="zkb-BF-mW3" id="njE-hv-iHq"/>
                 <outlet property="likeButton" destination="LUm-Qj-N9W" id="g27-Fb-jz1"/>
                 <outlet property="likeLabel" destination="efc-2P-8MO" id="gmJ-Q9-htp"/>
                 <outlet property="locationLabel" destination="Lhw-rJ-vX5" id="TOz-Mh-eNE"/>
@@ -223,10 +235,11 @@
     <resources>
         <image name="My Posts.png" width="58" height="58"/>
         <image name="card separator.png" width="1090" height="4"/>
+        <image name="follow.png" width="59" height="46"/>
         <image name="like default.png" width="64" height="62"/>
         <image name="location pin.png" width="22" height="30"/>
         <image name="message default.png" width="62" height="44"/>
         <image name="other default.png" width="87" height="13"/>
-        <image name="placeholder.png" width="240" height="268"/>
+        <image name="placeholder.png" width="240" height="240"/>
     </resources>
 </document>

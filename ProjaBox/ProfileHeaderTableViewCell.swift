@@ -39,6 +39,23 @@ class ProfileHeaderTableViewCell: UITableViewCell {
 	
 	override func layoutSubviews() {
 		imageSetup()
+		buttonsSetup()
+	}
+	
+	func buttonsSetup() {
+		likeButton?.imageView?.contentMode = .ScaleAspectFit
+		followButton?.imageView?.contentMode = .ScaleAspectFit
+		moreButton?.imageView?.contentMode = .ScaleAspectFit
+		
+		likeButton?.setImage(UIImage(named: "like default.png"), forState: .Normal)
+		likeButton?.setImage(UIImage(named: "like selected.png"), forState: .Highlighted)
+		likeButton?.setImage(UIImage(named: "like selected.png"), forState: .Selected)
+		
+		moreButton?.setImage(UIImage(named: "other default.png"), forState: .Normal)
+		moreButton?.setImage(UIImage(named: "other selected.png"), forState: .Highlighted)
+		moreButton?.setImage(UIImage(named: "other selected.png"), forState: .Selected)
+		
+		followButton?.setImage(UIImage(named: "follow.png"), forState: .Normal)
 	}
 	
 	func imageSetup() {

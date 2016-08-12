@@ -162,6 +162,10 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 			cell.editButton?.hidden = true
 			cell.tagsLabel?.text = ""
 			
+			cell.likeButton?.addTarget(self, action: #selector(self.likeButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.messageButton?.addTarget(self, action: #selector(self.messageButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			cell.followButton?.addTarget(self, action: #selector(self.followButtonPressed(_:)), forControlEvents: .TouchUpInside)
+			
 			if let name = fullProfileData["name"] {
 				cell.nameLabel?.text = name as? String
 			}
@@ -185,13 +189,35 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 				cell.descriptionLabel?.text = description as? String
 			}
 			
+			if let likers = fullProfileData["likers"] as? [[String: AnyObject]] {
+				cell.likeLabel?.text = String(likers.count)
+			}
+			
+			if let isLikedByMe = fullProfileData["isLikedByMe"] as? Int {
+				if isLikedByMe == 1 {
+					cell.likeButton?.selected = true
+				} else {
+					cell.likeButton?.selected = false
+				}
+			}
+			
+			if let followers = fullProfileData["followers"] as? [[String: AnyObject]] {
+				cell.followersLabel?.text = String(followers.count)
+			}
+			
+			if let isFollowedByMe = fullProfileData["isFollowedByMe"] as? Int {
+				if isFollowedByMe == 1 {
+					cell.followButton?.selected = true
+				} else {
+					cell.followButton?.selected = false
+				}
+			}
+			
 			if let sex = fullProfileData["sex"] {
 				if !sex.isEqual("U") {
 					cell.nameLabel?.text = (cell.nameLabel?.text)! + ", " + (sex as? String)!
 				}
 			}
-			
-			print("RESULT : \(fullProfileData["avatar"]?.isEqual(NSNull))")
 			
 			if let url = fullProfileData["avatar"] {
 				let urlString = url as? String
@@ -347,6 +373,62 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 			performSegueWithIdentifier("editEducationSegue", sender: self)
 		} else if indexPath.section == 3 {
 			performSegueWithIdentifier("editExperienceSegue", sender: self)
+		}
+	}
+	
+	
+	// MARK: User Interaction
+	
+	func likeButtonPressed(sender: UIButton) {
+		if sender.selected == false {
+			ProfileHelper.likeUser(userId) { (response) in
+				if response == true {
+					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ProfileHeaderTableViewCell
+					cell.likeLabel!.text = String(Int((cell.likeLabel!.text)!)! + 1)
+					cell.likeButton?.selected = true
+				}
+			}
+		} else {
+			ProfileHelper.unLikeUser(userId, completionHandler: { (response) in
+				if response == true {
+					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ProfileHeaderTableViewCell
+					cell.likeLabel!.text = String(Int((cell.likeLabel!.text)!)! - 1)
+					cell.likeButton?.selected = false
+				}
+			})
+		}
+	}
+	
+	func followButtonPressed(sender: UIButton) {
+		if sender.selected == false {
+			ProfileHelper.followUser(userId, completionHandler: { (response) in
+				if response == true {
+					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ProfileHeaderTableViewCell
+					cell.followersLabel!.text = String(Int((cell.followersLabel!.text)!)! + 1)
+					cell.followButton?.selected = true
+				}
+			})
+		} else {
+			ProfileHelper.unFollowUser(userId, completionHandler: { (response) in
+				if response == true {
+					let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ProfileHeaderTableViewCell
+					cell.followersLabel!.text = String(Int((cell.followersLabel!.text)!)! - 1)
+					cell.followButton?.selected = false
+				}
+			})
+		}
+	}
+	
+	func messageButtonPressed(sender: UIButton) {
+		performSegueWithIdentifier("showChatSegue", sender: self)
+	}
+	
+	// MARK: Segue
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "showChatSegue" {
+			let destination = segue.destinationViewController as! ConversationViewController
+			destination.profileId = userId
 		}
 	}
 }
