@@ -103,6 +103,8 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
 			cell.moreButton?.tag = indexPath.row
 			cell.moreButton?.addTarget(self, action: #selector(MyPostsViewController.moreButtonPressed(_:)), forControlEvents: .TouchUpInside)
 			
+			cell.postImage?.image = UIImage(named: "white.png")
+			
 			Alamofire.request(.GET, imageURL)
 				.responseImage { response in
 					if let image = response.result.value {

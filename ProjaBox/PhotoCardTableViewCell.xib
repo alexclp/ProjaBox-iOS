@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="keW-p7-zGz" id="I47-uJ-La8">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="307.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXL-tA-KEI">
@@ -125,7 +125,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:41" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-qV-5Fj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:41" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-qV-5Fj">
                                 <rect key="frame" x="229" y="8" width="67" height="16"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -203,7 +203,7 @@
         <image name="comment-default.png" width="62" height="62"/>
         <image name="like default.png" width="64" height="62"/>
         <image name="other default.png" width="87" height="13"/>
-        <image name="placeholder.png" width="240" height="268"/>
+        <image name="placeholder.png" width="240" height="240"/>
         <image name="share default.png" width="56" height="63"/>
         <image name="share selected.png" width="56" height="63"/>
         <image name="white.png" width="288" height="192"/>
