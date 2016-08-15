@@ -117,7 +117,6 @@ class ConversationViewController: JSQMessagesViewController {
 		self.finishSendingMessage()
 		ChatHelper.sendMessage(senderId, content: text) { (response) in
 			if response == true {
-				print("sent message")
 			}
 		}
 	}

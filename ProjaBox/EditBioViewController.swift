@@ -64,7 +64,6 @@ class EditBioViewController: FormViewController {
 	}
 	
 	func doneButtonPressed() {
-		
 		let rawData = self.form.values()
 		if let name = rawData["name"], let location = rawData["location"], let position = rawData["occupation"], let status = rawData["status"],
 			let description = rawData["about"], let sex = rawData["sex"], let avatar = rawData["avatar"]  {
@@ -79,7 +78,9 @@ class EditBioViewController: FormViewController {
 			delegate?.userDidFinishCompletingData(formData)
 			self.navigationController?.popViewControllerAnimated(true)
 		} else {
-			print("Please fill all the data alert")
+			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+			self.presentViewController(alert, animated: true, completion: nil)
 		}
 	}
 }

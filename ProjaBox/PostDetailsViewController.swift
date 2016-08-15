@@ -41,15 +41,12 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			NSForegroundColorAttributeName : UIColor.whiteColor()
 		] // Title color
 		
-		print("ID: \(selectedPost.id)")
-		
 		fillData()
 	}
 	
 	func fillData() {
 		if let comments = selectedPost.comments {
 			commentsData = comments
-			print("comments data: \(comments)")
 		}
 		postDetailsTableView?.reloadData()
 	}
@@ -109,7 +106,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 				Alamofire.request(.GET, imageURL)
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.postPhoto?.image = image
 						}
 				}
@@ -135,7 +131,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						Alamofire.request(.GET, url)
 							.responseImage { response in
 								if let image = response.result.value {
-									print("image downloaded: \(image)")
 									cell.profileImageView!.image = image
 								}
 						}
@@ -149,7 +144,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						Alamofire.request(.GET, url)
 							.responseImage { response in
 								if let image = response.result.value {
-									print("image downloaded: \(image)")
 									cell.profileImageView!.image = image
 								}
 						}
@@ -193,7 +187,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						Alamofire.request(.GET, url)
 							.responseImage { response in
 								if let image = response.result.value {
-									print("image downloaded: \(image)")
 									cell.profileImageView!.image = image
 								}
 						}
@@ -207,7 +200,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						Alamofire.request(.GET, url)
 							.responseImage { response in
 								if let image = response.result.value {
-									print("image downloaded: \(image)")
 									cell.profileImageView!.image = image
 								}
 						}
@@ -226,15 +218,12 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			
 			cell.selectionStyle = .None
 			
-			print(selectedPost.likers)
-			
 			if let likers = selectedPost.likers {
 				if likers.count <= 6 {
 					for i in 0..<likers.count {
 						Alamofire.request(.GET, (likers[i]["avatar"] as! String))
 							.responseImage { response in
 								if let image = response.result.value {
-									print("image downloaded: \(image)")
 									cell.imageViewList[i].hidden = false
 									cell.imageViewList[i].image = image
 								}
@@ -247,7 +236,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						Alamofire.request(.GET, (likers[i]["avatar"] as! String))
 							.responseImage { response in
 								if let image = response.result.value {
-									print("image downloaded: \(image)")
 									cell.imageViewList[i].hidden = false
 									cell.imageViewList[i].image = image
 								}
@@ -290,12 +278,9 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		let postId = String(editedPost.id!)
 		let strBase64 = CompressedImage.encodeImageLowetQuality(image)
 		NewsFeedHelper.editPost(postId, content: ["image": strBase64], completionHandler: { (response) in
-			print(response)
 			self.isEditingPost = false
 			if response == true {
 				self.navigationController?.popViewControllerAnimated(true)
-			} else {
-				print("update failed")
 			}
 		})
 	}
@@ -315,14 +300,10 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 			self.commentTextField?.text = ""
 			
 			if response == true {
-				print("Comment success")
-				
 				if let data = data {
 					self.commentsData.append(data)
 					self.postDetailsTableView?.reloadData()
 				}
-			} else {
-				print("Comment failed")
 			}
 		}
 	}
@@ -332,7 +313,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		if sender.selected == false {
 			NewsFeedHelper.likePost(String(postId!)) { (response) in
 				if response == true {
-					print("Liked successfully")
 					sender.selected = true
 					if self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) is PhotoCardTableViewCell {
 						let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! PhotoCardTableViewCell
@@ -341,14 +321,11 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
 						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
 					}
-				} else {
-					print("Error while liking post id: \(postId)")
 				}
 			}
 		} else {
 			NewsFeedHelper.unlikePost(String(postId!), completionHandler: { (response) in
 				if response == true {
-					print("Unliked successfully")
 					sender.selected = false
 					if self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) is PhotoCardTableViewCell {
 						let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! PhotoCardTableViewCell
@@ -357,15 +334,12 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 						let cell = self.postDetailsTableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
 						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
 					}
-				} else {
-					print("Error while unliking post id: \(postId)")
 				}
 			})
 		}
 	}
 	
 	func sharePressed(sender: UIButton) {
-		print("Share button tag: \(sender.tag)")
 		if let shareController = SharingHelper.shareStandardText() {
 			presentViewController(shareController, animated: true, completion: nil)
 		}

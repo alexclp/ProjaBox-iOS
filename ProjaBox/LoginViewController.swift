@@ -34,16 +34,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	//	MARK: Facebook Login Delegate + Fetching Data
 	
 	func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-		print("Facebook login")
 		if ((error) != nil) {
 			// Process error
-			print("Error: \(error.description)")
 		} else if result.isCancelled {
 			// Handle cancellations
-			print("Cancelled")
 		} else {
 			// Navigate to other view
-			print("Success")
 			fetchFacebookData()
 		}
 	}
@@ -55,7 +51,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	func fetchFacebookData() {
 		let parameters: [String : String] = ["fields": "name, birthday, picture, gender, email"]
 		FBSDKGraphRequest.init(graphPath: "me", parameters: parameters) .startWithCompletionHandler { (connection, result, error) in
-			print(result)
 			var signInParameters = [String: AnyObject]()
 			if let birthday = result["birthday"] as? String {
 				let dateFormatter = NSDateFormatter()
@@ -88,7 +83,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 				}
 			}
 			signInParameters["os"] = "iOS"
-			print(signInParameters)
 			SignInHelper.facebookSignIn(signInParameters, completionHandler: { (response) in
 				if response == true {
 					self.performSegueWithIdentifier("showFeed", sender: self)

@@ -89,7 +89,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			ProjectHelper.getFullProjectProfile(id, completionHandler: { (response, data) in
 				
 				if response == true {
-					print(data)
 					self.fullProjectData = data!
 					self.getLatestPosts()
 					self.getProjectPhotos()
@@ -141,10 +140,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	func getProjectPhotos() {
 		ProjectHelper.getProjectPhotos(String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)) { (response, data) in
-			print("response: \(response)")
 			if response == true {
 				self.collectionViewSourceArray = data!
-				print("image array = \(self.collectionViewSourceArray)")
 				self.tableView?.reloadData()
 			}
 		}
@@ -292,7 +289,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -335,7 +331,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					Alamofire.request(.GET, (imageURL as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -370,7 +365,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			Alamofire.request(.GET, imageURL)
 				.responseImage { response in
 					if let image = response.result.value {
-						print("image downloaded: \(image)")
 						cell.postImage!.image = image
 					}
 			}
@@ -401,7 +395,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -430,7 +423,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 				Alamofire.request(.GET, (url as! String))
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.profileImageView!.image = image
 						}
 				}
@@ -451,10 +443,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		if indexPath.section == 3 {
 			let collectionCell = cell as! DHCollectionTableViewCell
 			collectionCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, index: indexPath.row)
-//			let index = collectionCell.collectionView.tag
-//			let value = contentOffsetDictionary[index]
-//			let horizontalOffset = CGFloat(value != nil ? value!.floatValue : 0)
-//			collectionCell.collectionView.setContentOffset(CGPointMake(horizontalOffset, 0), animated: false)
 		}
 	}
 	
@@ -467,11 +455,9 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionPhotoCell", forIndexPath: indexPath)
 		let imageURL = collectionViewSourceArray[indexPath.item]["image"]
-		print("IMAGE URL: \(imageURL)")
 		Alamofire.request(.GET, (imageURL as! String))
 			.responseImage { response in
 				if let image = response.result.value {
-					print("image downloaded: \(image)")
 					let imageView = UIImageView(image: image)
 					imageView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
 					imageView.contentMode = .ScaleToFill
@@ -495,15 +481,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		let browser = SKPhotoBrowser(photos: images)
 		presentViewController(browser, animated: true, completion: {})
 	}
-//	
-//	func scrollViewDidScroll(scrollView: UIScrollView) {
-//		if !(scrollView is UICollectionView) {
-//			return
-//		}
-//		let horizontalOffset = scrollView.contentOffset.x
-//		let collectionView = scrollView as! UICollectionView
-//		contentOffsetDictionary[collectionView.tag] = horizontalOffset
-//	}
 	
 	// MARK: User Interaction
 	
@@ -595,7 +572,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			}
 			let id = String(NSUserDefaults.standardUserDefaults().objectForKey("projectId") as! Int)
 			ProjectHelper.updateProjectProfile(id, fullProfileData: projectData, completionHandler: { (response) in
-				//				print(response)
 				if response == true {
 					self.getProfile()
 				}
@@ -603,7 +579,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		} else {
 			ProjectHelper.createProject(projectData, completionHandler: { (response, fullProfile) in
 				if response == true {
-					print(fullProfile)
 					let id = fullProfile!["id"]
 					self.fullProjectData = fullProfile!
 					NSUserDefaults.standardUserDefaults().setObject(id, forKey: "projectId")
@@ -618,7 +593,6 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 			let idString = String(id as! Int)
 			ProjectHelper.createProjectTeamMate(idString, teammate: teamMate, completionHandler: { (response) in
 				if response == true {
-					print("Created a new team mate")
 					self.teamData.append(teamMate)
 					self.projectData["team"] = self.teamData
 					self.tableView?.reloadData()

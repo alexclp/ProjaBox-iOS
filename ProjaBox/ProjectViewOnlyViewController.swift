@@ -61,9 +61,7 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 	
 	func getProfile() {
 		ProjectHelper.getFullProjectProfile(projectId, completionHandler: { (response, data) in
-			print("project id: \(self.projectId)")
 			if response == true {
-				print(data)
 				self.getLatestPosts()
 				self.getProjectPhotos()
 				if let name = data!["name"] {
@@ -108,7 +106,6 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 	func getLatestPosts() {
 		ProjectHelper.getProjectsLatestPosts(projectId) { (response, posts) in
 			if response == true {
-				print("GOT PROJECT'S POSTS")
 				self.postsData = posts!
 				self.tableView?.reloadData()
 			}
@@ -117,10 +114,8 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 	
 	func getProjectPhotos() {
 		ProjectHelper.getProjectPhotos(projectId) { (response, data) in
-			print("response: \(response)")
 			if response == true {
 				self.collectionViewSourceArray = data!
-				print("image array = \(self.collectionViewSourceArray)")
 				self.tableView?.reloadData()
 			}
 		}
@@ -236,7 +231,6 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -303,7 +297,6 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 					Alamofire.request(.GET, (imageURL as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -337,7 +330,6 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 			Alamofire.request(.GET, imageURL)
 				.responseImage { response in
 					if let image = response.result.value {
-						print("image downloaded: \(image)")
 						cell.postImage!.image = image
 					}
 			}
@@ -368,7 +360,6 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -397,7 +388,6 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 				Alamofire.request(.GET, (url as! String))
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.profileImageView!.image = image
 						}
 				}
@@ -418,10 +408,6 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 		if indexPath.section == 3 {
 			let collectionCell = cell as! DHCollectionTableViewCell
 			collectionCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, index: indexPath.row)
-			//			let index = collectionCell.collectionView.tag
-			//			let value = contentOffsetDictionary[index]
-			//			let horizontalOffset = CGFloat(value != nil ? value!.floatValue : 0)
-			//			collectionCell.collectionView.setContentOffset(CGPointMake(horizontalOffset, 0), animated: false)
 		}
 	}
 	
@@ -434,11 +420,9 @@ class ProjectViewOnlyViewController: UIViewController, UITableViewDelegate, UITa
 	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionPhotoCell", forIndexPath: indexPath)
 		let imageURL = collectionViewSourceArray[indexPath.item]["image"]
-		print("IMAGE URL: \(imageURL)")
 		Alamofire.request(.GET, (imageURL as! String))
 			.responseImage { response in
 				if let image = response.result.value {
-					print("image downloaded: \(image)")
 					let imageView = UIImageView(image: image)
 					imageView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
 					imageView.contentMode = .ScaleToFill

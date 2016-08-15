@@ -36,7 +36,6 @@ class ProjectHelper: NSObject {
 				completionHandler(false, nil)
 			} else {
 				let data = response.result.value!["data"] as! [String: AnyObject]
-				print(data)
 				completionHandler(true, data)
 			}
 		}
@@ -47,7 +46,6 @@ class ProjectHelper: NSObject {
 		let headers = getHeaders()
 		
 		Alamofire.request(.POST, urlString, parameters: teammate, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
-			print(response.response)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			if errorCode != 0 {
@@ -63,10 +61,8 @@ class ProjectHelper: NSObject {
 		let headers = getHeaders()
 		if let image = photo {
 			let parameters: [String: AnyObject] = ["name": name, "content": content, "image": image]
+
 			Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
-				
-				//				print(response)
-				
 				let errorCode = response.result.value!["errorCode"] as! Int
 				if errorCode != 0 {
 					completionHandler(false)
@@ -76,9 +72,6 @@ class ProjectHelper: NSObject {
 			}
 		} else {
 			Alamofire.request(.POST, urlString, parameters: ["name": name, "content": content], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
-				
-				//				print(response)
-				
 				let errorCode = response.result.value!["errorCode"] as! Int
 				if errorCode != 0 {
 					completionHandler(false)
@@ -110,10 +103,8 @@ class ProjectHelper: NSObject {
 		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("followed unsuccessfully")
 				completionHandler(false)
 			} else {
-				print("followed successfully")
 				completionHandler(true)
 			}
 		}
@@ -126,10 +117,8 @@ class ProjectHelper: NSObject {
 		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("followed unsuccessfully")
 				completionHandler(false)
 			} else {
-				print("followed successfully")
 				completionHandler(true)
 			}
 		}
@@ -142,10 +131,8 @@ class ProjectHelper: NSObject {
 		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("liked unsuccessfully")
 				completionHandler(false)
 			} else {
-				print("liked successfully")
 				completionHandler(true)
 			}
 		}
@@ -158,11 +145,8 @@ class ProjectHelper: NSObject {
 		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("unliked unsuccessfully")
 				completionHandler(false)
-			} else {
-				print("unliked successfully")
-				completionHandler(true)
+			} else {				completionHandler(true)
 			}
 		}
 	}
@@ -174,10 +158,8 @@ class ProjectHelper: NSObject {
 		Alamofire.request(.POST, urlString, parameters: ["image": image], encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("failed to upload photo")
 				completionHandler(false)
 			} else {
-				print("photo was uploaded successfully")
 				completionHandler(true)
 			}
 		}
@@ -191,12 +173,10 @@ class ProjectHelper: NSObject {
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
-			
 			if errorCode != 0 {
 				completionHandler(false, nil)
 			} else {
 				let data = response.result.value!["data"] as! [String: AnyObject]
-//				print(data)
 				completionHandler(true, data)
 			}
 		}
@@ -204,11 +184,9 @@ class ProjectHelper: NSObject {
 	
 	class func getProjectsLatestPosts(projectId: String, completionHandler: (Bool, [ProjectPost]?) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/posts/latest"
-		print("URL: \(urlString)")
 		let headers = getHeaders()
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
-			print("RESPONSE: \(response)")
 			let errorCode = response.result.value!["errorCode"] as! Int
 			let data = response.result.value!["data"] as? [[String: AnyObject]]
 			
@@ -271,6 +249,7 @@ class ProjectHelper: NSObject {
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			let data = response.result.value!["data"] as? [[String: AnyObject]]
+			
 			if errorCode == 0 {
 				if let data = data {
 					completionHandler(true, data)
@@ -289,10 +268,7 @@ class ProjectHelper: NSObject {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)"
 		let headers = getHeaders()
 		
-//		print("Data: \(fullProfileData)")
-		
 		Alamofire.request(.PUT, urlString, parameters: fullProfileData, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
-			print(response)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			if errorCode != 0 {

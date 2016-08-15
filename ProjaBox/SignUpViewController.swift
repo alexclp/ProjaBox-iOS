@@ -26,8 +26,6 @@ class SignUpViewController: UIViewController {
 		
 		if isValidEmail(emailAddress!) {
 			SignInHelper.signUpFirstStep((emailTextField?.text)!, completionHandler: { (response) in
-				print("result: \(response)")
-				
 				if response == true {
 					self.performSegueWithIdentifier("showPasswordSegue", sender: self)
 				} else {

@@ -20,7 +20,6 @@ class InitialViewController: UIViewController {
 		if NSUserDefaults.standardUserDefaults().objectForKey("userData") == nil {
 			performSegueWithIdentifier("showLoginSegue", sender: self)
 		} else {
-			print(NSUserDefaults.standardUserDefaults().objectForKey("userData"))
 			performSegueWithIdentifier("showFeedSegue", sender: self)
 		}
 	}

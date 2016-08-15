@@ -15,9 +15,6 @@ class SignInHelper: NSObject {
 		let parameters: [String: String] = ["email": emailAddress]
 		
 		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/auth/signup", parameters: parameters, encoding: .JSON, headers: nil) .validate() .responseJSON { response in
-			
-			print(response)
-			
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
 				completionHandler(false)
@@ -31,9 +28,6 @@ class SignInHelper: NSObject {
 		let parameters: [String: String] = ["email": emailAddress, "password": "password", "os": "iOS"]
 		
 		Alamofire.request(.PUT, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/auth/signup", parameters: parameters, encoding: .JSON, headers: nil) .validate() .responseJSON { response in
-			
-			print(response)
-			
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
 				completionHandler(false)
@@ -50,9 +44,6 @@ class SignInHelper: NSObject {
 		let parameters: [String: String] = ["email": "alexandru.clapa@gmail.com", "password": "password", "os": "iOS"]
 		
 		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/auth/signin", parameters: parameters, encoding: .JSON, headers: nil) .validate() .responseJSON { response in
-			
-			print(response)
-			
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
 				completionHandler(false)
@@ -84,12 +75,9 @@ class SignInHelper: NSObject {
 		
 		Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: nil) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
-			print(response)
 			if errorCode != 0 {
-				print("facebook sign in unsuccessful")
 				completionHandler(false)
 			} else {
-				print("facebook sign in successful")
 				let userData = response.result.value!["data"] as! [String: AnyObject]
 				saveUserData(userData)
 				
@@ -108,7 +96,6 @@ class SignInHelper: NSObject {
 	}
 	
 	private class func saveUserData(userData: [String: AnyObject]) {
-		print(userData)
 		NSUserDefaults.standardUserDefaults().setObject(userData, forKey: "userData")
 		NSUserDefaults.standardUserDefaults().synchronize()
 	}

@@ -66,9 +66,6 @@ class NewsFeedHelper: NSObject {
 		if let url = NSURL(string: urlString) {
 			let urlRequest = createAuthHeadersForURL(url, "GET")
 			Alamofire.request(urlRequest).responseJSON { response in
-				//				print(response.request)
-				//				print(response.result.value)
-				//				print(response)
 				
 				let errorCode = response.result.value!["errorCode"] as! Int
 				let data = response.result.value!["data"] as? [[String: AnyObject]]
@@ -142,7 +139,6 @@ class NewsFeedHelper: NSObject {
 		
 		Alamofire.request(.POST, "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts", parameters: ["name": "Post", "image": photo], encoding: .JSON, headers: headers) .validate() .responseJSON { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
-			print(response)
 			if errorCode != 0 {
 				completionHandler(false)
 			} else {
@@ -154,16 +150,12 @@ class NewsFeedHelper: NSObject {
 	class func deletePost(postId: String, completionHandler: (Bool) -> Void) {
 		let headers = getHeaders()
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)"
-		print(urlString)
 		
 		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print(response)
-				print("Failed deleting")
 				completionHandler(false)
 			} else {
-				print("Delete successful")
 				completionHandler(true)
 			}
 		}
@@ -176,7 +168,6 @@ class NewsFeedHelper: NSObject {
 		Alamofire.request(.PUT, urlString, parameters: content, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("Failed editing")
 				completionHandler(false)
 			} else {
 				completionHandler(true)
@@ -191,8 +182,6 @@ class NewsFeedHelper: NSObject {
 		let headers = getHeaders()
 		
 		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
-			//			print(response)
-			
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
 				completionHandler(false)
@@ -224,8 +213,6 @@ class NewsFeedHelper: NSObject {
 		let parameters = ["content": commentContent]
 		
 		Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
-			//			print(response)
-			
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
 				completionHandler(false, nil)
@@ -243,13 +230,14 @@ class NewsFeedHelper: NSObject {
 		let headers = getHeaders()
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
-			//			print(response)
-			
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
 				completionHandler(false, nil)
 			} else {
-				
+				let data = response.result.value!["data"] as? [[String: AnyObject]]
+				if let data = data {
+					completionHandler(true, data)
+				}
 			}
 		}
 	}

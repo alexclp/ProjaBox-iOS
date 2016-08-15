@@ -74,7 +74,6 @@ class EditTeamViewController: FormViewController {
 	
 	func searchForTeammate(name: String, completionHandler: (Bool, [User]?) -> Void) {
 		SearchHelper.searchForUsers(name) { (response, result) in
-			print("result: \(result)")
 			if response == true {
 				completionHandler(true, result)
 			} else {

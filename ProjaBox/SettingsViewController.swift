@@ -96,7 +96,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 				Alamofire.request(.GET, (imageURL as! String))
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.profileImageView?.image = image
 						}
 				}
@@ -129,8 +128,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 			SignInHelper.signOut({ (response) in
 				if response == true {
 					self.performSegueWithIdentifier("logoutSegue", sender: self)
-				} else {
-					print("logout failed")
 				}
 			})
 		}

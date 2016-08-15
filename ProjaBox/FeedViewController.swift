@@ -29,7 +29,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	override func viewDidAppear(animated: Bool) {
-		print("did appear")
 		super.viewDidAppear(animated)
 		setupBarButtons()
 		getLatestPosts()
@@ -119,7 +118,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 			Alamofire.request(.GET, imageURL)
 				.responseImage { response in
 					if let image = response.result.value {
-						print("image downloaded: \(image)")
 						cell.postImage?.image = image
 					}
 			}
@@ -145,7 +143,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 					Alamofire.request(.GET, url)
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -162,7 +159,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 					Alamofire.request(.GET, url)
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -210,7 +206,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				Alamofire.request(.GET, url)
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.profileImageView!.image = image
 						}
 				}
@@ -228,7 +223,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				Alamofire.request(.GET, url)
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.profileImageView!.image = image
 						}
 				}
@@ -256,7 +250,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				let editedPost = postsData[editingPostIndex]
 				let postId = String(editedPost.id!)
 				NewsFeedHelper.editPost(postId, content: ["image": strBase64], completionHandler: { (response) in
-					print(response)
 					self.isEditingPost = false
 					self.getLatestPosts()
 				})
@@ -279,7 +272,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		if sender.selected == false {
 			NewsFeedHelper.likePost(String(postId!)) { (response) in
 				if response == true {
-					print("Liked successfully")
 					sender.selected = true
 					if self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) is PhotoCardTableViewCell {
 						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! PhotoCardTableViewCell
@@ -288,8 +280,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
 						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! + 1)
 					}
-				} else {
-					print("Error while liking post id: \(postId)")
 				}
 			}
 		} else {
@@ -304,8 +294,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 						let cell = self.tableView?.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0)) as! FeedCardTableViewCell
 						cell.likesLabel?.text = String(Int((cell.likesLabel?.text)!)! - 1)
 					}
-				} else {
-					print("Error while unliking post id: \(postId)")
 				}
 			})
 		}
@@ -322,21 +310,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
 	
 	func shareButtonPressed(sender: UIButton) {
-		print("Share button tag: \(sender.tag)")
 		if let shareController = SharingHelper.shareStandardText() {
 			presentViewController(shareController, animated: true, completion: nil)
 		}
 	}
 	
 	func commentButtonPressed(sender: UIButton) {
-		print("Comment button tag: \(sender.tag)")
 		selectedCellIndex = sender.tag
 		performSegueWithIdentifier("showPostDetailsSegue", sender: self)
 	}
 	
 	func moreButtonPressed(sender: UIButton) {
-		print("More button tag: \(sender.tag)")
-		
 		let alertController = UIAlertController(title: nil, message: "Edit or delete post", preferredStyle: .ActionSheet)
 		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
 			self.dismissViewControllerAnimated(true, completion: nil)

@@ -37,7 +37,6 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		ProfileHelper.getMyFullProfile { (response, data) in
 			if response == true {
 				self.fullProfileData = data!
-				print(self.fullProfileData)
 				self.getLatestPosts()
 			} else {
 				
@@ -192,7 +191,6 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -260,7 +258,6 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 				Alamofire.request(.GET, imageURL)
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.postImage!.image = image
 						}
 				}
@@ -291,7 +288,6 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 						Alamofire.request(.GET, (url as! String))
 							.responseImage { response in
 								if let image = response.result.value {
-									print("image downloaded: \(image)")
 									cell.profileImageView!.image = image
 								}
 						}
@@ -332,7 +328,6 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -437,10 +432,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	
 	func updateProfile() {
 		ProfileHelper.updateMyProfile(fullProfileData) { (response, data) in
-			if response != true {
-				print("Update failed")
-			} else {
-				print("Update successful")
+			if response == true {
 				if let data = data {
 					self.fullProfileData = data
 					self.tableView?.reloadData()

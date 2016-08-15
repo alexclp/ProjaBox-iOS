@@ -29,7 +29,6 @@ class ProfileHelper: NSObject {
 		let headers = getHeaders()
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
-			print(response.request)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			if errorCode != 0 {
@@ -46,7 +45,6 @@ class ProfileHelper: NSObject {
 		let headers = getHeaders()
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
-			print(response)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			if errorCode != 0 {
@@ -63,7 +61,6 @@ class ProfileHelper: NSObject {
 		let headers = getHeaders()
 		
 		Alamofire.request(.PUT, urlString, parameters: myProfile, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
-			print(response)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			if errorCode != 0 {
@@ -82,10 +79,8 @@ class ProfileHelper: NSObject {
 		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("failed")
 				completionHandler(false)
 			} else {
-				print("success")
 				completionHandler(true)
 			}
 		}
@@ -98,10 +93,8 @@ class ProfileHelper: NSObject {
 		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("failed")
 				completionHandler(false)
 			} else {
-				print("success")
 				completionHandler(true)
 			}
 		}
@@ -114,10 +107,8 @@ class ProfileHelper: NSObject {
 		Alamofire.request(.POST, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("failed")
 				completionHandler(false)
 			} else {
-				print("success")
 				completionHandler(true)
 			}
 		}
@@ -130,10 +121,8 @@ class ProfileHelper: NSObject {
 		Alamofire.request(.DELETE, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			if errorCode != 0 {
-				print("failed")
 				completionHandler(false)
 			} else {
-				print("success")
 				completionHandler(true)
 			}
 		}
@@ -146,7 +135,6 @@ class ProfileHelper: NSObject {
 		let headers = getHeaders()
 		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
-			print(response)
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			let data = response.result.value!["data"] as? [[String: AnyObject]]
@@ -190,10 +178,8 @@ class ProfileHelper: NSObject {
 			let errorCode = response.result.value!["errorCode"] as! Int
 			
 			if errorCode != 0 {
-				print("failed changing password")
 				completionHandler(false)
 			} else {
-				print("changed password successfully")
 				completionHandler(true)
 			}
 		}

@@ -34,7 +34,6 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 			if response == true {
 				if let data = data {
 					self.chatData = data
-					print("chat data: \(self.chatData)")
 					self.tableView?.reloadData()
 				}
 			}

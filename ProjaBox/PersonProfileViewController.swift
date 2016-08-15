@@ -40,7 +40,6 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 		ProfileHelper.getUserFullProfile(userId) { (response, data) in
 			if response == true {
 				self.fullProfileData = data!
-				print("Data: \(data)")
 				self.tableView?.reloadData()
 				self.getLatestPosts()
 			} else {
@@ -225,7 +224,6 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -281,7 +279,6 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 				Alamofire.request(.GET, imageURL)
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.postImage!.image = image
 						}
 				}
@@ -312,7 +309,6 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 						Alamofire.request(.GET, (url as! String))
 							.responseImage { response in
 								if let image = response.result.value {
-									print("image downloaded: \(image)")
 									cell.profileImageView!.image = image
 								}
 						}
@@ -353,7 +349,6 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 					Alamofire.request(.GET, (url as! String))
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}

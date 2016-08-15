@@ -186,7 +186,6 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 					Alamofire.request(.GET, url)
 						.responseImage { response in
 							if let image = response.result.value {
-								print("image downloaded: \(image)")
 								cell.profileImageView!.image = image
 							}
 					}
@@ -259,7 +258,6 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 				Alamofire.request(.GET, url)
 					.responseImage { response in
 						if let image = response.result.value {
-							print("image downloaded: \(image)")
 							cell.profileImageView!.image = image
 						}
 				}
@@ -440,11 +438,9 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 	
 	func nameButtonPressed(sender: UIGestureRecognizer) {
 		selectedName = (sender.view?.tag)!
-		print("selected index :\(selectedIndex)")
 		if selectedIndex == 0 {
 			performSegueWithIdentifier("discoverShowProjectProfile", sender: self)
 		} else {
-			print("name button pressed profile")
 			performSegueWithIdentifier("discoverShowProfile", sender: self)
 		}
 		
@@ -457,7 +453,6 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			let destination = segue.destinationViewController as! PersonProfileViewController
 			let userResult = results[selectedName] as! User
 			let id = String(userResult.id!)
-			print("ID: \(id)")
 			destination.userId = id
 		} else if segue.identifier == "discoverShowProjectProfile" {
 			let destination = segue.destinationViewController as! ProjectViewOnlyViewController
