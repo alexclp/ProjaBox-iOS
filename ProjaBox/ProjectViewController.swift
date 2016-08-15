@@ -33,8 +33,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 	var collectionViewSourceArray = [[String: AnyObject]]()
 	
-	override func viewDidAppear(animated: Bool) {
-		super.viewDidAppear(animated)
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
 		
 		self.tabBarController?.navigationItem.leftBarButtonItem = nil
 		self.tabBarController?.navigationItem.titleView = nil
@@ -65,14 +65,8 @@ class ProjectViewController: UIViewController, UITableViewDelegate, UITableViewD
 		] // Title color
 
 		
-		print("ID: \(NSUserDefaults.standardUserDefaults().objectForKey("projectId"))")
-		
 		getProfile()
 		setupPostButton()
-	}
-	
-	func setupBarButtons() {
-		
 	}
 	
 	func setupPostButton() {

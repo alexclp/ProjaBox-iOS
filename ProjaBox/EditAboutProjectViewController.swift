@@ -20,6 +20,8 @@ class EditAboutProjectViewController: FormViewController {
 		// Do any additional setup after loading the view.
 		
 		setupForm()
+		
+		self.tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(self.backButtonPressed(_:)))
 	}
 	
 	func setupForm() {
@@ -47,6 +49,10 @@ class EditAboutProjectViewController: FormViewController {
 				}  .onCellSelection({ (cell, row) in
 					self.doneButtonPressed()
 				})
+	}
+	
+	func backButtonPressed(sender: UIBarButtonItem) {
+		self.navigationController?.popViewControllerAnimated(true)
 	}
 	
 	func doneButtonPressed() {

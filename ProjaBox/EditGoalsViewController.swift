@@ -25,6 +25,12 @@ class EditGoalsViewController: UIViewController {
 		
 		// Do any additional setup after loading the view.
 		
+		self.tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(self.backButtonPressed(_:)))
+		self.textView?.text = goals
+	}
+	
+	func backButtonPressed(sender: UIBarButtonItem) {
+		self.navigationController?.popViewControllerAnimated(true)
 	}
 	
 	@IBAction func doneButtonPressed() {

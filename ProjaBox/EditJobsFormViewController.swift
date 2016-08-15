@@ -25,8 +25,10 @@ class EditJobsFormViewController: UIViewController, TagListViewDelegate {
 		
 		// Do any additional setup after loading the view.
 		
-		self.navigationItem.hidesBackButton = true
-		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(self.donePressed(_:)))
+		self.tabBarController?.navigationItem.hidesBackButton = true
+		self.tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(self.backButtonPressed(_:)))
+		self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(self.donePressed(_:)))
+		
 		tagListView?.delegate = self
 		
 		fillData()
@@ -46,6 +48,10 @@ class EditJobsFormViewController: UIViewController, TagListViewDelegate {
 			}
 		}
 		tagListView?.removeTag(tag)
+	}
+	
+	func backButtonPressed(sender: UIBarButtonItem) {
+		self.navigationController?.popViewControllerAnimated(true)
 	}
 	
 	func donePressed(sender: UIBarButtonItem) {
