@@ -53,7 +53,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	}
 	
 	func fetchFacebookData() {
-		let parameters: [String : String] = ["fields": "name, birthday, picture, location, gender, email"]
+		let parameters: [String : String] = ["fields": "name, birthday, picture, gender, email"]
 		FBSDKGraphRequest.init(graphPath: "me", parameters: parameters) .startWithCompletionHandler { (connection, result, error) in
 			print(result)
 			var signInParameters = [String: AnyObject]()
