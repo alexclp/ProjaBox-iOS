@@ -56,6 +56,8 @@ class ProfileHeaderTableViewCell: UITableViewCell {
 		moreButton?.setImage(UIImage(named: "other selected.png"), forState: .Selected)
 		
 		followButton?.setImage(UIImage(named: "follow.png"), forState: .Normal)
+		followButton?.setImage(UIImage(named: "follow_selected.png"), forState: .Highlighted)
+		followButton?.setImage(UIImage(named: "follow_selected.png"), forState: .Selected)
 	}
 	
 	func imageSetup() {
