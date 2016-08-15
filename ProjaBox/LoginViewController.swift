@@ -80,9 +80,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 			if let dob = result["dob"] as? String {
 				signInParameters["dob"] = dob
 			}
-			if let locationData = result["location"] {
-				signInParameters["location"] = locationData["name"] as? String
-			}
 			if let gender = result["gender"] as? String {
 				if gender == "male" {
 					signInParameters["sex"] = "M"
