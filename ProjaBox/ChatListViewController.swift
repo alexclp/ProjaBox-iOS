@@ -23,7 +23,8 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 		self.tableView?.separatorColor = UIColor(red: 242/256, green: 242/256, blue: 242/256, alpha: 1.0)
 		self.tableView?.tableFooterView = UIView.init()
 		
-		self.tabBarController?.navigationItem.title = "Message List"
+		self.navigationItem.title = "Message List"
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.createNewConversation(_:)))
 		
 		loadChatList()
 	}
@@ -38,6 +39,10 @@ class ChatListViewController: UIViewController, UITableViewDelegate, UITableView
 				}
 			}
 		}
+	}
+	
+	func createNewConversation(sender: UIBarButtonItem) {
+		performSegueWithIdentifier("showPersonSearchSegue", sender: self)
 	}
 	
 	// MARK: Table View Data Source

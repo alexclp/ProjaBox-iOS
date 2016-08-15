@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		IQKeyboardManager.sharedManager().enable = true
 		IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses.insert(NSStringFromClass(CreatingPostViewController))
+		IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses.insert(NSStringFromClass(PersonSearchTableViewController))
 		
 		return true
 	}

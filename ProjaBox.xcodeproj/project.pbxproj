@@ -138,6 +138,7 @@
 		0F6E016E1D14386E00BC69FA /* PersonProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E016D1D14386E00BC69FA /* PersonProfileViewController.swift */; };
 		0F6E01701D14707300BC69FA /* ProjectViewOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */; };
 		0F6E1C4B1D61E1FE001A6E1A /* follow_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E1C4A1D61E1FE001A6E1A /* follow_selected.png */; };
+		0F6E1C4E1D6251CF001A6E1A /* PersonSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E1C4C1D6251CF001A6E1A /* PersonSearchTableViewController.swift */; };
 		0F7896AC1CCC2E3A004FCCD3 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */; };
 		0F79C78C1D0122210002D117 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F79C7821D0122210002D117 /* AccountKit.framework */; };
 		0F79C78D1D0122210002D117 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F79C7831D0122210002D117 /* AccountKitStrings.bundle */; };
@@ -339,6 +340,7 @@
 		0F6E016D1D14386E00BC69FA /* PersonProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProfileViewController.swift; sourceTree = "<group>"; };
 		0F6E016F1D14707300BC69FA /* ProjectViewOnlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewOnlyViewController.swift; sourceTree = "<group>"; };
 		0F6E1C4A1D61E1FE001A6E1A /* follow_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow_selected.png; sourceTree = "<group>"; };
+		0F6E1C4C1D6251CF001A6E1A /* PersonSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSearchTableViewController.swift; sourceTree = "<group>"; };
 		0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		0F79C7821D0122210002D117 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
 		0F79C7831D0122210002D117 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
@@ -640,6 +642,7 @@
 			children = (
 				0F4F99621CCBB413006628CF /* ChatListViewController.swift */,
 				0F7896AB1CCC2E3A004FCCD3 /* ConversationViewController.swift */,
+				0F6E1C4C1D6251CF001A6E1A /* PersonSearchTableViewController.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -1320,6 +1323,7 @@
 				0F6E015A1D13115200BC69FA /* User.swift in Sources */,
 				0F2A996B1D12D782006C3540 /* OccupationFilterViewController.swift in Sources */,
 				0F0BF5881D4BB6CE00189BBD /* MyPostsViewController.swift in Sources */,
+				0F6E1C4E1D6251CF001A6E1A /* PersonSearchTableViewController.swift in Sources */,
 				0F46DEC81D120DC60057C479 /* DiscoverViewController.swift in Sources */,
 				0F6E01581D13112500BC69FA /* SearchHelper.swift in Sources */,
 				0F6E015C1D13115C00BC69FA /* Project.swift in Sources */,

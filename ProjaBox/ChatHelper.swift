@@ -24,6 +24,8 @@ class ChatHelper: NSObject {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/chats/recipient/\(userId)"
 		let headers = getHeaders()
 		
+		print("URL for chat: \(urlString)")
+		
 		Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON, headers: headers) .validate() .responseJSON() { response in
 			let errorCode = response.result.value!["errorCode"] as! Int
 			let data = response.result.value!["data"] as? [String: AnyObject]
