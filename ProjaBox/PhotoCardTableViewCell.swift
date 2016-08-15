@@ -47,19 +47,19 @@ class PhotoCardTableViewCell: UITableViewCell {
 		commentButton?.imageView?.contentMode = .ScaleAspectFit
 		moreButton?.imageView?.contentMode = .ScaleAspectFit
 		
-		likeButton?.setBackgroundImage(UIImage(named: "like default.png"), forState: .Normal)
-		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Highlighted)
-		likeButton?.setBackgroundImage(UIImage(named: "like selected.png"), forState: .Selected)
+		likeButton?.setImage(UIImage(named: "like default.png"), forState: .Normal)
+		likeButton?.setImage(UIImage(named: "like selected.png"), forState: .Highlighted)
+		likeButton?.setImage(UIImage(named: "like selected.png"), forState: .Selected)
 		
-		shareButton?.setBackgroundImage(UIImage(named: "share default.png"), forState: .Normal)
-		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Highlighted)
-		shareButton?.setBackgroundImage(UIImage(named: "share selected.png"), forState: .Selected)
+		shareButton?.setImage(UIImage(named: "share default.png"), forState: .Normal)
+		shareButton?.setImage(UIImage(named: "share selected.png"), forState: .Highlighted)
+		shareButton?.setImage(UIImage(named: "share selected.png"), forState: .Selected)
 		
-		commentButton?.setBackgroundImage(UIImage(named: "comment-default.png"), forState: .Normal)
+		commentButton?.setImage(UIImage(named: "comment-default.png"), forState: .Normal)
 		
-		moreButton?.setBackgroundImage(UIImage(named: "other default.png"), forState: .Normal)
-		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Highlighted)
-		moreButton?.setBackgroundImage(UIImage(named: "other selected.png"), forState: .Selected)
+		moreButton?.setImage(UIImage(named: "other default.png"), forState: .Normal)
+		moreButton?.setImage(UIImage(named: "other selected.png"), forState: .Highlighted)
+		moreButton?.setImage(UIImage(named: "other selected.png"), forState: .Selected)
 	}
 	
 	private func cardSetup() {
