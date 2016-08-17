@@ -143,8 +143,8 @@ class SearchHelper: NSObject {
 					currentUser.likers = result["likers"] as? [[String: AnyObject]]
 					currentUser.about = result["about"] as? String
 					currentUser.status = result["status"] as? String
-					currentUser.isFollowed = result["isFollowedByMe"] as? Bool
-					currentUser.isLikedByMe = result["isLikedByMe"] as? Bool
+					currentUser.isFollowed = result["isFollowedByMe"] as? Int
+					currentUser.isLikedByMe = result["isLikedByMe"] as? Int
 					currentUser.avatar = result["avatar"] as? String
 					
 					results.append(currentUser)

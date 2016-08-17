@@ -15,8 +15,8 @@ class User: NSObject {
 	var likers: [[String: AnyObject]]?
 	var about: String?
 	var status: String?
-	var isFollowed: Bool?
-	var isLikedByMe: Bool?
+	var isFollowed: Int?
+	var isLikedByMe: Int?
 	var avatar: String?
 	var position: String?
 }

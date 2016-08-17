@@ -238,15 +238,15 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 		}
 		
 		if let isFollowed = userResult.isFollowed {
-			if isFollowed == true {
+			if isFollowed == 1 {
 				cell.followButton.selected = true
 			} else {
-				cell.followButton.selected = true
+				cell.followButton.selected = false
 			}
 		}
 		
 		if let isLiked = userResult.isLikedByMe {
-			if isLiked == true {
+			if isLiked == 1 {
 				cell.likeButton.selected = true
 			} else {
 				cell.likeButton.selected = false
