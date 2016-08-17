@@ -294,7 +294,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	@IBAction func postCommentPressed(sender: UIBarButtonItem) {
 		let postContent = commentTextField?.text
 		let postId = selectedPost.id
-		
+		print("about to create commment")
 		NewsFeedHelper.createComment(String(postId!), commentContent: postContent!) { (response, data) in
 			self.commentTextField?.resignFirstResponder()
 			self.commentTextField?.text = ""
