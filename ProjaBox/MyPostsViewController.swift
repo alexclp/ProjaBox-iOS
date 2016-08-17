@@ -21,6 +21,11 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
 	var editingPostIndex = 0
 	let imagePicker = UIImagePickerController()
 	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(true)
+		getLatestPosts()
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +40,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
 			NSForegroundColorAttributeName : UIColor.whiteColor()
 		] // Title color
 		
-		self.getLatestPosts()
+		getLatestPosts()
     }
 	
 	func getLatestPosts() {
