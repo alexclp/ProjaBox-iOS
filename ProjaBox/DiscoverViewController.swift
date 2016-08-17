@@ -153,8 +153,10 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			}
 			
 			if let isLikedByMe = projectResult.isLikedByMe {
-				if isLikedByMe == true {
+				if isLikedByMe == 1 {
 					cell.likeButton.selected = true
+				} else {
+					cell.likeButton.selected = false
 				}
 			}
 			
@@ -174,10 +176,10 @@ class DiscoverViewController: UIViewController, YSSegmentedControlDelegate, UISe
 			}
 			
 			if let isFollowed = projectResult.isFollowed {
-				if isFollowed == true {
+				if isFollowed == 1 {
 					cell.followButton.selected = true
 				} else {
-					cell.followButton.selected = true
+					cell.followButton.selected = false
 				}
 			}
 			
