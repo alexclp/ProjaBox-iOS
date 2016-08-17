@@ -97,6 +97,7 @@ class CreatingPostViewController: UIViewController {
 				}
 			}
 		}
+		self.navigationController?.popViewControllerAnimated(true)
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 	

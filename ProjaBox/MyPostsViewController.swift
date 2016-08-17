@@ -277,8 +277,9 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
 			let destinationController = segue.destinationViewController as! PostDetailsViewController
 			destinationController.selectedPost = posts[selectedCellIndex]
 		} else if segue.identifier == "postingSegue" {
-			let navCon = segue.destinationViewController as! UINavigationController
-			let destination = navCon.viewControllers[0] as! CreatingPostViewController
+//			print(segue.destinationViewController)
+//			let navCon = segue.destinationViewController as! UINavigationController
+			let destination = segue.destinationViewController as! CreatingPostViewController
 			if isEditingPost == true {
 				destination.isEditingPost = true
 				let editingPost = posts[editingPostIndex]
