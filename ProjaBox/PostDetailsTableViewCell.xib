@@ -18,8 +18,11 @@
                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="nhW-u5-Vw1">
                         <rect key="frame" x="8" y="8" width="78" height="78"/>
                     </imageView>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telegram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHD-0q-AVX">
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHD-0q-AVX">
                         <rect key="frame" x="94" y="8" width="160" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="oDm-I6-z5m"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -174,7 +177,7 @@
         <image name="like default.png" width="64" height="62"/>
         <image name="location pin.png" width="22" height="30"/>
         <image name="other default.png" width="87" height="13"/>
-        <image name="placeholder.png" width="240" height="268"/>
+        <image name="placeholder.png" width="240" height="240"/>
         <image name="share default.png" width="56" height="63"/>
     </resources>
 </document>
