@@ -207,6 +207,24 @@ class NewsFeedHelper: NSObject {
 	
 	// MARK: COMMENT METHODS
 	
+	class func createProjectPostComment(postId: String, projectId: String, commentString: String, completionHandler: (Bool, [String: AnyObject]?) -> Void) {
+		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/projects/\(projectId)/posts/\(postId)/comments"
+		let headers = getHeaders()
+		let parameters = ["content": commentString]
+		
+		Alamofire.request(.POST, urlString, parameters: parameters, encoding: .JSON, headers: headers) .validate() .responseJSON { response in
+			let errorCode = response.result.value!["errorCode"] as! Int
+			if errorCode != 0 {
+				completionHandler(false, nil)
+			} else {
+				let data = response.result.value!["data"] as? [String: AnyObject]
+				if let data = data {
+					completionHandler(true, data)
+				}
+			}
+		}
+	}
+	
 	class func createComment(postId: String, commentContent: String, completionHandler: (Bool, [String: AnyObject]?) -> Void) {
 		let urlString = "http://139.59.161.63:8080/projabox-webapp/api/rest/v1/posts/\(postId)/comments"
 		let headers = getHeaders()

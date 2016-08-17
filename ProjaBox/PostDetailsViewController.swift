@@ -86,7 +86,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		
 		if indexPath.row == 0 {
 			
 			if let imageURL = selectedPost.image {
@@ -295,14 +294,29 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 		let postContent = commentTextField?.text
 		let postId = selectedPost.id
 		print("about to create commment")
-		NewsFeedHelper.createComment(String(postId!), commentContent: postContent!) { (response, data) in
-			self.commentTextField?.resignFirstResponder()
-			self.commentTextField?.text = ""
-			
-			if response == true {
-				if let data = data {
-					self.commentsData.append(data)
-					self.postDetailsTableView?.reloadData()
+		if selectedPost is ProjectPost {
+			let projectPost = selectedPost as! ProjectPost
+			NewsFeedHelper.createProjectPostComment(String(projectPost.id!), projectId: String(projectPost.projectId!), commentString: postContent!, completionHandler: { (response, data) in
+				self.commentTextField?.resignFirstResponder()
+				self.commentTextField?.text = ""
+				
+				if response == true {
+					if let data = data {
+						self.commentsData.append(data)
+						self.postDetailsTableView?.reloadData()
+					}
+				}
+			})
+		} else {
+			NewsFeedHelper.createComment(String(postId!), commentContent: postContent!) { (response, data) in
+				self.commentTextField?.resignFirstResponder()
+				self.commentTextField?.text = ""
+				
+				if response == true {
+					if let data = data {
+						self.commentsData.append(data)
+						self.postDetailsTableView?.reloadData()
+					}
 				}
 			}
 		}

@@ -381,6 +381,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		if segue.identifier == "showPostDetailsSegue" {
 			let destinationController = segue.destinationViewController as! PostDetailsViewController
 			destinationController.selectedPost = postsData[selectedCellIndex]
+			print("Comments :\(postsData[selectedCellIndex].comments)")
 		} else if segue.identifier == "showSettingsSegue" {
 			let backItem = UIBarButtonItem()
 			backItem.title = ""
