@@ -38,7 +38,7 @@ class SearchHelper: NSObject {
 					currentProject.desc = result["description"] as? String
 					currentProject.jobs = result["jobs"] as? [String]
 					currentProject.location = result["location"] as? String
-					currentProject.isLikedByMe = result["isLikedByMe"] as? Bool
+					currentProject.isLikedByMe = result["isLikedByMe"] as? Int
 					currentProject.likers = result["likers"] as? [[String: AnyObject]]
 					currentProject.avatar = result["avatar"] as? String
 					
@@ -109,9 +109,9 @@ class SearchHelper: NSObject {
 					currentProject.desc = result["description"] as? String
 					currentProject.jobs = result["jobs"] as? [String]
 					currentProject.location = result["location"] as? String
-					currentProject.isLikedByMe = result["isLikedByMe"] as? Bool
+					currentProject.isLikedByMe = result["isLikedByMe"] as? Int
 					currentProject.likers = result["likers"] as? [[String: AnyObject]]
-					currentProject.isFollowed = result["isFollowedByMe"] as? Bool
+					currentProject.isFollowed = result["isFollowedByMe"] as? Int
 					currentProject.avatar = result["avatar"] as? String
 					
 					results.append(currentProject)

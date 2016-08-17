@@ -14,9 +14,9 @@ class Project: NSObject {
 	var name: String?
 	var location: String?
 	var jobs: [String]?
-	var isLikedByMe: Bool?
+	var isLikedByMe: Int?
 	var type: String?
 	var likers: [[String: AnyObject]]?
-	var isFollowed: Bool?
+	var isFollowed: Int?
 	var avatar: String?
 }
