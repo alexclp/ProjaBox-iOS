@@ -45,43 +45,45 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	}
 	
 	func fillData() {
-		if let education = fullProfileData["education"] {
-			educationData = education as! [[String : String]]
+		if ((fullProfileData["education"]?.isEqual(NSNull)) == nil) {
+			educationData = fullProfileData["education"] as! [[String: String]]
 		}
 		
-		if let experience = fullProfileData["experience"] {
-			experienceData = experience as! [[String : String]]
+		if ((fullProfileData["experience"]?.isEqual(NSNull)) == nil) {
+			experienceData = fullProfileData["experience"] as! [[String : String]]
 		}
 		
-		if let interests = fullProfileData["interests"] {
-			interestsData = interests as! [String]
+		print("interests: \(fullProfileData["interests"]!)")
+		
+		if ((fullProfileData["interests"]?.isEqual(NSNull)) == nil) {
+			interestsData = fullProfileData["interests"] as! [String]
 		}
 		
 		// bio
 		
-		if let name = fullProfileData["name"] {
-			bioData["name"] = name as! String
+		if ((fullProfileData["name"]?.isEqual(NSNull)) == nil) {
+			bioData["name"] = fullProfileData["name"] as! String
 		}
 		
-		if let location = fullProfileData["location"] {
-			bioData["location"] = location as! String
+		if ((fullProfileData["location"]?.isEqual(NSNull)) == nil) {
+			bioData["location"] = fullProfileData["location"] as! String
 		}
 		
-		if let position = fullProfileData["occupation"] {
-			bioData["occupation"] = position as! String
+		if ((fullProfileData["occupation"]?.isEqual(NSNull)) == nil) {
+			bioData["occupation"] = fullProfileData["occupation"] as! String
 		}
 		
-		if let status = fullProfileData["status"] {
-			bioData["status"] = status as! String
+		if ((fullProfileData["status"]?.isEqual(NSNull)) == nil) {
+			bioData["status"] = fullProfileData["status"] as! String
 		}
 		
-		if let about = fullProfileData["about"] {
-			bioData["about"] = about
+		if ((fullProfileData["about"]?.isEqual(NSNull)) == nil){
+			bioData["about"] = fullProfileData["about"]
 		}
 		
-		if let sex = fullProfileData["sex"] {
-			if !sex.isEqual("U") {
-				bioData["sex"] = sex
+		if fullProfileData["sex"] != nil {
+			if !((fullProfileData["sex"] as! String).isEqual("U")) {
+				bioData["sex"] = fullProfileData["sex"]
 			}
 		}
 		
@@ -92,7 +94,8 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		ProfileHelper.getUsersLatestPosts(String(fullProfileData["id"]!)) { (response, posts) in
 			if response == true {
 				self.posts = posts!
-				self.tableView?.reloadData()
+				self.fillData()
+//				self.tableView?.reloadData()
 			}
 		}
 	}
@@ -213,13 +216,13 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 		} else if indexPath.section == 2 {
 			// EDUCATION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
-			
+			print("COUNT:\(educationData.count)")
 			cell.profileImageView?.image = UIImage(named: "education-placeholder.png")
 			
-			if educationData.count == 0 && indexPath.row == educationData.count && fullProfileData["education"] == nil  {
+			if educationData.count == 0 && indexPath.row == 0 && fullProfileData["education"] == nil  {
 				cell.companyNameLabel?.text = "Add past education"
 				cell.periodLabel?.text = ""
-			} else if educationData.count != 0 && educationData.count == indexPath.row {
+			} else if educationData.count > 0 && educationData.count == indexPath.row {
 				cell.companyNameLabel?.text = "Add past education"
 				cell.periodLabel?.text = ""
 			} else {

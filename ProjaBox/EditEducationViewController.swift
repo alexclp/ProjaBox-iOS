@@ -43,7 +43,7 @@ class EditEducationViewController: FormViewController {
 				}  .onCellSelection({ (cell, row) in
 					self.sendData()
 				})
-		
+		self.navigationItem.hidesBackButton = true
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(self.cancelButtonPressed(_:)))
 	}
 	
