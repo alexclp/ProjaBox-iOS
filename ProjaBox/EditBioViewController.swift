@@ -24,8 +24,13 @@ class EditBioViewController: FormViewController {
 		// Do any additional setup after loading the view.
 		
 		self.navigationItem.hidesBackButton = true
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(self.cancelButtonPressed(_:)))
 		
 		setupForm()
+	}
+	
+	func cancelButtonPressed(sender: UIBarButtonItem) {
+		self.navigationController?.popViewControllerAnimated(true)
 	}
 	
 	func setupForm() {
@@ -68,19 +73,21 @@ class EditBioViewController: FormViewController {
 		if let name = rawData["name"], let location = rawData["location"], let position = rawData["occupation"], let status = rawData["status"],
 			let description = rawData["about"], let sex = rawData["sex"], let avatar = rawData["avatar"]  {
 			
-			formData["name"] = name as! String
-			formData["location"] = location as! String
-			formData["occupation"] = position as! String
-			formData["status"] = status as! String
-			formData["about"] = description as! String
-			formData["sex"] = sex as! String
-			formData["avatar"] = CompressedImage.encodeImageLowetQuality(avatar as! UIImage)
-			delegate?.userDidFinishCompletingData(formData)
-			self.navigationController?.popViewControllerAnimated(true)
-		} else {
+			if name != nil && location != nil && position != nil && status != nil && description != nil && sex != nil && avatar != nil {
+				formData["name"] = name as! String
+				formData["location"] = location as! String
+				formData["occupation"] = position as! String
+				formData["status"] = status as! String
+				formData["about"] = description as! String
+				formData["sex"] = sex as! String
+				formData["avatar"] = CompressedImage.encodeImageLowetQuality(avatar as! UIImage)
+				delegate?.userDidFinishCompletingData(formData)
+				self.navigationController?.popViewControllerAnimated(true)
+			} else {
 			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
 			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
 			self.presentViewController(alert, animated: true, completion: nil)
+			}
 		}
 	}
 }

@@ -33,6 +33,12 @@ class EditInterestsViewController: UIViewController, TagListViewDelegate {
 		tagListView?.delegate = self
 		
 		fillData()
+		
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(self.cancelButtonPressed(_:)))
+	}
+	
+	func cancelButtonPressed(sender: UIBarButtonItem) {
+		self.navigationController?.popViewControllerAnimated(true)
 	}
 	
 	func fillData() {

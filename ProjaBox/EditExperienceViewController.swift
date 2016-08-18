@@ -40,6 +40,11 @@ class EditExperienceViewController: FormViewController {
 				}  .onCellSelection({ (cell, row) in
 					self.sendData()
 				})
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(self.cancelButtonPressed(_:)))
+	}
+	
+	func cancelButtonPressed(sender: UIBarButtonItem) {
+		self.navigationController?.popViewControllerAnimated(true)
 	}
 	
 	func sendData() {

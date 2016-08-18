@@ -24,7 +24,7 @@ class EditEducationViewController: FormViewController {
 			$0.placeholder = "Type it in"
 			}
 			<<< DateRow("start-date")	{
-				$0.title = "Short style"
+				$0.title = "Start date"
 				$0.value = NSDate()
 				let formatter = NSDateFormatter()
 				formatter.locale = .currentLocale()
@@ -32,7 +32,7 @@ class EditEducationViewController: FormViewController {
 				$0.dateFormatter = formatter
 			}
 			<<< DateRow("end-date") {
-				$0.title = "Short style"
+				$0.title = "End date"
 				$0.value = NSDate()
 				let formatter = NSDateFormatter()
 				formatter.locale = .currentLocale()
@@ -43,6 +43,12 @@ class EditEducationViewController: FormViewController {
 				}  .onCellSelection({ (cell, row) in
 					self.sendData()
 				})
+		
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(self.cancelButtonPressed(_:)))
+	}
+	
+	func cancelButtonPressed(sender: UIBarButtonItem) {
+		self.navigationController?.popViewControllerAnimated(true)
 	}
 	
 	func sendData() {
@@ -52,15 +58,17 @@ class EditEducationViewController: FormViewController {
 		if let university = values["university"],
 			let startDate = values["start-date"],
 			let endDate = values["end-date"] {
-			let startDateString = formatDate(startDate as! NSDate)
-			let endDateString = formatDate(endDate as! NSDate)
-			
-			data["university"] = (university as! String)
-			data["start"] = startDateString
-			data["finish"] = endDateString
-			
-			delegate?.finishedCompletingItem(data)
-			self.navigationController?.popViewControllerAnimated(true)
+			if university != nil {
+				let startDateString = formatDate(startDate as! NSDate)
+				let endDateString = formatDate(endDate as! NSDate)
+				
+				data["university"] = (university as! String)
+				data["start"] = startDateString
+				data["finish"] = endDateString
+				
+				delegate?.finishedCompletingItem(data)
+				self.navigationController?.popViewControllerAnimated(true)
+			}
 		} else {
 			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
 			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
