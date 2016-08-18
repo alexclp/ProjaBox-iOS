@@ -55,19 +55,22 @@ class EditExperienceViewController: FormViewController {
 		if let university = values["work"],
 			let startDate = values["start-date"],
 			let endDate = values["end-date"] {
-			let startDateString = formatDate(startDate as! NSDate)
-			let endDateString = formatDate(endDate as! NSDate)
 			
-			data["work"] = (university as! String)
-			data["start"] = startDateString
-			data["finish"] = endDateString
-			
-			delegate?.finishedCompletingItem(data)
-			self.navigationController?.popViewControllerAnimated(true)
-		} else {
-			let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
-			alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-			self.presentViewController(alert, animated: true, completion: nil)
+			if university != nil {
+				let startDateString = formatDate(startDate as! NSDate)
+				let endDateString = formatDate(endDate as! NSDate)
+				
+				data["work"] = (university as! String)
+				data["start"] = startDateString
+				data["finish"] = endDateString
+				
+				delegate?.finishedCompletingItem(data)
+				self.navigationController?.popViewControllerAnimated(true)
+			} else {
+				let alert = UIAlertController(title: "Alert", message: "Enter all data please", preferredStyle: UIAlertControllerStyle.Alert)
+				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+				self.presentViewController(alert, animated: true, completion: nil)
+			}
 		}
 	}
 	

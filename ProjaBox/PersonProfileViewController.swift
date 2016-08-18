@@ -49,47 +49,64 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 	}
 	
 	func fillData() {
-		if let education = fullProfileData["education"] {
-			educationData = education as! [[String : String]]
+		let education = fullProfileData["education"]
+		
+		if (education as? [[String: String]] != nil) {
+			educationData = fullProfileData["education"] as! [[String: String]]
 		}
 		
-		if let experience = fullProfileData["experience"] {
-			experienceData = experience as! [[String : String]]
+		let experience = fullProfileData["experience"]
+		
+		if (experience as? [[String: String]] != nil) {
+			experienceData = fullProfileData["experience"] as! [[String : String]]
 		}
 		
-		if let interests = fullProfileData["interests"] {
-			interestsData = interests as! [String]
+		let interests = fullProfileData["interests"]
+		
+		if (interests as? [String]) != nil {
+			interestsData = fullProfileData["interests"] as! [String]
 		}
 		
 		// bio
+		let name = fullProfileData["name"]
 		
-		if let name = fullProfileData["name"] {
-			bioData["name"] = name as! String
+		if (name as? String) != nil {
+			bioData["name"] = fullProfileData["name"] as! String
 		}
 		
-		if let location = fullProfileData["location"] {
-			bioData["location"] = location as! String
+		let location = fullProfileData["location"]
+		
+		if (location as? String) != nil {
+			bioData["location"] = fullProfileData["location"] as! String
 		}
 		
-		if let position = fullProfileData["occupation"] {
-			bioData["occupation"] = position as! String
+		let occupation = fullProfileData["occupation"]
+		
+		if (occupation as? String) != nil {
+			bioData["occupation"] = fullProfileData["occupation"] as! String
 		}
 		
-		if let status = fullProfileData["status"] {
-			bioData["status"] = status as! String
+		let status = fullProfileData["status"]
+		
+		if (status as? String) != nil {
+			bioData["status"] = fullProfileData["status"] as! String
 		}
 		
-		if let about = fullProfileData["about"] {
-			bioData["about"] = about
+		let about = fullProfileData["about"]
+		
+		if (about as? String) != nil {
+			bioData["about"] = fullProfileData["about"]
 		}
 		
-		if let sex = fullProfileData["sex"] {
-			if !sex.isEqual("U") {
-				bioData["sex"] = sex
+		let sex = fullProfileData["sex"]
+		
+		if (sex as? String) != nil {
+			if !((fullProfileData["sex"] as! String).isEqual("U")) {
+				bioData["sex"] = fullProfileData["sex"]
 			}
 		}
 		
-//		tableView?.reloadData()
+		//		tableView?.reloadData()
 	}
 	
 	func getLatestPosts() {
@@ -246,12 +263,17 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 		} else if indexPath.section == 2 {
 			// EDUCATION
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
-		
+			print("COUNT:\(educationData.count)")
 			cell.profileImageView?.image = UIImage(named: "education-placeholder.png")
 			
-			if educationData.count == 0 || indexPath.row == educationData.count {
+			if educationData.count == 0 && indexPath.row == 0 && fullProfileData["education"] == nil  {
 				cell.companyNameLabel?.text = "Add past education"
+				cell.periodLabel?.text = ""
+			} else if educationData.count > 0 && educationData.count == indexPath.row {
+				cell.companyNameLabel?.text = "Add past education"
+				cell.periodLabel?.text = ""
 			} else {
+				//				educationData = fullProfileData["education"] as! [[String: String]]
 				cell.companyNameLabel?.text = educationData[indexPath.row]["name"]
 				cell.periodLabel?.text = educationData[indexPath.row]["start"]! + " - " + educationData[indexPath.row]["finish"]!
 			}
@@ -260,12 +282,19 @@ class PersonProfileViewController: UIViewController, UITableViewDelegate, UITabl
 		} else if indexPath.section == 3 {
 			// EXPERIENCE
 			let cell = tableView.dequeueReusableCellWithIdentifier("educationExperienceCell", forIndexPath: indexPath) as! EducationExperienceTableViewCell
-			cell.userInteractionEnabled = false
-			
 			cell.profileImageView?.image = UIImage(named: "experience-placeholder.png")
 			
-			cell.companyNameLabel?.text = experienceData[indexPath.row]["name"]
-			cell.periodLabel?.text = experienceData[indexPath.row]["start"]! + " - " + experienceData[indexPath.row]["finish"]!
+			if experienceData.count == 0 && indexPath.row == experienceData.count && fullProfileData["experience"] == nil {
+				cell.companyNameLabel?.text = "Add past experience"
+				cell.periodLabel?.text = ""
+			} else if experienceData.count != 0 && experienceData.count == indexPath.row {
+				cell.companyNameLabel?.text = "Add past experience"
+				cell.periodLabel?.text = ""
+			} else {
+				//				experienceData = fullProfileData["experience"] as! [[String: String]]
+				cell.companyNameLabel?.text = experienceData[indexPath.row]["name"]
+				cell.periodLabel?.text = experienceData[indexPath.row]["start"]! + " - " + experienceData[indexPath.row]["finish"]!
+			}
 			
 			return cell
 		} else {

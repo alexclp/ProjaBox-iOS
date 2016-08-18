@@ -45,43 +45,58 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 	}
 	
 	func fillData() {
-		if ((fullProfileData["education"]?.isEqual(NSNull)) == nil) {
+		let education = fullProfileData["education"]
+		
+		if (education as? [[String: String]] != nil) {
 			educationData = fullProfileData["education"] as! [[String: String]]
 		}
 		
-		if ((fullProfileData["experience"]?.isEqual(NSNull)) == nil) {
+		let experience = fullProfileData["experience"]
+		
+		if (experience as? [[String: String]] != nil) {
 			experienceData = fullProfileData["experience"] as! [[String : String]]
 		}
 		
-		print("interests: \(fullProfileData["interests"]!)")
+		let interests = fullProfileData["interests"]
 		
-		if ((fullProfileData["interests"]?.isEqual(NSNull)) == nil) {
+		if (interests as? [String]) != nil {
 			interestsData = fullProfileData["interests"] as! [String]
 		}
 		
 		// bio
+		let name = fullProfileData["name"]
 		
-		if ((fullProfileData["name"]?.isEqual(NSNull)) == nil) {
+		if (name as? String) != nil {
 			bioData["name"] = fullProfileData["name"] as! String
 		}
 		
-		if ((fullProfileData["location"]?.isEqual(NSNull)) == nil) {
+		let location = fullProfileData["location"]
+		
+		if (location as? String) != nil {
 			bioData["location"] = fullProfileData["location"] as! String
 		}
 		
-		if ((fullProfileData["occupation"]?.isEqual(NSNull)) == nil) {
+		let occupation = fullProfileData["occupation"]
+		
+		if (occupation as? String) != nil {
 			bioData["occupation"] = fullProfileData["occupation"] as! String
 		}
 		
-		if ((fullProfileData["status"]?.isEqual(NSNull)) == nil) {
+		let status = fullProfileData["status"]
+		
+		if (status as? String) != nil {
 			bioData["status"] = fullProfileData["status"] as! String
 		}
 		
-		if ((fullProfileData["about"]?.isEqual(NSNull)) == nil){
+		let about = fullProfileData["about"]
+		
+		if (about as? String) != nil {
 			bioData["about"] = fullProfileData["about"]
 		}
 		
-		if fullProfileData["sex"] != nil {
+		let sex = fullProfileData["sex"]
+		
+		if (sex as? String) != nil {
 			if !((fullProfileData["sex"] as! String).isEqual("U")) {
 				bioData["sex"] = fullProfileData["sex"]
 			}
@@ -226,7 +241,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 				cell.companyNameLabel?.text = "Add past education"
 				cell.periodLabel?.text = ""
 			} else {
-				educationData = fullProfileData["education"] as! [[String: String]]
+//				educationData = fullProfileData["education"] as! [[String: String]]
 				cell.companyNameLabel?.text = educationData[indexPath.row]["name"]
 				cell.periodLabel?.text = educationData[indexPath.row]["start"]! + " - " + educationData[indexPath.row]["finish"]!
 			}
@@ -244,7 +259,7 @@ class MyProfileViewController: UIViewController, UITableViewDataSource, UITableV
 				cell.companyNameLabel?.text = "Add past experience"
 				cell.periodLabel?.text = ""
 			} else {
-				experienceData = fullProfileData["experience"] as! [[String: String]]
+//				experienceData = fullProfileData["experience"] as! [[String: String]]
 				cell.companyNameLabel?.text = experienceData[indexPath.row]["name"]
 				cell.periodLabel?.text = experienceData[indexPath.row]["start"]! + " - " + experienceData[indexPath.row]["finish"]!
 			}
